@@ -151,5 +151,70 @@ def iea_oil_stocks(input_path, output_path):
     final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to {output_path}')
 
+def oil_import_summary(input_path, output_path):
+    df = pd.read_csv(input_path)
 
+    # date
+    df = df[df['Month'] != 'Total']
+    df['date'] = pd.to_datetime(df['Month'].astype(str) + '-01')
 
+    df_long = pd.melt(
+        df,
+        id_vars=['date', 'Month'],
+        var_name='region_unit',
+        value_name='value'
+    )
+
+    # extract
+    df_long[['country', 'unit']] = df_long['country_unit'].str.extract(r'^(.*?)\s*\((.*?)\)$')
+
+    # region mapping
+    region_map = {
+        'Asia': ['필리핀', '말레이시아', '인도네시아', '호주', '뉴질랜드', '파푸아뉴기니', '카자흐스탄'],
+        'Africa': ['알제리', '콩고', '나이지리아', '적도기니', '모잠비크'],
+        'America': ['캐나다', '미국', '멕시코', '브라질', '에콰도르'],
+        'MiddleEast': ['이라크', '쿠웨이트', '카타르', '아랍에미레이트', '사우디아라비아', '오만', '중립지대'],
+        'Europe': ['노르웨이', '영국']
+    }
+    country_to_region = {country: region for region, countries in region_map.items() for country in countries}
+    df_long['region'] = df_long['country'].map(country_to_region).fillna(df_long['country'])
+
+    # English
+    country_name_map = {'필리핀': 'Philippines','말레이시아': 'Malaysia','인도네시아': 'Indonesia',
+        '호주': 'Australia','뉴질랜드': 'New Zealand','파푸아뉴기니': 'Papua New Guinea',
+        '카자흐스탄': 'Kazakhstan','알제리': 'Algeria','콩고': 'Congo','나이지리아': 'Nigeria','적도기니': 'Equatorial Guinea',
+        '모잠비크': 'Mozambique','캐나다': 'Canada','미국': 'United States','멕시코': 'Mexico','브라질': 'Brazil',
+        '에콰도르': 'Ecuador','이라크': 'Iraq','쿠웨이트': 'Kuwait','카타르': 'Qatar','아랍에미레이트': 'UAE',
+        '사우디아라비아': 'Saudi Arabia','오만': 'Oman','중립지대': 'Neutral Zone',
+        '노르웨이': 'Norway','영국': 'United Kingdom'
+    }
+    df_long['country'] = df_long['country'].map(country_name_map).fillna(df_long['country'])
+
+    # Clean and convert % strings to float
+    mask_percent = df_long['unit'] == '%'
+    df_long.loc[mask_percent, 'value'] = (df_long.loc[mask_percent, 'value']
+                                          .astype(str).str.replace('%', '', regex=False)
+                                          .astype(float))
+
+    df_long['sector'] = 'energy'
+    df_long['source'] = 'PETRONET'
+
+    df_long['unit'] = pd.Categorical(
+        df_long['unit'],
+        categories=['%', 'Value', 'Vol', 'Price'],
+        ordered=True
+    )
+    unit_map = {
+        'Value': 'thousand USD',
+        'Price': 'USD/bbl',
+        'Vol': 'thousand bbl',
+        '%': 'percentage'
+    }
+    df_long['unit'] = df_long['unit'].map(unit_map)
+
+    df_long = df_long[['date', 'region', 'country', 'value', 'unit', 'sector', 'source']].sort_values(
+        by=['date', 'country', 'unit']
+    )
+
+    df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f'Saved cleaned data to: {output_path}')

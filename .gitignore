@@ -8,17 +8,15 @@ __pycache__/
 # Virtual environment
 .venv/
 
-# Secrets
+# Api keys
 .env
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# Data files (raw & processed)
-data/**/*.csv
-data/**/*.pdf
-data/**/*.xlsx
+# Data files
+data/
 data/processed/
 
 # Exception: Keep the data catalogue
