@@ -1,5 +1,5 @@
 from src.processed.sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
-    iea_oil_stocks, oil_import_summary
+    iea_oil_stocks, oil_import_summary, manufacture_inventory
 import os
 
 TASKS = [
@@ -9,7 +9,8 @@ TASKS = [
     (fxrate, "economy", "fx_rates"),
     (economic_indicator, "economy", "leading_vs_coincident_kospi"),
     (iea_oil_stocks, "energy", "iea_oil_stocks"),
-    (oil_import_summary, "energy", "oil_imports_with_continents")
+    (oil_import_summary, "energy", "oil_imports_with_continents"),
+    (manufacture_inventory, "industry", "manufacture_inventory")
 ]
 
 def run_all():

@@ -160,12 +160,11 @@ def oil_import_summary(input_path, output_path):
 
     df_long = pd.melt(
         df,
-        id_vars=['date', 'Month'],
-        var_name='region_unit',
+        id_vars=['date'],
+        var_name='country_unit',
         value_name='value'
     )
 
-    # extract
     df_long[['country', 'unit']] = df_long['country_unit'].str.extract(r'^(.*?)\s*\((.*?)\)$')
 
     # region mapping
@@ -190,7 +189,7 @@ def oil_import_summary(input_path, output_path):
     }
     df_long['country'] = df_long['country'].map(country_name_map).fillna(df_long['country'])
 
-    # Clean and convert % strings to float
+    # convert % strings to float
     mask_percent = df_long['unit'] == '%'
     df_long.loc[mask_percent, 'value'] = (df_long.loc[mask_percent, 'value']
                                           .astype(str).str.replace('%', '', regex=False)
@@ -212,9 +211,41 @@ def oil_import_summary(input_path, output_path):
     }
     df_long['unit'] = df_long['unit'].map(unit_map)
 
-    df_long = df_long[['date', 'region', 'country', 'value', 'unit', 'sector', 'source']].sort_values(
-        by=['date', 'country', 'unit']
-    )
+    df_long = df_long[['date', 'region', 'country', 'value', 'unit', 'sector', 'source']].sort_values(by=['date', 'country', 'unit'])
 
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to: {output_path}')
+
+# Industry Sector
+def manufacture_inventory(input_path, output_path):
+    df = pd.read_csv(input_path)
+
+    # standardise columns
+    df = df.rename(columns={
+        'STAT_NAME': 'category',
+        'DATA_VALUE': 'value'
+    })
+    rename_map = {
+        '8.1.3. 설비투자지수': '설비투자지수',
+        '8.3.5. 제조업 재고율': '제조업 재고율'
+    }
+    df['category'] = df['category'].map(rename_map)
+
+
+    df['date'] = pd.to_datetime(df['TIME'].astype(str) + '01', format='%Y%m%d')
+    df['country'] = 'South Korea'
+    df['sector'] = 'industry'
+    df['value'] = pd.to_numeric(df['value'], errors='coerce')
+    df['unit'] = 'index'
+    df['source'] = 'ECOS'
+
+    # reorder columns
+    final_df = (df[['date', 'country', 'sector', 'category', 'value', 'source']]
+                .sort_values(by=['date', 'category']))
+
+    # save
+    final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f'Saved cleaned data to {output_path}')
+
+def steel_combined(input_path, output_path):
+    df = pd.read_csv(input_path)
