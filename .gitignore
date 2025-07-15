@@ -1,0 +1,25 @@
+# Bytecode and cache
+__pycache__/
+*.py[cod]
+
+# IDE settings
+.idea/
+
+# Virtual environment
+.venv/
+
+# Secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data files (raw & processed)
+data/**/*.csv
+data/**/*.pdf
+data/**/*.xlsx
+data/processed/
+
+# Exception: Keep the data catalogue
+!data/data_catalogue.xlsx
