@@ -1,5 +1,6 @@
 import pandas as pd
 from pandas import to_datetime
+import re
 
 ## Agriculture Sector
 def crop_production(input_path, output_path):
@@ -249,3 +250,37 @@ def manufacture_inventory(input_path, output_path):
 
 def steel_combined(input_path, output_path):
     df = pd.read_csv(input_path)
+
+    df.drop(columns=['Scope'], inplace=True)
+    df['sector'] = 'trade'
+    df['source'] = 'World Steel Association'
+    df['unit'] = 'percentage'
+    df['region'] = df['Region']
+
+    # melt the DataFrame
+    yoy_cols = [col for col in df.columns if 'YoY' in col]
+
+    df_long = df.melt(
+        id_vars=['region', 'sector', 'unit', 'source'],
+        value_vars=yoy_cols,
+        var_name='variable',
+        value_name='value'
+    )
+
+    # extract month and year using regex
+    month = df_long['variable'].str.extract(r'([A-Za-z]+)')
+    year = df_long['variable'].str.extract(r'(\d{4})')
+
+    df_long['date'] = pd.to_datetime(year[0] + '-' + month[0] + '-01', errors='coerce')
+
+    # extract indicator
+    df_long['indicator'] = df_long['variable'].str.replace(r'.*\d{4}\s*', '', regex=True).str.strip(" ()")
+
+    # reorder columns
+    final_df = df_long[['date', 'region', 'sector', 'indicator', 'value', 'unit', 'source']].sort_values(by=['date', 'region'])
+
+    # save
+    final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f'Saved cleaned data to: {output_path}')
+
+
