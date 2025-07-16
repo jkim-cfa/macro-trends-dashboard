@@ -1,6 +1,5 @@
 from processed.sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
-    iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined
-import os
+    iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined, KOTRA_global_trade_variation_top5
 
 TASKS = [
     (crop_production, "agriculture", "crop_production"),
@@ -11,7 +10,8 @@ TASKS = [
     (iea_oil_stocks, "energy", "iea_oil_stocks"),
     (oil_import_summary, "energy", "oil_imports_with_continents"),
     (manufacture_inventory, "industry", "manufacture_inventory"),
-    (steel_combined, "industry", "steel_combined")
+    (steel_combined, "industry", "steel_combined"),
+    (KOTRA_global_trade_variation_top5, "trade", "global_trade_variation_top5")
 ]
 
 def run_all():

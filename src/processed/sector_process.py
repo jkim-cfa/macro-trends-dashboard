@@ -1,5 +1,6 @@
 import pandas as pd
 from datetime import datetime
+import pycountry
 
 ## Agriculture Sector
 def crop_production(input_path, output_path):
@@ -113,8 +114,7 @@ def economic_indicator(input_path, output_path):
     df['source'] = 'ECOS'
     df['unit'] = 'index'
 
-    df_long = pd.melt(
-        df,
+    df_long = df.melt(
         id_vars=['date', 'country', 'sector', 'source', 'unit'],
         var_name='indicator',
         value_name='value'
@@ -158,8 +158,7 @@ def oil_import_summary(input_path, output_path):
     df = df[df['Month'] != 'Total']
     df['date'] = pd.to_datetime(df['Month'].astype(str) + '-01')
 
-    df_long = pd.melt(
-        df,
+    df_long = df.melt(
         id_vars=['date'],
         var_name='country_unit',
         value_name='value'
@@ -257,6 +256,9 @@ def steel_combined(input_path, output_path):
     df['unit'] = 'percentage'
     df['region'] = df['Region']
 
+    # Rename Turkey
+    df['region'] = df['region'].replace('Türkiye', 'Turkey')
+
     # Melt the DataFrame first
     yoy_cols = [col for col in df.columns if 'YoY' in col]
 
@@ -281,3 +283,55 @@ def steel_combined(input_path, output_path):
     final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to: {output_path}')
 
+# Trade Sector
+# KOTRA Global Trade Variation Top 5
+def KOTRA_global_trade_variation_top5(input_path, output_path):
+    df = pd.read_csv(input_path)
+
+    # Date
+    df['date'] = pd.to_datetime(df['baseYr'].astype(str) + '-01-01')
+
+    # Drop
+    df.drop(columns=['expItcNatCd', 'impItcNatCd', 'expCountryNm', 'impCountryNm', 'hscd', 'cmdltDisplayNm', 'rank'], inplace=True)
+
+    # Convert ISO codes to country names
+    ISO2_TO_COUNTRY = {c.alpha_2: c.name for c in pycountry.countries}
+    df['country'] = df['expIsoWd2NatCd'].map(ISO2_TO_COUNTRY).fillna(df['expIsoWd2NatCd'])
+    df['partner'] = df['impIsoWd2NatCd'].map(ISO2_TO_COUNTRY).fillna(df['impIsoWd2NatCd'])
+
+    # Rename indicators
+    indicator_rename = {
+        'expAmt': 'export_amount',
+        'expVaritnRate': 'export_yoy',
+        'expMkshRate': 'export_share',
+        'impMkshRate': 'import_share'
+    }
+    df = df.rename(columns=indicator_rename)
+
+    # Melt indicators
+    melt_cols = list(indicator_rename.values())
+
+    df_long = df.melt(
+        id_vars=['date', 'country', 'partner'],
+        value_vars=melt_cols,
+        var_name='indicator',
+        value_name='value'
+    )
+
+    # Assign units based on indicator
+    unit_map = {
+        'export_amount': 'USD',
+        'export_yoy': '%',
+        'export_share': '%',
+        'import_share': '%'
+    }
+    df_long['unit'] = df_long['indicator'].map(unit_map)
+
+    # Add static columns
+    df_long['sector'] = 'trade'
+    df_long['source'] = 'KOTRA'
+
+    # Sort and save
+    df_long = df_long.sort_values(by=['date', 'country', 'partner', 'indicator'])
+    df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to: {output_path}")
