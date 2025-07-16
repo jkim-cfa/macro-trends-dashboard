@@ -1,4 +1,4 @@
-from src.processed.sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
+from processed.sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
     iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined
 import os
 

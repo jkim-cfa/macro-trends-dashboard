@@ -1,6 +1,5 @@
 import pandas as pd
-from pandas import to_datetime
-import re
+from datetime import datetime
 
 ## Agriculture Sector
 def crop_production(input_path, output_path):
@@ -251,36 +250,34 @@ def manufacture_inventory(input_path, output_path):
 def steel_combined(input_path, output_path):
     df = pd.read_csv(input_path)
 
+    # Drop and standardize
     df.drop(columns=['Scope'], inplace=True)
     df['sector'] = 'trade'
     df['source'] = 'World Steel Association'
     df['unit'] = 'percentage'
     df['region'] = df['Region']
 
-    # melt the DataFrame
+    # Melt the DataFrame first
     yoy_cols = [col for col in df.columns if 'YoY' in col]
 
     df_long = df.melt(
         id_vars=['region', 'sector', 'unit', 'source'],
         value_vars=yoy_cols,
-        var_name='variable',
+        var_name='indicator',
         value_name='value'
     )
 
-    # extract month and year using regex
-    month = df_long['variable'].str.extract(r'([A-Za-z]+)')
-    year = df_long['variable'].str.extract(r'(\d{4})')
+    # Now extract date from melted 'indicator' column
+    month_strs = df_long['indicator'].str.split().str[0]
+    year_strs = df_long['indicator'].str.split().str[1]
+    month_nums = month_strs.str[:3].apply(lambda x: datetime.strptime(x, '%b').month)
 
-    df_long['date'] = pd.to_datetime(year[0] + '-' + month[0] + '-01', errors='coerce')
+    df_long['date'] = pd.to_datetime(year_strs + '-' + month_nums.astype(str).str.zfill(2) + '-01', errors='coerce')
 
-    # extract indicator
-    df_long['indicator'] = df_long['variable'].str.replace(r'.*\d{4}\s*', '', regex=True).str.strip(" ()")
+    # Final cleanup and save
+    final_df = df_long[['date', 'region', 'sector', 'indicator', 'value', 'unit', 'source']]
+    final_df = final_df.sort_values(by=['date', 'region'])
 
-    # reorder columns
-    final_df = df_long[['date', 'region', 'sector', 'indicator', 'value', 'unit', 'source']].sort_values(by=['date', 'region'])
-
-    # save
     final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to: {output_path}')
-
 
