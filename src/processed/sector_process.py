@@ -320,7 +320,7 @@ def KOTRA_global_trade_variation_top5(input_path, output_path):
 
     # Assign units based on indicator
     unit_map = {
-        'export_amount': 'USD',
+        'export_amount': 'thousand USD',
         'export_yoy': '%',
         'export_share': '%',
         'import_share': '%'
@@ -376,7 +376,7 @@ def KOTRA_global_trade(input_path, output_path):
 
     # Assign units
     unit_map = {
-        'export_amount': 'USD',
+        'export_amount': 'thousand USD',
         'export_yoy': '%',
         'export_share': '%',
         'import_share': '%'
@@ -429,7 +429,7 @@ def KOTRA_global_export(input_path, output_path, direction):
 
     # Assign units
     df_long['unit'] = df_long['indicator'].map({
-        'export_amount': 'USD',
+        'export_amount': 'thousand USD',
         'export_yoy': '%'
     })
     
@@ -438,4 +438,50 @@ def KOTRA_global_export(input_path, output_path, direction):
     # Sort and save
     df_long = df_long.sort_values(by=['date', 'country', 'indicator'])
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to: {output_path}")
+
+
+
+def korea_trade_trend(input_path, output_path, direction):
+    df = pd.read_csv(input_path)
+    
+    # Drop rows with only baseYm and no other data
+    df = df.dropna(how='all', subset=[col for col in df.columns if col != 'baseYm'])
+    
+    # Date
+    df['date'] = pd.to_datetime(df['baseYm'].astype(str) + '-01')
+
+    # Drop unused columns if they exist
+    df = df.drop(columns=[col for col in ['hscd', 'countryNm', 'expEntpCnt'] if col in df.columns])
+
+    # Rename
+    rename_map = {
+        'expAmt': 'export_amount',
+        'impAmt': 'import_amount',
+        'varitnRate': 'trade_yoy',
+        'mkshRate': 'market_share'
+    }
+    df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+    
+    # Convert ISO codes to country names
+    ISO2_TO_COUNTRY = {c.alpha_2: c.name for c in pycountry.countries}  # type: ignore
+    df['partner'] = df['isoWd2NatCd'].map(ISO2_TO_COUNTRY).fillna(df['isoWd2NatCd'])
+    df['partner'] = df['partner'].replace('ALL', 'World')
+
+    # Add static info
+    df['country'] = 'South Korea'
+    df['sector'] = 'trade'
+    df['source'] = 'KOTRA'
+    df['indicator'] = direction
+    
+    # Select columns dynamically based on existing data
+    base_cols = ['date', 'country', 'partner', 'indicator']
+    value_cols = [col for col in ['export_amount', 'import_amount', 'trade_yoy', 'market_share'] if col in df.columns]
+    static_cols = ['sector', 'source']
+    final_cols = base_cols + value_cols + static_cols
+
+    df = df[final_cols]
+
+    # Save
+    df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to: {output_path}")
