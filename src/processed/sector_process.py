@@ -295,7 +295,7 @@ def KOTRA_global_trade_variation_top5(input_path, output_path):
     df.drop(columns=['expItcNatCd', 'impItcNatCd', 'expCountryNm', 'impCountryNm', 'hscd', 'cmdltDisplayNm', 'rank'], inplace=True)
 
     # Convert ISO codes to country names
-    ISO2_TO_COUNTRY = {c.alpha_2: c.name for c in pycountry.countries}
+    ISO2_TO_COUNTRY = {c.alpha_2: c.name for c in pycountry.countries} # type: ignore
     df['country'] = df['expIsoWd2NatCd'].map(ISO2_TO_COUNTRY).fillna(df['expIsoWd2NatCd'])
     df['partner'] = df['impIsoWd2NatCd'].map(ISO2_TO_COUNTRY).fillna(df['impIsoWd2NatCd'])
 
@@ -333,5 +333,109 @@ def KOTRA_global_trade_variation_top5(input_path, output_path):
 
     # Sort and save
     df_long = df_long.sort_values(by=['date', 'country', 'partner', 'indicator'])
+    df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to: {output_path}")
+
+# KOTRA Global Trade
+def KOTRA_global_trade(input_path, output_path):
+    df = pd.read_csv(input_path)
+
+    # Date
+    df['date'] = pd.to_datetime(df['baseYr'].astype(str) + '-01-01')
+
+    # Drop unused columns
+    df.drop(columns=['expItcNatCd', 'impItcNatCd', 'expCountryNm', 'impCountryNm', 'hscd', 'cmdltDisplayNm'], inplace=True)
+
+    # Ensure 'rank' is clean and sortable
+    df['rank'] = pd.to_numeric(df['rank'], errors='coerce')
+    df = df.dropna(subset=['rank'])
+    df['rank'] = df['rank'].astype(int)
+
+    # Convert ISO codes to country names
+    ISO2_TO_COUNTRY = {c.alpha_2: c.name for c in pycountry.countries}  # type: ignore
+    df['country'] = df['expIsoWd2NatCd'].map(ISO2_TO_COUNTRY).fillna(df['expIsoWd2NatCd'])
+    df['partner'] = df['impIsoWd2NatCd'].map(ISO2_TO_COUNTRY).fillna(df['impIsoWd2NatCd'])
+
+    # Rename indicators
+    indicator_rename = {
+        'expAmt': 'export_amount',
+        'expVaritnRate': 'export_yoy',
+        'expMkshRate': 'export_share',
+        'impMkshRate': 'import_share'
+    }
+    df = df.rename(columns=indicator_rename)
+
+    # Melt indicators
+    melt_cols = list(indicator_rename.values())
+    df_long = df.melt(
+        id_vars=['date', 'country', 'partner', 'rank'],
+        value_vars=melt_cols,
+        var_name='indicator',
+        value_name='value'
+    )
+
+    # Assign units
+    unit_map = {
+        'export_amount': 'USD',
+        'export_yoy': '%',
+        'export_share': '%',
+        'import_share': '%'
+    }
+    df_long['unit'] = df_long['indicator'].map(unit_map)
+
+    # Add metadata
+    df_long['sector'] = 'trade'
+    df_long['source'] = 'KOTRA'
+
+    # Sort and save
+    df_long = df_long.sort_values(by=['date', 'rank', 'country', 'partner', 'indicator'])
+    df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to: {output_path}")
+
+
+
+# KOTRA Global Export Increase and Decrease Items Top 5
+def KOTRA_global_export(input_path, output_path, direction):
+    df = pd.read_csv(input_path)
+    
+    # Date
+    df['date'] = pd.to_datetime(df['baseYr'].astype(str) + '-01-01')
+
+    # Drop
+    df.drop(columns=['expItcNatCd', 'impItcNatCd', 'expMkshRate','impMkshRate','rank'], inplace=True)
+
+    # Add static info
+    df['sector'] = 'trade'
+    df['source'] = 'KOTRA'
+    df['country'] = 'World'
+
+     # Rename columns
+    df = df.rename(columns={
+        'expAmt': 'export_amount',
+        'expVaritnRate': 'export_yoy',
+        'cmdltNm': 'commodity_name',
+        'cmdltParentNm': 'parent',
+        'cmdltGrParentNm': 'group',
+        'cmdltDisplayNm': 'full_label'
+    })
+
+    # Melt the export indicators (values only)
+    df_long = df.melt(
+        id_vars=['date', 'country', 'commodity_name', 'parent', 'group', 'full_label'],
+        value_vars=['export_amount', 'export_yoy'],
+        var_name='indicator',
+        value_name='value'
+    )
+
+    # Assign units
+    df_long['unit'] = df_long['indicator'].map({
+        'export_amount': 'USD',
+        'export_yoy': '%'
+    })
+    
+    df_long['change_type'] = direction
+
+    # Sort and save
+    df_long = df_long.sort_values(by=['date', 'country', 'indicator'])
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to: {output_path}")
