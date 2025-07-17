@@ -661,3 +661,171 @@ def shipping_indices(input_path, output_path):
     # Save
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to {output_path}")
+
+
+def wsts_billings(input_path, output_path):
+    # Read the Excel file
+    df = pd.read_excel(input_path, sheet_name='Monthly Data', header=None)
+    
+    # Use row 4 (index 3) as headers
+    headers = df.iloc[3, :].tolist()
+    
+    # Clean headers - convert to string and strip whitespace
+    headers = [str(h).strip() if pd.notna(h) else f'col_{i}' for i, h in enumerate(headers)]
+    
+    # Set headers and remove header rows
+    df.columns = headers
+    df = df.iloc[4:].reset_index(drop=True)
+    
+    # Define the columns we want to extract
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 
+              'July', 'August', 'September', 'October', 'November', 'December']
+    
+    quarters = ['Q1', 'Q2', 'Q3', 'Q4']
+    total_year = 'Total Year'
+    
+    # Filter to only include columns that exist in the data
+    available_months = [month for month in months if month in df.columns]
+    available_quarters = [quarter for quarter in quarters if quarter in df.columns]
+    has_total_year = total_year in df.columns
+    
+    # Create a clean dataframe with year and region info
+    result_rows = []
+    current_year = None
+    
+    for idx, row in df.iterrows():
+        first_col = str(row.iloc[0]).strip()
+        
+        # Check if this row contains a year
+        if first_col.isdigit() and len(first_col) == 4:
+            current_year = int(first_col)
+            continue
+            
+        # Check if this row contains region data
+        regions = ['Americas', 'Europe', 'Japan', 'Asia Pacific', 'Worldwide']
+        if first_col in regions and current_year is not None:
+            region = first_col
+            
+            # Extract monthly values
+            for month in available_months:
+                value = row[month]
+                if pd.notna(value) and value != '':
+                    try:
+                        # Convert value to numeric, handling potential formatting
+                        if isinstance(value, str):
+                            value = value.replace(',', '').replace('$', '')
+                        value = float(value)
+                        
+                        result_rows.append({
+                            'year': current_year,
+                            'period': month,
+                            'period_type': 'month',
+                            'region': region,
+                            'value': value
+                        })
+                    except (ValueError, TypeError):
+                        # Skip invalid values
+                        continue
+            
+            # Extract quarterly values
+            for quarter in available_quarters:
+                value = row[quarter]
+                if pd.notna(value) and value != '':
+                    try:
+                        # Convert value to numeric, handling potential formatting
+                        if isinstance(value, str):
+                            value = value.replace(',', '').replace('$', '')
+                        value = float(value)
+                        
+                        result_rows.append({
+                            'year': current_year,
+                            'period': quarter,
+                            'period_type': 'quarter',
+                            'region': region,
+                            'value': value
+                        })
+                    except (ValueError, TypeError):
+                        # Skip invalid values
+                        continue
+            
+            # Extract total year value
+            if has_total_year:
+                value = row[total_year]
+                if pd.notna(value) and value != '':
+                    try:
+                        # Convert value to numeric, handling potential formatting
+                        if isinstance(value, str):
+                            value = value.replace(',', '').replace('$', '')
+                        value = float(value)
+                        
+                        result_rows.append({
+                            'year': current_year,
+                            'period': 'Total Year',
+                            'period_type': 'annual',
+                            'region': region,
+                            'value': value
+                        })
+                    except (ValueError, TypeError):
+                        # Skip invalid values
+                        continue
+    
+    # Create DataFrame from results
+    df_long = pd.DataFrame(result_rows)
+
+    # Create proper date column for monthly data only
+    df_long['date'] = None
+    monthly_mask = df_long['period_type'] == 'month'
+    df_long.loc[monthly_mask, 'date'] = pd.to_datetime(
+        df_long.loc[monthly_mask, 'year'].astype(str) + '-' + 
+        df_long.loc[monthly_mask, 'period'] + '-01',
+        errors='coerce'
+    )
+    
+    # For quarterly data, create approximate dates (middle of quarter)
+    quarterly_mask = df_long['period_type'] == 'quarter'
+    quarter_to_month = {'Q1': '02-15', 'Q2': '05-15', 'Q3': '08-15', 'Q4': '11-15'}
+    for quarter, month_day in quarter_to_month.items():
+        mask = quarterly_mask & (df_long['period'] == quarter)
+        df_long.loc[mask, 'date'] = pd.to_datetime(
+            df_long.loc[mask, 'year'].astype(str) + '-' + month_day,
+            errors='coerce'
+        )
+    
+    # For annual data, use middle of year
+    annual_mask = df_long['period_type'] == 'annual'
+    df_long.loc[annual_mask, 'date'] = pd.to_datetime(
+        df_long.loc[annual_mask, 'year'].astype(str) + '-07-01',
+        errors='coerce'
+    )
+    df_long['date'] = pd.to_datetime(df_long['date'], errors='coerce')
+    df_long['date'] = df_long['date'].dt.strftime('%Y-%m-%d')
+
+    # Clean up and rename columns
+    df_long = df_long.rename(columns={'region': 'country'})
+    
+    # Standardize country names
+    df_long['country'] = df_long['country'].replace({
+        'Americas': 'Americas',
+        'Europe': 'Europe', 
+        'Japan': 'Japan',
+        'Asia Pacific': 'Asia Pacific',
+        'Worldwide': 'World'
+    })
+    
+    # Add metadata columns
+    df_long['sector'] = 'semiconductors'
+    df_long['indicator'] = 'billings'
+    df_long['unit'] = 'thousand USD'
+    df_long['source'] = 'WSTS'
+    
+    # Drop rows with missing dates or values
+    df_long = df_long.dropna(subset=['date', 'value'])
+    
+    # Sort and reorder columns
+    df_long = df_long[['date', 'country', 'period',  'value', 'unit', 'period_type', 'sector', 'indicator','source']]
+    df_long = df_long.sort_values(by=['date', 'country'])
+    
+    # Save to CSV
+    df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to {output_path}")
+ 

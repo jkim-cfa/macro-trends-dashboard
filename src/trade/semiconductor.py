@@ -9,6 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 DOWNLOAD_DIR = r"C:\Users\va26\Desktop\global event\data\trade"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
+TARGET_FILENAME = "wsts_billings_latest.xlsx"
 
 def download_latest():
     options = webdriver.ChromeOptions()
@@ -39,20 +40,27 @@ def download_latest():
         print(f"Downloading: {excel_link.text}")
         excel_link.click()
 
-        # Wait for download to complete
-        time.sleep(5)
+        # Wait for the file to download (increase if needed)
+        time.sleep(8)
 
-        # Verify download
-        files = [f for f in os.listdir(DOWNLOAD_DIR) if f.startswith('WSTS-Historical-Billings-Report')]
-        if files:
-            print(f"✓ Successfully downloaded: {files[-1]}")
+        # Find the latest downloaded file
+        downloaded_files = sorted(
+            [f for f in os.listdir(DOWNLOAD_DIR) if f.endswith('.xlsx')],
+            key=lambda f: os.path.getmtime(os.path.join(DOWNLOAD_DIR, f))
+        )
+
+        if downloaded_files:
+            latest_file = os.path.join(DOWNLOAD_DIR, downloaded_files[-1])
+            new_file_path = os.path.join(DOWNLOAD_DIR, TARGET_FILENAME)
+
+            os.rename(latest_file, new_file_path)
+            print(f"✓ Renamed downloaded file to: {TARGET_FILENAME}")
         else:
-            print("Download may still be in progress...")
+            print("No downloaded Excel file found.")
 
     finally:
         driver.quit()
         print("Browser closed.")
-
 
 if __name__ == "__main__":
     download_latest()
