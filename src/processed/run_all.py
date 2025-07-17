@@ -1,6 +1,6 @@
 from processed.sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
     iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined, global_trade_variation_top5, global_trade_trend, \
-    global_export, korea_trade_trend, korea_export_import_items, ecos_trade_detail, ecos_trade_items
+    global_export, korea_trade_trend, korea_export_import_items, ecos_trade_detail, ecos_trade_items, shipping_indices
 
 TASKS = [
     (crop_production, "agriculture", "crop_production"),
@@ -15,7 +15,8 @@ TASKS = [
     (global_trade_variation_top5, "trade", "global_trade_variation_top5"),
     (global_trade_trend, "trade", "global_trade"),
     (ecos_trade_detail, "trade", "korea_trade_yoy"),
-    (ecos_trade_items, "trade", "korea_trade_items_yoy")
+    (ecos_trade_items, "trade", "korea_trade_items_yoy"),
+    (shipping_indices, "trade", "shipping_indices")
 ]
 
 GLOBAL_EXPORT_ITEMS = [

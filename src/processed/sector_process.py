@@ -629,3 +629,35 @@ def ecos_trade_items(input_path, output_path):
     # Save
     df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to {output_path}")
+
+# Shipping indcies
+def shipping_indices(input_path, output_path):
+    df = pd.read_csv(input_path)
+
+    # Date
+    df['Date'] = pd.to_datetime(df['Date'], format='%Y.%m.%d', errors='coerce')
+    df = df.rename(columns={'Date': 'date'})
+
+    # Strip and rename columns
+    df.columns = [col.strip().replace('_Value', '') for col in df.columns]
+    
+    # Melt
+    df_long = df.melt(
+        id_vars=['date'],
+        var_name='indicator',
+        value_name='value'
+    )
+
+    # Add metadata
+    df_long['country'] = 'World'
+    df_long['sector'] = 'trade'
+    df_long['unit'] = 'index'
+    df_long['source'] = 'KCLA'
+
+    # Sort and reorder
+    df_long = df_long[['date', 'country', 'sector', 'indicator', 'value', 'unit', 'source']]
+    df_long = df_long.sort_values(by=['date', 'indicator'])
+
+    # Save
+    df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to {output_path}")
