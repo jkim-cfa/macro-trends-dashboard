@@ -283,9 +283,10 @@ def steel_combined(input_path, output_path):
     final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to: {output_path}')
 
+
 # Trade Sector
 # KOTRA Global Trade Variation Top 5
-def KOTRA_global_trade_variation_top5(input_path, output_path):
+def global_trade_variation_top5(input_path, output_path):
     df = pd.read_csv(input_path)
 
     # Date
@@ -336,8 +337,8 @@ def KOTRA_global_trade_variation_top5(input_path, output_path):
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to: {output_path}")
 
-# KOTRA Global Trade
-def KOTRA_global_trade(input_path, output_path):
+# Global Trade
+def global_trade_trend(input_path, output_path):
     df = pd.read_csv(input_path)
 
     # Date
@@ -392,10 +393,8 @@ def KOTRA_global_trade(input_path, output_path):
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to: {output_path}")
 
-
-
-# KOTRA Global Export Increase and Decrease Items Top 5
-def KOTRA_global_export(input_path, output_path, direction):
+# Global Export Increase and Decrease Items Top 5
+def global_export(input_path, output_path, direction):
     df = pd.read_csv(input_path)
     
     # Date
@@ -440,8 +439,7 @@ def KOTRA_global_export(input_path, output_path, direction):
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to: {output_path}")
 
-
-
+# Korea Trade Trend
 def korea_trade_trend(input_path, output_path, direction):
     df = pd.read_csv(input_path)
     
@@ -449,7 +447,7 @@ def korea_trade_trend(input_path, output_path, direction):
     df = df.dropna(how='all', subset=[col for col in df.columns if col != 'baseYm'])
     
     # Date
-    df['date'] = pd.to_datetime(df['baseYm'].astype(str) + '-01')
+    df['date'] = pd.to_datetime(df['baseYm'].astype(str) + '-01', format='%Y%m-%d')
 
     # Drop unused columns if they exist
     df = df.drop(columns=[col for col in ['hscd', 'countryNm', 'expEntpCnt'] if col in df.columns])
@@ -459,7 +457,7 @@ def korea_trade_trend(input_path, output_path, direction):
         'expAmt': 'export_amount',
         'impAmt': 'import_amount',
         'varitnRate': 'trade_yoy',
-        'mkshRate': 'market_share'
+        'mkshRate': 'trade_share'
     }
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
     
@@ -476,10 +474,48 @@ def korea_trade_trend(input_path, output_path, direction):
     
     # Select columns dynamically based on existing data
     base_cols = ['date', 'country', 'partner', 'indicator']
-    value_cols = [col for col in ['export_amount', 'import_amount', 'trade_yoy', 'market_share'] if col in df.columns]
+    value_cols = [col for col in ['export_amount', 'import_amount', 'trade_yoy', 'trade_share'] if col in df.columns]
     static_cols = ['sector', 'source']
     final_cols = base_cols + value_cols + static_cols
 
+    df = df[final_cols]
+
+    # Save
+    df.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to: {output_path}")
+
+# Korea Export and Import Items
+def korea_export_import_items(input_path, output_path, direction):
+    df = pd.read_csv(input_path)
+    
+    # Drop rows with only baseYm and no other data
+    df = df.dropna(how='all', subset=[col for col in df.columns if col != 'baseYm'])
+    
+    # Date
+    df['date'] = pd.to_datetime(df['baseYm'].astype(str) + '-01', format='%Y%m-%d')
+
+    # Drop unused columns if they exist
+    df = df.drop(columns=[col for col in ['isoWd2NatCd','mkshRate','expEntpCnt'] if col in df.columns])
+
+    # Rename
+    rename_map = {
+        'cmdltNm': 'commodity_name',
+        'expAmt': 'export_amount',
+        'impAmt': 'import_amount',
+        'varitnRate': 'trade_yoy'
+    }
+    df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+
+    # Add static info
+    df['country'] = 'South Korea'
+    df['partner'] = 'World'
+    df['sector'] = 'trade'
+    df['source'] = 'KOTRA'
+    df['indicator'] = direction
+    
+    # Select columns dynamically based on existing data
+    value_cols = [col for col in ['export_amount', 'import_amount'] if col in df.columns]
+    final_cols = ['date', 'country', 'partner', 'indicator', 'commodity_name'] + value_cols + ['trade_yoy', 'sector', 'source']
     df = df[final_cols]
 
     # Save

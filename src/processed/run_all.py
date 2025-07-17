@@ -1,6 +1,6 @@
 from processed.sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
-    iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined, KOTRA_global_trade_variation_top5, KOTRA_global_trade, \
-    KOTRA_global_export, korea_trade_trend
+    iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined, global_trade_variation_top5, global_trade_trend, \
+    global_export, korea_trade_trend, korea_export_import_items
 
 TASKS = [
     (crop_production, "agriculture", "crop_production"),
@@ -12,18 +12,23 @@ TASKS = [
     (oil_import_summary, "energy", "oil_imports_with_continents"),
     (manufacture_inventory, "industry", "manufacture_inventory"),
     (steel_combined, "industry", "steel_combined"),
-    (KOTRA_global_trade_variation_top5, "trade", "global_trade_variation_top5"),
-    (KOTRA_global_trade, "trade", "global_trade")
+    (global_trade_variation_top5, "trade", "global_trade_variation_top5"),
+    (global_trade_trend, "trade", "global_trade")
 ]
 
-KOTRA_EXPORT_ITEMS = [
+GLOBAL_EXPORT_ITEMS = [
     ("global_export_increase_items_top5", "increase"),
     ("global_export_decrease_items_top5", "decrease")
 ]
 
-KOTRA_KOREA_TRADE_TREND = [
+KOREA_TRADE_TREND = [
     ("korea_export_country_variation", "export"),
     ("korea_import_country_variation", "import")
+]
+
+KOREA_EXPORT_IMPORT_ITEMS = [
+    ("korea_export_increase_items", "export"),
+    ("korea_import_increase_items", "import")
 ]
 
 def run_all():
@@ -32,15 +37,20 @@ def run_all():
         output_path = f"C:/Users/va26/Desktop/global event/data/processed/{sector}/{name}_processed.csv"
         func(input_path, output_path)
 
-    for name, direction in KOTRA_EXPORT_ITEMS:
+    for name, direction in GLOBAL_EXPORT_ITEMS:
         input_path = f"C:/Users/va26/Desktop/global event/data/trade/{name}.csv"
         output_path = f"C:/Users/va26/Desktop/global event/data/processed/trade/{name}_processed.csv"
-        KOTRA_global_export(input_path, output_path, direction)
+        global_export(input_path, output_path, direction)
 
-    for name, direction in KOTRA_KOREA_TRADE_TREND:
+    for name, direction in KOREA_TRADE_TREND:
         input_path = f"C:/Users/va26/Desktop/global event/data/trade/{name}.csv"
         output_path = f"C:/Users/va26/Desktop/global event/data/processed/trade/{name}_processed.csv"
-        KOTRA_global_export(input_path, output_path, direction)
+        korea_trade_trend(input_path, output_path, direction)
+
+    for name, direction in KOREA_EXPORT_IMPORT_ITEMS:
+        input_path = f"C:/Users/va26/Desktop/global event/data/trade/{name}.csv"
+        output_path = f"C:/Users/va26/Desktop/global event/data/processed/trade/{name}_processed.csv"
+        korea_export_import_items(input_path, output_path, direction)
 
 if __name__ == "__main__":
     run_all()
