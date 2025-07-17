@@ -6,7 +6,7 @@ import pycountry
 def crop_production(input_path, output_path):
     df = pd.read_csv(input_path)
 
-    # standardise columns
+    # Standardise columns
     df['date'] = pd.to_datetime(df['marketYear'].astype(str) + '-' + df['report_month'].astype(str).str.zfill(2) + '-01')
     df['country'] = df['countryCode']
     df['sector'] = 'agriculture'
@@ -15,11 +15,11 @@ def crop_production(input_path, output_path):
     df['unit'] = df['unitId']
     df['source'] = 'USDA PSD'
 
-    # reorder columns
+    # Reorder columns
     final_df = (df[['date', 'country', 'sector', 'indicator', 'commodity', 'value', 'unit', 'source']]
         .sort_values(by=['commodity', 'country', 'date']))
 
-    # save
+    # Save
     final_df.to_csv(output_path, index=False)
     print(f'Saved cleaned data to {output_path}')
 
@@ -27,7 +27,7 @@ def crop_production(input_path, output_path):
 def bid_info(input_path, output_path):
     df = pd.read_csv(input_path, encoding='utf-8-sig')
 
-    # standardise columns
+    # Standardise columns
     df['date'] = pd.to_datetime(df['orderPrearngeMt'].astype(str) + '01', format='%Y%m%d')
     df['country'] = 'South Korea'
     df['sector'] = 'defence'
@@ -39,13 +39,13 @@ def bid_info(input_path, output_path):
     df['item'] = df['reprsntPrdlstNm']
     df['source'] = 'DAPA KOREA'
 
-    # reorder columns
+    # Reorder columns
     final_df = df[[
         'date', 'country', 'sector', 'indicator',
         'category', 'item','value', 'unit', 'agency', 'source'
     ]].sort_values(by=['date', 'agency', 'value'])
 
-    # save
+    # Save
     final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to {output_path}')
 
@@ -53,7 +53,7 @@ def bid_info(input_path, output_path):
 def confidence(input_path, output_path):
     df = pd.read_csv(input_path)
 
-    # standardise columns
+    # Standardise columns
     df = df.rename(columns={
         'STAT_CODE': 'category',
         'ITEM_NAME1': 'indicator',
@@ -67,18 +67,18 @@ def confidence(input_path, output_path):
     df['unit'] = 'index'
     df['source'] = 'ECOS'
 
-    # reorder columns
+    # Reorder columns
     final_df = (df[['date', 'country', 'sector', 'category', 'indicator', 'value', 'unit', 'source']]
                 .sort_values(by=['date', 'category','indicator']))
 
-    # save
+    # Save
     final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to {output_path}')
 
 def fxrate(input_path, output_path):
     df = pd.read_csv(input_path)
 
-    # standardise columns
+    # Standardise columns
     df = df.rename(columns={
         'DATE': 'date',
         'EXCHANGE_RATE': 'exchange_rate',
@@ -94,11 +94,11 @@ def fxrate(input_path, output_path):
     df['sector'] = 'economy'
     df['source'] = 'ECOS'
 
-    # reorder columns
+    # Reorder columns
     final_df = (df[[ 'date', 'country','sector', 'currency', 'quote', 'exchange_rate', 'unit', 'source']]
                 .sort_values(by=['date', 'currency']))
 
-    # save
+    # Save
     final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to {output_path}')
 
@@ -135,7 +135,7 @@ def economic_indicator(input_path, output_path):
 def iea_oil_stocks(input_path, output_path):
     df = pd.read_csv(input_path)
 
-    # standardise columns
+    # Standardise columns
     df['date'] = pd.to_datetime(df['Year'].astype(str) + '-' + df['Month'] + '-01')
 
     df = df.rename(columns={'countryName': 'country'})
@@ -154,7 +154,7 @@ def iea_oil_stocks(input_path, output_path):
 def oil_import_summary(input_path, output_path):
     df = pd.read_csv(input_path)
 
-    # date
+    # Date
     df = df[df['Month'] != 'Total']
     df['date'] = pd.to_datetime(df['Month'].astype(str) + '-01')
 
@@ -166,7 +166,7 @@ def oil_import_summary(input_path, output_path):
 
     df_long[['country', 'unit']] = df_long['country_unit'].str.extract(r'^(.*?)\s*\((.*?)\)$')
 
-    # region mapping
+    # Region mapping
     region_map = {
         'Asia': ['필리핀', '말레이시아', '인도네시아', '호주', '뉴질랜드', '파푸아뉴기니', '카자흐스탄'],
         'Africa': ['알제리', '콩고', '나이지리아', '적도기니', '모잠비크'],
@@ -188,7 +188,7 @@ def oil_import_summary(input_path, output_path):
     }
     df_long['country'] = df_long['country'].map(country_name_map).fillna(df_long['country'])
 
-    # convert % strings to float
+    # Convert % strings to float
     mask_percent = df_long['unit'] == '%'
     df_long.loc[mask_percent, 'value'] = (df_long.loc[mask_percent, 'value']
                                           .astype(str).str.replace('%', '', regex=False)
@@ -219,7 +219,7 @@ def oil_import_summary(input_path, output_path):
 def manufacture_inventory(input_path, output_path):
     df = pd.read_csv(input_path)
 
-    # standardise columns
+    # Standardise columns
     df = df.rename(columns={
         'STAT_NAME': 'category',
         'DATA_VALUE': 'value'
@@ -235,21 +235,21 @@ def manufacture_inventory(input_path, output_path):
     df['country'] = 'South Korea'
     df['sector'] = 'industry'
     df['value'] = pd.to_numeric(df['value'], errors='coerce')
-    df['unit'] = 'index'
+    df['unit'] = 'index (2020=100)'
     df['source'] = 'ECOS'
 
-    # reorder columns
+    # Reorder columns
     final_df = (df[['date', 'country', 'sector', 'category', 'value', 'source']]
                 .sort_values(by=['date', 'category']))
 
-    # save
+    # Save
     final_df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to {output_path}')
 
 def steel_combined(input_path, output_path):
     df = pd.read_csv(input_path)
 
-    # Drop and standardize
+    # Drop and Standardise
     df.drop(columns=['Scope'], inplace=True)
     df['sector'] = 'trade'
     df['source'] = 'World Steel Association'
@@ -521,3 +521,111 @@ def korea_export_import_items(input_path, output_path, direction):
     # Save
     df.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to: {output_path}")
+
+# ECOS Trade Overview
+def ecos_trade_detail(input_path, output_path):
+    df = pd.read_csv(input_path)
+    
+    # Clean YoY column safely
+    df['yoy'] = df['yoy'].str.replace('%', '', regex=False).astype(float)
+
+    # Replace STAT_CODE values
+    df['STAT_CODE'] = df['STAT_CODE'].replace({'901Y011': 'Total Exports','901Y012': 'Total Imports'})
+
+    # Drop unused columns
+    df.drop(columns=['STAT_NAME', 'ITEM_CODE1', 'TIME'], inplace=True)
+
+    # Rename columns
+    df = df.rename(columns={
+        'datetime': 'date',
+        'STAT_CODE': 'category',
+        'ITEM_NAME1': 'indicator',
+        'DATA_VALUE': 'value',
+        'UNIT_NAME': 'unit',
+        'yoy': 'yoy_change'
+    })
+
+    # Standardise unit
+    df['unit'] = df['unit'].replace('천달러', 'thousand USD')
+
+    # Extract partner from indicator:
+    # If contains "(관세청)" → 'World'
+    # If format is like "수출총액(독일)" → extract "독일"
+    df['partner'] = df['indicator'].apply(
+    lambda x: 'World' if '관세청' in x 
+    else (x[x.rfind('(')+1:x.rfind(')')] if '(' in x and ')' in x and x.rfind('(') < x.rfind(')') 
+    else 'World')
+    )
+
+    # Rename partner
+    korean_to_english = {
+    '독일': 'Germany',
+    '러시아': 'Russia',
+    '미국': 'United States',
+    '인도네시아': 'Indonesia',
+    '중국': 'China',
+    '캐나다': 'Canada',
+    '태국': 'Thailand',
+    '필리핀': 'Philippines',
+    '호주': 'Australia',
+    '말레이지아': 'Malaysia',
+    '싱가포르': 'Singapore',
+    '아랍에미레이트': 'United Arab Emirates',
+    '이탈리아': 'Italy',
+    '인도': 'India',
+    '프랑스': 'France'
+    }
+
+    # Apply to the `partner` column
+    df['partner'] = df['partner'].replace(korean_to_english)
+
+    # Add static metadata
+    df['country'] = 'South Korea'
+    df['sector'] = 'trade'
+    df['source'] = 'ECOS'
+
+    # Reorder and sort
+    df = df[['date', 'country', 'partner', 'sector', 'category', 'indicator', 'value', 'unit', 'yoy_change', 'source']]
+    df = df.sort_values(by=['date', 'category', 'indicator'])
+
+    # Save
+    df.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to {output_path}")
+
+def ecos_trade_items(input_path, output_path):
+    df = pd.read_csv(input_path)
+       
+    # Clean YoY column safely
+    df['yoy'] = df['yoy'].str.replace('%', '', regex=False).astype(float)
+
+    # Replace STAT_CODE values
+    df['STAT_CODE'] = df['STAT_CODE'].replace({'수출금액지수': 'Export Value Index','수입금액지수': 'Import Value Index'})
+
+    # Drop unused columns
+    df.drop(columns=['STAT_NAME', 'ITEM_CODE1', 'TIME'], inplace=True)
+
+    # Rename columns
+    df = df.rename(columns={
+        'datetime': 'date',
+        'STAT_CODE': 'category',
+        'ITEM_NAME1': 'indicator',
+        'DATA_VALUE': 'value',
+        'UNIT_NAME': 'unit',
+        'yoy': 'yoy_change'
+    })
+
+    # Standardise unit
+    df['unit'] = 'index (2020=100)'
+
+    # Add static metadata
+    df['country'] = 'South Korea'
+    df['sector'] = 'trade'
+    df['source'] = 'ECOS'
+
+    # Reorder and sort
+    df = df[['date', 'country', 'sector', 'category', 'indicator', 'value', 'unit', 'yoy_change', 'source']]
+    df = df.sort_values(by=['date', 'category', 'indicator'])
+
+    # Save
+    df.to_csv(output_path, index=False, encoding='utf-8-sig')
+    print(f"Saved cleaned file to {output_path}")
