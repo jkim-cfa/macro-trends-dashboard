@@ -51,6 +51,17 @@ def download_latest_momr():
         del driver  # prevent __del__ from running later and causing WinError
         print("Browser closed.")
 
-
 if __name__ == "__main__":
     download_latest_momr()
+        
+    # Find the newest PDF file in the download directory
+    downloaded_files = [f for f in os.listdir(DOWNLOAD_DIR) if f.endswith('.pdf')]
+    downloaded_files.sort(key=lambda f: os.path.getmtime(os.path.join(DOWNLOAD_DIR, f)), reverse=True)
+
+    if downloaded_files:
+        original_path = os.path.join(DOWNLOAD_DIR, downloaded_files[0])
+        renamed_path = os.path.join(DOWNLOAD_DIR, 'OPEC_MOMR_Latest.pdf')
+        os.rename(original_path, renamed_path)
+        print(f"Renamed downloaded file to: {renamed_path}")
+    else:
+        print("No PDF found to rename.")
