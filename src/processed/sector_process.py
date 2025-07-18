@@ -662,33 +662,16 @@ def shipping_indices(input_path, output_path):
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"Saved cleaned file to {output_path}")
 
-
+# WSTS Billings Semiconductors
 def wsts_billings(input_path, output_path):
-    # Read the Excel file
-    df = pd.read_excel(input_path, sheet_name='Monthly Data', header=None)
-    
-    # Use row 4 (index 3) as headers
-    headers = df.iloc[3, :].tolist()
-    
-    # Clean headers - convert to string and strip whitespace
-    headers = [str(h).strip() if pd.notna(h) else f'col_{i}' for i, h in enumerate(headers)]
-    
-    # Set headers and remove header rows
-    df.columns = headers
-    df = df.iloc[4:].reset_index(drop=True)
-    
-    # Define the columns we want to extract
+    df = pd.read_excel(input_path, sheet_name='Monthly Data', header=3)
+
+    # Define the columns
     months = ['January', 'February', 'March', 'April', 'May', 'June', 
               'July', 'August', 'September', 'October', 'November', 'December']
-    
     quarters = ['Q1', 'Q2', 'Q3', 'Q4']
     total_year = 'Total Year'
-    
-    # Filter to only include columns that exist in the data
-    available_months = [month for month in months if month in df.columns]
-    available_quarters = [quarter for quarter in quarters if quarter in df.columns]
-    has_total_year = total_year in df.columns
-    
+
     # Create a clean dataframe with year and region info
     result_rows = []
     current_year = None
@@ -707,7 +690,7 @@ def wsts_billings(input_path, output_path):
             region = first_col
             
             # Extract monthly values
-            for month in available_months:
+            for month in months:
                 value = row[month]
                 if pd.notna(value) and value != '':
                     try:
@@ -728,7 +711,7 @@ def wsts_billings(input_path, output_path):
                         continue
             
             # Extract quarterly values
-            for quarter in available_quarters:
+            for quarter in quarters:
                 value = row[quarter]
                 if pd.notna(value) and value != '':
                     try:
@@ -749,7 +732,7 @@ def wsts_billings(input_path, output_path):
                         continue
             
             # Extract total year value
-            if has_total_year:
+            if total_year:
                 value = row[total_year]
                 if pd.notna(value) and value != '':
                     try:
@@ -803,7 +786,7 @@ def wsts_billings(input_path, output_path):
     # Clean up and rename columns
     df_long = df_long.rename(columns={'region': 'country'})
     
-    # Standardize country names
+    # Standardise country names
     df_long['country'] = df_long['country'].replace({
         'Americas': 'Americas',
         'Europe': 'Europe', 
