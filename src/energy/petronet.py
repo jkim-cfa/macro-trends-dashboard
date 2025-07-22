@@ -2,18 +2,18 @@ import os
 import requests
 import pandas as pd
 
-# --- Settings ---
+# Settings
 download_dir = os.path.dirname(os.path.abspath(__file__))
 filename = "petronet_oil_imports_monthly.xls"
 filepath = os.path.join(download_dir, filename)
 
-# --- Time range ---
+# Time range
 start_year = 2024
 start_month = 1
 end_year = 2025
 end_month = 5
 
-# --- Download Excel ---
+# Download Excel
 url = (
     "https://www.petronet.co.kr/v4/excel/KDXQ0400_x.jsp"
     "?term=m"

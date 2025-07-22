@@ -6,13 +6,13 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-# --- Parameters ---
+# Parameters
 api_key = os.getenv('CROP_API_KEY')
 base_url = 'https://api.fas.usda.gov/api/psd/commodity'
 start_year = 2000
 end_year = int(datetime.now().year)
 
-# --- Commodities ---
+# Commodities
 commodity_code = [
     {'commodityCode': '0410000', 'commodityName': 'Wheat'},
     {'commodityCode': '0440000', 'commodityName': 'Corn'},
@@ -27,7 +27,7 @@ headers = {
     'X-Api-Key': api_key
 }
 
-# --- Function ---
+# Function
 def fetch_commodity_data(commodity_code, start_year, end_year):
     all_data = []
     for item in commodity_code:
@@ -45,7 +45,7 @@ def fetch_commodity_data(commodity_code, start_year, end_year):
             time.sleep(0.3)
     return all_data
 
-# --- Run & Display ---
+# Run & Display
 data = fetch_commodity_data(commodity_code, start_year, end_year)
 df = pd.DataFrame(data)
 

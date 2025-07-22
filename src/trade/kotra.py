@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import os
 
-# --- Fetch data ---
+# Fetch data
 url = "https://www.kotra.or.kr/bigdata/visualization/global/search"
 params = {
     "baseYr": "2024", # Change this as needed
@@ -15,20 +15,20 @@ params = {
 r = requests.get(url, params=params)
 data = r.json()
 
-# --- Save raw JSON ---
+# Save raw JSON
 with open("kotra_global_trade.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
 print("✅ Saved KOTRA data to kotra_global_data.json")
 
-# --- CSV output directory ---
+# CSV output directory
 output_dir = "C:/Users/va26/Desktop/global event/data/trade"
 os.makedirs(output_dir, exist_ok=True)
 
-# --- Extract main content ---
+# Extract main content
 kotra_data = data  # JSON is already flat at top level
 
-# --- Export CSVs ---
+# Export CSVs
 export_map = {
     "mapList": "global_trade.csv",
     "itemDecrsTop5List": "global_export_decrease_items_top5.csv",

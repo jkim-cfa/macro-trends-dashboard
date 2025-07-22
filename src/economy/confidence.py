@@ -6,7 +6,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-# --- Parameters ---
+# Parameters
 api_key = os.getenv('ECOS_API_KEY')
 base_url = 'https://ecos.bok.or.kr/api/StatisticSearch'
 start_date = '201001'
@@ -14,7 +14,7 @@ end_date = datetime.now().strftime('%Y%m')
 stat_codes = ['513Y001', '521Y001']  # 경제심리지수, 뉴스심리지수
 cycle = 'M'
 
-# --- Function ---
+# Function
 def fetch_data(stat_codes):
     all_data = []
     for code in stat_codes:
@@ -29,7 +29,7 @@ def fetch_data(stat_codes):
         time.sleep(0.3)
     return all_data
 
-# --- Run ---
+# Run
 data = fetch_data(stat_codes)
 df = pd.DataFrame(data)
 

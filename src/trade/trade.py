@@ -85,4 +85,5 @@ output_dir = "C:/Users/va26/Desktop/global event/data/trade"
 os.makedirs(output_dir, exist_ok=True)
 save_path = os.path.join(output_dir, "korea_trade_yoy.csv")
 df_filtered.to_csv(save_path, index=False, encoding='utf-8-sig')
+print(f"✅ Saved filtered trade data to: {save_path}")
 

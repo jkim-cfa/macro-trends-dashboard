@@ -1,5 +1,5 @@
 import os
-from processed.sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
+from sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
     iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined, global_trade_variation_top5, global_trade_trend, \
     global_export, korea_trade_trend, korea_export_import_items, ecos_trade_detail, ecos_trade_items, shipping_indices, wsts_billings
 

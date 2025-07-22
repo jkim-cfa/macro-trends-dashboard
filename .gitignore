@@ -8,7 +8,7 @@ __pycache__/
 # Virtual environment
 .venv/
 
-# Api keys
+# Secrets and keys
 .env
 
 # OS files
@@ -18,6 +18,7 @@ Thumbs.db
 # Data files
 data/
 data/processed/
+!data/data_catalogue.xlsx  # Keep only this one
 
-# Exception: Keep the data catalogue
-!data/data_catalogue.xlsx
+# PostgreSQL volume
+pgdata/

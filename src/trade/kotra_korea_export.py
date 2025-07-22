@@ -6,7 +6,7 @@ from dateutil.relativedelta import relativedelta
 import time
 import os
 
-# --- Constants ---
+# Constants
 BASE_URL = "https://www.kotra.or.kr/bigdata/visualization/korea/search"
 EXPORT_PARAMS = {
     "impIsoWd2NatCd": "ALL",
@@ -18,7 +18,7 @@ EXPORT_PARAMS = {
 IMPORT_PARAMS = EXPORT_PARAMS.copy()
 IMPORT_PARAMS["korExpImp"] = "imp"
 
-# --- Find latest available month ---
+# Find latest available month
 def fetch_data(baseYr, baseMn, params):
     params["baseYr"] = str(baseYr)
     params["baseMn"] = str(baseMn)
@@ -45,12 +45,12 @@ def get_latest_valid_data():
         time.sleep(0.5)  # be polite to the server
     raise Exception("❌ No valid data found for the past 12 months.")
 
-# --- Save JSON ---
+# Save JSON
 def save_json(data, filename):
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-# --- Save CSV ---
+# Save CSV
 def save_selected_lists_to_csv(data, export_map, output_dir):
     saved = []
     for key, filename in export_map.items():
@@ -64,7 +64,7 @@ def save_selected_lists_to_csv(data, export_map, output_dir):
             saved.append(save_path)
     return saved
 
-# --- Main run ---
+# Main run
 if __name__ == "__main__":
     year, month = get_latest_valid_data()
     print(f"📦 Fetching latest available data: {year}-{month:02d}")
