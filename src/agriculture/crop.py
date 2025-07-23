@@ -6,6 +6,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
+
 # Parameters
 api_key = os.getenv('CROP_API_KEY')
 base_url = 'https://api.fas.usda.gov/api/psd/commodity'
@@ -62,6 +64,7 @@ df = df.rename(columns={'month': 'report_month'})
 df['countryCode'] = 'World'
 print(df.head())
 
-save_path = "C:/Users/va26/Desktop/global event/data/agriculture/crop_production.csv"
+save_path = os.path.join(data_dir, "agriculture", "crop_production.csv")
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 df.to_csv(save_path, index=False, encoding="utf-8-sig")
 print("Data saved to crop_production.csv")

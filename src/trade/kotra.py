@@ -2,6 +2,10 @@ import requests
 import json
 import pandas as pd
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 # Fetch data
 url = "https://www.kotra.or.kr/bigdata/visualization/global/search"
@@ -16,14 +20,14 @@ r = requests.get(url, params=params)
 data = r.json()
 
 # Save raw JSON
-with open("kotra_global_trade.json", "w", encoding="utf-8") as f:
+with open(os.path.join(data_dir, "trade", "kotra_global_trade.json"), "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
 print("✅ Saved KOTRA data to kotra_global_data.json")
 
 # CSV output directory
-output_dir = "C:/Users/va26/Desktop/global event/data/trade"
-os.makedirs(output_dir, exist_ok=True)
+output_dir = os.path.join(data_dir, "trade")
+os.makedirs(os.path.dirname(output_dir), exist_ok=True)
 
 # Extract main content
 kotra_data = data  # JSON is already flat at top level

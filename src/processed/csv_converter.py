@@ -8,6 +8,8 @@ import google.generativeai as genai
 
 # Load .env and configure Gemini
 load_dotenv()
+DATA_DIR = os.getenv("DATA_DIR", "data")
+
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 MODEL = genai.GenerativeModel("gemini-1.5-flash")
 
@@ -75,15 +77,15 @@ def save_insights_to_csv(insights, csv_path):
 
 # Run summaries
 process_summary_file(
-    summary_path=r"C:/Users/va26/Desktop/global event/data/processed/defence/sipri_summary_gemini.txt",
+    summary_path=os.path.join(DATA_DIR, "processed", "defence", "sipri_summary_gemini.txt"),
     report_name="SIPRI",
     year=2025,
-    output_csv_path=r"C:/Users/va26/Desktop/global event/data/processed/defence/sipri_insights.csv"
+    output_csv_path=os.path.join(DATA_DIR, "processed", "defence", "sipri_insights.csv")
 )
 
 process_summary_file(
-    summary_path=r"C:/Users/va26/Desktop/global event/data/processed/energy/opec_summary_gemini.txt",
+    summary_path=os.path.join(DATA_DIR, "processed", "energy", "opec_summary_gemini.txt"),
     report_name="OPEC",
     year=2025,
-    output_csv_path=r"C:/Users/va26/Desktop/global event/data/processed/energy/opec_insights.csv"
+    output_csv_path=os.path.join(DATA_DIR, "processed", "energy", "opec_insights.csv")
 )

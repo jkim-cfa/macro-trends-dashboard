@@ -5,6 +5,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import re, os
+from dotenv import load_dotenv
+
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 def initialize_browser():
     """Initialize a Chrome WebDriver instance with predefined options."""
@@ -151,11 +155,11 @@ def main():
         print("Browser closed.")
 
     # Save all data to a CSV file relative to the script
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    output_file_path = os.path.join(script_dir, "global_energy_data.csv")
+    output_file_path = os.path.join(data_dir, "energy", "global_energy_data.csv")
+    os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
 
     df = pd.DataFrame(all_data)
-    df.to_csv(output_file_path, index=False)
+    df.to_csv(output_file_path, index=False, encoding="utf-8-sig")
     print(f"Data saved to {output_file_path}.")
 
 if __name__ == "__main__":

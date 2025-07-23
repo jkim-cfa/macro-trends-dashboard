@@ -1,9 +1,13 @@
 import os
 import requests
 import pandas as pd
+from dotenv import load_dotenv
+
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 # Settings
-download_dir = os.path.dirname(os.path.abspath(__file__))
+download_dir = os.path.join(data_dir, "energy")
 filename = "petronet_oil_imports_monthly.xls"
 filepath = os.path.join(download_dir, filename)
 

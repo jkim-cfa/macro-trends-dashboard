@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 # Config
 load_dotenv()
+DATA_DIR = os.getenv("DATA_DIR", "data")
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -74,12 +75,12 @@ def summarize(text):
 def main():
     inputs = {
         "sipri": {
-            "in": r"C:/Users/va26/Desktop/global event/data/processed/defence/sipri_summary_cleaned.txt",
-            "out": r"C:/Users/va26/Desktop/global event/data/processed/defence/sipri_summary_gemini.txt",
+            "in": os.path.join(DATA_DIR, "processed", "defence", "sipri_summary_cleaned.txt"),
+            "out": os.path.join(DATA_DIR, "processed", "defence", "sipri_summary_gemini.txt"),
         },
         "opec": {
-            "in": r"C:/Users/va26/Desktop/global event/data/processed/energy/opec_summary_cleaned.txt",
-            "out": r"C:/Users/va26/Desktop/global event/data/processed/energy/opec_summary_gemini.txt",
+            "in": os.path.join(DATA_DIR, "processed", "energy", "opec_summary_cleaned.txt"),
+            "out": os.path.join(DATA_DIR, "processed", "energy", "opec_summary_gemini.txt"),
         }
     }
 

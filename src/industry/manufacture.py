@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 # Parameters
 api_key = os.getenv('ECOS_API_KEY')
@@ -44,7 +45,8 @@ df = df[df['ITEM_NAME1'] != '원지수']
 df.drop(columns=cols_to_drop, inplace=True, errors='ignore')
 
 # Save to CSV
-save_path = "C:/Users/va26/Desktop/global event/data/industry/manufacture_inventory.csv"
+save_path = os.path.join(data_dir, "industry", "manufacture_inventory.csv")
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 df.to_csv(save_path, index=False, encoding="utf-8-sig")
 print("Data saved to manufacture_inventory.csv")
 

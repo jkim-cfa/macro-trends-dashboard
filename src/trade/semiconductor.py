@@ -4,10 +4,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from dotenv import load_dotenv
 
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
+    
 # Set your desired download directory
-DOWNLOAD_DIR = r"C:\Users\va26\Desktop\global event\data\trade"
-os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+DOWNLOAD_DIR = os.path.join(data_dir, "trade")
+os.makedirs(os.path.dirname(DOWNLOAD_DIR), exist_ok=True)
 
 TARGET_FILENAME = "wsts_billings_latest.xlsx"
 

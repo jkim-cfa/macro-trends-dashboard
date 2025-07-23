@@ -4,6 +4,10 @@ from collections import OrderedDict
 import re
 import numpy as np
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 # Continent mapping
 CONTINENT_MAPPING = {
@@ -15,7 +19,7 @@ CONTINENT_MAPPING = {
 }
 
 # Load disguised .xls (actually HTML)
-with open(r"/src/energy/petronet_oil_imports_monthly.xls", "r", encoding="utf-8") as f:
+with open(os.path.join(data_dir, "energy", "petronet_oil_imports_monthly.xls"), "r", encoding="utf-8") as f:
     html = f.read()
 
 soup = BeautifulSoup(html, 'html.parser')
@@ -141,7 +145,8 @@ df_wide = pd.concat([
 ], axis=1)
 
 filename = "oil_imports_with_continents.csv"
-save_path = "C:/Users/va26/Desktop/global event/data/energy/" + filename
+save_path = os.path.join(data_dir, "energy", filename)
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
 # Save final result
 df_wide.to_csv(save_path, index=False, encoding="utf-8-sig")

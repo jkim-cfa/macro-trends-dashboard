@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 api_key = os.getenv('ECOS_API_KEY')
 base_url = 'https://ecos.bok.or.kr/api/StatisticSearch'
@@ -81,8 +82,8 @@ cols_to_drop = ['ITEM_CODE2', 'ITEM_NAME2', 'ITEM_CODE3', 'ITEM_NAME3', 'ITEM_CO
 df_filtered.drop(columns=cols_to_drop, inplace=True, errors='ignore')
 
 # Save
-output_dir = "C:/Users/va26/Desktop/global event/data/trade"
-os.makedirs(output_dir, exist_ok=True)
+output_dir = os.path.join(data_dir, "trade")
+os.makedirs(os.path.dirname(output_dir), exist_ok=True)
 save_path = os.path.join(output_dir, "korea_trade_yoy.csv")
 df_filtered.to_csv(save_path, index=False, encoding='utf-8-sig')
 print(f"✅ Saved filtered trade data to: {save_path}")

@@ -5,6 +5,10 @@ import time
 from datetime import datetime
 import logging
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -156,8 +160,8 @@ def main():
 
     if data_frames:
         # Merge and save data
-        output_dir = "C:/Users/va26/Desktop/global event/data/trade"
-        os.makedirs(output_dir, exist_ok=True)
+        output_dir = os.path.join(data_dir, "trade")
+        os.makedirs(os.path.dirname(output_dir), exist_ok=True)
         output_path = os.path.join(output_dir, "shipping_indices.csv")
         success = scraper.merge_and_save_data(data_frames, output_file=output_path)
 

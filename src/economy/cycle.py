@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 # Parameters
 api_key = os.getenv('ECOS_API_KEY')
 base_url = 'https://ecos.bok.or.kr/api/StatisticSearch'
@@ -46,8 +47,10 @@ pivot_df = pivot_df.merge(kospi_monthly, on='datetime', how='left')
 
 # After the merge line
 pivot_df = pivot_df.rename(columns={'^KS11': 'KOSPI'})
+print(pivot_df.head())
 
 # Save
-save_path = "C:/Users/va26/Desktop/global event/data/economy/leading_vs_coincident_kospi.csv"
+save_path = os.path.join(data_dir, "economy", "leading_vs_coincident_kospi.csv")
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 pivot_df.to_csv(save_path, index=False, encoding='utf-8-sig')
-print(pivot_df.head())
+print("Data saved to cycle.csv")

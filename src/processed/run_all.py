@@ -1,4 +1,9 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+DATA_DIR = os.getenv("DATA_DIR", "data")
+
 from sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
     iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined, global_trade_variation_top5, global_trade_trend, \
     global_export, korea_trade_trend, korea_export_import_items, ecos_trade_detail, ecos_trade_items, shipping_indices, wsts_billings
@@ -39,26 +44,26 @@ KOREA_EXPORT_IMPORT_ITEMS = [
 
 def run_all():
     for func, sector, name in TASKS:
-        input_path = f"C:/Users/va26/Desktop/global event/data/{sector}/{name}"
-        output_path = f"C:/Users/va26/Desktop/global event/data/processed/{sector}/{os.path.splitext(name)[0]}_processed.csv"
+        input_path = os.path.join(DATA_DIR, sector, name)
+        output_path = os.path.join(DATA_DIR, "processed", sector, f"{os.path.splitext(name)[0]}_processed.csv")
         if name.endswith(".xlsx"):
             func(input_path, output_path)
         else:
             func(input_path + ".csv", output_path)
 
     for name, direction in GLOBAL_EXPORT_ITEMS:
-        input_path = f"C:/Users/va26/Desktop/global event/data/trade/{name}.csv"
-        output_path = f"C:/Users/va26/Desktop/global event/data/processed/trade/{name}_processed.csv"
+        input_path = os.path.join(DATA_DIR, "trade", f"{name}.csv")
+        output_path = os.path.join(DATA_DIR, "processed", "trade", f"{name}_processed.csv")
         global_export(input_path, output_path, direction)
 
     for name, direction in KOREA_TRADE_TREND:
-        input_path = f"C:/Users/va26/Desktop/global event/data/trade/{name}.csv"
-        output_path = f"C:/Users/va26/Desktop/global event/data/processed/trade/{name}_processed.csv"
+        input_path = os.path.join(DATA_DIR, "trade", f"{name}.csv")
+        output_path = os.path.join(DATA_DIR, "processed", "trade", f"{name}_processed.csv")
         korea_trade_trend(input_path, output_path, direction)
 
     for name, direction in KOREA_EXPORT_IMPORT_ITEMS:
-        input_path = f"C:/Users/va26/Desktop/global event/data/trade/{name}.csv"
-        output_path = f"C:/Users/va26/Desktop/global event/data/processed/trade/{name}_processed.csv"
+        input_path = os.path.join(DATA_DIR, "trade", f"{name}.csv")
+        output_path = os.path.join(DATA_DIR, "processed", "trade", f"{name}_processed.csv")
         korea_export_import_items(input_path, output_path, direction)
 
 if __name__ == "__main__":

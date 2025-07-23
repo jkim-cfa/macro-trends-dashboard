@@ -1,8 +1,13 @@
 import fitz
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+DATA_DIR = os.getenv("DATA_DIR", "data")
 
 # Extract All Text from PDF
-pdf_path = r"C:/Users/va26/Desktop/global event/data/defence/SIPRI_yearbook.pdf"
-output_txt_path = r"C:/Users/va26/Desktop/global event/data/processed/defence/sipri_summary_cleaned.txt"
+pdf_path = os.path.join(DATA_DIR, "defence", "SIPRI_yearbook.pdf")
+output_txt_path = os.path.join(DATA_DIR, "processed", "defence", "sipri_summary_cleaned.txt")
 
 doc = fitz.open(pdf_path)
 all_text = [page.get_text() for page in doc]

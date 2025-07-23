@@ -5,6 +5,10 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import time
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 # Constants
 BASE_URL = "https://www.kotra.or.kr/bigdata/visualization/korea/search"
@@ -18,7 +22,10 @@ EXPORT_PARAMS = {
 IMPORT_PARAMS = EXPORT_PARAMS.copy()
 IMPORT_PARAMS["korExpImp"] = "imp"
 
-# Find latest available month
+# ---------------------------
+# Functions
+# ---------------------------
+
 def fetch_data(baseYr, baseMn, params):
     params["baseYr"] = str(baseYr)
     params["baseMn"] = str(baseMn)
@@ -45,12 +52,10 @@ def get_latest_valid_data():
         time.sleep(0.5)  # be polite to the server
     raise Exception("❌ No valid data found for the past 12 months.")
 
-# Save JSON
-def save_json(data, filename):
-    with open(filename, "w", encoding="utf-8") as f:
+def save_json(data, filepath):
+    with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-# Save CSV
 def save_selected_lists_to_csv(data, export_map, output_dir):
     saved = []
     for key, filename in export_map.items():
@@ -64,7 +69,10 @@ def save_selected_lists_to_csv(data, export_map, output_dir):
             saved.append(save_path)
     return saved
 
-# Main run
+# ---------------------------
+# Main Execution
+# ---------------------------
+
 if __name__ == "__main__":
     year, month = get_latest_valid_data()
     print(f"📦 Fetching latest available data: {year}-{month:02d}")
@@ -75,14 +83,14 @@ if __name__ == "__main__":
     export_data = fetch_data(year, month, EXPORT_PARAMS)
     import_data = fetch_data(year, month, IMPORT_PARAMS)
 
-    save_json(export_data, "kotra_korea_export.json")
-    save_json(import_data, "kotra_korea_import.json")
-
-    print("✅ Saved both export and import JSON files.")
-
     # Output directory
-    output_dir = "C:/Users/va26/Desktop/global event/data/trade"
-    os.makedirs(output_dir, exist_ok=True)
+    output_dir = os.path.join(data_dir, "trade")
+    os.makedirs(os.path.dirname(output_dir), exist_ok=True)
+
+    # Save JSONs
+    save_json(export_data, os.path.join(output_dir, "kotra_korea_export.json"))
+    save_json(import_data, os.path.join(output_dir, "kotra_korea_import.json"))
+    print("✅ Saved both export and import JSON files.")
 
     # CSV mappings
     export_map = {

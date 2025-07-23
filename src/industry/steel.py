@@ -6,6 +6,10 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.remote.webelement import WebElement
 import pandas as pd
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 
 def initialize_browser():
@@ -80,7 +84,7 @@ def main():
         combined_df = pd.concat([region_df, country_df], ignore_index=True)
 
         # Save
-        output_path = os.path.join("C:/Users/va26/Desktop/global event/data/industry", "steel_combined.csv")
+        output_path = os.path.join(data_dir, "industry", "steel_combined.csv")
         combined_df.to_csv(output_path, index=False, encoding="utf-8-sig")
 
         print(f"Data saved to {output_path}.")

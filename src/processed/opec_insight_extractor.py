@@ -1,10 +1,14 @@
 import fitz
 import re
 import os
+from dotenv import load_dotenv
 
-OPEC_PDF = r"C:/Users/va26/Desktop/global event/data/energy/OPEC_MOMR_Latest.pdf"
-OPEC_RAW_TXT = r"C:/Users/va26/Desktop/global event/data/processed/energy/opec_summary_extracted.txt"
-OPEC_CLEANED_TXT = r"C:/Users/va26/Desktop/global event/data/processed/energy/opec_summary_cleaned.txt"
+load_dotenv()
+DATA_DIR = os.getenv("DATA_DIR", "data")
+
+OPEC_PDF = os.path.join(DATA_DIR, "energy", "OPEC_MOMR_Latest.pdf")
+OPEC_RAW_TXT = os.path.join(DATA_DIR, "processed", "energy", "opec_summary_extracted.txt")
+OPEC_CLEANED_TXT = os.path.join(DATA_DIR, "processed", "energy", "opec_summary_cleaned.txt")
 
 # Extract summary pages 5-6
 def extract_opec_report(pdf_path, output_txt_path):

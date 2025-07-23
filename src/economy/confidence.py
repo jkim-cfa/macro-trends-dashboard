@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 # Parameters
 api_key = os.getenv('ECOS_API_KEY')
 base_url = 'https://ecos.bok.or.kr/api/StatisticSearch'
@@ -46,6 +47,7 @@ df.drop(columns=cols_to_drop, inplace=True, errors='ignore')
 print(df.head)
 
 # Save to CSV
-save_path = "C:/Users/va26/Desktop/global event/data/economy/economy_confidence.csv"
+save_path = os.path.join(data_dir, "economy", "economy_confidence.csv")
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 df.to_csv(save_path, index=False, encoding="utf-8-sig")
 print("Data saved to economy_confidence.csv")

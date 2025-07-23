@@ -6,6 +6,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
+
 # Parameters
 api_key = os.getenv('ECOS_API_KEY')
 base_url = 'https://ecos.bok.or.kr/api/StatisticSearch'
@@ -64,6 +66,7 @@ for currency in df['CURRENCY'].unique():
     print(f"{currency}: {latest['EXCHANGE_RATE']:.2f} ({latest['DATE'].strftime('%Y-%m')})")
 
 # Save
-save_path = "C:/Users/va26/Desktop/global event/data/economy/fx_rates.csv"
+save_path = os.path.join(data_dir, "economy", "fx_rates.csv")
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 df.to_csv(save_path, index=False, encoding="utf-8-sig")
 print("Data saved to monthly_fx_rates.csv")

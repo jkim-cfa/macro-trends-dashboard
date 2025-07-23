@@ -1,5 +1,10 @@
 import requests
 import pandas as pd
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+data_dir = os.getenv("DATA_DIR", "data")
 
 year = "2025"  # Change this as needed
 all_data = []
@@ -38,6 +43,7 @@ df = df[desired_order]
 df["Month"] = pd.to_datetime(df["Year"] + "-" + df["Month"] + "-01").dt.strftime("%B")
 
 # Save or show
-save_path = "C:/Users/va26/Desktop/global event/data/energy/iea_oil_stocks.csv"
+save_path = os.path.join(data_dir, "energy", "iea_oil_stocks.csv")
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 df.to_csv(save_path, index=False, encoding="utf-8-sig")
 print("Data saved to iea_oil_stocks.csv")
