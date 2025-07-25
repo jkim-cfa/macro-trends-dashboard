@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-data_dir = os.getenv("DATA_DIR", "data")
+data_dir = os.getenv("DATA_DIR")
 
 year = "2025"  # Change this as needed
 all_data = []

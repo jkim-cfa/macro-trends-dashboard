@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from dotenv import load_dotenv
 
 load_dotenv()
-data_dir = os.getenv("DATA_DIR", "data")
+data_dir = os.getenv("DATA_DIR")
     
 # Set your desired download directory
 DOWNLOAD_DIR = os.path.abspath(os.path.join(data_dir, "energy"))

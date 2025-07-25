@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # Config
 load_dotenv()
-DATA_DIR = os.getenv("DATA_DIR", "data")
+DATA_DIR = os.getenv("DATA_DIR")
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 API_KEY = os.getenv("GEMINI_API_KEY")

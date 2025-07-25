@@ -4,7 +4,7 @@ import pandas as pd
 from dotenv import load_dotenv
 
 load_dotenv()
-data_dir = os.getenv("DATA_DIR", "data")
+data_dir = os.getenv("DATA_DIR")
 
 # Settings
 download_dir = os.path.join(data_dir, "energy")

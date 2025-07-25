@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-data_dir = os.getenv("DATA_DIR", "data")
+data_dir = os.getenv("DATA_DIR")
 
 # Fetch data
 url = "https://www.kotra.or.kr/bigdata/visualization/global/search"

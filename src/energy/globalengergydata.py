@@ -8,7 +8,7 @@ import re, os
 from dotenv import load_dotenv
 
 load_dotenv()
-data_dir = os.getenv("DATA_DIR", "data")
+data_dir = os.getenv("DATA_DIR")
 
 def initialize_browser():
     """Initialize a Chrome WebDriver instance with predefined options."""

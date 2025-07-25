@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-DATA_DIR = os.getenv("DATA_DIR", "data")
+DATA_DIR = os.getenv("DATA_DIR")
 
 from sector_process import crop_production, bid_info, confidence, fxrate, economic_indicator, \
     iea_oil_stocks, oil_import_summary, manufacture_inventory, steel_combined, global_trade_variation_top5, global_trade_trend, \

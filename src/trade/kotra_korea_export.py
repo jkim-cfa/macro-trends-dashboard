@@ -8,7 +8,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-data_dir = os.getenv("DATA_DIR", "data")
+data_dir = os.getenv("DATA_DIR")
 
 # Constants
 BASE_URL = "https://www.kotra.or.kr/bigdata/visualization/korea/search"

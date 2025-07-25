@@ -8,7 +8,7 @@ import google.generativeai as genai
 
 # Load .env and configure Gemini
 load_dotenv()
-DATA_DIR = os.getenv("DATA_DIR", "data")
+DATA_DIR = os.getenv("DATA_DIR")
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 MODEL = genai.GenerativeModel("gemini-1.5-flash")

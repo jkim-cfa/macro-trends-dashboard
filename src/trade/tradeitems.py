@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-data_dir = os.getenv("DATA_DIR", "data")
+data_dir = os.getenv("DATA_DIR")
 
 api_key = os.getenv('ECOS_API_KEY')
 base_url = 'https://ecos.bok.or.kr/api/StatisticSearch'

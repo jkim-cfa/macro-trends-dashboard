@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-DATA_DIR = os.getenv("DATA_DIR", "data")
+DATA_DIR = os.getenv("DATA_DIR")
 
 OPEC_PDF = os.path.join(DATA_DIR, "energy", "OPEC_MOMR_Latest.pdf")
 OPEC_RAW_TXT = os.path.join(DATA_DIR, "processed", "energy", "opec_summary_extracted.txt")

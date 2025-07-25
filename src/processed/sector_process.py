@@ -7,7 +7,7 @@ def crop_production(input_path, output_path):
     df = pd.read_csv(input_path)
 
     # Standardise columns
-    df['date'] = pd.to_datetime(df['marketYear'].astype(str) + '-' + df['report_month'].astype(str).str.zfill(2) + '-01')
+    df['date'] = pd.to_datetime(df['marketYear'].astype(str) + '-06-01')
     df['country'] = df['countryCode']
     df['sector'] = 'agriculture'
     df['indicator'] = df['attributeId']

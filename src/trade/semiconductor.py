@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from dotenv import load_dotenv
 
 load_dotenv()
-data_dir = os.getenv("DATA_DIR", "data")
+data_dir = os.getenv("DATA_DIR")
     
 # Set your desired download directory
 DOWNLOAD_DIR = os.path.join(data_dir, "trade")

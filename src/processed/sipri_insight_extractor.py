@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-DATA_DIR = os.getenv("DATA_DIR", "data")
+DATA_DIR = os.getenv("DATA_DIR")
 
 # Extract All Text from PDF
 pdf_path = os.path.join(DATA_DIR, "defence", "SIPRI_yearbook.pdf")
