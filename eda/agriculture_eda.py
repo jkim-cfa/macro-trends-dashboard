@@ -37,14 +37,14 @@ def load_agriculture_data(engine):
     """
     return pd.read_sql(query, engine)
 
-def plot_production_trends(df, indicator='Production'):
-    filtered = df[df['indicator'] == indicator]
+def plot_production_trends(df):
+    filtered = df
     fig = px.line(
         filtered,
         x='date',
         y='value',
         color='commodity',
-        title=f'\U0001F33E Global {indicator} Trends (2000–2025)',
+        title=f'\U0001F33E Global Production Trends (2000–2025)',
         markers=True,
         template='plotly_white'
     )
@@ -56,10 +56,10 @@ def plot_production_trends(df, indicator='Production'):
     )
     fig.show()
 
-def analyse_growth_rates(df, indicator='Production'):
+def analyse_growth_rates(df):
     growth_data = []
-    for commodity in df[df['indicator'] == indicator]['commodity'].unique():
-        subset = df[(df['commodity'] == commodity) & (df['indicator'] == indicator)].sort_values('date')
+    for commodity in df['commodity'].unique():
+        subset = df[(df['commodity'] == commodity)].sort_values('date')
         if len(subset) < 2:
             continue
         start_value = subset.iloc[0]['value']
@@ -89,9 +89,8 @@ def analyse_growth_rates(df, indicator='Production'):
 
     return growth_df
 
-def analyse_yearly_variation(df, indicator='Production'):
-    df['year'] = df['date'].dt.year
-    seasonal_df = df[df['indicator'] == indicator]
+def analyse_yearly_variation(df):
+    seasonal_df = df
 
     if seasonal_df['commodity'].nunique() > 1:
         fig = px.box(
@@ -114,7 +113,7 @@ def analyse_yearly_variation(df, indicator='Production'):
 
 def save_aggregated_data(df, output_dir=eda_path):
     os.makedirs(output_dir, exist_ok=True)
-    production_df = df[df['indicator'] == 'Production'].copy()
+    production_df = df
 
     trend_data = production_df.pivot(index='date', columns='commodity', values='value')
     trend_data.to_csv(f'{output_dir}/production_trends.csv')
@@ -133,6 +132,7 @@ def save_aggregated_data(df, output_dir=eda_path):
     corr_matrix_out = pivot_df.corr()
     corr_matrix_out.to_csv(f"{output_dir}/correlation_matrix.csv")
 
+    # Key Insights: Top Commodity, Highest Growth Rate, Average Growth Rate, Most Recent Year
     key_insights = {}
     if not growth_df_out.empty:
         top = growth_df_out.iloc[0]
@@ -146,9 +146,11 @@ def save_aggregated_data(df, output_dir=eda_path):
 
     return stats_df, growth_df_out, corr_matrix_out, key_insights
 
+# Gemini Insight
 def generate_insights(stats_df, growth_df_out, corr_matrix_out, key_insights, output_dir):
     try:
-        prompt = f"""
+        prompt = f""" Respond concisely with minimal words and no formatting. Avoid repetition or filler.
+
 You are a strategic economic intelligence analyst.
 
 The following agriculture production data includes:
@@ -197,7 +199,7 @@ def main():
     print(f"Commodities: {df['commodity'].nunique()}")
     print(f"Indicators: {df['indicator'].unique()}")
 
-    production_df = df[df['indicator'] == 'Production']
+    production_df = df
     print("\n=== Summary Stats ===")
     print(production_df.groupby('commodity')['value'].describe().round(2))
 
