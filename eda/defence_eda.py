@@ -21,16 +21,14 @@ MODEL = genai.GenerativeModel(GEMINI_MODEL_NAME)
 EDA_DIR = os.getenv("EDA_DIR")
 eda_path = os.path.join(EDA_DIR, "outputs", "defence")
 
-PG_USER = os.getenv("POSTGRES_USER", "postgres")
-PG_PASSWORD = os.getenv("POSTGRES_PASSWORD", "macro2025")
-PG_DB = os.getenv("POSTGRES_DB", "macrodb")
-PG_HOST = os.getenv("POSTGRES_HOST", "localhost")
-PG_PORT = os.getenv("POSTGRES_PORT", "5432")
+# DB connection
+PG_USER = os.getenv("POSTGRES_USER")
+PG_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+PG_DB = os.getenv("POSTGRES_DB")
+PG_HOST = os.getenv("POSTGRES_HOST")
+PG_PORT = os.getenv("POSTGRES_PORT")
 
-# Connect to PostgreSQL
-engine = create_engine(
-    f"postgresql+psycopg2://{PG_USER}:{PG_PASSWORD}@{PG_HOST}:{PG_PORT}/{PG_DB}"
-)
+engine = create_engine(f"postgresql+psycopg2://{PG_USER}:{PG_PASSWORD}@{PG_HOST}:{PG_PORT}/{PG_DB}")
 
 # Load defence data
 query = """
@@ -213,41 +211,64 @@ def save_eda_data(df, output_dir=eda_path):
 # Gemini Insight
 def generate_insights(key_insights, combined_df, insight_text, output_dir):
     try:
-        prompt = f""" Respond concisely with minimal words and no formatting. Avoid repetition or filler.
+        prompt = f""" 
+**Role**: You are a senior economic strategist analyzing cross-sector ripple effects. Extract non-obvious implications from the data below.
 
-You are a strategic economic intelligence analyst.
-
-The following defence data includes both structured procurement data and unstructured geopolitical insight.
-
-Your task:
-1. Identify 3–5 *second-order insights*. These are not just about what the data says, but what the implications might be.
-2. Highlight any surprising correlations and propose plausible macroeconomic or geopolitical explanations.
-3. Suggest how these trends might evolve given current global contexts such as climate shifts, trade policy, fertilizer prices, and food security concerns.
-
-Data:
-- SIPRI Insight:
+**Data Inputs**:
+1. SIPRI Insight:
 \"\"\"
 {insight_text}
 \"\"\"
 
-- Summary Statistics:
+2. Summary Statistics:
 {json.dumps(key_insights["summary_statistics"], indent=2, ensure_ascii=False)}
 
-- Category Breakdown:
+3. Category Breakdown:
 {json.dumps(key_insights["category_breakdown"], indent=2, ensure_ascii=False)}
 
-- Value Distribution (contract_value_distribution):
+4. Value Distribution (contract_value_distribution):
 {json.dumps(key_insights["value_analysis"]["contract_value_distribution"], indent=2, ensure_ascii=False)}
 
-- Category Value Stats:
+5. Category Value Stats:
 {json.dumps(key_insights["value_analysis"]["category_value_stats"], indent=2, ensure_ascii=False)}
 
-- Word Frequency (top procurement terms):
+6. Word Frequency (top procurement terms):
 {json.dumps(key_insights["frequency_analysis"], indent=2, ensure_ascii=False)}
 
-- Timeline: {key_insights['temporal_analysis']['date_range']['earliest']} to {key_insights['temporal_analysis']['date_range']['latest']}
+7. Timeline: {key_insights['temporal_analysis']['date_range']['earliest']} to {key_insights['temporal_analysis']['date_range']['latest']}
 
-Avoid restating exact numbers. Focus on relationships, causes, risks, and opportunities.
+---
+
+### **Required Output Format**  
+```markdown
+## Defence Second-Order Analysis
+
+### Core Trend  
+• Defence: [TREND SUMMARY IN 5-10 WORDS]  
+• **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]  
+
+### Hidden Effects  
+1. **[EFFECT 1 NAME]**  
+   - *Catalyst*: [PRIMARY DRIVER]  
+   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]  
+   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]  
+
+2. **[EFFECT 2 NAME]**  
+   - *Catalyst*: [PRIMARY DRIVER]  
+   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]  
+   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]  
+
+### Cross-Domain Impacts  
+→ **[SECTOR A]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])  
+→ **[SECTOR B]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])  
+
+### System Dynamics  
+⚠️ *Threshold Effect*: "[QUANTITATIVE TRIGGER IF KNOWN]"  
+♻️ *Feedback Mechanism*: "[SELF-REINFORCING OR DAMPENING CYCLE]"  
+
+### Actionable Intelligence  
+🛠 **Policy Lever**: [CONCRETE INTERVENTION]  
+📊 **Leading Indicator**: [METRIC] (Update: [FREQUENCY])  
 """
         response = MODEL.generate_content(prompt)
         gemini_insight = response.text.strip()
@@ -271,12 +292,21 @@ if __name__ == "__main__":
         # Extract SIPRI insight text for Gemini
         sipri_text = (
             full_df.loc[
-                full_df['file_source'] == 'sipri_report_insight', 'insight'
+                full_df['file_source'] == 'sipri_insight', 'insight'
             ]
             .dropna()
             .unique()
         )
         insight_text = "\n".join(sipri_text)
+
+        # Print 3 SIPRI insight
+        print("🔍 First 3 SIPRI insight rows:")
+        for i, row in enumerate(sipri_text[:3]):
+            print(f"{i+1}. {row}\n")
+
+        # Save the SIPRI insight text
+        with open(f"{eda_path}/sipri_insight.txt", "w", encoding="utf-8") as f:
+            f.write(insight_text)
 
         # Run Gemini insight generation
         generate_insights(insights, combined_data, insight_text, eda_path)

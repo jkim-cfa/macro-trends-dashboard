@@ -1,11 +1,8 @@
 import os
 import warnings
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
-import numpy as np
 import json
 import google.generativeai as genai
 
@@ -21,11 +18,12 @@ MODEL = genai.GenerativeModel(GEMINI_MODEL_NAME)
 EDA_DIR = os.getenv("EDA_DIR")
 eda_path = os.path.join(EDA_DIR, "outputs", "agriculture")
 
-PG_USER = os.getenv("POSTGRES_USER", "postgres")
-PG_PASSWORD = os.getenv("POSTGRES_PASSWORD", "macro2025")
-PG_DB = os.getenv("POSTGRES_DB", "macrodb")
-PG_HOST = os.getenv("POSTGRES_HOST", "localhost")
-PG_PORT = os.getenv("POSTGRES_PORT", "5432")
+# DB connection
+PG_USER = os.getenv("POSTGRES_USER")
+PG_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+PG_DB = os.getenv("POSTGRES_DB")
+PG_HOST = os.getenv("POSTGRES_HOST")
+PG_PORT = os.getenv("POSTGRES_PORT")
 
 engine = create_engine(f"postgresql+psycopg2://{PG_USER}:{PG_PASSWORD}@{PG_HOST}:{PG_PORT}/{PG_DB}")
 
@@ -36,25 +34,6 @@ def load_agriculture_data(engine):
     ORDER BY indicator, date
     """
     return pd.read_sql(query, engine)
-
-def plot_production_trends(df):
-    filtered = df
-    fig = px.line(
-        filtered,
-        x='date',
-        y='value',
-        color='commodity',
-        title=f'\U0001F33E Global Production Trends (2000–2025)',
-        markers=True,
-        template='plotly_white'
-    )
-    fig.update_layout(
-        xaxis_title='Year',
-        yaxis_title='Production Value',
-        legend_title='Commodity',
-        height=600
-    )
-    fig.show()
 
 def analyse_growth_rates(df):
     growth_data = []
@@ -73,111 +52,104 @@ def analyse_growth_rates(df):
                 'End Value': end_value,
                 'CAGR (%)': cagr * 100
             })
-    growth_df = pd.DataFrame(growth_data).sort_values('CAGR (%)', ascending=False)
+    return pd.DataFrame(growth_data).sort_values('CAGR (%)', ascending=False)
 
-    fig = px.bar(
-        growth_df,
-        x='Commodity',
-        y='CAGR (%)',
-        color='CAGR (%)',
-        color_continuous_scale='Viridis',
-        title='\U0001F4C8 CAGR by Commodity',
-        template='plotly_white'
-    )
-    fig.update_layout(xaxis_tickangle=-45, height=500)
-    fig.show()
-
-    return growth_df
-
-def analyse_yearly_variation(df):
-    seasonal_df = df
-
-    if seasonal_df['commodity'].nunique() > 1:
-        fig = px.box(
-            seasonal_df,
-            x='commodity',
-            y='value',
-            color='commodity',
-            title='\U0001F4E6 Yearly Production Distribution by Commodity',
-            template='plotly_white'
-        )
-        fig.update_layout(
-            xaxis_title='Commodity',
-            yaxis_title='Production Value',
-            boxmode='group',
-            showlegend=False
-        )
-        fig.show()
-    else:
-        print("Insufficient data for production variation analysis.")
-
+# Save
 def save_aggregated_data(df, output_dir=eda_path):
     os.makedirs(output_dir, exist_ok=True)
     production_df = df
 
+    # Trend data for line charts
     trend_data = production_df.pivot(index='date', columns='commodity', values='value')
     trend_data.to_csv(f'{output_dir}/production_trends.csv')
 
+    # Summary statistics
     stats_df = production_df.groupby('commodity')['value'].agg(['mean', 'median', 'std', 'min', 'max', 'count'])
     stats_df.to_csv(f'{output_dir}/production_stats.csv')
 
+    # Year-over-year changes
     production_df.sort_values(['commodity', 'date'], inplace=True)
     production_df['yoy_change'] = production_df.groupby('commodity')['value'].pct_change() * 100
     production_df.to_csv(f"{output_dir}/production_yoy_change.csv", index=False)
 
-    growth_df_out = analyse_growth_rates(df)
-    growth_df_out.to_csv(f"{output_dir}/growth_rates.csv", index=False)
+    # Growth rates
+    growth_df = analyse_growth_rates(df)
+    growth_df.to_csv(f"{output_dir}/growth_rates.csv", index=False)
 
+    # Correlation matrix
     pivot_df = production_df.pivot(index='date', columns='commodity', values='value')
-    corr_matrix_out = pivot_df.corr()
-    corr_matrix_out.to_csv(f"{output_dir}/correlation_matrix.csv")
+    corr_matrix = pivot_df.corr()
+    corr_matrix.to_csv(f"{output_dir}/correlation_matrix.csv")
 
-    # Key Insights: Top Commodity, Highest Growth Rate, Average Growth Rate, Most Recent Year
+    # Clean data for Streamlit
+    streamlit_df = production_df[['date', 'commodity', 'value']].copy()
+    streamlit_df.to_csv(f"{output_dir}/streamlit_ready_data.csv", index=False)
+
+    # Key insights for AI analysis
     key_insights = {}
-    if not growth_df_out.empty:
-        top = growth_df_out.iloc[0]
+    if not growth_df.empty:
+        top = growth_df.iloc[0]
         key_insights["highest_growth"] = top['Commodity']
         key_insights["highest_growth_rate"] = round(top['CAGR (%)'], 2)
-        key_insights["average_growth"] = round(growth_df_out['CAGR (%)'].mean(), 2)
+        key_insights["average_growth"] = round(growth_df['CAGR (%)'].mean(), 2)
     key_insights["most_recent_year"] = int(df['date'].max().year)
 
     with open(f"{output_dir}/key_insights.json", "w") as f:
         json.dump(key_insights, f, indent=2)
 
-    return stats_df, growth_df_out, corr_matrix_out, key_insights
+    return stats_df, growth_df, corr_matrix, key_insights
 
 # Gemini Insight
-def generate_insights(stats_df, growth_df_out, corr_matrix_out, key_insights, output_dir):
+def generate_insights(stats_df, growth_df, corr_matrix, key_insights, output_dir):
     try:
-        prompt = f""" Respond concisely with minimal words and no formatting. Avoid repetition or filler.
+        prompt = f"""
+**Role**: You are a senior economic strategist analyzing cross-sector ripple effects. Extract non-obvious implications from the data below.
 
-You are a strategic economic intelligence analyst.
-
-The following agriculture production data includes:
-- Summary statistics (mean, median, volatility)
-- Growth rates (CAGR)
-- Inter-commodity correlations
-- Key metadata
-
-Your task:
-1. Identify 3–5 *second-order insights*. These are not just about what the data says, but what the implications might be.
-2. Highlight any surprising correlations and propose plausible macroeconomic or geopolitical explanations.
-3. Suggest how these trends might evolve given current global contexts such as climate shifts, trade policy, fertilizer prices, and food security concerns.
-
-Data:
-Summary Statistics:
+**Data Inputs**:
+1. Summary Statistics:
 {stats_df.to_markdown(index=False)}
 
-CAGR (% Growth):
-{growth_df_out.to_markdown(index=False)}
+2. Growth Rates (CAGR):
+{growth_df.to_markdown(index=False)}
 
-Correlation Matrix:
-{corr_matrix_out.to_string(index=False)}
+3. Correlation Matrix:
+{corr_matrix.to_string(index=False)}
 
-Key Metrics:
+4. Key Metrics:
 {json.dumps(key_insights, indent=2)}
 
-Avoid restating exact numbers. Focus on relationships, causes, risks, and opportunities.
+---
+
+### **Required Output Format**  
+```markdown
+## Agriculture Second-Order Analysis
+
+### Core Trend  
+• Agriculture: [TREND SUMMARY IN 5-10 WORDS]  
+• **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]  
+
+### Hidden Effects  
+1. **[EFFECT 1 NAME]**  
+   - *Catalyst*: [PRIMARY DRIVER]  
+   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]  
+   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]  
+
+2. **[EFFECT 2 NAME]**  
+   - *Catalyst*: [PRIMARY DRIVER]  
+   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]  
+   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]  
+
+### Cross-Domain Impacts  
+→ **[SECTOR A]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])  
+→ **[SECTOR B]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])  
+
+### System Dynamics  
+⚠️ *Threshold Effect*: "[QUANTITATIVE TRIGGER IF KNOWN]"  
+♻️ *Feedback Mechanism*: "[SELF-REINFORCING OR DAMPENING CYCLE]"  
+
+### Actionable Intelligence  
+🛠 **Policy Lever**: [CONCRETE INTERVENTION]  
+📊 **Leading Indicator**: [METRIC] (Update: [FREQUENCY])  
 """
         response = MODEL.generate_content(prompt)
         gemini_insight = response.text.strip()
@@ -199,28 +171,28 @@ def main():
     print(f"Commodities: {df['commodity'].nunique()}")
     print(f"Indicators: {df['indicator'].unique()}")
 
-    production_df = df
     print("\n=== Summary Stats ===")
-    print(production_df.groupby('commodity')['value'].describe().round(2))
+    print(df.groupby('commodity')['value'].describe().round(2))
 
-    plot_production_trends(df)
-    analyse_yearly_variation(df)
-    stats_df, growth_df_out, corr_matrix_out, key_insights = save_aggregated_data(df)
+    # Process and save all data
+    stats_df, growth_df, corr_matrix, key_insights = save_aggregated_data(df)
+
+    print("\n=== Growth Rates (CAGR) ===")
+    print(growth_df.head())
 
     print("\n=== Correlation Matrix ===")
-    print(corr_matrix_out.round(2))
+    print(corr_matrix.round(2))
 
-    fig = px.imshow(
-        corr_matrix_out,
-        text_auto=True,
-        color_continuous_scale='RdBu',
-        title='\U0001F517 Commodity Correlation Matrix',
-        template='plotly_white'
-    )
-    fig.update_layout(height=600)
-    fig.show()
+    # Generate AI insights
+    generate_insights(stats_df, growth_df, corr_matrix, key_insights, eda_path)
 
-    generate_insights(stats_df, growth_df_out, corr_matrix_out, key_insights, eda_path)
+    print(f"\n✅ All data saved to: {eda_path}")
+    print("Files created:")
+    print("- production_trends.csv (for trend charts)")
+    print("- streamlit_ready_data.csv (clean data for Streamlit)")
+    print("- growth_rates.csv (CAGR analysis)")
+    print("- correlation_matrix.csv (commodity correlations)")
+    print("- gemini_insight.txt (AI analysis)")
 
 if __name__ == "__main__":
     main()
