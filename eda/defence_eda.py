@@ -3,10 +3,9 @@ import re
 import warnings
 import pandas as pd
 import json
-from collections import Counter, defaultdict
+from collections import Counter
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
-import numpy as np
 import google.generativeai as genai
 
 # Configuration

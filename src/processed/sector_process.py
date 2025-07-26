@@ -169,10 +169,11 @@ def oil_import_summary(input_path, output_path):
     # Region mapping
     region_map = {
         'Asia': ['필리핀', '말레이시아', '인도네시아', '호주', '뉴질랜드', '파푸아뉴기니', '카자흐스탄'],
-        'Africa': ['알제리', '콩고', '나이지리아', '적도기니', '모잠비크'],
+        'Africa': ['알제리', '콩고', '나이지리아', '적도기니', '모잠비크', '가봉'],
         'America': ['캐나다', '미국', '멕시코', '브라질', '에콰도르'],
         'MiddleEast': ['이라크', '쿠웨이트', '카타르', '아랍에미레이트', '사우디아라비아', '오만', '중립지대'],
-        'Europe': ['노르웨이', '영국']
+        'Europe': ['노르웨이', '영국'],
+        'Total': ['합 계']
     }
     country_to_region = {country: region for region, countries in region_map.items() for country in countries}
     df_long['region'] = df_long['country'].map(country_to_region).fillna(df_long['country'])
@@ -184,7 +185,7 @@ def oil_import_summary(input_path, output_path):
         '모잠비크': 'Mozambique','캐나다': 'Canada','미국': 'United States','멕시코': 'Mexico','브라질': 'Brazil',
         '에콰도르': 'Ecuador','이라크': 'Iraq','쿠웨이트': 'Kuwait','카타르': 'Qatar','아랍에미레이트': 'UAE',
         '사우디아라비아': 'Saudi Arabia','오만': 'Oman','중립지대': 'Neutral Zone',
-        '노르웨이': 'Norway','영국': 'United Kingdom'
+        '노르웨이': 'Norway','영국': 'United Kingdom', '가봉': 'Gabon', '합 계': 'Total'
     }
     df_long['country'] = df_long['country'].map(country_name_map).fillna(df_long['country'])
 
@@ -211,6 +212,10 @@ def oil_import_summary(input_path, output_path):
     df_long['unit'] = df_long['unit'].map(unit_map)
 
     df_long = df_long[['date', 'region', 'country', 'value', 'unit', 'sector', 'source']].sort_values(by=['date', 'country', 'unit'])
+
+    # Drop rows where both 'region' and 'country' columns are missing or empty
+    if 'region' in df_long.columns and 'country' in df_long.columns:
+        df_long = df_long[~(df_long['region'].fillna('').eq('') & df_long['country'].fillna('').eq(''))]
 
     df_long.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f'Saved cleaned data to: {output_path}')
