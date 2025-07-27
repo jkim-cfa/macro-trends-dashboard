@@ -256,7 +256,7 @@ def steel_combined(input_path, output_path):
 
     # Drop and Standardise
     df.drop(columns=['Scope'], inplace=True)
-    df['sector'] = 'trade'
+    df['sector'] = 'industry'
     df['source'] = 'World Steel Association'
     df['unit'] = 'percentage'
     df['region'] = df['Region']
