@@ -5,7 +5,6 @@ import json
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import google.generativeai as genai
-from pandas.tseries.offsets import DateOffset
 
 # Configuration
 warnings.filterwarnings('ignore')
@@ -57,56 +56,56 @@ def load_opec_summary_data():
     df_opec_summary = pd.read_sql(query, engine)
     return df_opec_summary
 
-# Oil Stock Analysis
+# Stockpile Analysis
 def stock_time_series_analysis(df_iea_oil_stocks):
+    """Analyze IEA oil stock data over time, excluding aggregates."""
+    if df_iea_oil_stocks.empty:
+        return {}
 
+    # Define aggregate entries to exclude
     aggregates = ['Total IEA', 'Total IEA Asia Pacific', 'Total IEA net importers', 'Total IEA Europe']
-    
-    # 1. Country stock ranking (latest values)
-    latest_date = df_iea_oil_stocks['date'].max()
 
+    # Filter out aggregates once
+    df_filtered = df_iea_oil_stocks[~df_iea_oil_stocks['country'].isin(aggregates)].copy()
+    df_filtered['month'] = df_filtered['date'].dt.month
+    latest_date = df_filtered['date'].max()
+
+    # 1. Country stock ranking (latest values)
     country_ranking = (
-        df_iea_oil_stocks[
-            (df_iea_oil_stocks['date'] == latest_date) &
-            (~df_iea_oil_stocks['country'].isin(aggregates))  # Excluding aggregates
-        ]
+        df_filtered[df_filtered['date'] == latest_date]
         .sort_values('value', ascending=False)
         .reset_index(drop=True)
     )
-    
-    # 3. Volatility by country (standard deviation)
+
+    # 2. Volatility by country
     volatility_by_country = (
-        df_iea_oil_stocks[~df_iea_oil_stocks['country'].isin(aggregates)]  # Excluding aggregates
-        .groupby("country")["value"]
-        .agg(['std', 'mean', 'count'])
+        df_filtered.groupby("country")["value"]
+        .agg(volatility='std', avg_stock='mean', data_points='count')
         .reset_index()
-        .rename(columns={'std': 'volatility', 'mean': 'avg_stock', 'count': 'data_points'})
         .sort_values(by="volatility", ascending=False)
     )
-    
-    # 4. Seasonality patterns
-    df_copy = df_iea_oil_stocks[~df_iea_oil_stocks['country'].isin(aggregates)].copy()  # Excluding aggregates
-    df_copy['month'] = df_copy['date'].dt.month
+
+    # 3. Seasonality patterns
     seasonality_by_country = (
-        df_copy.groupby(['month', 'country'])['value']
+        df_filtered.groupby(['month', 'country'])['value']
         .mean()
         .reset_index()
+        .rename(columns={'value': 'monthly_avg_stock'})
     )
-    
-    # 5. Top stockpilers stats
+
+    # 4. Top stockpilers statistics
     stockpile_stats = (
-        df_iea_oil_stocks[~df_iea_oil_stocks['country'].isin(aggregates)]  # Excluding aggregates
-        .groupby("country")
+        df_filtered.groupby("country")
         .agg(
-            avg_stock=("value", "mean"),
-            latest_stock=("value", "last"),
-            min_stock=("value", "min"),
-            max_stock=("value", "max")
+            avg_stock=('value', 'mean'),
+            latest_stock=('value', 'last'),
+            min_stock=('value', 'min'),
+            max_stock=('value', 'max')
         )
         .sort_values(by="latest_stock", ascending=False)
         .reset_index()
     )
-    
+
     return {
         'country_ranking': country_ranking,
         'volatility_analysis': volatility_by_country,
@@ -116,7 +115,6 @@ def stock_time_series_analysis(df_iea_oil_stocks):
 
 # Oil Import Analysis
 def oil_import_analysis(df_oil_import_with_continents):
-
     # Map units to readable metric names
     metric_unit_map = {
         'thousand USD': 'Value',
@@ -125,6 +123,8 @@ def oil_import_analysis(df_oil_import_with_continents):
         'USD/bbl': 'Price'
     }
     
+    # Create metric_type column on a copy to avoid modifying original
+    df_oil_import_with_continents = df_oil_import_with_continents.copy()
     df_oil_import_with_continents['metric_type'] = df_oil_import_with_continents['unit'].map(metric_unit_map)
     
     # 1. Regional share analysis (percentage data)
@@ -144,8 +144,11 @@ def oil_import_analysis(df_oil_import_with_continents):
     ].copy()
     
     volume_by_region = (
-        volume_data.groupby(['date', 'region'])['value']
-        .sum()
+        volume_data.groupby(['date', 'region'])
+        .agg({
+            'value': 'sum',
+            'metric_type': 'first'
+        })
         .reset_index()
         .sort_values(['date', 'value'], ascending=[True, False])
     )
@@ -156,8 +159,11 @@ def oil_import_analysis(df_oil_import_with_continents):
     ].copy()
     
     value_by_region = (
-        value_data.groupby(['date', 'region'])['value']
-        .sum()
+        value_data.groupby(['date', 'region'])
+        .agg({
+            'value': 'sum',
+            'metric_type': 'first'
+        })
         .reset_index()
         .sort_values(['date', 'value'], ascending=[True, False])
     )
@@ -168,8 +174,11 @@ def oil_import_analysis(df_oil_import_with_continents):
     ].copy()
     
     price_by_region = (
-        price_data.groupby(['date', 'region'])['value']
-        .mean()  # Average price per region per date
+        price_data.groupby(['date', 'region'])
+        .agg({
+            'value': 'mean',
+            'metric_type': 'first'      
+        })
         .reset_index()
         .sort_values(['date', 'value'], ascending=[True, False])
     )
@@ -178,30 +187,40 @@ def oil_import_analysis(df_oil_import_with_continents):
     latest_date = df_oil_import_with_continents['date'].max()
     latest_shares = continent_share[continent_share['date'] == latest_date]
     
-    dependency_risk = {
-        'dominant_supplier': latest_shares.loc[latest_shares['value'].idxmax(), 'region'],
-        'max_dependency': float(latest_shares['value'].max()),
-        'supplier_count': int(latest_shares['region'].nunique()),
-    }
+    if latest_shares.empty:
+        dependency_risk = {
+            'dominant_supplier': 'Unknown',
+            'max_dependency': 0.0,
+            'supplier_count': 0,
+        }
+    else:
+        dependency_risk = {
+            'dominant_supplier': latest_shares.loc[latest_shares['value'].idxmax(), 'region'],
+            'max_dependency': float(latest_shares['value'].max()),
+            'supplier_count': int(latest_shares['region'].nunique()),
+        }
     
     # 6. Dominant Supplier Trend
     dominant_region_trend = dependency_risk.get('dominant_supplier')
     n_months = 12
-    start_date = latest_date - DateOffset(months=n_months)
+    start_date = latest_date - pd.DateOffset(months=n_months)
 
     # Filter only for that region and recent months
-    trend_df = (
-        continent_share[
-            (continent_share['region'] == dominant_region_trend) &
-            (continent_share['date'] >= start_date)
-        ]
-        .sort_values('date')
-        .loc[:, ['date', 'value']]
-        .rename(columns={'value': 'dominant_region_share'})
-    )
-    
-    # Add the dominant_region_name column
-    trend_df['dominant_region_name'] = dominant_region_trend
+    if dominant_region_trend != 'Unknown':
+        trend_df = (
+            continent_share[
+                (continent_share['region'] == dominant_region_trend) &
+                (continent_share['date'] >= start_date)
+            ]
+            .sort_values('date')
+            .loc[:, ['date', 'value']]
+            .rename(columns={'value': 'dominant_region_share'})
+        )
+        
+        # Add the dominant_region_name column
+        trend_df['dominant_region_name'] = dominant_region_trend
+    else:
+        trend_df = pd.DataFrame(columns=['date', 'dominant_region_share', 'dominant_region_name'])
 
     return {
         'regional_share_trends': continent_share_summary,
@@ -215,7 +234,6 @@ def oil_import_analysis(df_oil_import_with_continents):
 
 # OPEC insights integration
 def integrate_opec_insights(df_opec_summary):
-
     opec_analysis = {}
     for _, row in df_opec_summary.iterrows():
         topic = row['topic']
@@ -237,7 +255,6 @@ def integrate_opec_insights(df_opec_summary):
 
 # Main analysis function
 def save_eda_data(df_iea_oil_stocks, df_oil_import_with_continents, df_opec_summary, output_dir=eda_path):
-
     os.makedirs(output_dir, exist_ok=True)
     
     # Save raw data
@@ -259,6 +276,11 @@ def save_eda_data(df_iea_oil_stocks, df_oil_import_with_continents, df_opec_summ
         if isinstance(df, pd.DataFrame):
             df.to_csv(f'{output_dir}/import_{key}.csv', index=False, encoding='utf-8-sig')
 
+    # Safe summary statistics extraction
+    stockpile_stats = stock_analysis_results.get('stockpile_statistics', pd.DataFrame())
+    volume_data = import_analysis_results.get('volume_by_region', pd.DataFrame())
+    price_data = import_analysis_results.get('price_by_region', pd.DataFrame())
+    
     # Build comprehensive key insights
     key_insights = {
         # Stock Analysis
@@ -268,7 +290,7 @@ def save_eda_data(df_iea_oil_stocks, df_oil_import_with_continents, df_opec_summ
                 "earliest": df_iea_oil_stocks['date'].min().strftime('%Y-%m-%d'),
                 "latest": df_iea_oil_stocks['date'].max().strftime('%Y-%m-%d')
             },
-            "top_stockpilers": stock_analysis_results.get('stockpile_statistics', pd.DataFrame()).head(5).to_dict('records'),
+            "top_stockpilers": stockpile_stats.head(5).to_dict('records') if not stockpile_stats.empty else [],
             "volatility_leaders": stock_analysis_results.get('volatility_analysis', pd.DataFrame()).head(5).to_dict('records')
         },
         
@@ -288,11 +310,12 @@ def save_eda_data(df_iea_oil_stocks, df_oil_import_with_continents, df_opec_summ
         },
         
         "summary_statistics": {
-            "total_iea_stocks_latest_value": float(stock_analysis_results['stockpile_statistics'].iloc[0]['latest_stock']),
-            "top_import_region_volume": import_analysis_results['volume_by_region'].iloc[0]['region'],
-            "top_import_volume_value": float(import_analysis_results['volume_by_region'].iloc[0]['value']),
-            "avg_import_price_latest": float(import_analysis_results['price_by_region'].loc[lambda df: df['date'] == df['date'].max(), 'value'].mean()
-            ),
+            "total_iea_stocks_latest_value": float(stockpile_stats.iloc[0]['latest_stock']) if not stockpile_stats.empty else 0.0,
+            "top_import_region_volume": volume_data.iloc[0]['region'] if not volume_data.empty else 'Unknown',
+            "top_import_volume_value": float(volume_data.iloc[0]['value']) if not volume_data.empty else 0.0,
+            "avg_import_price_latest": float(
+                price_data.loc[price_data['date'] == price_data['date'].max(), 'value'].mean()
+            ) if not price_data.empty and not price_data['date'].isna().all() else 0.0,
         },
         "value_analysis": {
             "stock_value_distribution": {
