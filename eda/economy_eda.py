@@ -420,7 +420,6 @@ def generate_insights(key_insights, output_dir):
 
 ---
 
-
 ### **Required Output Format**
 ## Economy Sector Second-Order Effect Analysis
 
@@ -476,24 +475,14 @@ def main():
     df_sentiment = load_economy_sentiment_data()
     df_economic_indicators = load_economic_indicators_data()
     
-    print("🔍 Data Loading Summary:")
-    print(f"- Main economic indicators: {len(df_economic_indicators)} records")
-    print(f"- FX rates: {len(df_fx)} records")  
-    print(f"- Sentiment indicators: {len(df_sentiment)} records")
-    
     # Run analysis and save results
     insights = save_eda_data(df_economic_indicators, df_fx, df_sentiment)
     
     # Generate AI insights
     generate_insights(insights, eda_path)
     
-    print(f"\n✅ Economy analysis completed successfully!")
-    print(f"📁 Results saved to: {eda_path}")
-    print("📊 Files created:")
-    print("- *_raw.csv (original data)")
-    print("- *_processed.csv (analyzed data)")
-    print("- key_insights.json (summary metrics)")
-    print("- gemini_insights.txt (AI analysis)")
+    print(f"\n✅ All data saved to: {eda_path}")
+    print("="*50)
 
 if __name__ == "__main__":
     main()

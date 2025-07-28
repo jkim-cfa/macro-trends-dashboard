@@ -380,7 +380,6 @@ def generate_insights(key_insights, df_opec_summary_df, output_dir):
 
 ---
 
-
 ### **Required Output Format**
 ## Energy Sector Second-Order Effect Analysis
 
@@ -435,17 +434,10 @@ def generate_insights(key_insights, df_opec_summary_df, output_dir):
 
 # Main execution
 def main():
-    print("🛢️ Starting Energy Market Analysis...")
-    
     # Load all datasets
     df_iea_oil_stocks = load_iea_oil_stocks_data()
     df_oil_import_with_continents = load_oil_import_with_continents_data()
     df_opec_summary = load_opec_summary_data()
-
-    print("📊 Data Loading Summary:")
-    print(f"- IEA Oil Stocks: {len(df_iea_oil_stocks)} records")
-    print(f"- Oil Imports by Region: {len(df_oil_import_with_continents)} records")
-    print(f"- OPEC Summary Insights: {len(df_opec_summary)} records")
     
     # Run comprehensive analysis
     insights = save_eda_data(df_iea_oil_stocks, df_oil_import_with_continents, df_opec_summary)
@@ -453,16 +445,8 @@ def main():
     # Generate AI insights
     generate_insights(insights, df_opec_summary, eda_path)
 
-    print(f"\n✅ Energy market analysis completed successfully!")
-    print(f"📁 Results saved to: {eda_path}")
-    print("📊 Files created:")
-    print("- *_raw.csv (original datasets)")
-    print("- stock_*.csv (stock analysis results)")
-    print("- import_*.csv (import analysis results)")
-    print("- key_insights.json (comprehensive metrics)")
-    print("- gemini_insight.txt (AI strategic analysis)")
-    
-    return insights
+    print(f"\n✅ All data saved to: {eda_path}")
+    print("="*50)
 
 if __name__ == "__main__":
     main()

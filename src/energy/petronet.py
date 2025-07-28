@@ -1,6 +1,7 @@
 import os
 import requests
 import pandas as pd
+from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -14,8 +15,8 @@ filepath = os.path.join(download_dir, filename)
 # Time range
 start_year = 2024
 start_month = 1
-end_year = 2025
-end_month = 5
+end_year = datetime.now().year
+end_month = datetime.now().month
 
 # Download Excel
 url = (

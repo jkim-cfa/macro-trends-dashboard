@@ -741,42 +741,14 @@ def generate_gemini_insights(eda_results, output_dir):
 
 
 if __name__ == "__main__":
-    # Run comprehensive EDA analysis and save all outputs
-    print("🚀 Starting Korea Trade EDA Analysis...")
-    
     # Create output directory
     os.makedirs(eda_path, exist_ok=True)
     
     # Run complete analysis
     results = save_trade_eda_outputs(eda_path, engine)
     
-    print("\n" + "="*50)
-    print("📊 ANALYSIS COMPLETE!")
-    print("="*50)
-    
-    # Display key insights
-    print(f"\n📈 Export Analysis:")
-    print(f"   • Latest Date: {results['export_items']['latest_date']}")
-    print(f"   • Total Records: {results['export_items']['total_records']}")
-    print(f"   • Top Commodity: {results['export_items']['top_amount'].iloc[0]['commodity_name_en'] if len(results['export_items']['top_amount']) > 0 else 'N/A'}")
-    
-    print(f"\n📉 Import Analysis:")
-    print(f"   • Latest Date: {results['import_items']['latest_date']}")
-    print(f"   • Total Records: {results['import_items']['total_records']}")
-    print(f"   • Top Commodity: {results['import_items']['top_amount'].iloc[0]['commodity_name_en'] if len(results['import_items']['top_amount']) > 0 else 'N/A'}")
-    
-    print(f"\n🔌 Semiconductor Analysis:")
-    print(f"   • Latest Month: {results['semiconductor']['latest_month']}")
-    print(f"   • Top Region: {results['semiconductor']['top_monthly_regions'].iloc[0]['country'] if len(results['semiconductor']['top_monthly_regions']) > 0 else 'N/A'}")
-    
     # Generate AI-powered insights
-    print(f"\n🤖 Generating AI-powered strategic insights...")
-    gemini_results = generate_gemini_insights(results, eda_path)
+    generate_gemini_insights(results, eda_path)
     
-    if gemini_results:
-        print(f"\n📄 Strategic insights saved:")
-        print(f"   • Markdown: gemini_insights_korea_trade.txt")
-        print(f"   • Data: gemini_insights_data.json")
-    
-    print(f"\n📁 All outputs saved to: {eda_path}")
+    print(f"\n✅ All data saved to: {eda_path}")
     print("="*50)

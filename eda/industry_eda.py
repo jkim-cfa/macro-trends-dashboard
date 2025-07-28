@@ -339,19 +339,14 @@ def main():
     df_inventory = load_manufacturing_inventory_data()
     df_steel = load_steel_production_data()
 
-    print("🔍 Loaded datasets:")
-    print(f"- Manufacturing inventory: {len(df_inventory)} rows")
-    print(f"- Steel production: {len(df_steel)} rows")
-
     key_insights = save_eda_data(df_inventory, df_steel, eda_path)
 
     if key_insights["manufacturing_inventory"]["average_yoy_change"] is not None and \
        key_insights["steel_production"]["top_current_performers"]:
         generate_insights(key_insights, eda_path)
-    else:
-        print("⚠️ Gemini generation skipped due to missing data.")
 
-    print("✅ EDA complete. Ready for Streamlit visualizations.")
+    print(f"\n✅ All data saved to: {eda_path}")
+    print("="*50)
 
 if __name__ == "__main__":
     main()

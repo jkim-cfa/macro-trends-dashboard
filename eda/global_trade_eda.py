@@ -400,31 +400,11 @@ def main():
         eda_path
     )
 
-    # Basic console overview
-    df_decrease_items['date'] = pd.to_datetime(df_decrease_items['date'], errors='coerce')
-
-    print("\n=== Data Overview ===")
-    print(f"Time Range: {df_decrease_items['date'].min().year} to {df_decrease_items['date'].max().year}")
-    print(f"Commodities: {df_decrease_items['commodity_name'].nunique()}")
-    print(f"Indicators: {df_decrease_items['indicator'].nunique()}")
-
-
-    print("\n=== Summary Stats ===")
-    print(df_decrease_items.groupby('commodity_name')['value'].describe().round(2))
-
     # Generate Gemini insight text based on key stats
     generate_insights(key_insights, eda_path)
 
     print(f"\n✅ All data saved to: {eda_path}")
-    print("Files created:")
-    print("- export_decrease_items_top5.csv")
-    print("- export_increase_items_top5.csv")
-    print("- export_increase_countries_top5.csv")
-    print("- trade_partners_top5.csv")
-    print("- shipping_index_pivoted.csv")
-    print("- shipping_index_correlation.csv")
-    print("- shipping_index_3m_volatility.csv")
-    print("- gemini_insight.txt")
+    print("="*50)
 
 if __name__ == "__main__":
     main()

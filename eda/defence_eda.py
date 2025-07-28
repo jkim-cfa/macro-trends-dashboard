@@ -308,11 +308,6 @@ if __name__ == "__main__":
         )
         insight_text = "\n".join(sipri_text)
 
-        # Print 3 SIPRI insight
-        print("🔍 First 3 SIPRI insight rows:")
-        for i, row in enumerate(sipri_text[:3]):
-            print(f"{i+1}. {row}\n")
-
         # Save the SIPRI insight text
         with open(f"{eda_path}/sipri_insight.txt", "w", encoding="utf-8") as f:
             f.write(insight_text)
@@ -320,7 +315,8 @@ if __name__ == "__main__":
         # Run Gemini insight generation
         generate_insights(insights, combined_data, insight_text, eda_path)
 
-        print("\n✅ Analysis completed successfully!")
+        print(f"\n✅ All data saved to: {eda_path}")
+        print("="*50)
         
     except Exception as e:
         print(f"❌ Error occurred: {str(e)}")

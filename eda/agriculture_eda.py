@@ -175,33 +175,14 @@ def main():
     df = load_agriculture_data(engine)
     df['date'] = pd.to_datetime(df['date'])
 
-    print("\n=== Data Overview ===")
-    print(f"Time Range: {df['date'].min().year} to {df['date'].max().year}")
-    print(f"Commodities: {df['commodity'].nunique()}")
-    print(f"Indicators: {df['indicator'].unique()}")
-
-    print("\n=== Summary Stats ===")
-    print(df.groupby('commodity')['value'].describe().round(2))
-
     # Process and save all data
     stats_df, growth_df, corr_matrix, key_insights = save_aggregated_data(df)
-
-    print("\n=== Growth Rates (CAGR) ===")
-    print(growth_df.head())
-
-    print("\n=== Correlation Matrix ===")
-    print(corr_matrix.round(2))
 
     # Generate AI insights
     generate_insights(stats_df, growth_df, corr_matrix, key_insights, eda_path)
 
     print(f"\n✅ All data saved to: {eda_path}")
-    print("Files created:")
-    print("- production_trends.csv (for trend charts)")
-    print("- streamlit_ready_data.csv (clean data for Streamlit)")
-    print("- growth_rates.csv (CAGR analysis)")
-    print("- correlation_matrix.csv (commodity correlations)")
-    print("- gemini_insight.txt (AI analysis)")
+    print("="*50)
 
 if __name__ == "__main__":
     main()
