@@ -420,36 +420,46 @@ def generate_insights(key_insights, output_dir):
 
 ---
 
-### **Required Output Format**  
-```markdown
-## Economy Second-Order Analysis
 
-### Core Trend  
-• Economy: [TREND SUMMARY IN 5-10 WORDS]  
-• **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]  
+### **Required Output Format**
+## Economy Sector Second-Order Effect Analysis
 
-### Hidden Effects  
-1. **[EFFECT 1 NAME]**  
-   - *Catalyst*: [PRIMARY DRIVER]  
-   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]  
-   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]  
+### Core Trend
+• Economy: [TREND SUMMARY IN 5–10 WORDS]  
+• **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]
 
-2. **[EFFECT 2 NAME]**  
-   - *Catalyst*: [PRIMARY DRIVER]  
-   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]  
-   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]  
+### Hidden Effects
+1. **[EFFECT 1 NAME]**
+   - *Catalyst*: [PRIMARY DRIVER]
+   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]
+   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]
 
-### Cross-Domain Impacts  
-→ **[SECTOR A]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])  
-→ **[SECTOR B]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])  
+2. **[EFFECT 2 NAME]**
+   - *Catalyst*: [PRIMARY DRIVER]
+   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]
+   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]
 
-### System Dynamics  
-⚠️ *Threshold Effect*: "[QUANTITATIVE TRIGGER IF KNOWN]"  
-♻️ *Feedback Mechanism*: "[SELF-REINFORCING OR DAMPENING CYCLE]"  
+### Strategic Recommendations
+🛠 **Immediate Actions**: [CONCRETE STEPS]
+📊 **Monitoring Metrics**: [KEY INDICATORS]
+🎯 **Long-term Strategy**: [STRATEGIC DIRECTION]
 
-### Actionable Intelligence  
-🛠 **Policy Lever**: [CONCRETE INTERVENTION]  
-📊 **Leading Indicator**: [METRIC] (Update: [FREQUENCY])  
+### Risk Assessment
+⚠️ **High Risk**: [CRITICAL CONCERN]
+⚠️ **Medium Risk**: [MODERATE CONCERN]
+⚠️ **Low Risk**: [MINOR CONCERN]
+
+### Market Intelligence
+📈 **Bullish Signals**: [POSITIVE INDICATORS]
+📉 **Bearish Signals**: [NEGATIVE INDICATORS]
+🔄 **Neutral Factors**: [BALANCED ELEMENTS]
+
+**Analysis Guidelines**:
+- Focus on actionable intelligence
+- Consider global geopolitical dynamics
+- Assess Korea's competitive positioning
+- Identify emerging trends and risks
+- Provide specific, measurable recommendations
 """
     response = MODEL.generate_content(prompt)
     gemini_insight = response.text.strip()

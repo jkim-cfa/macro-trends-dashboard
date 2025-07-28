@@ -329,41 +329,51 @@ def generate_insights(key_insights, output_dir):
 2. Key Metrics:
 {json.dumps(shipping_metrics, indent=2)}
 
-### **Required Output Format**  
-```markdown
-## Global Trade Second-Order Analysis
 
-### Core Trend  
-• Global Trade: [TREND SUMMARY IN 5-10 WORDS]  
-• **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]  
+### **Required Output Format**
+## Global Trade Sector Second-Order Effect Analysis
 
-### Hidden Effects  
-1. **[EFFECT 1 NAME]**  
-   - *Catalyst*: [PRIMARY DRIVER]  
-   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]  
-   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]  
+### Core Trend
+• Global Trade: [TREND SUMMARY IN 5–10 WORDS]  
+• **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]
 
-2. **[EFFECT 2 NAME]**  
-   - *Catalyst*: [PRIMARY DRIVER]  
-   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]  
-   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]  
+### Hidden Effects
+1. **[EFFECT 1 NAME]**
+   - *Catalyst*: [PRIMARY DRIVER]
+   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]
+   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]
 
-### Cross-Domain Impacts  
-→ **[SECTOR A]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])  
-→ **[SECTOR B]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])  
+2. **[EFFECT 2 NAME]**
+   - *Catalyst*: [PRIMARY DRIVER]
+   - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]
+   - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]
 
-### System Dynamics  
-⚠️ *Threshold Effect*: "[QUANTITATIVE TRIGGER IF KNOWN]"  
-♻️ *Feedback Mechanism*: "[SELF-REINFORCING OR DAMPENING CYCLE]"  
+### Strategic Recommendations
+🛠 **Immediate Actions**: [CONCRETE STEPS]
+📊 **Monitoring Metrics**: [KEY INDICATORS]
+🎯 **Long-term Strategy**: [STRATEGIC DIRECTION]
 
-### Actionable Intelligence  
-🛠 **Policy Lever**: [CONCRETE INTERVENTION]  
-📊 **Leading Indicator**: [METRIC] (Update: [FREQUENCY])  
+### Risk Assessment
+⚠️ **High Risk**: [CRITICAL CONCERN]
+⚠️ **Medium Risk**: [MODERATE CONCERN]
+⚠️ **Low Risk**: [MINOR CONCERN]
+
+### Market Intelligence
+📈 **Bullish Signals**: [POSITIVE INDICATORS]
+📉 **Bearish Signals**: [NEGATIVE INDICATORS]
+🔄 **Neutral Factors**: [BALANCED ELEMENTS]
+
+**Analysis Guidelines**:
+- Focus on actionable intelligence
+- Consider global geopolitical dynamics
+- Assess Korea's competitive positioning
+- Identify emerging trends and risks
+- Provide specific, measurable recommendations
 """
         response = MODEL.generate_content(prompt)
         gemini_insight = response.text.strip()
 
-        with open(f"{output_dir}/gemini_insight.txt", "w", encoding="utf-8") as f:
+        with open(f"{output_dir}/gemini_insight_gloal_trade.txt", "w", encoding="utf-8") as f:
             f.write(gemini_insight)
 
         print("✅ Gemini insights generated and saved.")

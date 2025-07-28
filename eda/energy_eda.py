@@ -380,12 +380,12 @@ def generate_insights(key_insights, df_opec_summary_df, output_dir):
 
 ---
 
+
 ### **Required Output Format**
-```markdown
-## Energy Second-Order Analysis
+## Energy Sector Second-Order Effect Analysis
 
 ### Core Trend
-• Energy: [TREND SUMMARY IN 5-10 WORDS]
+• Energy: [TREND SUMMARY IN 5–10 WORDS]  
 • **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]
 
 ### Hidden Effects
@@ -399,17 +399,27 @@ def generate_insights(key_insights, df_opec_summary_df, output_dir):
    - *Transmission*: [HOW IT SPREADS THROUGH SYSTEM]
    - *Evidence*: [DATA POINT OR HISTORICAL PRECEDENT]
 
-### Cross-Domain Impacts
-→ **[SECTOR A]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])
-→ **[SECTOR B]**: [IMPACT DESCRIPTION] (Delay: [X MONTHS/YEARS])
+### Strategic Recommendations
+🛠 **Immediate Actions**: [CONCRETE STEPS]
+📊 **Monitoring Metrics**: [KEY INDICATORS]
+🎯 **Long-term Strategy**: [STRATEGIC DIRECTION]
 
-### System Dynamics
-⚠️ *Threshold Effect*: "[QUANTITATIVE TRIGGER IF KNOWN]"
-♻️ *Feedback Mechanism*: "[SELF-REINFORCING OR DAMPENING CYCLE]"
+### Risk Assessment
+⚠️ **High Risk**: [CRITICAL CONCERN]
+⚠️ **Medium Risk**: [MODERATE CONCERN]
+⚠️ **Low Risk**: [MINOR CONCERN]
 
-### Actionable Intelligence
-🛠 **Policy Lever**: [CONCRETE INTERVENTION]
-📊 **Leading Indicator**: [METRIC] (Update: [FREQUENCY])
+### Market Intelligence
+📈 **Bullish Signals**: [POSITIVE INDICATORS]
+📉 **Bearish Signals**: [NEGATIVE INDICATORS]
+🔄 **Neutral Factors**: [BALANCED ELEMENTS]
+
+**Analysis Guidelines**:
+- Focus on actionable intelligence
+- Consider global geopolitical dynamics
+- Assess Korea's competitive positioning
+- Identify emerging trends and risks
+- Provide specific, measurable recommendations
 """
         response = MODEL.generate_content(prompt)
         gemini_insight = response.text.strip()
