@@ -39,7 +39,8 @@ indicator_rename_map = {
 sentiment_rename_map = {
     '경제심리지수(순환변동치)': 'Economic Sentiment Index (Adjusted)',
     '경제심리지수(원계열)': 'Economic Sentiment Index (Raw)',
-    '뉴스심리지수': 'News Sentiment Index'
+    '뉴스심리지수': 'News Sentiment Index',
+    '경제심리지수': 'Economic Sentiment Index'
 }
 
 # Load economic sentiment datasets
@@ -52,6 +53,7 @@ def load_economy_sentiment_data():
     df_sentiment = pd.read_sql(query, engine)
     df_sentiment['date'] = pd.to_datetime(df_sentiment['date'])
     df_sentiment['indicator'] = df_sentiment['indicator'].replace(sentiment_rename_map)
+    df_sentiment['category'] = df_sentiment['category'].replace(sentiment_rename_map)
     return df_sentiment
 
 # Load FX datasets

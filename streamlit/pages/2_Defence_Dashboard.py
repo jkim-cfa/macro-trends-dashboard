@@ -237,6 +237,9 @@ def format_insight_section(text):
             # This is a standalone header - bold it
             formatted_lines.append(f"\n**{line}**")
         
+        # Handle numbered lists (don't add bullet points to them)
+        elif line and line[0].isdigit() and len(line) > 1 and line[1] == '.':
+            formatted_lines.append(line)
         # Handle other lines that might need bullet points
         elif line and not line.startswith('-'):
             formatted_lines.append(f"• {line}")
@@ -246,26 +249,89 @@ def format_insight_section(text):
     return "\n\n".join(formatted_lines)
 
 def format_sipri_text(text):
-    """Format SIPRI analysis text with proper line breaks"""
+    """Format SIPRI analysis text with numbered points and emojis in styled containers"""
     if not text or text == "No SIPRI insights found.":
         return ""
     
     # Split into lines and add proper spacing
     lines = text.strip().split('\n')
     formatted_lines = []
+    point_counter = 1
+    
+    # Define emojis for different types of content
+    emoji_map = {
+        'spending': '💰', 'military': '🛡️', 'defence': '🛡️', 'defense': '🛡️',
+        'conflict': '⚔️', 'war': '⚔️', 'battle': '⚔️', 'fighting': '⚔️',
+        'nuclear': '☢️', 'atomic': '☢️', 'missile': '🚀', 'weapon': '🔫',
+        'russia': '🇷🇺', 'ukraine': '🇺🇦', 'europe': '🇪🇺', 'asia': '🌏',
+        'china': '🇨🇳', 'india': '🇮🇳', 'us': '🇺🇸', 'america': '🇺🇸',
+        'ai': '🤖', 'artificial': '🤖', 'intelligence': '🤖', 'cyber': '💻',
+        'technology': '⚡', 'modern': '⚡', 'digital': '💻', 'computer': '💻',
+        'fatalities': '💀', 'death': '💀', 'casualty': '💀', 'killed': '💀',
+        'increase': '📈', 'growth': '📈', 'rise': '📈', 'higher': '📈',
+        'decrease': '📉', 'decline': '📉', 'lower': '📉', 'drop': '📉',
+        'report': '📊', 'analysis': '📊', 'data': '📊', 'statistics': '📊',
+        'recommend': '💡', 'suggest': '💡', 'propose': '💡', 'advise': '💡',
+        'risk': '⚠️', 'danger': '⚠️', 'threat': '⚠️', 'warning': '⚠️',
+        'cooperation': '🤝', 'international': '🌍', 'global': '🌍', 'world': '🌍'
+    }
     
     for line in lines:
         line = line.strip()
         if not line:
             continue
         
-        # Add bullet points to lines that don't have them
-        if line and not line.startswith('•') and not line.startswith('-'):
-            formatted_lines.append(f"• {line}")
-        else:
-            formatted_lines.append(line)
+        # Remove existing bullet points
+        if line.startswith('•'):
+            line = line[1:].strip()
+        elif line.startswith('-'):
+            line = line[1:].strip()
+        
+        if line:
+            # Determine appropriate emoji based on content
+            line_lower = line.lower()
+            selected_emoji = '📋'  # Default emoji
+            
+            for keyword, emoji in emoji_map.items():
+                if keyword in line_lower:
+                    selected_emoji = emoji
+                    break
+            
+            # Create styled container for each point
+            container_html = f"""
+            <div style="
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border: 1px solid #dee2e6;
+                border-radius: 8px;
+                padding: 12px 16px;
+                margin: 8px 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            ">
+                <div style="
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 8px;
+                ">
+                    <span style="
+                        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+                        color: white;
+                        padding: 4px 8px;
+                        border-radius: 12px;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        min-width: 60px;
+                        text-align: center;
+                    ">Point {point_counter}</span>
+                    <span style="font-size: 1.2rem; margin-right: 8px;">{selected_emoji}</span>
+                    <span style="flex-grow: 1; line-height: 1.5;">{line}</span>
+                </div>
+            </div>
+            """
+            formatted_lines.append(container_html)
+            point_counter += 1
     
-    return "\n\n".join(formatted_lines)
+    return "\n".join(formatted_lines)
 
 # Load Data
 with st.spinner("Loading defence intelligence data..."):
@@ -370,8 +436,8 @@ if not combined_analysis.empty:
     
     with col4:
         st.markdown(create_metric_card(
-            "Analysis Period",
-            format_date_range(min_date_display, max_date_display),
+            "Planned Order Date",
+            max_date_display.strftime("%Y-%m-%d"),
             f"{total_contracts:,} contracts analyzed",
             "#6f42c1"
         ), unsafe_allow_html=True)
@@ -657,6 +723,14 @@ if not emergency_contracts.empty:
     max_emergency_value = emergency_contracts['value'].max()
     emergency_pct = (total_emergency / len(combined_analysis) * 100) if not combined_analysis.empty else 0
     
+    # Largest Emergency Contract - single metric at top
+    st.markdown(create_metric_card(
+        "🏆 Largest Emergency Contract",
+        format_currency(max_emergency_value),
+        "Single contract value",
+        "#6f42c1"
+    ), unsafe_allow_html=True)
+    
     # Create metrics in a grid layout
     col1, col2, col3 = st.columns(3)
     
@@ -684,13 +758,6 @@ if not emergency_contracts.empty:
             "#e83e8c"
         ), unsafe_allow_html=True)
     
-    # Additional metrics row - single metric
-    st.markdown(create_metric_card(
-        "🏆 Largest Emergency Contract",
-        format_currency(max_emergency_value),
-        "Single contract value",
-        "#6f42c1"
-    ), unsafe_allow_html=True)
     
     # Emergency contracts detailed table
     st.markdown("""
@@ -835,18 +902,18 @@ else:
     """, unsafe_allow_html=True)
 
 # SIPRI Insights
-st.markdown('<div class="section-header"><h2>📊 SIPRI Defence Insights</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>📊 SIPRI Defence Report Insights</h2></div>', unsafe_allow_html=True)
 
 if sipri_insight and sipri_insight != "No SIPRI insights found.":
     with st.expander("🔍 View SIPRI Defence Analysis", expanded=False):
         formatted_sipri = format_sipri_text(sipri_insight)
-        st.markdown(formatted_sipri)
+        st.markdown(formatted_sipri, unsafe_allow_html=True)
         
         # SIPRI metrics
         st.subheader("📈 SIPRI Analysis Metrics")
         sipri_metrics = {
             "Analysis Length": len(sipri_insight),
-            "Contains Recommendations": "Yes" if "recommend" in sipri_insight.lower() else "No",
+            "Contains Recommendations": "Yes" if "recommend" in sipri_insight.lower() or "suggest" in sipri_insight.lower() else "No",
             "Contains Risk Assessment": "Yes" if "risk" in sipri_insight.lower() else "No",
             "Last Updated": datetime.now().strftime("%Y-%m-%d")
         }
@@ -859,7 +926,7 @@ else:
     st.info("No SIPRI insights available at the moment.")
 
 # Data Explorer
-st.markdown('<div class="section-header"><h2>📄 Advanced Data Explorer</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', unsafe_allow_html=True)
 
 if not combined_analysis.empty:
     with st.expander("📊 Interactive Data Analysis", expanded=False):
