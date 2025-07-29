@@ -108,10 +108,18 @@ def load_industry_data():
         "manufacturing_inventory_raw": load_csv("industry", "manufacturing_inventory_raw.csv", parse_dates=["date"]),
         "steel_production_raw": load_csv("industry", "steel_production_raw.csv", parse_dates=["date"]),
         # Processed/analysis data
-        "inventory_processed_data": load_csv("industry", "inventory_processed_data.csv", parse_dates=["date"]),
+        "manufacturing_inventory_processed": load_csv("industry", "manufacturing_inventory_processed.csv", parse_dates=["date"]),
         "inventory_volatility_analysis": load_csv("industry", "inventory_volatility_analysis.csv"),
+        "inventory_trend_statistics": load_csv("industry", "inventory_trend_statistics.csv"),
+        # Steel analysis data
         "steel_top_current": load_csv("industry", "steel_top_current.csv"),
         "steel_bottom_current": load_csv("industry", "steel_bottom_current.csv"),
+        "steel_top_jan_current": load_csv("industry", "steel_top_jan_current.csv"),
+        "steel_bottom_jan_current": load_csv("industry", "steel_bottom_jan_current.csv"),
+        "steel_vs_world_current": load_csv("industry", "steel_vs_world_current.csv", parse_dates=["date"]),
+        "steel_vs_world_jan_current": load_csv("industry", "steel_vs_world_jan_current.csv", parse_dates=["date"]),
+        "steel_major_economies_current": load_csv("industry", "steel_major_economies_current.csv"),
+        "steel_major_economies_jan_current": load_csv("industry", "steel_major_economies_jan_current.csv"),
         # Insights and AI analysis
         "insights": load_json("industry", "key_insights.json"),
         "gemini_insight": load_text("industry", "gemini_insight.txt"),

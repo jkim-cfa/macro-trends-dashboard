@@ -198,18 +198,73 @@ def steel_production_analysis(df):
 # Save EDA output and build key insights
 def save_eda_data(df_inventory, df_steel, output_dir=eda_path):
     os.makedirs(output_dir, exist_ok=True)
+    
+    # Save raw data
     df_inventory.to_csv(f"{output_dir}/manufacturing_inventory_raw.csv", index=False, encoding="utf-8-sig")
     df_steel.to_csv(f"{output_dir}/steel_production_raw.csv", index=False, encoding="utf-8-sig")
 
     inv_results = manufacturing_inventory_analysis(df_inventory)
     steel_results = steel_production_analysis(df_steel)
 
+    # Save all inventory analysis results
     for k, v in inv_results.items():
         if isinstance(v, pd.DataFrame):
             v.to_csv(f"{output_dir}/inventory_{k}.csv", index=False, encoding="utf-8-sig")
+        elif k == 'trend_statistics' and isinstance(v, dict):
+            # Convert trend_statistics dict to DataFrame for dashboard compatibility
+            # Flatten the nested trend_consistency structure
+            flattened_data = []
+            for category, stats in v.items():
+                flat_row = {
+                    'category': category,
+                    'total_data_points': stats.get('total_data_points', 0),
+                    'avg_mom_change': stats.get('avg_mom_change', 0),
+                    'avg_yoy_change': stats.get('avg_yoy_change', 0),
+                    'months_above_3m_ma': stats.get('months_above_3m_ma', 0),
+                    'months_above_12m_ma': stats.get('months_above_12m_ma', 0),
+                    'significant_mom_increases': stats.get('significant_mom_increases', 0),
+                    'significant_mom_decreases': stats.get('significant_mom_decreases', 0),
+                    'positive_momentum_3m': stats.get('positive_momentum_3m', 0),
+                    'positive_momentum_6m': stats.get('positive_momentum_6m', 0)
+                }
+                
+                # Extract trend_consistency data
+                trend_consistency = stats.get('trend_consistency', {})
+                if isinstance(trend_consistency, dict):
+                    flat_row.update({
+                        'mom_volatility': trend_consistency.get('mom_volatility', 0),
+                        'yoy_volatility': trend_consistency.get('yoy_volatility', 0),
+                        'current_trend': trend_consistency.get('current_trend', 'Unknown')
+                    })
+                
+                flattened_data.append(flat_row)
+            
+            trend_df = pd.DataFrame(flattened_data)
+            trend_df.to_csv(f"{output_dir}/inventory_trend_statistics.csv", index=False, encoding="utf-8-sig")
+    
+    # Save all steel analysis results
     for k, v in steel_results.items():
         if isinstance(v, pd.DataFrame):
             v.to_csv(f"{output_dir}/steel_{k}.csv", index=False, encoding="utf-8-sig")
+        elif isinstance(v, dict):
+            # Save nested DataFrames in steel results
+            for sub_k, sub_v in v.items():
+                if isinstance(sub_v, pd.DataFrame):
+                    sub_v.to_csv(f"{output_dir}/steel_{k}_{sub_k}.csv", index=False, encoding="utf-8-sig")
+
+    # Save processed data separately for dashboard use
+    inv_results["processed_data"].to_csv(f"{output_dir}/manufacturing_inventory_processed.csv", index=False, encoding="utf-8-sig")
+    
+    # Save steel vs world comparisons
+    if "vs_world" in steel_results:
+        steel_results["vs_world"]["jan_current"].to_csv(f"{output_dir}/steel_vs_world_jan_current.csv", index=False, encoding="utf-8-sig")
+        steel_results["vs_world"]["current"].to_csv(f"{output_dir}/steel_vs_world_current.csv", index=False, encoding="utf-8-sig")
+    
+    # Save top/bottom performers
+    if "top_bottom" in steel_results:
+        for k, v in steel_results["top_bottom"].items():
+            if isinstance(v, pd.DataFrame):
+                v.to_csv(f"{output_dir}/steel_{k}.csv", index=False, encoding="utf-8-sig")
 
     key_insights = {
         "manufacturing_inventory": {
@@ -220,16 +275,28 @@ def save_eda_data(df_inventory, df_steel, output_dir=eda_path):
                 cat: v["trend_consistency"] for cat, v in inv_results["trend_statistics"].items()
             },
             "volatility_summary": inv_results["volatility_analysis"].to_dict("records"),
+            "total_indicators": len(inv_results["trend_statistics"]),
+            "data_points": len(inv_results["processed_data"])
         },
         "steel_production": {
-        "top_current_performers": steel_results["top_bottom"].get("top_current", pd.DataFrame()).to_dict("records"),
-        "bottom_current_performers": steel_results["top_bottom"].get("bottom_current", pd.DataFrame()).to_dict("records"),
-        "vs_world_comparison": steel_results["vs_world"]["current"].to_dict("records"),
-        "major_economies": {
-            "jan_current": steel_results["major_economies"]["jan_current"].to_dict("records"),
-            "current": steel_results["major_economies"]["current"].to_dict("records")
+            "top_current_performers": steel_results["top_bottom"].get("top_current", pd.DataFrame()).to_dict("records"),
+            "bottom_current_performers": steel_results["top_bottom"].get("bottom_current", pd.DataFrame()).to_dict("records"),
+            "top_jan_current_performers": steel_results["top_bottom"].get("top_jan_current", pd.DataFrame()).to_dict("records"),
+            "bottom_jan_current_performers": steel_results["top_bottom"].get("bottom_jan_current", pd.DataFrame()).to_dict("records"),
+            "vs_world_comparison": steel_results["vs_world"]["current"].to_dict("records"),
+            "vs_world_jan_current": steel_results["vs_world"]["jan_current"].to_dict("records"),
+            "major_economies": {
+                "jan_current": steel_results["major_economies"]["jan_current"].to_dict("records"),
+                "current": steel_results["major_economies"]["current"].to_dict("records")
+            },
+            "metadata": steel_results.get("metadata", {}),
+            "total_regions": len(steel_results["vs_world"]["current"])
+        },
+        "data_quality": {
+            "inventory_completeness": float((df_inventory.notna().sum() / len(df_inventory)).mean()),
+            "steel_completeness": float((df_steel.notna().sum() / len(df_steel)).mean()),
+            "has_complete_dataset": bool(all([not df_inventory.empty, not df_steel.empty]))
         }
-    },
     }
 
     with open(f"{output_dir}/key_insights.json", "w", encoding="utf-8") as f:

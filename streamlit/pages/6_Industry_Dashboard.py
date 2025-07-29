@@ -199,10 +199,17 @@ with st.spinner("Loading industry intelligence data..."):
 # Extract data
 manufacturing_inventory_raw = data.get("manufacturing_inventory_raw", pd.DataFrame())
 steel_production_raw = data.get("steel_production_raw", pd.DataFrame())
-inventory_processed_data = data.get("inventory_processed_data", pd.DataFrame())
+manufacturing_inventory_processed = data.get("manufacturing_inventory_processed", pd.DataFrame())
 inventory_volatility_analysis = data.get("inventory_volatility_analysis", pd.DataFrame())
+inventory_trend_statistics = data.get("inventory_trend_statistics", pd.DataFrame())
 steel_top_current = data.get("steel_top_current", pd.DataFrame())
 steel_bottom_current = data.get("steel_bottom_current", pd.DataFrame())
+steel_top_jan_current = data.get("steel_top_jan_current", pd.DataFrame())
+steel_bottom_jan_current = data.get("steel_bottom_jan_current", pd.DataFrame())
+steel_vs_world_current = data.get("steel_vs_world_current", pd.DataFrame())
+steel_vs_world_jan_current = data.get("steel_vs_world_jan_current", pd.DataFrame())
+steel_major_economies_current = data.get("steel_major_economies_current", pd.DataFrame())
+steel_major_economies_jan_current = data.get("steel_major_economies_jan_current", pd.DataFrame())
 key_insights = data.get("insights", {})
 gemini_insight = data.get("gemini_insight", "No AI insights found.")
 
@@ -224,7 +231,7 @@ if not manufacturing_inventory_raw.empty and 'date' in manufacturing_inventory_r
         if len(date_range) == 2:
             start_date, end_date = date_range
             manufacturing_inventory_raw = manufacturing_inventory_raw[(pd.to_datetime(manufacturing_inventory_raw['date']).dt.date >= start_date) & (pd.to_datetime(manufacturing_inventory_raw['date']).dt.date <= end_date)]
-            inventory_processed_data = inventory_processed_data[(pd.to_datetime(inventory_processed_data['date']).dt.date >= start_date) & (pd.to_datetime(inventory_processed_data['date']).dt.date <= end_date)] if 'date' in inventory_processed_data.columns else inventory_processed_data
+            manufacturing_inventory_processed = manufacturing_inventory_processed[(pd.to_datetime(manufacturing_inventory_processed['date']).dt.date >= start_date) & (pd.to_datetime(manufacturing_inventory_processed['date']).dt.date <= end_date)] if 'date' in manufacturing_inventory_processed.columns else manufacturing_inventory_processed
     except Exception as e:
         st.sidebar.warning(f"Date filtering error: {str(e)}")
 
@@ -237,7 +244,7 @@ if not manufacturing_inventory_raw.empty and 'category' in manufacturing_invento
     selected = st.sidebar.multiselect(
         "Select categories:",
         options=multiselect_options,
-        default=multiselect_options,
+        default=[select_all_label],  # Only 'Select All' is selected by default
         key="category_multiselect"
     )
     if select_all_label in selected:
@@ -246,7 +253,7 @@ if not manufacturing_inventory_raw.empty and 'category' in manufacturing_invento
         selected_categories = [c for c in selected if c in all_categories]
     if selected_categories:
         manufacturing_inventory_raw = manufacturing_inventory_raw[manufacturing_inventory_raw['category'].isin(selected_categories)]
-        inventory_processed_data = inventory_processed_data[inventory_processed_data['category'].isin(selected_categories)] if 'category' in inventory_processed_data.columns else inventory_processed_data
+        manufacturing_inventory_processed = manufacturing_inventory_processed[manufacturing_inventory_processed['category'].isin(selected_categories)] if 'category' in manufacturing_inventory_processed.columns else manufacturing_inventory_processed
 
 # Filter status indicator
 st.sidebar.markdown("### 📊 Filter Status")
@@ -269,15 +276,48 @@ else:
 
 # Key Metrics with enhanced styling
 st.markdown('<div class="section-header"><h2>📊 Key Industry Metrics</h2></div>', unsafe_allow_html=True)
-if key_insights and "manufacturing_inventory" in key_insights:
-    inv = key_insights["manufacturing_inventory"]
+
+# Get metrics from key insights
+if key_insights:
+    inv = key_insights.get("manufacturing_inventory", {})
+    steel = key_insights.get("steel_production", {})
+    data_quality = key_insights.get("data_quality", {})
+    
     avg_mom = inv.get("average_mom_change", "N/A")
     avg_yoy = inv.get("average_yoy_change", "N/A")
     latest_date = inv.get("latest_date", "N/A")
     vol_count = len(inv.get("volatility_summary", []))
+    total_indicators = inv.get("total_indicators", "N/A")
+    
+    # Steel metrics
+    top_steel = steel.get("top_current_performers", [])
+    top_steel_region = top_steel[0].get("region", "N/A") if top_steel else "N/A"
+    total_regions = steel.get("total_regions", "N/A")
+    
+    # Data quality
+    inv_completeness = data_quality.get("inventory_completeness", 0)
+    steel_completeness = data_quality.get("steel_completeness", 0)
 else:
-    avg_mom = avg_yoy = latest_date = vol_count = "N/A"
-col1, col2, col3, col4 = st.columns(4)
+    avg_mom = avg_yoy = latest_date = vol_count = total_indicators = "N/A"
+    top_steel_region = total_regions = "N/A"
+    inv_completeness = steel_completeness = 0
+
+# Get last update date
+def get_latest_update_date():
+    dates = []
+    if not manufacturing_inventory_raw.empty and 'date' in manufacturing_inventory_raw.columns:
+        dates.append(pd.to_datetime(manufacturing_inventory_raw['date']).max())
+    if not steel_production_raw.empty and 'date' in steel_production_raw.columns:
+        dates.append(pd.to_datetime(steel_production_raw['date']).max())
+    if dates:
+        return max(dates).strftime('%Y-%m-%d')
+    return "N/A"
+
+last_update = get_latest_update_date()
+
+# Expand to 6 columns
+col1, col2, col3, col4, col5, col6 = st.columns(6)
+
 with col1:
     st.markdown(create_metric_card(
         "📦 Avg MoM Change",
@@ -294,9 +334,9 @@ with col2:
     ), unsafe_allow_html=True)
 with col3:
     st.markdown(create_metric_card(
-        "📅 Latest Data",
-        latest_date,
-        "Inventory",
+        "🏭 Top Steel Producer",
+        top_steel_region,
+        f"Regions: {total_regions}",
         "#ffc107"
     ), unsafe_allow_html=True)
 with col4:
@@ -306,12 +346,26 @@ with col4:
         "Inventory",
         "#dc3545"
     ), unsafe_allow_html=True)
+with col5:
+    st.markdown(create_metric_card(
+        "📊 Total Indicators",
+        f"{total_indicators}" if isinstance(total_indicators, int) else str(total_indicators),
+        "Manufacturing",
+        "#6f42c1"
+    ), unsafe_allow_html=True)
+with col6:
+    st.markdown(create_metric_card(
+        "⏰ Last Update",
+        last_update,
+        "Latest data date",
+        "#fd7e14"
+    ), unsafe_allow_html=True)
 
 # Manufacturing Inventory Trends
 st.markdown('<div class="section-header"><h2>📦 Manufacturing Inventory Trends</h2></div>', unsafe_allow_html=True)
-if not inventory_processed_data.empty:
+if not manufacturing_inventory_processed.empty:
     fig_inv = px.line(
-        inventory_processed_data,
+        manufacturing_inventory_processed,
         x="date",
         y="value",
         color="category",
@@ -332,26 +386,231 @@ else:
 
 # Steel Production Analysis
 st.markdown('<div class="section-header"><h2>🏭 Steel Production Analysis</h2></div>', unsafe_allow_html=True)
-if not steel_production_raw.empty:
-    fig_steel = px.line(
-        steel_production_raw,
-        x="date",
-        y="value",
-        color="region",
-        title="Steel Production by Region",
-        labels={"value": "Production (thousand tons)", "date": "Date"},
-        color_discrete_sequence=px.colors.qualitative.Pastel,
-        template="plotly_white"
+
+# Create two columns for steel analysis
+col1, col2 = st.columns(2)
+
+with col1:
+    # Steel Production Trends - Relative Change
+    if not steel_production_raw.empty:
+        # Calculate relative change (percentage change from first value for each region)
+        steel_relative = steel_production_raw.copy()
+        steel_relative['relative_change'] = steel_relative.groupby('region')['value'].transform(
+            lambda x: ((x - x.iloc[0]) / x.iloc[0]) * 100
+        )
+        
+        fig_steel = px.line(
+            steel_relative,
+            x="date",
+            y="relative_change",
+            color="region",
+            title="Steel Production - Relative Change by Region",
+            labels={"relative_change": "Relative Change (%)", "date": "Date"},
+            color_discrete_sequence=px.colors.qualitative.Pastel,
+            template="plotly_white"
+        )
+        fig_steel = apply_chart_styling(fig_steel)
+        # Add horizontal line at 0% for reference
+        fig_steel.add_hline(y=0, line_dash="dash", line_color="gray", opacity=0.5)
+        st.plotly_chart(fig_steel, use_container_width=True)
+    else:
+        st.info("No steel production trend data available.")
+
+with col2:
+    # Top Steel Producers
+    if not steel_top_current.empty:
+        fig_top = px.bar(
+            steel_top_current,
+            x="region",
+            y="value",
+            title="Top 5 Steel Producers (Current)",
+            labels={"value": "Production (thousand tons)", "region": "Region"},
+            color="value",
+            color_continuous_scale="Blues"
+        )
+        fig_top = apply_chart_styling(fig_top)
+        st.plotly_chart(fig_top, use_container_width=True)
+    else:
+        st.info("No top steel producers data available.")
+
+# Steel Production Rankings
+st.markdown('<div class="section-header"><h2>🏆 Steel Production Rankings</h2></div>', unsafe_allow_html=True)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.subheader("🥇 Top 5 Producers - Current Month")
+    if not steel_top_current.empty:
+        st.dataframe(steel_top_current, use_container_width=True)
+        st.caption("📊 Based on absolute production volume (thousand tons)")
+    else:
+        st.info("No current month top performers data available.")
+
+with col2:
+    st.subheader("🥉 Bottom 5 Producers - Current Month")
+    if not steel_bottom_current.empty:
+        st.dataframe(steel_bottom_current, use_container_width=True)
+        st.caption("📊 Based on absolute production volume (thousand tons)")
+    else:
+        st.info("No current month bottom performers data available.")
+
+# World Comparison Analysis
+st.markdown('<div class="section-header"><h2>🌍 World Comparison Analysis</h2></div>', unsafe_allow_html=True)
+
+if not steel_vs_world_current.empty:
+    # Sort data by vs_world values in descending order (highest first)
+    steel_vs_world_sorted = steel_vs_world_current.sort_values('vs_world', ascending=False)
+    
+    fig_world = px.bar(
+        steel_vs_world_sorted,
+        x="region",
+        y="vs_world",
+        title="Steel Production vs World Average",
+        labels={"vs_world": "Difference from World Avg (thousand tons)", "region": "Region"},
+        color="vs_world",
+        color_continuous_scale="RdYlBu"
     )
-    fig_steel = apply_chart_styling(fig_steel)
-    st.plotly_chart(fig_steel, use_container_width=True)
+    # Set the color scale midpoint manually
+    fig_world.update_traces(
+        marker=dict(
+            colorscale="RdYlBu",
+            cmin=steel_vs_world_current['vs_world'].min(),
+            cmax=steel_vs_world_current['vs_world'].max(),
+            colorbar=dict(
+                title="Difference from World Avg",
+                tickformat=".0f"
+            )
+        )
+    )
+    fig_world = apply_chart_styling(fig_world)
+    st.plotly_chart(fig_world, use_container_width=True)
 else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>⚠️ No Steel Production Data Available</h4>
-        <p>No steel production data is currently available.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.info("No world comparison data available.")
+
+# Major Economies Analysis
+st.markdown('<div class="section-header"><h2>🏛️ Major Economies Analysis</h2></div>', unsafe_allow_html=True)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.subheader("Current Month")
+    if not steel_major_economies_current.empty:
+        fig_major_current = px.bar(
+            steel_major_economies_current,
+            x="region",
+            y="value",
+            title="Major Economies - Current Month",
+            labels={"value": "Production (thousand tons)", "region": "Region"},
+            color="value",
+            color_continuous_scale="Greens"
+        )
+        fig_major_current = apply_chart_styling(fig_major_current)
+        st.plotly_chart(fig_major_current, use_container_width=True)
+    else:
+        st.info("No major economies current data available.")
+
+with col2:
+    st.subheader("Year-to-Date Cumulative")
+    if not steel_major_economies_jan_current.empty:
+        fig_major_jan = px.bar(
+            steel_major_economies_jan_current,
+            x="region",
+            y="value",
+            title="Major Economies - Year-to-Date Production",
+            labels={"value": "Production (thousand tons)", "region": "Region"},
+            color="value",
+            color_continuous_scale="Oranges"
+        )
+        fig_major_jan = apply_chart_styling(fig_major_jan)
+        st.plotly_chart(fig_major_jan, use_container_width=True)
+    else:
+        st.info("No major economies year-to-date data available.")
+
+# Trend Statistics Analysis
+st.markdown('<div class="section-header"><h2>📈 Trend Statistics Analysis</h2></div>', unsafe_allow_html=True)
+
+if not inventory_trend_statistics.empty:
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        # Trend consistency metrics
+        if 'mom_volatility' in inventory_trend_statistics.columns and 'current_trend' in inventory_trend_statistics.columns:
+            fig_trend = px.bar(
+                inventory_trend_statistics,
+                x="category",
+                y="mom_volatility",
+                color="current_trend",
+                title="Trend Consistency by Category",
+                labels={"mom_volatility": "MoM Volatility", "category": "Category"},
+                color_discrete_map={
+                    'Positive': '#28a745',
+                    'Negative': '#dc3545',
+                    'Neutral': '#6c757d'
+                }
+            )
+            fig_trend = apply_chart_styling(fig_trend)
+            st.plotly_chart(fig_trend, use_container_width=True)
+    
+    with col2:
+        # Momentum analysis
+        if 'positive_momentum_3m' in inventory_trend_statistics.columns and 'positive_momentum_6m' in inventory_trend_statistics.columns:
+            momentum_data = inventory_trend_statistics[['category', 'positive_momentum_3m', 'positive_momentum_6m']].copy()
+            momentum_data['momentum_ratio'] = momentum_data['positive_momentum_3m'] / momentum_data['positive_momentum_6m']
+            
+            fig_momentum = px.bar(
+                momentum_data,
+                x="category",
+                y="momentum_ratio",
+                title="3M vs 6M Momentum Ratio",
+                labels={"momentum_ratio": "3M/6M Momentum Ratio", "category": "Category"},
+                color="momentum_ratio",
+                color_continuous_scale="RdYlGn"
+            )
+            fig_momentum = apply_chart_styling(fig_momentum)
+            fig_momentum.add_hline(y=1, line_dash="dash", line_color="gray", opacity=0.5)
+            st.plotly_chart(fig_momentum, use_container_width=True)
+    
+    # Trend statistics summary table
+    st.subheader("📊 Trend Statistics Summary")
+    display_columns = ['category', 'avg_mom_change', 'avg_yoy_change', 'months_above_3m_ma', 'months_above_12m_ma']
+    available_columns = [col for col in display_columns if col in inventory_trend_statistics.columns]
+    
+    if available_columns:
+        summary_df = inventory_trend_statistics[available_columns].copy()
+        # Format percentage columns
+        if 'avg_mom_change' in summary_df.columns:
+            summary_df['avg_mom_change'] = summary_df['avg_mom_change'].apply(lambda x: f"{x:.2f}%" if pd.notna(x) else "N/A")
+        if 'avg_yoy_change' in summary_df.columns:
+            summary_df['avg_yoy_change'] = summary_df['avg_yoy_change'].apply(lambda x: f"{x:.2f}%" if pd.notna(x) else "N/A")
+        
+        st.dataframe(summary_df, use_container_width=True)
+    else:
+        st.dataframe(inventory_trend_statistics, use_container_width=True)
+else:
+    st.info("No trend statistics data available.")
+
+# Volatility Analysis
+st.markdown('<div class="section-header"><h2>📊 Volatility Analysis</h2></div>', unsafe_allow_html=True)
+
+if not inventory_volatility_analysis.empty:
+    # Create volatility visualization
+    fig_vol = px.bar(
+        inventory_volatility_analysis,
+        x="indicator",
+        y="volatility_std",
+        color="period",
+        title="Inventory Volatility by Indicator and Period",
+        labels={"volatility_std": "Standard Deviation", "indicator": "Indicator"},
+        barmode="group"
+    )
+    fig_vol = apply_chart_styling(fig_vol)
+    st.plotly_chart(fig_vol, use_container_width=True)
+    
+    # Volatility summary table
+    st.subheader("📈 Volatility Summary")
+    st.dataframe(inventory_volatility_analysis, use_container_width=True)
+else:
+    st.info("No volatility analysis data available.")
 
 # AI-Powered Strategic Analysis
 st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)
@@ -396,32 +655,138 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
+# Data Quality Metrics
+st.markdown('<div class="section-header"><h2>📋 Data Quality Metrics</h2></div>', unsafe_allow_html=True)
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric("Inventory Data Completeness", f"{inv_completeness*100:.1f}%")
+with col2:
+    st.metric("Steel Data Completeness", f"{steel_completeness*100:.1f}%")
+with col3:
+    st.metric("Total Data Points", len(manufacturing_inventory_raw) + len(steel_production_raw))
+with col4:
+    st.metric("Data Sources", "2")
+
 # Data Explorer
 st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', unsafe_allow_html=True)
-tab1, tab2, tab3 = st.tabs([
-    "📦 Manufacturing Inventory", "🏭 Steel Production", "📊 Volatility Analysis"
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+    "📦 Manufacturing Inventory", "🏭 Steel Production", "📊 Volatility Analysis", "📈 Trend Statistics", "🏆 Rankings", "🌍 World Comparison"
 ])
+
 with tab1:
     if not manufacturing_inventory_raw.empty:
-        st.dataframe(manufacturing_inventory_raw, use_container_width=True)
-        csv = manufacturing_inventory_raw.to_csv(index=False)
-        st.download_button("Download CSV", csv, "manufacturing_inventory_raw.csv", "text/csv")
+        with st.expander("📦 Manufacturing Inventory Raw Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_inventory"):
+                    csv = manufacturing_inventory_raw.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"manufacturing_inventory_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            search_term = st.text_input("🔍 Search categories:", placeholder="Enter category name...", key="search_inventory")
+            if search_term:
+                filtered_data = manufacturing_inventory_raw[
+                    manufacturing_inventory_raw.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+                ]
+            else:
+                filtered_data = manufacturing_inventory_raw
+            st.dataframe(filtered_data, use_container_width=True)
     else:
-        st.info("No data available.")
+        st.info("No manufacturing inventory data available.")
+
 with tab2:
     if not steel_production_raw.empty:
-        st.dataframe(steel_production_raw, use_container_width=True)
-        csv = steel_production_raw.to_csv(index=False)
-        st.download_button("Download CSV", csv, "steel_production_raw.csv", "text/csv")
+        with st.expander("🏭 Steel Production Raw Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_steel"):
+                    csv = steel_production_raw.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"steel_production_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            search_term = st.text_input("🔍 Search regions:", placeholder="Enter region name...", key="search_steel")
+            if search_term:
+                filtered_data = steel_production_raw[
+                    steel_production_raw.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+                ]
+            else:
+                filtered_data = steel_production_raw
+            st.dataframe(filtered_data, use_container_width=True)
     else:
-        st.info("No data available.")
+        st.info("No steel production data available.")
+
 with tab3:
     if not inventory_volatility_analysis.empty:
-        st.dataframe(inventory_volatility_analysis, use_container_width=True)
-        csv = inventory_volatility_analysis.to_csv(index=False)
-        st.download_button("Download CSV", csv, "inventory_volatility_analysis.csv", "text/csv")
+        with st.expander("📊 Volatility Analysis Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_volatility"):
+                    csv = inventory_volatility_analysis.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"volatility_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            st.dataframe(inventory_volatility_analysis, use_container_width=True)
     else:
-        st.info("No data available.")
+        st.info("No volatility analysis data available.")
+
+with tab4:
+    if not inventory_trend_statistics.empty:
+        with st.expander("📈 Trend Statistics Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_trend_stats"):
+                    csv = inventory_trend_statistics.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"trend_statistics_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            st.dataframe(inventory_trend_statistics, use_container_width=True)
+    else:
+        st.info("No trend statistics data available.")
+
+with tab5:
+    if not steel_top_current.empty or not steel_bottom_current.empty:
+        col1, col2 = st.columns(2)
+        with col1:
+            st.subheader("🥇 Top Performers")
+            if not steel_top_current.empty:
+                st.dataframe(steel_top_current, use_container_width=True)
+        with col2:
+            st.subheader("🥉 Bottom Performers")
+            if not steel_bottom_current.empty:
+                st.dataframe(steel_bottom_current, use_container_width=True)
+    else:
+        st.info("No rankings data available.")
+
+with tab6:
+    if not steel_vs_world_current.empty:
+        with st.expander("🌍 World Comparison Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_world"):
+                    csv = steel_vs_world_current.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"world_comparison_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            st.dataframe(steel_vs_world_current, use_container_width=True)
+    else:
+        st.info("No world comparison data available.")
 
 # Enhanced Footer
 st.markdown("---")
