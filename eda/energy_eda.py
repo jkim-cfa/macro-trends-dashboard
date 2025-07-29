@@ -112,8 +112,7 @@ def stock_time_series_analysis(df_iea_oil_stocks):
         'seasonality_patterns': seasonality_by_country,
         'stockpile_statistics': stockpile_stats
     }
-
-# Oil Import Analysis
+# Oil Import Analysis - Fixed Version
 def oil_import_analysis(df_oil_import_with_continents):
     # Map units to readable metric names
     metric_unit_map = {
@@ -127,10 +126,21 @@ def oil_import_analysis(df_oil_import_with_continents):
     df_oil_import_with_continents = df_oil_import_with_continents.copy()
     df_oil_import_with_continents['metric_type'] = df_oil_import_with_continents['unit'].map(metric_unit_map)
     
-    # 1. Regional share analysis (percentage data)
-    continent_share = df_oil_import_with_continents[
-        df_oil_import_with_continents['unit'] == 'percentage'
-    ].copy()
+    # Data validation: Check for potential aggregates/totals
+    def identify_aggregates(df, country_col='country'):
+        """Identify rows that might be regional/total aggregates"""
+        aggregate_keywords = ['total', 'all', 'aggregate', 'sum', 'world', 'global']
+        mask = df[country_col].str.lower().str.contains('|'.join(aggregate_keywords), na=False)
+        return mask
+    
+    # Remove potential country-level aggregates to avoid double counting
+    aggregate_mask = identify_aggregates(df_oil_import_with_continents, 'country')
+    df_clean = df_oil_import_with_continents[~aggregate_mask].copy()
+    
+    print(f"Removed {aggregate_mask.sum()} potential aggregate rows from {len(df_oil_import_with_continents)} total rows")
+    
+    # 1. Regional share analysis (percentage data) - No aggregation needed
+    continent_share = df_clean[df_clean['unit'] == 'percentage'].copy()
     
     continent_share_summary = (
         continent_share
@@ -138,75 +148,106 @@ def oil_import_analysis(df_oil_import_with_continents):
         .reset_index(drop=True)
     )
     
-    # 2. Volume analysis (thousand bbl)
-    volume_data = df_oil_import_with_continents[
-        df_oil_import_with_continents['unit'] == 'thousand bbl'
-    ].copy()
+    # 2. Volume analysis (thousand bbl) - Check if aggregation is appropriate
+    volume_data = df_clean[df_clean['unit'] == 'thousand bbl'].copy()
     
-    volume_by_region = (
-        volume_data.groupby(['date', 'region'])
-        .agg({
-            'value': 'sum',
-            'metric_type': 'first'
-        })
-        .reset_index()
-        .sort_values(['date', 'value'], ascending=[True, False])
-    )
+    # Check if we have individual country data that should be aggregated
+    country_count_by_region = volume_data.groupby(['date', 'region'])['country'].nunique()
+    regions_with_multiple_countries = country_count_by_region[country_count_by_region > 1]
     
-    # 3. Value analysis (thousand USD)
-    value_data = df_oil_import_with_continents[
-        df_oil_import_with_continents['unit'] == 'thousand USD'
-    ].copy()
+    if len(regions_with_multiple_countries) > 0:
+        print(f"Found regions with multiple countries - aggregating volume data")
+        volume_by_region = (
+            volume_data.groupby(['date', 'region'])
+            .agg({
+                'value': 'sum',
+                'metric_type': 'first',
+                'country': 'count'  # Track how many countries were aggregated
+            })
+            .reset_index()
+            .rename(columns={'country': 'country_count'})
+            .sort_values(['date', 'value'], ascending=[True, False])
+        )
+    else:
+        print("No aggregation needed for volume data - using as-is")
+        volume_by_region = volume_data.copy()
+        volume_by_region['country_count'] = 1
     
-    value_by_region = (
-        value_data.groupby(['date', 'region'])
-        .agg({
-            'value': 'sum',
-            'metric_type': 'first'
-        })
-        .reset_index()
-        .sort_values(['date', 'value'], ascending=[True, False])
-    )
+    # 3. Value analysis (thousand USD) - Same logic as volume
+    value_data = df_clean[df_clean['unit'] == 'thousand USD'].copy()
     
-    # 4. Price analysis (USD/bbl)
-    price_data = df_oil_import_with_continents[
-        df_oil_import_with_continents['unit'] == 'USD/bbl'
-    ].copy()
+    country_count_by_region_value = value_data.groupby(['date', 'region'])['country'].nunique()
+    regions_with_multiple_countries_value = country_count_by_region_value[country_count_by_region_value > 1]
+    
+    if len(regions_with_multiple_countries_value) > 0:
+        print(f"Found regions with multiple countries - aggregating value data")
+        value_by_region = (
+            value_data.groupby(['date', 'region'])
+            .agg({
+                'value': 'sum',
+                'metric_type': 'first',
+                'country': 'count'
+            })
+            .reset_index()
+            .rename(columns={'country': 'country_count'})
+            .sort_values(['date', 'value'], ascending=[True, False])
+        )
+    else:
+        print("No aggregation needed for value data - using as-is")
+        value_by_region = value_data.copy()
+        value_by_region['country_count'] = 1
+    
+    # 4. Price analysis (USD/bbl) - Always use mean for prices
+    price_data = df_clean[df_clean['unit'] == 'USD/bbl'].copy()
     
     price_by_region = (
         price_data.groupby(['date', 'region'])
         .agg({
-            'value': 'mean',
-            'metric_type': 'first'      
+            'value': 'mean',  # Always average for prices
+            'metric_type': 'first',
+            'country': 'count'
         })
         .reset_index()
+        .rename(columns={'country': 'country_count'})
         .sort_values(['date', 'value'], ascending=[True, False])
     )
     
-    # 5. Import dependency analysis
-    latest_date = df_oil_import_with_continents['date'].max()
-    latest_shares = continent_share[continent_share['date'] == latest_date]
+    # 5. Import dependency analysis - Use cleaned percentage data
+    latest_date = continent_share['date'].max() if not continent_share.empty else None
     
-    if latest_shares.empty:
+    if latest_date is not None:
+        latest_shares = continent_share[continent_share['date'] == latest_date]
+        
+        if not latest_shares.empty:
+            max_idx = latest_shares['value'].idxmax()
+            dependency_risk = {
+                'dominant_supplier': latest_shares.loc[max_idx, 'region'],
+                'max_dependency': float(latest_shares['value'].max()),
+                'supplier_count': int(latest_shares['region'].nunique()),
+                'data_date': latest_date.strftime('%Y-%m-%d')
+            }
+        else:
+            dependency_risk = {
+                'dominant_supplier': 'Unknown',
+                'max_dependency': 0.0,
+                'supplier_count': 0,
+                'data_date': 'Unknown'
+            }
+    else:
         dependency_risk = {
             'dominant_supplier': 'Unknown',
             'max_dependency': 0.0,
             'supplier_count': 0,
-        }
-    else:
-        dependency_risk = {
-            'dominant_supplier': latest_shares.loc[latest_shares['value'].idxmax(), 'region'],
-            'max_dependency': float(latest_shares['value'].max()),
-            'supplier_count': int(latest_shares['region'].nunique()),
+            'data_date': 'Unknown'
         }
     
-    # 6. Dominant Supplier Trend
+    # 6. Dominant Supplier Trend - Enhanced validation
     dominant_region_trend = dependency_risk.get('dominant_supplier')
     n_months = 12
-    start_date = latest_date - pd.DateOffset(months=n_months)
-
-    # Filter only for that region and recent months
-    if dominant_region_trend != 'Unknown':
+    
+    if latest_date is not None and dominant_region_trend != 'Unknown':
+        start_date = latest_date - pd.DateOffset(months=n_months)
+        
         trend_df = (
             continent_share[
                 (continent_share['region'] == dominant_region_trend) &
@@ -217,11 +258,23 @@ def oil_import_analysis(df_oil_import_with_continents):
             .rename(columns={'value': 'dominant_region_share'})
         )
         
-        # Add the dominant_region_name column
         trend_df['dominant_region_name'] = dominant_region_trend
     else:
         trend_df = pd.DataFrame(columns=['date', 'dominant_region_share', 'dominant_region_name'])
-
+    
+    # 7. Data quality metrics
+    data_quality = {
+        'original_rows': len(df_oil_import_with_continents),
+        'cleaned_rows': len(df_clean),
+        'removed_aggregates': aggregate_mask.sum(),
+        'unique_regions': df_clean['region'].nunique(),
+        'unique_countries': df_clean['country'].nunique(),
+        'date_range': {
+            'start': df_clean['date'].min().strftime('%Y-%m-%d') if not df_clean.empty else 'Unknown',
+            'end': df_clean['date'].max().strftime('%Y-%m-%d') if not df_clean.empty else 'Unknown'
+        }
+    }
+    
     return {
         'regional_share_trends': continent_share_summary,
         'volume_by_region': volume_by_region,
@@ -229,7 +282,8 @@ def oil_import_analysis(df_oil_import_with_continents):
         'price_by_region': price_by_region,
         'dependency_analysis': dependency_risk,
         'dominant_supplier_trend': trend_df,
-        'metric_breakdown': df_oil_import_with_continents.groupby('metric_type')['value'].describe()
+        'metric_breakdown': df_clean.groupby('metric_type')['value'].describe() if not df_clean.empty else pd.DataFrame(),
+        'data_quality': data_quality
     }
 
 # OPEC insights integration
@@ -281,6 +335,13 @@ def save_eda_data(df_iea_oil_stocks, df_oil_import_with_continents, df_opec_summ
     volume_data = import_analysis_results.get('volume_by_region', pd.DataFrame())
     price_data = import_analysis_results.get('price_by_region', pd.DataFrame())
     
+    # Debug information
+    print(f"Volume data shape: {volume_data.shape}")
+    print(f"Price data shape: {price_data.shape}")
+    if not volume_data.empty:
+        print(f"Volume data columns: {volume_data.columns.tolist()}")
+        print(f"Volume data sample: {volume_data.head()}")
+    
     # Build comprehensive key insights
     key_insights = {
         # Stock Analysis
@@ -311,8 +372,8 @@ def save_eda_data(df_iea_oil_stocks, df_oil_import_with_continents, df_opec_summ
         
         "summary_statistics": {
             "total_iea_stocks_latest_value": float(stockpile_stats.iloc[0]['latest_stock']) if not stockpile_stats.empty else 0.0,
-            "top_import_region_volume": volume_data.iloc[0]['region'] if not volume_data.empty else 'Unknown',
-            "top_import_volume_value": float(volume_data.iloc[0]['value']) if not volume_data.empty else 0.0,
+            "top_import_region_volume": volume_data.loc[volume_data['value'].idxmax(), 'region'] if not volume_data.empty and not volume_data['value'].isna().all() else 'Unknown',
+            "top_import_volume_value": float(volume_data['value'].max()) if not volume_data.empty and not volume_data['value'].isna().all() else 0.0,
             "avg_import_price_latest": float(
                 price_data.loc[price_data['date'] == price_data['date'].max(), 'value'].mean()
             ) if not price_data.empty and not price_data['date'].isna().all() else 0.0,

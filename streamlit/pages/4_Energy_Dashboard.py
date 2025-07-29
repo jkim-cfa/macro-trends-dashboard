@@ -198,6 +198,94 @@ def format_insight_text(text):
             formatted.append(line)
     return "\n\n".join(formatted)
 
+def format_opec_text(text):
+    """Format OPEC analysis text with numbered points and emojis in styled containers"""
+    if not text or text == "No OPEC insights found.":
+        return ""
+    
+    # Split into lines and add proper spacing
+    lines = text.strip().split('\n')
+    formatted_lines = []
+    point_counter = 1
+    
+    # Define emojis for different types of content
+    emoji_map = {
+        'oil': '🛢️', 'petroleum': '🛢️', 'crude': '🛢️', 'barrel': '🛢️',
+        'production': '⚙️', 'output': '⚙️', 'supply': '📦', 'demand': '📈',
+        'price': '💰', 'cost': '💰', 'revenue': '💰', 'profit': '💰',
+        'market': '📊', 'trade': '🔄', 'export': '📤', 'import': '📥',
+        'opec': '🛢️', 'saudi': '🇸🇦', 'arabia': '🇸🇦', 'iran': '🇮🇷',
+        'iraq': '🇮🇶', 'kuwait': '🇰🇼', 'uae': '🇦🇪', 'venezuela': '🇻🇪',
+        'nigeria': '🇳🇬', 'angola': '🇦🇴', 'algeria': '🇩🇿', 'libya': '🇱🇾',
+        'russia': '🇷🇺', 'china': '🇨🇳', 'india': '🇮🇳', 'us': '🇺🇸',
+        'europe': '🇪🇺', 'asia': '🌏', 'africa': '🌍', 'america': '🌎',
+        'increase': '📈', 'growth': '📈', 'rise': '📈', 'higher': '📈',
+        'decrease': '📉', 'decline': '📉', 'lower': '📉', 'drop': '📉',
+        'report': '📊', 'analysis': '📊', 'data': '📊', 'statistics': '📊',
+        'recommend': '💡', 'suggest': '💡', 'propose': '💡', 'advise': '💡',
+        'risk': '⚠️', 'danger': '⚠️', 'threat': '⚠️', 'warning': '⚠️',
+        'cooperation': '🤝', 'international': '🌍', 'global': '🌍', 'world': '🌍',
+        'energy': '⚡', 'fuel': '⛽', 'gasoline': '⛽', 'diesel': '⛽',
+        'refinery': '🏭', 'pipeline': '🛢️', 'tanker': '🚢', 'shipping': '🚢'
+    }
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        
+        # Remove existing bullet points
+        if line.startswith('•'):
+            line = line[1:].strip()
+        elif line.startswith('-'):
+            line = line[1:].strip()
+        
+        if line:
+            # Determine appropriate emoji based on content
+            line_lower = line.lower()
+            selected_emoji = '📋'  # Default emoji
+            
+            for keyword, emoji in emoji_map.items():
+                if keyword in line_lower:
+                    selected_emoji = emoji
+                    break
+            
+            # Create styled container for each point
+            container_html = f"""
+            <div style="
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border: 1px solid #dee2e6;
+                border-radius: 8px;
+                padding: 12px 16px;
+                margin: 8px 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            ">
+                <div style="
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 8px;
+                ">
+                    <span style="
+                        background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+                        color: white;
+                        padding: 4px 8px;
+                        border-radius: 12px;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        min-width: 60px;
+                        text-align: center;
+                    ">Point {point_counter}</span>
+                    <span style="font-size: 1.2rem; margin-right: 8px;">{selected_emoji}</span>
+                    <span style="flex-grow: 1; line-height: 1.5;">{line}</span>
+                </div>
+            </div>
+            """
+            formatted_lines.append(container_html)
+            point_counter += 1
+    
+    return "\n".join(formatted_lines)
+
 # Load Data
 with st.spinner("Loading energy intelligence data..."):
     data = load_cached_energy_data()
@@ -215,6 +303,7 @@ import_volume_by_region = data.get("import_volume_by_region", pd.DataFrame())
 import_value_by_region = data.get("import_value_by_region", pd.DataFrame())
 import_price_by_region = data.get("import_price_by_region", pd.DataFrame())
 import_dominant_supplier_trend = data.get("import_dominant_supplier_trend", pd.DataFrame())
+import_metric_breakdown = data.get("import_metric_breakdown", pd.DataFrame())
 key_insights = data.get("insights", {})
 gemini_insight = data.get("gemini_insight", "No AI insights found.")
 
@@ -249,7 +338,7 @@ if not iea_stocks_raw.empty and 'country' in iea_stocks_raw.columns:
     selected = st.sidebar.multiselect(
         "Select countries:",
         options=multiselect_options,
-        default=multiselect_options,
+        default=[select_all_label],  # Only 'Select All' is selected by default
         key="country_multiselect"
     )
     if select_all_label in selected:
@@ -291,22 +380,42 @@ if key_insights and "summary_statistics" in key_insights:
     avg_import_price = stats.get("avg_import_price_latest", "N/A")
 else:
     total_stock = top_import_region = top_import_volume = avg_import_price = "N/A"
+# Get top import region share
+if key_insights and "import_analysis" in key_insights:
+    dependency_risk = key_insights["import_analysis"].get("dependency_risk", {})
+    top_import_region_share = dependency_risk.get("max_dependency", None)
+else:
+    top_import_region_share = None
+# Get last update date (latest date from IEA stocks or oil imports)
+def get_latest_update_date():
+    dates = []
+    if not iea_stocks_raw.empty and 'date' in iea_stocks_raw.columns:
+        dates.append(pd.to_datetime(iea_stocks_raw['date']).max())
+    if not oil_imports_raw.empty and 'date' in oil_imports_raw.columns:
+        dates.append(pd.to_datetime(oil_imports_raw['date']).max())
+    if dates:
+        return max(dates).strftime('%Y-%m-%d')
+    return "N/A"
+last_update = get_latest_update_date()
 
-col1, col2, col3, col4 = st.columns(4)
+# Expand metrics row to 6 columns
+col1, col2, col3, col4, col5, col6 = st.columns(6)
+
 with col1:
-    st.markdown(create_metric_card(
-        "🛢️ Total IEA Stocks",
-        f"{total_stock:,.0f}" if isinstance(total_stock, (int, float)) else str(total_stock),
-        "Latest value",
-        "#28a745"
-    ), unsafe_allow_html=True)
-with col2:
     st.markdown(create_metric_card(
         "🌍 Top Import Region",
         top_import_region,
         f"Volume: {top_import_volume:,.0f}" if isinstance(top_import_volume, (int, float)) else "",
         "#007bff"
     ), unsafe_allow_html=True)
+with col2:
+    st.markdown(create_metric_card(
+        "🏆 Top Import Region Share",
+        f"{top_import_region_share:.1f}%" if isinstance(top_import_region_share, (int, float)) else str(top_import_region_share),
+        "Share of total imports",
+        "#20c997"
+    ), unsafe_allow_html=True)
+        
 with col3:
     st.markdown(create_metric_card(
         "💰 Top Import Volume",
@@ -314,6 +423,7 @@ with col3:
         "Latest",
         "#ffc107"
     ), unsafe_allow_html=True)
+
 with col4:
     st.markdown(create_metric_card(
         "💵 Avg Import Price",
@@ -321,30 +431,67 @@ with col4:
         "Latest USD/bbl",
         "#6f42c1"
     ), unsafe_allow_html=True)
+with col5:
+    st.markdown(create_metric_card(
+        "🛢️ Total IEA Stocks",
+        f"{total_stock:,.0f}" if isinstance(total_stock, (int, float)) else str(total_stock),
+        "Latest value",
+        "#28a745"
+    ), unsafe_allow_html=True)
+with col6:
+    st.markdown(create_metric_card(
+        "⏰ Last Update",
+        last_update,
+        "Latest data date",
+        "#fd7e14"
+    ), unsafe_allow_html=True)
 
-# IEA Oil Stocks Trends
-st.markdown('<div class="section-header"><h2>📈 IEA Oil Stocks Trends</h2></div>', unsafe_allow_html=True)
-if not iea_stocks_raw.empty:
-    fig_stocks = px.line(
-        iea_stocks_raw,
-        x="date",
-        y="value",
-        color="country",
-        title="IEA Oil Stocks by Country",
-        labels={"value": "Stock (thousand bbl)", "date": "Date"},
-        color_discrete_sequence=px.colors.qualitative.Set3,
-        template="plotly_white"
-    )
-    fig_stocks = apply_chart_styling(fig_stocks)
-    st.plotly_chart(fig_stocks, use_container_width=True)
+
+# After Import Price Trends, add Dominant Supplier Trend
+st.markdown('<div class="section-header"><h2>🏅 Dominant Supplier Trend</h2></div>', unsafe_allow_html=True)
+if not import_dominant_supplier_trend.empty:
+    # Create two columns for the charts
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        fig_dom = px.line(
+            import_dominant_supplier_trend,
+            x="date", y="dominant_region_share", color="dominant_region_name",
+            title="Dominant Supplier Share (Last 12 Months)",
+            labels={"dominant_region_share": "Share (%)", "date": "Date"}
+        )
+        fig_dom = apply_chart_styling(fig_dom)
+        st.plotly_chart(fig_dom, use_container_width=True)
+    
+    with col2:
+        # Create pie chart for latest regional shares
+        if not import_regional_share_trends.empty:
+            # Get the latest date
+            latest_date = import_regional_share_trends['date'].max()
+            latest_shares = import_regional_share_trends[import_regional_share_trends['date'] == latest_date]
+            
+            if not latest_shares.empty:
+                fig_pie = px.pie(
+                    latest_shares,
+                    values='value',
+                    names='region',
+                    title=f"Regional Share Distribution ({pd.to_datetime(latest_date).strftime('%Y-%m-%d')})",
+                    color_discrete_sequence=px.colors.qualitative.Set3
+                )
+                fig_pie.update_layout(
+                    title_font_size=16,
+                    title_font_color="#1e3c72",
+                    height=400,
+                    margin=dict(l=50, r=50, t=80, b=50)
+                )
+                st.plotly_chart(fig_pie, use_container_width=True)
+            else:
+                st.info("No latest share data available for pie chart.")
+        else:
+            st.info("No regional share data available for pie chart.")
 else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>⚠️ No IEA Oil Stocks Data Available</h4>
-        <p>No IEA oil stocks data is currently available.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
+    st.info("No dominant supplier trend data available.")
+    
 # Oil Import Analysis
 st.markdown('<div class="section-header"><h2>🚢 Oil Import Analysis</h2></div>', unsafe_allow_html=True)
 if not import_volume_by_region.empty:
@@ -368,12 +515,187 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-# OPEC Insights
-st.markdown('<div class="section-header"><h2>🛢️ OPEC Insights</h2></div>', unsafe_allow_html=True)
-if not opec_summary_raw.empty:
-    st.dataframe(opec_summary_raw, use_container_width=True)
+# After Oil Import Analysis, add Import Value and Price Trends
+st.markdown('<div class="section-header"><h2>💰 Import Value Trends</h2></div>', unsafe_allow_html=True)
+if not import_value_by_region.empty:
+    fig_value = px.line(
+        import_value_by_region,
+        x="date", y="value", color="region",
+        title="Oil Import Value by Region",
+        labels={"value": "Value (thousand USD)", "date": "Date"},
+        color_discrete_sequence=px.colors.qualitative.Pastel
+    )
+    fig_value = apply_chart_styling(fig_value)
+    st.plotly_chart(fig_value, use_container_width=True)
 else:
-    st.info("No OPEC insights available.")
+    st.info("No import value data available.")
+st.markdown('<div class="section-header"><h2>💵 Import Price Trends</h2></div>', unsafe_allow_html=True)
+if not import_price_by_region.empty:
+    fig_price = px.line(
+        import_price_by_region,
+        x="date", y="value", color="region",
+        title="Oil Import Price by Region",
+        labels={"value": "Price (USD/bbl)", "date": "Date"},
+        color_discrete_sequence=px.colors.qualitative.Pastel
+    )
+    fig_price = apply_chart_styling(fig_price)
+    st.plotly_chart(fig_price, use_container_width=True)
+else:
+    st.info("No import price data available.")
+
+# IEA Oil Stocks Trends
+st.markdown('<div class="section-header"><h2>📈 IEA Oil Stocks Trends</h2></div>', unsafe_allow_html=True)
+if not iea_stocks_raw.empty:
+    # Filter out regional totals and get top 8 countries
+    regional_totals = ['Total IEA', 'Total IEA Asia Pacific', 'Total IEA Europe', 'Total IEA net importers']
+    filtered_stocks = iea_stocks_raw[~iea_stocks_raw['country'].isin(regional_totals)]
+    
+    # Get the latest date to determine top countries
+    latest_date = filtered_stocks['date'].max()
+    latest_stocks = filtered_stocks[filtered_stocks['date'] == latest_date]
+    top_8_countries = latest_stocks.nlargest(8, 'value')['country'].tolist()
+    
+    # Filter data to only include top 8 countries
+    top_8_data = filtered_stocks[filtered_stocks['country'].isin(top_8_countries)]
+    
+    if not top_8_data.empty:
+        fig_stocks = px.line(
+            top_8_data,
+            x="date",
+            y="value",
+            color="country",
+            title="IEA Oil Stocks by Country (Top 8)",
+            labels={"value": "Stock (thousand bbl)", "date": "Date"},
+            color_discrete_sequence=px.colors.qualitative.Set3,
+            template="plotly_white"
+        )
+        fig_stocks = apply_chart_styling(fig_stocks)
+        st.plotly_chart(fig_stocks, use_container_width=True)
+    else:
+        st.markdown("""
+        <div class="alert-box">
+            <h4>⚠️ No IEA Oil Stocks Data Available</h4>
+            <p>No IEA oil stocks data is currently available after filtering.</p>
+        </div>
+        """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+    <div class="alert-box">
+        <h4>⚠️ No IEA Oil Stocks Data Available</h4>
+        <p>No IEA oil stocks data is currently available.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# After Key Metrics section, add Stockpile Statistics Table
+st.markdown('<div class="section-header"><h2>🏆 Top 5 IEA Stockpilers</h2></div>', unsafe_allow_html=True)
+if not stock_stockpile_statistics.empty:
+    st.dataframe(stock_stockpile_statistics.head(5), use_container_width=True)
+else:
+    st.info("No stockpile statistics available.")
+
+# After IEA Oil Stocks Trends, add Volatility by Country
+st.markdown('<div class="section-header"><h2>📉 Volatility by Country</h2></div>', unsafe_allow_html=True)
+if not stock_volatility_analysis.empty:
+    fig_vol = px.bar(
+        stock_volatility_analysis.sort_values("volatility", ascending=False).head(10),
+        x="country", y="volatility",
+        color="volatility", color_continuous_scale="Blues",
+        title="Top 10 Most Volatile IEA Oil Stocks by Country"
+    )
+    fig_vol = apply_chart_styling(fig_vol)
+    st.plotly_chart(fig_vol, use_container_width=True)
+else:
+    st.info("No volatility analysis data available.")
+
+# After Volatility, add Seasonality Patterns
+st.markdown('<div class="section-header"><h2>📅 Seasonality Patterns</h2></div>', unsafe_allow_html=True)
+if not stock_seasonality_patterns.empty:
+    # 1. Order countries by total average stock (descending)
+    country_totals = stock_seasonality_patterns.groupby('country')['monthly_avg_stock'].mean().sort_values(ascending=False)
+    top_countries = country_totals.head(15).index.tolist()  # Top 15 countries for better visualization
+    
+    # Filter data to top countries
+    filtered_seasonality = stock_seasonality_patterns[stock_seasonality_patterns['country'].isin(top_countries)]
+    
+    # 2. Create pivot with ordered countries
+    pivot = filtered_seasonality.pivot(index="month", columns="country", values="monthly_avg_stock")
+    
+    # Reorder columns by total average stock
+    pivot = pivot[top_countries]
+    
+    # 3. Create improved heatmap
+    fig_season = px.imshow(
+        pivot,
+        labels=dict(x="Country", y="Month", color="Avg Stock (thousand bbl)"),
+        aspect="auto",
+        title="Monthly Average IEA Oil Stocks by Country (Top 15)",
+        color_continuous_scale="Blues"  # Use Blues scale for better contrast
+    )
+    
+    # 4. Improve axis formatting and styling
+    fig_season.update_layout(
+        title_font_size=18,
+        title_font_color="#1e3c72",
+        xaxis_title="Country",
+        yaxis_title="Month",
+        height=500,
+        margin=dict(l=80, r=50, t=100, b=100)
+    )
+    
+    # Rotate x-axis labels and improve spacing
+    fig_season.update_xaxes(
+        tickangle=-45,
+        tickmode='array',
+        ticktext=pivot.columns,
+        tickvals=list(range(len(pivot.columns))),
+        tickfont=dict(size=10),
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='rgba(0,0,0,0.1)'
+    )
+    
+    # Improve y-axis (months)
+    month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    fig_season.update_yaxes(
+        tickmode='array',
+        ticktext=month_names,
+        tickvals=list(range(1, 13)),
+        tickfont=dict(size=12),
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='rgba(0,0,0,0.1)'
+    )
+    
+    # Add colorbar improvements
+    fig_season.update_coloraxes(
+        colorbar=dict(
+            title=dict(text="Avg Stock (thousand bbl)"),
+            thickness=15,
+            len=0.8,
+            outlinewidth=1,
+            outlinecolor="black"
+        )
+    )
+    
+    st.plotly_chart(fig_season, use_container_width=True)
+    
+    # Add summary statistics
+    st.subheader("📊 Seasonality Summary")
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.metric("Countries Analyzed", len(top_countries))
+    
+    with col2:
+        st.metric("Months Covered", len(pivot.index))
+    
+    with col3:
+        max_stock = pivot.max().max()
+        st.metric("Highest Monthly Average", f"{max_stock:,.0f}")
+    
+else:
+    st.info("No seasonality pattern data available.")
 
 # AI-Powered Strategic Analysis
 st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)
@@ -418,16 +740,43 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
+# OPEC Insights
+st.markdown('<div class="section-header"><h2>🛢️ OPEC Monthly Report Insights</h2></div>', unsafe_allow_html=True)
+
+if not opec_summary_raw.empty:
+    with st.expander("🔍 View OPEC Analysis", expanded=False):
+        # Format and display OPEC insights
+        opec_text = "\n".join([f"Topic: {row['topic']} - Insight: {row['insight']}" for _, row in opec_summary_raw.iterrows()])
+        formatted_opec = format_opec_text(opec_text)
+        st.markdown(formatted_opec, unsafe_allow_html=True)
+        
+        # OPEC metrics
+        st.subheader("📈 OPEC Analysis Metrics")
+        opec_metrics = {
+            "Total Insights": len(opec_summary_raw),
+            "Unique Topics": opec_summary_raw['topic'].nunique() if 'topic' in opec_summary_raw.columns else 0,
+            "Analysis Length": len(opec_text),
+            "Contains Market Data": "Yes" if any(word in opec_text.lower() for word in ['market', 'price', 'demand', 'supply']) else "No",
+            "Last Updated": datetime.now().strftime("%Y-%m-%d")
+        }
+        
+        col1, col2, col3, col4, col5 = st.columns(5)
+        for i, (key, value) in enumerate(opec_metrics.items()):
+            with [col1, col2, col3, col4, col5][i]:
+                st.metric(key, value)
+else:
+    st.info("No OPEC insights available at the moment.")
+
 # Data Explorer
 st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', unsafe_allow_html=True)
-if not iea_stocks_raw.empty or not oil_imports_raw.empty or not opec_summary_raw.empty:
-    tab1, tab2, tab3 = st.tabs(["🛢️ IEA Stocks", "🚢 Oil Imports", "🛢️ OPEC Insights"])
+if not iea_stocks_raw.empty or not oil_imports_raw.empty or not opec_summary_raw.empty or not import_metric_breakdown.empty:
+    tab1, tab2, tab3, tab4 = st.tabs(["🛢️ IEA Stocks", "🚢 Oil Imports", "🛢️ OPEC Insights", "📊 Import Metric Breakdown"])
     with tab1:
         if not iea_stocks_raw.empty:
             with st.expander("🛢️ IEA Oil Stocks Data", expanded=False):
                 col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
                 with col4:
-                    if st.button("📥 Export IEA Stocks", type="primary", key="export_iea"):
+                    if st.button("📥 Export Data", type="primary", key="export_iea"):
                         csv = iea_stocks_raw.to_csv(index=False)
                         st.download_button(
                             label="Download CSV",
@@ -450,7 +799,7 @@ if not iea_stocks_raw.empty or not oil_imports_raw.empty or not opec_summary_raw
             with st.expander("🚢 Oil Imports Data", expanded=False):
                 col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
                 with col4:
-                    if st.button("📥 Export Oil Imports", type="primary", key="export_imports"):
+                    if st.button("📥 Export Data", type="primary", key="export_imports"):
                         csv = oil_imports_raw.to_csv(index=False)
                         st.download_button(
                             label="Download CSV",
@@ -473,7 +822,7 @@ if not iea_stocks_raw.empty or not oil_imports_raw.empty or not opec_summary_raw
             with st.expander("🛢️ OPEC Insights Data", expanded=False):
                 col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
                 with col4:
-                    if st.button("📥 Export OPEC Insights", type="primary", key="export_opec"):
+                    if st.button("📥 Export Data", type="primary", key="export_opec"):
                         csv = opec_summary_raw.to_csv(index=False)
                         st.download_button(
                             label="Download CSV",
@@ -491,6 +840,16 @@ if not iea_stocks_raw.empty or not oil_imports_raw.empty or not opec_summary_raw
                 st.dataframe(filtered_data, use_container_width=True)
         else:
             st.info("No OPEC insights data available.")
+    with tab4:
+        if not import_metric_breakdown.empty:
+            with st.expander("📊 Import Metric Breakdown Data", expanded=False):
+                # Display the breakdown as a summary table with clear labels
+                st.markdown("#### Import Metric Breakdown Summary")
+                # If the CSV has no row labels, just show as a table with a note
+                st.dataframe(import_metric_breakdown, use_container_width=True)
+                st.caption("Summary statistics for key import metrics. Row order corresponds to different metrics (see documentation for mapping if available). Columns: count, mean, std, min, 25%, 50%, 75%, max.")
+        else:
+            st.info("No import metric breakdown data available.")
 else:
     st.markdown("""
     <div class="alert-box">
@@ -508,4 +867,4 @@ st.markdown("""
     <p style="color: #6c757d; font-size: 0.9rem;">Comprehensive energy analysis and strategic intelligence</p>
     <p style="color: #6c757d; font-size: 0.8rem;">Last updated: {}</p>
 </div>
-""".format(datetime.now().strftime("%Y-%m-%d %H:%M")), unsafe_allow_html=True) 
+""".format(datetime.now().strftime("%Y-%m-%d %H:%M")), unsafe_allow_html=True)

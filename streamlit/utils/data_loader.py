@@ -94,6 +94,7 @@ def load_energy_data():
         "import_value_by_region": load_csv("energy", "import_value_by_region.csv"),
         "import_price_by_region": load_csv("energy", "import_price_by_region.csv"),
         "import_dominant_supplier_trend": load_csv("energy", "import_dominant_supplier_trend.csv"),
+        "import_metric_breakdown": load_csv("energy", "import_metric_breakdown.csv"),
 
         # Insights and AI analysis
         "insights": load_json("energy", "key_insights.json"),
