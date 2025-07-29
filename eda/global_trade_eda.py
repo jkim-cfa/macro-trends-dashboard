@@ -104,11 +104,11 @@ def process_top5_export_decrease_items(df):
     # Map English names with fallback
     df['eng_commodity_name'] = df['commodity_name'].map(eng_commodity_name).fillna(df['commodity_name'])
 
-    # Extract HS code
-    df['hs_code'] = df['full_label'].str[:6]
+    # Extract HS code - get the full 6-digit code in parentheses
+    df['hs_code'] = df['full_label'].str.extract(r'\((\d{6})\)')[0]
 
-    # Combine for full label
-    df['commodity_full_name'] = df['eng_commodity_name'] + df['hs_code']
+    # Combine for full label using English names with parentheses around HS code
+    df['commodity_full_name'] = df['eng_commodity_name'] + '(' + df['hs_code'] + ')'
 
     # Pivot to combine amount and YoY into one row
     export_decreased_items_pivoted = df.pivot_table(
@@ -117,6 +117,9 @@ def process_top5_export_decrease_items(df):
         values="value",
         aggfunc="first"
     ).reset_index()
+
+    # Ensure we get the top 5 unique items by YoY change
+    export_decreased_items_pivoted = export_decreased_items_pivoted.sort_values('export_yoy').head(5)
 
     # Rename columns
     export_decreased_items_pivoted = export_decreased_items_pivoted.rename(columns={
@@ -132,11 +135,11 @@ def process_top5_export_increase_items(df):
     # Map English names with fallback
     df['eng_commodity_name'] = df['commodity_name'].map(eng_commodity_name).fillna(df['commodity_name'])
 
-    # Extract HS code
-    df['hs_code'] = df['full_label'].str[:6]
+    # Extract HS code - get the full 6-digit code in parentheses
+    df['hs_code'] = df['full_label'].str.extract(r'\((\d{6})\)')[0]
 
-    # Combine for full label
-    df['commodity_full_name'] = df['eng_commodity_name'] + df['hs_code']
+    # Combine for full label using English names with parentheses around HS code
+    df['commodity_full_name'] = df['eng_commodity_name'] + '(' + df['hs_code'] + ')'
 
     # Pivot to combine amount and YoY into one row
     export_increased_items_pivoted = df.pivot_table(
@@ -145,6 +148,9 @@ def process_top5_export_increase_items(df):
         values="value",
         aggfunc="first"
     ).reset_index()
+
+    # Ensure we get the top 5 unique items by YoY change
+    export_increased_items_pivoted = export_increased_items_pivoted.sort_values('export_yoy', ascending=False).head(5)
 
     # Rename columns
     export_increased_items_pivoted = export_increased_items_pivoted.rename(columns={
@@ -193,11 +199,17 @@ def process_top5_trade_partners(df):
 
 # Shipping Index
 def process_shipping_index(df):
+    df = df.copy()
     df['date'] = pd.to_datetime(df['date'])
     df['value'] = pd.to_numeric(df['value'], errors='coerce')
     
     # Drop rows with missing values
     df = df.dropna(subset=["value", "indicator"])
+    
+    # Debug info
+    print(f"Shipping index data shape: {df.shape}")
+    print(f"Unique indicators: {df['indicator'].unique()}")
+    print(f"Date range: {df['date'].min()} to {df['date'].max()}")
 
     # Pivot
     shipping_index_pivoted = df.pivot_table(
@@ -206,6 +218,9 @@ def process_shipping_index(df):
         values="value",
         aggfunc="mean"
     ).sort_index()
+    
+    print(f"Pivoted shipping index shape: {shipping_index_pivoted.shape}")
+    print(f"Pivoted columns: {shipping_index_pivoted.columns.tolist()}")
 
     return shipping_index_pivoted
 
@@ -216,7 +231,7 @@ def correlation_analysis(shipping_index_pivoted):
 
     return correlation_matrix
 
-# Volitility Analysis
+# Volatility Analysis
 def three_month_volatility_analysis(df):
     df = df.copy()
     df['date'] = pd.to_datetime(df['date'])
@@ -227,12 +242,21 @@ def three_month_volatility_analysis(df):
 
     # Set 'date' as the index and sort it
     df_filled = df_filled.set_index('date').sort_index()
+    
+    # Debug info
+    print(f"Volatility analysis - data shape: {df_filled.shape}")
+    print(f"Volatility analysis - date range: {df_filled.index.min()} to {df_filled.index.max()}")
 
     # Resample the data to a monthly frequency and calculate the mean for each month
     monthly_mean = df_filled.resample('M')['value'].mean().to_frame()
+    
+    print(f"Monthly mean shape: {monthly_mean.shape}")
 
     # Apply a rolling 3-month standard deviation (volatility) calculation
     rolling_3m_volatility = monthly_mean.rolling(window=3).std()
+    
+    print(f"Rolling volatility shape: {rolling_3m_volatility.shape}")
+    print(f"Non-null volatility values: {rolling_3m_volatility['value'].notna().sum()}")
 
     return rolling_3m_volatility
 
@@ -264,16 +288,37 @@ def save_trade_eda_outputs(
     processed_partners.to_csv(os.path.join(output_dir, "trade_partners_top5.csv"), index=False)
 
     # Shipping Index: Pivoted
-    shipping_index_pivoted = process_shipping_index(df_shipping_index)
-    shipping_index_pivoted.to_csv(os.path.join(output_dir, "shipping_index_pivoted.csv"))
+    try:
+        shipping_index_pivoted = process_shipping_index(df_shipping_index)
+        if not shipping_index_pivoted.empty:
+            shipping_index_pivoted.to_csv(os.path.join(output_dir, "shipping_index_pivoted.csv"))
+            print(f"✅ Shipping index pivoted saved: {shipping_index_pivoted.shape}")
+        else:
+            print("⚠️ Warning: Shipping index pivoted is empty")
+    except Exception as e:
+        print(f"❌ Error processing shipping index pivoted: {e}")
 
     # Correlation Matrix
-    corr_matrix = correlation_analysis(shipping_index_pivoted)
-    corr_matrix.to_csv(os.path.join(output_dir, "shipping_index_correlation.csv"))
+    try:
+        if not shipping_index_pivoted.empty:
+            corr_matrix = correlation_analysis(shipping_index_pivoted)
+            corr_matrix.to_csv(os.path.join(output_dir, "shipping_index_correlation.csv"))
+            print(f"✅ Correlation matrix saved: {corr_matrix.shape}")
+        else:
+            print("⚠️ Warning: Cannot calculate correlation - shipping index is empty")
+    except Exception as e:
+        print(f"❌ Error processing correlation matrix: {e}")
 
     # Rolling 3-Month Volatility
-    rolling_volatility = three_month_volatility_analysis(df_shipping_index)
-    rolling_volatility.to_csv(os.path.join(output_dir, "shipping_index_3m_volatility.csv"))
+    try:
+        rolling_volatility = three_month_volatility_analysis(df_shipping_index)
+        if not rolling_volatility.empty:
+            rolling_volatility.to_csv(os.path.join(output_dir, "shipping_index_3m_volatility.csv"))
+            print(f"✅ Rolling volatility saved: {rolling_volatility.shape}")
+        else:
+            print("⚠️ Warning: Rolling volatility is empty")
+    except Exception as e:
+        print(f"❌ Error processing rolling volatility: {e}")
 
     print(f"✅ Trade EDA outputs saved to: {output_dir}")
 
