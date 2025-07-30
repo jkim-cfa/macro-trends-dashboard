@@ -801,7 +801,13 @@ if not sentiment_raw.empty and 'indicator' in sentiment_raw.columns:
             y=strength_counts.values,
             title="Sentiment Strength Distribution",
             labels={"x": "Sentiment Strength", "y": "Count"},
-            color_discrete_sequence=px.colors.qualitative.Set3
+            color_discrete_sequence=px.colors.qualitative.Set3,
+            text=strength_counts.values
+        )
+        fig_strength.update_traces(
+            textposition='auto',
+            textfont_size=12,
+            textfont_color='black',
         )
         fig_strength = apply_chart_styling(fig_strength)
         st.plotly_chart(fig_strength, use_container_width=True)
@@ -836,13 +842,14 @@ if not cross_correlations.empty:
             corr_max = min(1, corr_max + 0.1)
         
         fig_corr = px.imshow(
-            correlation_matrix,
+            correlation_matrix.round(2),
             title="Cross-Asset Correlation Matrix",
             color_continuous_scale="RdBu_r",
             zmin=corr_min,
             zmax=corr_max,
             aspect="auto",
-            template="plotly_white"
+            template="plotly_white",
+            text_auto=True
         )
         
         fig_corr = apply_chart_styling(fig_corr)

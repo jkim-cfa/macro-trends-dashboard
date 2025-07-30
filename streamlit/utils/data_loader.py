@@ -177,4 +177,5 @@ def load_korea_trade_data():
         # Insights and AI analysis
         "insights": load_json("korea_trade", "key_insights.json"),
         "gemini_insight": load_text("korea_trade", "gemini_insights_korea_trade.txt"),
+        "gemini_insights_data": load_json("korea_trade", "gemini_insights_data.json"),
     }

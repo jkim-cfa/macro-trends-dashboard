@@ -27,6 +27,28 @@ PG_PORT = os.getenv("POSTGRES_PORT")
 
 engine = create_engine(f"postgresql+psycopg2://{PG_USER}:{PG_PASSWORD}@{PG_HOST}:{PG_PORT}/{PG_DB}")
 
+# Helper functions for safe data extraction
+def safe_get_value(df, index, column, default="N/A"):
+    """Safely extract value from DataFrame with bounds checking"""
+    try:
+        if len(df) > index and column in df.columns:
+            value = df.iloc[index][column]
+            if pd.isna(value):
+                return default
+            return value
+        return default
+    except (IndexError, KeyError):
+        return default
+
+def safe_convert_numeric(value, default=0):
+    """Safely convert value to numeric, return default if conversion fails"""
+    try:
+        if pd.isna(value) or value == "N/A":
+            return default
+        return float(value)
+    except (ValueError, TypeError):
+        return default
+
 # Korea Export Trade
 def load_korea_export_trade_data(engine):
     query = """
@@ -329,13 +351,17 @@ def analyse_trade_yoy(df):
     exports = df_latest[df_latest['trade_type'] == 'Total Exports']
     imports = df_latest[df_latest['trade_type'] == 'Total Imports']
 
-    top_export_partners = exports.sort_values('value', ascending=False).head(10)
-    top_import_partners = imports.sort_values('value', ascending=False).head(10)
+    # Filter out 'World' from partner calculations
+    exports_filtered = exports[exports['partner'] != 'World']
+    imports_filtered = imports[imports['partner'] != 'World']
+
+    top_export_partners = exports_filtered.sort_values('value', ascending=False).head(10)
+    top_import_partners = imports_filtered.sort_values('value', ascending=False).head(10)
     top_yoy = df_latest.sort_values('yoy_change', ascending=False).head(5)
     bottom_yoy = df_latest.sort_values('yoy_change', ascending=True).head(5)
 
     top_partners = (
-        df.groupby('partner')['value'].sum()
+        df[df['partner'] != 'World'].groupby('partner')['value'].sum()
         .sort_values(ascending=False)
         .head(5)
         .index.tolist()
@@ -394,7 +420,9 @@ def analyse_wsts_billings(df):
     # Latest Monthly Snapshot
     latest_month = df_month['date'].max()
     latest_month_df = df_month[df_month['date'] == latest_month]
-    top_monthly_regions = latest_month_df.sort_values('value', ascending=False)
+    # Filter out 'World' from top monthly regions
+    latest_month_df_filtered = latest_month_df[latest_month_df['country'] != 'World']
+    top_monthly_regions = latest_month_df_filtered.sort_values('value', ascending=False)
 
     # Monthly Time Series Trend
     trend_month = (
@@ -441,7 +469,9 @@ def analyse_wsts_billings(df):
     # Latest Annual Snapshot
     latest_annual = df_annual['date'].max()
     latest_annual_df = df_annual[df_annual['date'] == latest_annual]
-    top_annual_regions = latest_annual_df.sort_values('value', ascending=False)
+    # Filter out 'World' from top annual regions
+    latest_annual_df_filtered = latest_annual_df[latest_annual_df['country'] != 'World']
+    top_annual_regions = latest_annual_df_filtered.sort_values('value', ascending=False)
 
     return {
         'latest_month': latest_month,
@@ -561,38 +591,67 @@ def save_trade_eda_outputs(output_dir, engine):
         os.path.join(output_dir, "wsts_market_share_monthly.csv"), index=False
     )
     
-     # Key insights
+    # Fixed Key insights
     key_insights = {
         "analysis_timestamp": pd.Timestamp.now().isoformat(),
         "export_analysis": {
             "latest_date": str(result_export['latest_date']),
-            "total_records": result_export['total_records'],
-            "top_commodity": result_export['top_amount'].iloc[0]['commodity_name_en'] if len(result_export['top_amount']) > 0 else "N/A",
-            "top_yoy_growth": float(result_export['top_yoy_growth'].iloc[0]['trade_yoy']) if len(result_export['top_yoy_growth']) > 0 else "N/A"
+            "total_records": int(result_export['total_records']),
+            "top_commodity": safe_get_value(result_export['top_amount'], 0, 'commodity_name_en'),
+            "top_commodity_amount": safe_convert_numeric(
+                safe_get_value(result_export['top_amount'], 0, 'export_amount')
+            ),
+                        "top_yoy_growth_commodity": safe_get_value(result_export['top_yoy_growth'], 0, 'commodity_name_en'),
+            "top_yoy_growth_value": safe_convert_numeric(
+                safe_get_value(result_export['top_yoy_growth'], 0, 'trade_yoy')
+            )
         },
         "import_analysis": {
             "latest_date": str(result_import['latest_date']),
-            "total_records": result_import['total_records'],
-            "top_commodity": result_import['top_amount'].iloc[0]['commodity_name_en'] if len(result_import['top_amount']) > 0 else "N/A",
-            "top_yoy_growth": float(result_import['top_yoy_growth'].iloc[0]['trade_yoy']) if len(result_import['top_yoy_growth']) > 0 else "N/A"
+            "total_records": int(result_import['total_records']),
+            "top_commodity": safe_get_value(result_import['top_amount'], 0, 'commodity_name_en'),
+            "top_commodity_amount": safe_convert_numeric(
+                safe_get_value(result_import['top_amount'], 0, 'import_amount')
+            ),
+            "top_yoy_growth_commodity": safe_get_value(result_import['top_yoy_growth'], 0, 'commodity_name_en'),
+            "top_yoy_growth_value": safe_convert_numeric(
+                safe_get_value(result_import['top_yoy_growth'], 0, 'trade_yoy')
+            )
         },
-        "trade_yoy_analysis": {
+        "trade_balance": {
             "latest_date": str(trade_yoy_insights['latest_date']),
-            "top_export_partner": trade_yoy_insights['top_export_partners'].iloc[0]['partner'] if len(trade_yoy_insights['top_export_partners']) > 0 else "N/A",
-            "top_import_partner": trade_yoy_insights['top_import_partners'].iloc[0]['partner'] if len(trade_yoy_insights['top_import_partners']) > 0 else "N/A"
+            "top_export_partner": safe_get_value(trade_yoy_insights['top_export_partners'], 0, 'partner'),
+            "top_import_partner": safe_get_value(trade_yoy_insights['top_import_partners'], 0, 'partner'),
+            "export_top_value": safe_convert_numeric(
+                safe_get_value(trade_yoy_insights['top_export_partners'], 0, 'value')
+            ),
+            "import_top_value": safe_convert_numeric(
+                safe_get_value(trade_yoy_insights['top_import_partners'], 0, 'value')
+            )
         },
-        "semiconductor_analysis": {
+        "value_index": {
+            "top_yoy_item": safe_get_value(value_index_insights['top_yoy'], 0, 'item_en'),
+            "top_yoy_value": safe_convert_numeric(
+                safe_get_value(value_index_insights['top_yoy'], 0, 'yoy_change')
+            ),
+            "bottom_yoy_item": safe_get_value(value_index_insights['bottom_yoy'], 0, 'item_en'),
+            "bottom_yoy_value": safe_convert_numeric(
+                safe_get_value(value_index_insights['bottom_yoy'], 0, 'yoy_change')
+            )
+        },
+        "semiconductors": {
             "latest_month": str(wsts_insights['latest_month']),
             "latest_annual": str(wsts_insights['latest_annual']),
-            "top_monthly_region": wsts_insights['top_monthly_regions'].iloc[0]['country'] if len(wsts_insights['top_monthly_regions']) > 0 else "N/A"
+            "top_monthly_country": safe_get_value(wsts_insights['top_monthly_regions'], 0, 'country'),
+            "top_annual_country": safe_get_value(wsts_insights['top_annual_regions'], 0, 'country')
         }
     }
-    
+
+    # Save key insights as JSON
     with open(os.path.join(output_dir, "key_insights.json"), "w", encoding='utf-8') as f:
-        json.dump(key_insights, f, indent=2, ensure_ascii=False)
-    
-    print(f"✅ All EDA outputs saved to: {output_dir}")
-    print(f"📁 Generated {len(os.listdir(output_dir))} files")
+        json.dump(key_insights, f, ensure_ascii=False, indent=2)
+
+    print("✅ All outputs saved.")
     
     return {
         "export_insights": export_insights,
@@ -605,37 +664,75 @@ def save_trade_eda_outputs(output_dir, engine):
         "key_insights": key_insights
     }
 
+
 # Gemini Insight
 def generate_gemini_insights(eda_results, output_dir):
     try:   
-        # Extract key data points
+        # Check if eda_results is None or empty
+        if not eda_results or not isinstance(eda_results, dict):
+            print("❌ No EDA results available for Gemini insights generation")
+            return None
+            
+        # Extract key data points with safe access
         export_data = {
-            "latest_date": str(eda_results['export_items']['latest_date']),
-            "total_records": eda_results['export_items']['total_records'],
-            "top_commodity": eda_results['export_items']['top_amount'].iloc[0]['commodity_name_en'] if len(eda_results['export_items']['top_amount']) > 0 else "N/A",
-            "top_yoy_growth": float(eda_results['export_items']['top_yoy_growth'].iloc[0]['trade_yoy']) if len(eda_results['export_items']['top_yoy_growth']) > 0 else "N/A",
-            "top_commodity_amount": float(eda_results['export_items']['top_amount'].iloc[0]['export_amount']) if len(eda_results['export_items']['top_amount']) > 0 else 0
+            "latest_date": str(eda_results.get('export_items', {}).get('latest_date', 'N/A')),
+            "total_records": eda_results.get('export_items', {}).get('total_records', 0),
+            "top_commodity": "N/A",
+            "top_yoy_growth": "N/A",
+            "top_commodity_amount": 0
         }
+        
+        # Safely extract export data
+        export_items = eda_results.get('export_items', {})
+        if export_items and 'top_amount' in export_items and len(export_items['top_amount']) > 0:
+            export_data["top_commodity"] = export_items['top_amount'].iloc[0].get('commodity_name_en', 'N/A')
+            export_data["top_commodity_amount"] = float(export_items['top_amount'].iloc[0].get('export_amount', 0))
+        
+        if export_items and 'top_yoy_growth' in export_items and len(export_items['top_yoy_growth']) > 0:
+            export_data["top_yoy_growth"] = float(export_items['top_yoy_growth'].iloc[0].get('trade_yoy', 0))
         
         import_data = {
-            "latest_date": str(eda_results['import_items']['latest_date']),
-            "total_records": eda_results['import_items']['total_records'],
-            "top_commodity": eda_results['import_items']['top_amount'].iloc[0]['commodity_name_en'] if len(eda_results['import_items']['top_amount']) > 0 else "N/A",
-            "top_yoy_growth": float(eda_results['import_items']['top_yoy_growth'].iloc[0]['trade_yoy']) if len(eda_results['import_items']['top_yoy_growth']) > 0 else "N/A",
-            "top_commodity_amount": float(eda_results['import_items']['top_amount'].iloc[0]['import_amount']) if len(eda_results['import_items']['top_amount']) > 0 else 0
+            "latest_date": str(eda_results.get('import_items', {}).get('latest_date', 'N/A')),
+            "total_records": eda_results.get('import_items', {}).get('total_records', 0),
+            "top_commodity": "N/A",
+            "top_yoy_growth": "N/A",
+            "top_commodity_amount": 0
         }
+        
+        # Safely extract import data
+        import_items = eda_results.get('import_items', {})
+        if import_items and 'top_amount' in import_items and len(import_items['top_amount']) > 0:
+            import_data["top_commodity"] = import_items['top_amount'].iloc[0].get('commodity_name_en', 'N/A')
+            import_data["top_commodity_amount"] = float(import_items['top_amount'].iloc[0].get('import_amount', 0))
+        
+        if import_items and 'top_yoy_growth' in import_items and len(import_items['top_yoy_growth']) > 0:
+            import_data["top_yoy_growth"] = float(import_items['top_yoy_growth'].iloc[0].get('trade_yoy', 0))
         
         semiconductor_data = {
-            "latest_month": str(eda_results['semiconductor']['latest_month']),
-            "top_region": eda_results['semiconductor']['top_monthly_regions'].iloc[0]['country'] if len(eda_results['semiconductor']['top_monthly_regions']) > 0 else "N/A",
-            "top_region_value": float(eda_results['semiconductor']['top_monthly_regions'].iloc[0]['value']) if len(eda_results['semiconductor']['top_monthly_regions']) > 0 else 0
+            "latest_month": str(eda_results.get('semiconductor', {}).get('latest_month', 'N/A')),
+            "top_region": "N/A",
+            "top_region_value": 0
         }
         
+        # Safely extract semiconductor data
+        semiconductor = eda_results.get('semiconductor', {})
+        if semiconductor and 'top_monthly_regions' in semiconductor and len(semiconductor['top_monthly_regions']) > 0:
+            semiconductor_data["top_region"] = semiconductor['top_monthly_regions'].iloc[0].get('country', 'N/A')
+            semiconductor_data["top_region_value"] = float(semiconductor['top_monthly_regions'].iloc[0].get('value', 0))
+        
         trade_balance_data = {
-            "latest_date": str(eda_results['trade_yoy']['latest_date']),
-            "top_export_partner": eda_results['trade_yoy']['top_export_partners'].iloc[0]['partner'] if len(eda_results['trade_yoy']['top_export_partners']) > 0 else "N/A",
-            "top_import_partner": eda_results['trade_yoy']['top_import_partners'].iloc[0]['partner'] if len(eda_results['trade_yoy']['top_import_partners']) > 0 else "N/A"
+            "latest_date": str(eda_results.get('trade_yoy', {}).get('latest_date', 'N/A')),
+            "top_export_partner": "N/A",
+            "top_import_partner": "N/A"
         }
+        
+        # Safely extract trade balance data
+        trade_yoy = eda_results.get('trade_yoy', {})
+        if trade_yoy and 'top_export_partners' in trade_yoy and len(trade_yoy['top_export_partners']) > 0:
+            trade_balance_data["top_export_partner"] = trade_yoy['top_export_partners'].iloc[0].get('partner', 'N/A')
+        
+        if trade_yoy and 'top_import_partners' in trade_yoy and len(trade_yoy['top_import_partners']) > 0:
+            trade_balance_data["top_import_partner"] = trade_yoy['top_import_partners'].iloc[0].get('partner', 'N/A')
 
         prompt = f"""
 **Role**: You are a senior economic strategist analyzing cross-sector ripple effects. Extract non-obvious implications from the data below.

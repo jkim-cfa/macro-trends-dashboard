@@ -663,27 +663,48 @@ st.markdown('<div class="section-header"><h2>🚢 Shipping Index Trends</h2></di
 if not shipping_index_pivoted.empty:
     indicators = [col for col in shipping_index_pivoted.columns if col != "date"]
     
-    # Check data availability for each indicator
+    # Check data availability and latest values for each indicator
     data_availability = {}
     for indicator in indicators:
         non_null_count = shipping_index_pivoted[indicator].dropna().shape[0]
         total_count = shipping_index_pivoted.shape[0]
         availability_pct = (non_null_count / total_count) * 100
+        
+        # Get the latest value for this indicator
+        latest_value = shipping_index_pivoted[indicator].dropna().iloc[-1] if non_null_count > 0 else None
+        latest_date = shipping_index_pivoted.loc[shipping_index_pivoted[indicator].dropna().index[-1], 'date'] if non_null_count > 0 else None
+        
         data_availability[indicator] = {
             'count': non_null_count,
-            'percentage': availability_pct
+            'percentage': availability_pct,
+            'latest_value': latest_value,
+            'latest_date': latest_date
         }
     
-    # Display data availability info
-    st.subheader("📊 Data Availability")
+    # Display latest values info
+    st.subheader("📊 Latest Values")
     availability_cols = st.columns(len(indicators))
     for i, indicator in enumerate(indicators):
         with availability_cols[i]:
-            st.metric(
-                f"{indicator}",
-                f"{data_availability[indicator]['count']} points",
-                f"{data_availability[indicator]['percentage']:.1f}% coverage"
-            )
+            if data_availability[indicator]['latest_value'] is not None:
+                latest_value = data_availability[indicator]['latest_value']
+                latest_date = data_availability[indicator]['latest_date']
+                # Format the value based on its magnitude
+                if latest_value >= 1000:
+                    formatted_value = f"{latest_value:,.0f}"
+                else:
+                    formatted_value = f"{latest_value:.2f}"
+                st.metric(
+                    f"{indicator}",
+                    formatted_value,
+                    f"as of {latest_date.strftime('%Y-%m-%d')}"
+                )
+            else:
+                st.metric(
+                    f"{indicator}",
+                    "No data",
+                    "No available data"
+                )
     
     selected_indicators = st.multiselect(
         "Select shipping indices:",
@@ -805,30 +826,6 @@ if not shipping_index_pivoted.empty:
                 st.dataframe(summary_df, use_container_width=True)
             else:
                 st.warning("No data available for selected indices.")
-                
-            # Show missing data pattern
-            st.subheader("🔍 Missing Data Pattern")
-            
-            # Create a heatmap showing data availability
-            availability_matrix = shipping_index_pivoted[['date'] + indices_to_plot].copy()
-            availability_matrix = availability_matrix.set_index('date')
-            
-            # Convert to binary (1 for data, 0 for missing)
-            availability_binary = availability_matrix.notna().astype(int)
-            
-            if not availability_binary.empty:
-                fig_availability = px.imshow(
-                    availability_binary.T,
-                    title="Data Availability Heatmap (White = Data Available, Dark = Missing)",
-                    color_continuous_scale="Greys",
-                    aspect="auto"
-                )
-                fig_availability.update_layout(
-                    height=300,
-                    xaxis_title="Date",
-                    yaxis_title="Index"
-                )
-                st.plotly_chart(fig_availability, use_container_width=True)
     else:
         st.warning("Please select at least one index to view trends.")
 else:
@@ -845,23 +842,129 @@ if not shipping_index_correlation.empty:
     corr_matrix = shipping_index_correlation.set_index(shipping_index_correlation.columns[0])
     corr_min = corr_matrix.min().min()
     corr_max = corr_matrix.max().max()
+    
+    # Ensure proper color scale range
     if corr_max - corr_min < 0.1:
         corr_min = max(-1, corr_min - 0.1)
         corr_max = min(1, corr_max + 0.1)
+    
+    # Create enhanced correlation heatmap with annotations
     fig_corr = px.imshow(
         corr_matrix,
         title="Shipping Index Correlation Matrix",
         color_continuous_scale="RdBu_r",
-        zmin=corr_min,
-        zmax=corr_max,
+        zmin=-1,
+        zmax=1,
         aspect="auto",
         template="plotly_white"
     )
+    
+    # Add correlation values as text annotations
+    for i in range(len(corr_matrix.index)):
+        for j in range(len(corr_matrix.columns)):
+            value = corr_matrix.iloc[i, j]
+            if not pd.isna(value):
+                # Format the correlation value
+                if abs(value) >= 0.8:
+                    text_color = 'white'  # High contrast for strong correlations
+                else:
+                    text_color = 'black'
+                
+                fig_corr.add_annotation(
+                    x=j,
+                    y=i,
+                    text=f"{value:.2f}",
+                    showarrow=False,
+                    font=dict(color=text_color, size=10),
+                    xanchor='center',
+                    yanchor='middle'
+                )
+    
+    # Fix colorbar with proper tick marks
+    fig_corr.update_layout(
+        coloraxis=dict(
+            colorbar=dict(
+                tickmode='array',
+                tickvals=[-1, -0.5, 0, 0.5, 1],
+                ticktext=['-1.0', '-0.5', '0.0', '0.5', '1.0'],
+                title="Correlation Coefficient",
+                len=0.8,
+                thickness=20
+            )
+        ),
+        height=600,
+        xaxis=dict(tickangle=-45),
+        yaxis=dict(tickangle=0)
+    )
+    
     fig_corr = apply_chart_styling(fig_corr)
-    fig_corr.update_layout(height=500)
-    fig_corr.update_xaxes(tickangle=-45)
     st.plotly_chart(fig_corr, use_container_width=True)
-    st.info(f"💡 **Correlation Insights**: Values range from {corr_min:.2f} to {corr_max:.2f}. Values closer to {corr_max:.2f} indicate strong positive correlation, while values closer to {corr_min:.2f} indicate strong negative correlation.")
+    
+    # Enhanced correlation insights and summary
+    st.markdown("### 📊 Correlation Analysis Summary")
+    
+    # Find strongest correlations
+    corr_pairs = []
+    for i in range(len(corr_matrix.index)):
+        for j in range(i+1, len(corr_matrix.columns)):
+            value = corr_matrix.iloc[i, j]
+            if not pd.isna(value):
+                corr_pairs.append({
+                    'index1': corr_matrix.index[i],
+                    'index2': corr_matrix.columns[j],
+                    'correlation': value
+                })
+    
+    # Sort by absolute correlation value
+    corr_pairs.sort(key=lambda x: abs(x['correlation']), reverse=True)
+    
+    # Display correlation insights
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("#### 🔗 Strongest Correlations")
+        if corr_pairs:
+            for i, pair in enumerate(corr_pairs[:5]):  # Top 5 correlations
+                corr_val = pair['correlation']
+                strength = "Strong Positive" if corr_val > 0.7 else "Strong Negative" if corr_val < -0.7 else "Moderate Positive" if corr_val > 0.3 else "Moderate Negative" if corr_val < -0.3 else "Weak"
+                color = "🟢" if corr_val > 0.7 else "🔴" if corr_val < -0.7 else "🟡"
+                st.markdown(f"{color} **{pair['index1']}** ↔ **{pair['index2']}**: {corr_val:.3f} ({strength})")
+    
+    with col2:
+        st.markdown("#### 📈 Correlation Strength Guide")
+        st.markdown("""
+        - **🟢 Strong Positive (0.7-1.0)**: Indices move together strongly
+        - **🟡 Moderate Positive (0.3-0.7)**: Indices tend to move in same direction
+        - **⚪ Weak (-0.3 to 0.3)**: Little relationship between indices
+        - **🟡 Moderate Negative (-0.7 to -0.3)**: Indices tend to move in opposite directions
+        - **🔴 Strong Negative (-1.0 to -0.7)**: Indices move strongly in opposite directions
+        """)
+    
+    # Detailed explanation
+    st.markdown("#### 💡 What This Means")
+    st.markdown("""
+    **Strong Positive Correlations** (red squares with values >0.7) indicate that when one shipping index rises, the other tends to rise as well. 
+    This often happens with indices that track similar routes or vessel types.
+    
+    **Strong Negative Correlations** (blue squares with values <-0.7) suggest that when one index rises, the other tends to fall. 
+    This could indicate different market segments or competing routes.
+    
+    **Weak Correlations** (neutral colors with values between -0.3 and 0.3) suggest that the indices move independently of each other.
+    """)
+    
+    # Correlation statistics
+    st.markdown("#### 📊 Correlation Statistics")
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.metric("Average Correlation", f"{corr_matrix.mean().mean():.3f}")
+    with col2:
+        st.metric("Strongest Positive", f"{corr_max:.3f}")
+    with col3:
+        st.metric("Strongest Negative", f"{corr_min:.3f}")
+    with col4:
+        strong_correlations = ((corr_matrix.abs() > 0.7).sum().sum() - len(corr_matrix)) / 2  # Subtract diagonal
+        st.metric("Strong Correlations", f"{strong_correlations:.0f}")
+        
 else:
     st.markdown("""
     <div class="alert-box">
@@ -979,48 +1082,150 @@ st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', uns
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "⬇️ Top 5 Decrease Items", "⬆️ Top 5 Increase Items", "🌍 Top 5 Increase Countries", "🤝 Top 5 Trade Partners", "🚢 Shipping Index", "📊 Volatility Analysis"
 ])
+
 with tab1:
     if not export_decrease_items_top5.empty:
-        st.dataframe(export_decrease_items_top5, use_container_width=True)
-        csv = export_decrease_items_top5.to_csv(index=False)
-        st.download_button("Download CSV", csv, "export_decrease_items_top5.csv", "text/csv")
+        with st.expander("📊 Export Decrease Items Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_decrease_items"):
+                    csv = export_decrease_items_top5.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"export_decrease_items_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_decrease_items")
+            if search_term:
+                filtered_data = export_decrease_items_top5[
+                    export_decrease_items_top5.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+                ]
+            else:
+                filtered_data = export_decrease_items_top5
+            st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No data available.")
+
 with tab2:
     if not export_increase_items_top5.empty:
-        st.dataframe(export_increase_items_top5, use_container_width=True)
-        csv = export_increase_items_top5.to_csv(index=False)
-        st.download_button("Download CSV", csv, "export_increase_items_top5.csv", "text/csv")
+        with st.expander("📈 Export Increase Items Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_increase_items"):
+                    csv = export_increase_items_top5.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"export_increase_items_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_increase_items")
+            if search_term:
+                filtered_data = export_increase_items_top5[
+                    export_increase_items_top5.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+                ]
+            else:
+                filtered_data = export_increase_items_top5
+            st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No data available.")
+
 with tab3:
     if not export_increase_countries_top5.empty:
-        st.dataframe(export_increase_countries_top5, use_container_width=True)
-        csv = export_increase_countries_top5.to_csv(index=False)
-        st.download_button("Download CSV", csv, "export_increase_countries_top5.csv", "text/csv")
+        with st.expander("🌍 Export Increase Countries Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_increase_countries"):
+                    csv = export_increase_countries_top5.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"export_increase_countries_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            search_term = st.text_input("🔍 Search countries:", placeholder="Enter country name...", key="search_increase_countries")
+            if search_term:
+                filtered_data = export_increase_countries_top5[
+                    export_increase_countries_top5.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+                ]
+            else:
+                filtered_data = export_increase_countries_top5
+            st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No data available.")
+
 with tab4:
     if not trade_partners_top5.empty:
-        st.dataframe(trade_partners_top5, use_container_width=True)
-        csv = trade_partners_top5.to_csv(index=False)
-        st.download_button("Download CSV", csv, "trade_partners_top5.csv", "text/csv")
+        with st.expander("🤝 Trade Partners Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_trade_partners"):
+                    csv = trade_partners_top5.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"trade_partners_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            search_term = st.text_input("🔍 Search partners:", placeholder="Enter partner name...", key="search_trade_partners")
+            if search_term:
+                filtered_data = trade_partners_top5[
+                    trade_partners_top5.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+                ]
+            else:
+                filtered_data = trade_partners_top5
+            st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No data available.")
+
 with tab5:
     if not shipping_index_pivoted.empty:
-        st.dataframe(shipping_index_pivoted, use_container_width=True)
-        csv = shipping_index_pivoted.to_csv(index=False)
-        st.download_button("Download CSV", csv, "shipping_index_pivoted.csv", "text/csv")
+        with st.expander("🚢 Shipping Index Data", expanded=False):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+            with col4:
+                if st.button("📥 Export Data", type="primary", key="export_shipping_index"):
+                    csv = shipping_index_pivoted.to_csv(index=False)
+                    st.download_button(
+                        label="Download CSV",
+                        data=csv,
+                        file_name=f"shipping_index_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+            search_term = st.text_input("🔍 Search indices:", placeholder="Enter index name...", key="search_shipping_index")
+            if search_term:
+                filtered_data = shipping_index_pivoted[
+                    shipping_index_pivoted.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+                ]
+            else:
+                filtered_data = shipping_index_pivoted
+            st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No data available.")
+
 with tab6:
     if not shipping_index_3m_volatility.empty:
         volatility_display = shipping_index_3m_volatility.dropna()
         if not volatility_display.empty:
-            st.dataframe(volatility_display, use_container_width=True)
-            csv = volatility_display.to_csv(index=False)
-            st.download_button("Download CSV", csv, "shipping_index_3m_volatility.csv", "text/csv")
+            with st.expander("📊 Volatility Analysis Data", expanded=False):
+                col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
+                with col4:
+                    if st.button("📥 Export Data", type="primary", key="export_volatility"):
+                        csv = volatility_display.to_csv(index=False)
+                        st.download_button(
+                            label="Download CSV",
+                            data=csv,
+                            file_name=f"volatility_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                            mime="text/csv"
+                        )
+                search_term = st.text_input("🔍 Search volatility data:", placeholder="Enter search term...", key="search_volatility")
+                if search_term:
+                    filtered_data = volatility_display[
+                        volatility_display.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+                    ]
+                else:
+                    filtered_data = volatility_display
+                st.dataframe(filtered_data, use_container_width=True)
         else:
             st.info("No valid volatility data available.")
     else:

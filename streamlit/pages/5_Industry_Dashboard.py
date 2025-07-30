@@ -460,7 +460,11 @@ st.markdown('<div class="section-header"><h2>🌍 World Comparison Analysis</h2>
 if not steel_vs_world_current.empty:
     # Sort data by vs_world values in descending order (highest first)
     steel_vs_world_sorted = steel_vs_world_current.sort_values('vs_world', ascending=False)
-    
+    # Prepare data
+    steel_vs_world_sorted = steel_vs_world_current.sort_values('vs_world', ascending=False).copy()
+    steel_vs_world_sorted['label'] = steel_vs_world_sorted['vs_world'].round(1).astype(str) + "k"
+
+    # Create labeled bar chart
     fig_world = px.bar(
         steel_vs_world_sorted,
         x="region",
@@ -468,24 +472,19 @@ if not steel_vs_world_current.empty:
         title="Steel Production vs World Average",
         labels={"vs_world": "Difference from World Avg (thousand tons)", "region": "Region"},
         color="vs_world",
-        color_continuous_scale="RdYlBu"
+        color_continuous_scale="RdYlBu",
+        text="label"
     )
+
+    fig_world.update_traces(textposition="outside", cliponaxis=False)
+
     # Set the color scale midpoint manually
-    fig_world.update_traces(
-        marker=dict(
-            colorscale="RdYlBu",
-            cmin=steel_vs_world_current['vs_world'].min(),
-            cmax=steel_vs_world_current['vs_world'].max(),
-            colorbar=dict(
-                title="Difference from World Avg",
-                tickformat=".0f"
-            )
-        )
-    )
+    fig_world.update_traces(marker=dict(
+        colorbar=dict(title="Diff from World Avg", tickformat=".0f")
+    ))
+
     fig_world = apply_chart_styling(fig_world)
     st.plotly_chart(fig_world, use_container_width=True)
-else:
-    st.info("No world comparison data available.")
 
 # Major Economies Analysis
 st.markdown('<div class="section-header"><h2>🏛️ Major Economies Analysis</h2></div>', unsafe_allow_html=True)
@@ -495,6 +494,9 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Current Month")
     if not steel_major_economies_current.empty:
+        steel_major_economies_current = steel_major_economies_current.copy()
+        steel_major_economies_current['label'] = steel_major_economies_current['value'].round(1).astype(str) + "k"
+
         fig_major_current = px.bar(
             steel_major_economies_current,
             x="region",
@@ -502,8 +504,10 @@ with col1:
             title="Major Economies - Current Month",
             labels={"value": "Production (thousand tons)", "region": "Region"},
             color="value",
-            color_continuous_scale="Greens"
+            color_continuous_scale="Greens",
+            text="label"
         )
+        fig_major_current.update_traces(textposition="outside", cliponaxis=False)
         fig_major_current = apply_chart_styling(fig_major_current)
         st.plotly_chart(fig_major_current, use_container_width=True)
     else:
@@ -512,6 +516,9 @@ with col1:
 with col2:
     st.subheader("Year-to-Date Cumulative")
     if not steel_major_economies_jan_current.empty:
+        steel_major_economies_jan_current = steel_major_economies_jan_current.copy()
+        steel_major_economies_jan_current['label'] = steel_major_economies_jan_current['value'].round(1).astype(str) + "k"
+
         fig_major_jan = px.bar(
             steel_major_economies_jan_current,
             x="region",
@@ -519,8 +526,10 @@ with col2:
             title="Major Economies - Year-to-Date Production",
             labels={"value": "Production (thousand tons)", "region": "Region"},
             color="value",
-            color_continuous_scale="Oranges"
+            color_continuous_scale="Oranges",
+            text="label"
         )
+        fig_major_jan.update_traces(textposition="outside", cliponaxis=False)
         fig_major_jan = apply_chart_styling(fig_major_jan)
         st.plotly_chart(fig_major_jan, use_container_width=True)
     else:
@@ -546,29 +555,53 @@ if not inventory_trend_statistics.empty:
                     'Positive': '#28a745',
                     'Negative': '#dc3545',
                     'Neutral': '#6c757d'
-                }
+                },
+                text=inventory_trend_statistics["mom_volatility"].round(1).astype(str)
             )
+            fig_trend.update_traces(textposition="outside", cliponaxis=False)
             fig_trend = apply_chart_styling(fig_trend)
             st.plotly_chart(fig_trend, use_container_width=True)
+
     
     with col2:
         # Momentum analysis
         if 'positive_momentum_3m' in inventory_trend_statistics.columns and 'positive_momentum_6m' in inventory_trend_statistics.columns:
+            # Compute momentum ratio and labels
             momentum_data = inventory_trend_statistics[['category', 'positive_momentum_3m', 'positive_momentum_6m']].copy()
             momentum_data['momentum_ratio'] = momentum_data['positive_momentum_3m'] / momentum_data['positive_momentum_6m']
-            
+            momentum_data['label'] = momentum_data['momentum_ratio'].round(2).astype(str)
+
+            # Define manual colors (matching trend direction if available)
+            color_map = {
+                "Equipment Investment Index": "#b30000",  # Red tone
+                "Manufacturing Inventory Ratio": "#006400"  # Green tone
+            }
+            momentum_data['bar_color'] = momentum_data['category'].map(color_map)
+
+            # Plot without color scale
             fig_momentum = px.bar(
                 momentum_data,
                 x="category",
                 y="momentum_ratio",
                 title="3M vs 6M Momentum Ratio",
                 labels={"momentum_ratio": "3M/6M Momentum Ratio", "category": "Category"},
-                color="momentum_ratio",
-                color_continuous_scale="RdYlGn"
+                text="label",
+                color_discrete_sequence=["#999999"]  # dummy for compliance
+            )
+            fig_momentum.update_traces(
+                textposition="outside",
+                marker_color=momentum_data["bar_color"],
+                cliponaxis=False
+            )
+            fig_momentum.update_layout(
+                xaxis_tickangle=0,
+                coloraxis_showscale=False  # hide unnecessary color scale
             )
             fig_momentum = apply_chart_styling(fig_momentum)
-            fig_momentum.add_hline(y=1, line_dash="dash", line_color="gray", opacity=0.5)
+            fig_momentum.add_hline(y=1, line_dash="dot", line_color="gray", opacity=0.5)
             st.plotly_chart(fig_momentum, use_container_width=True)
+
+
     
     # Trend statistics summary table
     st.subheader("📊 Trend Statistics Summary")
@@ -594,6 +627,10 @@ st.markdown('<div class="section-header"><h2>📊 Volatility Analysis</h2></div>
 
 if not inventory_volatility_analysis.empty:
     # Create volatility visualization
+    # Add label column
+    inventory_volatility_analysis["volatility_label"] = inventory_volatility_analysis["volatility_std"].round(2).astype(str) + " σ"
+
+    # Create chart with labels
     fig_vol = px.bar(
         inventory_volatility_analysis,
         x="indicator",
@@ -601,16 +638,13 @@ if not inventory_volatility_analysis.empty:
         color="period",
         title="Inventory Volatility by Indicator and Period",
         labels={"volatility_std": "Standard Deviation", "indicator": "Indicator"},
-        barmode="group"
+        barmode="group",
+        text="volatility_label"
     )
+    fig_vol.update_traces(textposition="outside", cliponaxis=False)
     fig_vol = apply_chart_styling(fig_vol)
     st.plotly_chart(fig_vol, use_container_width=True)
-    
-    # Volatility summary table
-    st.subheader("📈 Volatility Summary")
-    st.dataframe(inventory_volatility_analysis, use_container_width=True)
-else:
-    st.info("No volatility analysis data available.")
+
 
 # AI-Powered Strategic Analysis
 st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)

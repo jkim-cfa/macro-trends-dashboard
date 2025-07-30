@@ -597,12 +597,16 @@ else:
 # After IEA Oil Stocks Trends, add Volatility by Country
 st.markdown('<div class="section-header"><h2>📉 Volatility by Country</h2></div>', unsafe_allow_html=True)
 if not stock_volatility_analysis.empty:
+    df_vol = stock_volatility_analysis.sort_values("volatility", ascending=False).head(10).copy()
+    df_vol['vol_label'] = df_vol['volatility'].round(1).astype(str)
     fig_vol = px.bar(
-        stock_volatility_analysis.sort_values("volatility", ascending=False).head(10),
+        df_vol,
         x="country", y="volatility",
         color="volatility", color_continuous_scale="Blues",
-        title="Top 10 Most Volatile IEA Oil Stocks by Country"
+        title="Top 10 Most Volatile IEA Oil Stocks by Country",
+        text="vol_label"
     )
+    fig_vol.update_traces(textposition='auto', textfont_size=12, textfont_color='black')
     fig_vol = apply_chart_styling(fig_vol)
     st.plotly_chart(fig_vol, use_container_width=True)
 else:
@@ -630,7 +634,8 @@ if not stock_seasonality_patterns.empty:
         labels=dict(x="Country", y="Month", color="Avg Stock (thousand bbl)"),
         aspect="auto",
         title="Monthly Average IEA Oil Stocks by Country (Top 15)",
-        color_continuous_scale="Blues"  # Use Blues scale for better contrast
+        color_continuous_scale="Blues",  # Use Blues scale for better contrast
+        text_auto=True
     )
     
     # 4. Improve axis formatting and styling

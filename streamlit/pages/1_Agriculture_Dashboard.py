@@ -566,15 +566,19 @@ if not corr_data.empty:
     
     # Enhanced correlation heatmap with dynamic color scale
     fig_corr = px.imshow(
-        corr_data,
-        title="Correlation Matrix Between Commodities",
-        color_continuous_scale="RdBu_r",
-        zmin=corr_min,
-        zmax=corr_max,
-        aspect="auto",
-        template="plotly_white"
-    )
-    
+    corr_data,
+    title="Correlation Matrix Between Commodities",
+    color_continuous_scale="RdBu_r",
+    zmin=corr_min,
+    zmax=corr_max,
+    aspect="auto",
+    template="plotly_white",
+    text_auto=".2f"  # <-- This line adds value labels
+)
+    fig_corr.update_traces(
+        textfont_size=12,
+        textfont_color="black"
+)
     fig_corr = apply_chart_styling(fig_corr)
     fig_corr.update_layout(height=600)
     fig_corr.update_xaxes(tickangle=-45)
