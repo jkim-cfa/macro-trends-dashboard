@@ -1,0 +1,7 @@
+﻿indicator,period,data_points,current_value,period_return,volatility_std,high_volatility_periods,volatility_classification
+Equipment Investment Index,3M,4,113.0,-5.6761268781302165,3.1384709652950424,1,Normal
+Equipment Investment Index,6M,7,113.0,1.5274034141958603,7.6233038706824425,1,High
+Equipment Investment Index,12M,13,113.0,9.390125847047436,7.071910850464892,3,Normal
+Manufacturing Inventory Ratio,3M,4,104.4,-2.1555763823805085,1.8732769861039407,1,Normal
+Manufacturing Inventory Ratio,6M,7,104.4,-8.098591549295763,4.229938646408589,1,Normal
+Manufacturing Inventory Ratio,12M,13,104.4,-5.004549590536856,3.76531062497692,3,Normal

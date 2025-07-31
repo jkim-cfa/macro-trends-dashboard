@@ -1,0 +1,1873 @@
+﻿date,region,country,value,unit,sector,source
+2024-01-01,Africa,Africa,1.19,percentage,energy,PETRONET
+2024-01-01,Africa,Africa,1045.0,thousand bbl,energy,PETRONET
+2024-01-01,Africa,Africa,87779.0,thousand USD,energy,PETRONET
+2024-01-01,Africa,Africa,16.802,USD/bbl,energy,PETRONET
+2024-01-01,Africa,Algeria,1045.0,thousand bbl,energy,PETRONET
+2024-01-01,Africa,Algeria,87779.0,thousand USD,energy,PETRONET
+2024-01-01,Africa,Algeria,84.01,USD/bbl,energy,PETRONET
+2024-01-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-01-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-01-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-01-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2024-01-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2024-01-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2024-01-01,America,America,21.85,percentage,energy,PETRONET
+2024-01-01,America,America,19111.0,thousand bbl,energy,PETRONET
+2024-01-01,America,America,1611932.0,thousand USD,energy,PETRONET
+2024-01-01,America,America,49.71,USD/bbl,energy,PETRONET
+2024-01-01,America,Brazil,947.0,thousand bbl,energy,PETRONET
+2024-01-01,America,Brazil,80334.0,thousand USD,energy,PETRONET
+2024-01-01,America,Brazil,84.86,USD/bbl,energy,PETRONET
+2024-01-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-01-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-01-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-01-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-01-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-01-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-01-01,America,Mexico,3945.0,thousand bbl,energy,PETRONET
+2024-01-01,America,Mexico,305629.0,thousand USD,energy,PETRONET
+2024-01-01,America,Mexico,77.47,USD/bbl,energy,PETRONET
+2024-01-01,America,United States,14219.0,thousand bbl,energy,PETRONET
+2024-01-01,America,United States,1225969.0,thousand USD,energy,PETRONET
+2024-01-01,America,United States,86.22,USD/bbl,energy,PETRONET
+2024-01-01,Asia,Asia,4.82,percentage,energy,PETRONET
+2024-01-01,Asia,Asia,4460.0,thousand bbl,energy,PETRONET
+2024-01-01,Asia,Asia,355712.0,thousand USD,energy,PETRONET
+2024-01-01,Asia,Asia,22.20142857142857,USD/bbl,energy,PETRONET
+2024-01-01,Asia,Australia,1300.0,thousand bbl,energy,PETRONET
+2024-01-01,Asia,Australia,94592.0,thousand USD,energy,PETRONET
+2024-01-01,Asia,Australia,72.77,USD/bbl,energy,PETRONET
+2024-01-01,Asia,Indonesia,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Asia,Indonesia,0.0,thousand USD,energy,PETRONET
+2024-01-01,Asia,Indonesia,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Asia,Kazakhstan,3160.0,thousand bbl,energy,PETRONET
+2024-01-01,Asia,Kazakhstan,261120.0,thousand USD,energy,PETRONET
+2024-01-01,Asia,Kazakhstan,82.64,USD/bbl,energy,PETRONET
+2024-01-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-01-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2024-01-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2024-01-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-01-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2024-01-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2024-01-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-01-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-01-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-01-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-01-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-01-01,MiddleEast,Iraq,7851.0,thousand bbl,energy,PETRONET
+2024-01-01,MiddleEast,Iraq,613742.0,thousand USD,energy,PETRONET
+2024-01-01,MiddleEast,Iraq,78.17,USD/bbl,energy,PETRONET
+2024-01-01,MiddleEast,Kuwait,8254.0,thousand bbl,energy,PETRONET
+2024-01-01,MiddleEast,Kuwait,675033.0,thousand USD,energy,PETRONET
+2024-01-01,MiddleEast,Kuwait,81.78,USD/bbl,energy,PETRONET
+2024-01-01,MiddleEast,MiddleEast,72.14,percentage,energy,PETRONET
+2024-01-01,MiddleEast,MiddleEast,64518.0,thousand bbl,energy,PETRONET
+2024-01-01,MiddleEast,MiddleEast,5323503.0,thousand USD,energy,PETRONET
+2024-01-01,MiddleEast,MiddleEast,81.08571428571429,USD/bbl,energy,PETRONET
+2024-01-01,MiddleEast,Neutral Zone,2860.0,thousand bbl,energy,PETRONET
+2024-01-01,MiddleEast,Neutral Zone,233095.0,thousand USD,energy,PETRONET
+2024-01-01,MiddleEast,Neutral Zone,81.49,USD/bbl,energy,PETRONET
+2024-01-01,MiddleEast,Oman,1412.0,thousand bbl,energy,PETRONET
+2024-01-01,MiddleEast,Oman,110880.0,thousand USD,energy,PETRONET
+2024-01-01,MiddleEast,Oman,78.53,USD/bbl,energy,PETRONET
+2024-01-01,MiddleEast,Qatar,5093.0,thousand bbl,energy,PETRONET
+2024-01-01,MiddleEast,Qatar,404450.0,thousand USD,energy,PETRONET
+2024-01-01,MiddleEast,Qatar,79.42,USD/bbl,energy,PETRONET
+2024-01-01,MiddleEast,Saudi Arabia,27588.0,thousand bbl,energy,PETRONET
+2024-01-01,MiddleEast,Saudi Arabia,2323845.0,thousand USD,energy,PETRONET
+2024-01-01,MiddleEast,Saudi Arabia,84.23,USD/bbl,energy,PETRONET
+2024-01-01,MiddleEast,UAE,11460.0,thousand bbl,energy,PETRONET
+2024-01-01,MiddleEast,UAE,962458.0,thousand USD,energy,PETRONET
+2024-01-01,MiddleEast,UAE,83.98,USD/bbl,energy,PETRONET
+2024-01-01,Total,Total,89135.0,thousand bbl,energy,PETRONET
+2024-01-01,Total,Total,7378927.0,thousand USD,energy,PETRONET
+2024-01-01,Total,Total,82.78,USD/bbl,energy,PETRONET
+2024-02-01,Africa,Africa,2.88,percentage,energy,PETRONET
+2024-02-01,Africa,Africa,2452.0,thousand bbl,energy,PETRONET
+2024-02-01,Africa,Africa,212810.0,thousand USD,energy,PETRONET
+2024-02-01,Africa,Africa,51.752,USD/bbl,energy,PETRONET
+2024-02-01,Africa,Algeria,1758.0,thousand bbl,energy,PETRONET
+2024-02-01,Africa,Algeria,154132.0,thousand USD,energy,PETRONET
+2024-02-01,Africa,Algeria,87.67,USD/bbl,energy,PETRONET
+2024-02-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-02-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-02-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-02-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-02-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-02-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-02-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-02-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-02-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-02-01,Africa,Mozambique,253.0,thousand bbl,energy,PETRONET
+2024-02-01,Africa,Mozambique,22483.0,thousand USD,energy,PETRONET
+2024-02-01,Africa,Mozambique,88.97,USD/bbl,energy,PETRONET
+2024-02-01,Africa,Nigeria,441.0,thousand bbl,energy,PETRONET
+2024-02-01,Africa,Nigeria,36195.0,thousand USD,energy,PETRONET
+2024-02-01,Africa,Nigeria,82.12,USD/bbl,energy,PETRONET
+2024-02-01,America,America,20.57,percentage,energy,PETRONET
+2024-02-01,America,America,18326.0,thousand bbl,energy,PETRONET
+2024-02-01,America,America,1519132.0,thousand USD,energy,PETRONET
+2024-02-01,America,America,64.01599999999999,USD/bbl,energy,PETRONET
+2024-02-01,America,Brazil,2853.0,thousand bbl,energy,PETRONET
+2024-02-01,America,Brazil,242605.0,thousand USD,energy,PETRONET
+2024-02-01,America,Brazil,85.03,USD/bbl,energy,PETRONET
+2024-02-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-02-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-02-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-02-01,America,Ecuador,1077.0,thousand bbl,energy,PETRONET
+2024-02-01,America,Ecuador,84910.0,thousand USD,energy,PETRONET
+2024-02-01,America,Ecuador,78.83,USD/bbl,energy,PETRONET
+2024-02-01,America,Mexico,772.0,thousand bbl,energy,PETRONET
+2024-02-01,America,Mexico,56275.0,thousand USD,energy,PETRONET
+2024-02-01,America,Mexico,72.89,USD/bbl,energy,PETRONET
+2024-02-01,America,United States,13624.0,thousand bbl,energy,PETRONET
+2024-02-01,America,United States,1135342.0,thousand USD,energy,PETRONET
+2024-02-01,America,United States,83.33,USD/bbl,energy,PETRONET
+2024-02-01,Asia,Asia,5.16,percentage,energy,PETRONET
+2024-02-01,Asia,Asia,4556.0,thousand bbl,energy,PETRONET
+2024-02-01,Asia,Asia,381042.0,thousand USD,energy,PETRONET
+2024-02-01,Asia,Asia,47.62714285714286,USD/bbl,energy,PETRONET
+2024-02-01,Asia,Australia,3252.0,thousand bbl,energy,PETRONET
+2024-02-01,Asia,Australia,273940.0,thousand USD,energy,PETRONET
+2024-02-01,Asia,Australia,84.24,USD/bbl,energy,PETRONET
+2024-02-01,Asia,Indonesia,215.0,thousand bbl,energy,PETRONET
+2024-02-01,Asia,Indonesia,18916.0,thousand USD,energy,PETRONET
+2024-02-01,Asia,Indonesia,87.88,USD/bbl,energy,PETRONET
+2024-02-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2024-02-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2024-02-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2024-02-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-02-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-02-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-02-01,Asia,New Zealand,615.0,thousand bbl,energy,PETRONET
+2024-02-01,Asia,New Zealand,51401.0,thousand USD,energy,PETRONET
+2024-02-01,Asia,New Zealand,83.6,USD/bbl,energy,PETRONET
+2024-02-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2024-02-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2024-02-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2024-02-01,Asia,Philippines,474.0,thousand bbl,energy,PETRONET
+2024-02-01,Asia,Philippines,36785.0,thousand USD,energy,PETRONET
+2024-02-01,Asia,Philippines,77.67,USD/bbl,energy,PETRONET
+2024-02-01,Europe,Europe,4.2,percentage,energy,PETRONET
+2024-02-01,Europe,Europe,3760.0,thousand bbl,energy,PETRONET
+2024-02-01,Europe,Europe,310480.0,thousand USD,energy,PETRONET
+2024-02-01,Europe,Europe,81.565,USD/bbl,energy,PETRONET
+2024-02-01,Europe,Norway,659.0,thousand bbl,energy,PETRONET
+2024-02-01,Europe,Norway,52740.0,thousand USD,energy,PETRONET
+2024-02-01,Europe,Norway,80.01,USD/bbl,energy,PETRONET
+2024-02-01,Europe,United Kingdom,3101.0,thousand bbl,energy,PETRONET
+2024-02-01,Europe,United Kingdom,257740.0,thousand USD,energy,PETRONET
+2024-02-01,Europe,United Kingdom,83.12,USD/bbl,energy,PETRONET
+2024-02-01,MiddleEast,Iraq,8419.0,thousand bbl,energy,PETRONET
+2024-02-01,MiddleEast,Iraq,659468.0,thousand USD,energy,PETRONET
+2024-02-01,MiddleEast,Iraq,78.33,USD/bbl,energy,PETRONET
+2024-02-01,MiddleEast,Kuwait,9506.0,thousand bbl,energy,PETRONET
+2024-02-01,MiddleEast,Kuwait,794508.0,thousand USD,energy,PETRONET
+2024-02-01,MiddleEast,Kuwait,83.58,USD/bbl,energy,PETRONET
+2024-02-01,MiddleEast,MiddleEast,67.18,percentage,energy,PETRONET
+2024-02-01,MiddleEast,MiddleEast,59928.0,thousand bbl,energy,PETRONET
+2024-02-01,MiddleEast,MiddleEast,4960384.0,thousand USD,energy,PETRONET
+2024-02-01,MiddleEast,MiddleEast,69.89,USD/bbl,energy,PETRONET
+2024-02-01,MiddleEast,Neutral Zone,2734.0,thousand bbl,energy,PETRONET
+2024-02-01,MiddleEast,Neutral Zone,219594.0,thousand USD,energy,PETRONET
+2024-02-01,MiddleEast,Neutral Zone,80.32,USD/bbl,energy,PETRONET
+2024-02-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2024-02-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2024-02-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2024-02-01,MiddleEast,Qatar,4136.0,thousand bbl,energy,PETRONET
+2024-02-01,MiddleEast,Qatar,326004.0,thousand USD,energy,PETRONET
+2024-02-01,MiddleEast,Qatar,78.81,USD/bbl,energy,PETRONET
+2024-02-01,MiddleEast,Saudi Arabia,24023.0,thousand bbl,energy,PETRONET
+2024-02-01,MiddleEast,Saudi Arabia,2031831.0,thousand USD,energy,PETRONET
+2024-02-01,MiddleEast,Saudi Arabia,84.58,USD/bbl,energy,PETRONET
+2024-02-01,MiddleEast,UAE,11110.0,thousand bbl,energy,PETRONET
+2024-02-01,MiddleEast,UAE,928979.0,thousand USD,energy,PETRONET
+2024-02-01,MiddleEast,UAE,83.61,USD/bbl,energy,PETRONET
+2024-02-01,Total,Total,89022.0,thousand bbl,energy,PETRONET
+2024-02-01,Total,Total,7383846.0,thousand USD,energy,PETRONET
+2024-02-01,Total,Total,82.94,USD/bbl,energy,PETRONET
+2024-03-01,Africa,Africa,1.64,percentage,energy,PETRONET
+2024-03-01,Africa,Africa,1267.0,thousand bbl,energy,PETRONET
+2024-03-01,Africa,Africa,114029.0,thousand USD,energy,PETRONET
+2024-03-01,Africa,Africa,34.510000000000005,USD/bbl,energy,PETRONET
+2024-03-01,Africa,Algeria,1047.0,thousand bbl,energy,PETRONET
+2024-03-01,Africa,Algeria,96320.0,thousand USD,energy,PETRONET
+2024-03-01,Africa,Algeria,91.97,USD/bbl,energy,PETRONET
+2024-03-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-03-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-03-01,Africa,Equatorial Guinea,220.0,thousand bbl,energy,PETRONET
+2024-03-01,Africa,Equatorial Guinea,17709.0,thousand USD,energy,PETRONET
+2024-03-01,Africa,Equatorial Guinea,80.58,USD/bbl,energy,PETRONET
+2024-03-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-03-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-03-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2024-03-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2024-03-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2024-03-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2024-03-01,America,America,17.87,percentage,energy,PETRONET
+2024-03-01,America,America,14951.0,thousand bbl,energy,PETRONET
+2024-03-01,America,America,1240860.0,thousand USD,energy,PETRONET
+2024-03-01,America,America,48.254,USD/bbl,energy,PETRONET
+2024-03-01,America,Brazil,1473.0,thousand bbl,energy,PETRONET
+2024-03-01,America,Brazil,124542.0,thousand USD,energy,PETRONET
+2024-03-01,America,Brazil,84.56,USD/bbl,energy,PETRONET
+2024-03-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-03-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-03-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-03-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-03-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-03-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-03-01,America,Mexico,1224.0,thousand bbl,energy,PETRONET
+2024-03-01,America,Mexico,89250.0,thousand USD,energy,PETRONET
+2024-03-01,America,Mexico,72.89,USD/bbl,energy,PETRONET
+2024-03-01,America,United States,12254.0,thousand bbl,energy,PETRONET
+2024-03-01,America,United States,1027068.0,thousand USD,energy,PETRONET
+2024-03-01,America,United States,83.82,USD/bbl,energy,PETRONET
+2024-03-01,Asia,Asia,3.69,percentage,energy,PETRONET
+2024-03-01,Asia,Asia,3061.0,thousand bbl,energy,PETRONET
+2024-03-01,Asia,Asia,255977.0,thousand USD,energy,PETRONET
+2024-03-01,Asia,Asia,36.34142857142857,USD/bbl,energy,PETRONET
+2024-03-01,Asia,Australia,682.0,thousand bbl,energy,PETRONET
+2024-03-01,Asia,Australia,56325.0,thousand USD,energy,PETRONET
+2024-03-01,Asia,Australia,82.57,USD/bbl,energy,PETRONET
+2024-03-01,Asia,Indonesia,240.0,thousand bbl,energy,PETRONET
+2024-03-01,Asia,Indonesia,21260.0,thousand USD,energy,PETRONET
+2024-03-01,Asia,Indonesia,88.42,USD/bbl,energy,PETRONET
+2024-03-01,Asia,Kazakhstan,2139.0,thousand bbl,energy,PETRONET
+2024-03-01,Asia,Kazakhstan,178392.0,thousand USD,energy,PETRONET
+2024-03-01,Asia,Kazakhstan,83.4,USD/bbl,energy,PETRONET
+2024-03-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-03-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-03-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2024-03-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2024-03-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2024-03-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2024-03-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-03-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-03-01,Europe,Europe,1.15,percentage,energy,PETRONET
+2024-03-01,Europe,Europe,956.0,thousand bbl,energy,PETRONET
+2024-03-01,Europe,Europe,80076.0,thousand USD,energy,PETRONET
+2024-03-01,Europe,Europe,41.875,USD/bbl,energy,PETRONET
+2024-03-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-03-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-03-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-03-01,Europe,United Kingdom,956.0,thousand bbl,energy,PETRONET
+2024-03-01,Europe,United Kingdom,80076.0,thousand USD,energy,PETRONET
+2024-03-01,Europe,United Kingdom,83.75,USD/bbl,energy,PETRONET
+2024-03-01,MiddleEast,Iraq,8000.0,thousand bbl,energy,PETRONET
+2024-03-01,MiddleEast,Iraq,636710.0,thousand USD,energy,PETRONET
+2024-03-01,MiddleEast,Iraq,79.59,USD/bbl,energy,PETRONET
+2024-03-01,MiddleEast,Kuwait,5224.0,thousand bbl,energy,PETRONET
+2024-03-01,MiddleEast,Kuwait,435139.0,thousand USD,energy,PETRONET
+2024-03-01,MiddleEast,Kuwait,83.3,USD/bbl,energy,PETRONET
+2024-03-01,MiddleEast,MiddleEast,75.65,percentage,energy,PETRONET
+2024-03-01,MiddleEast,MiddleEast,62350.0,thousand bbl,energy,PETRONET
+2024-03-01,MiddleEast,MiddleEast,5253651.0,thousand USD,energy,PETRONET
+2024-03-01,MiddleEast,MiddleEast,71.37285714285714,USD/bbl,energy,PETRONET
+2024-03-01,MiddleEast,Neutral Zone,4446.0,thousand bbl,energy,PETRONET
+2024-03-01,MiddleEast,Neutral Zone,373663.0,thousand USD,energy,PETRONET
+2024-03-01,MiddleEast,Neutral Zone,84.05,USD/bbl,energy,PETRONET
+2024-03-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2024-03-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2024-03-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2024-03-01,MiddleEast,Qatar,4861.0,thousand bbl,energy,PETRONET
+2024-03-01,MiddleEast,Qatar,395949.0,thousand USD,energy,PETRONET
+2024-03-01,MiddleEast,Qatar,81.45,USD/bbl,energy,PETRONET
+2024-03-01,MiddleEast,Saudi Arabia,25838.0,thousand bbl,energy,PETRONET
+2024-03-01,MiddleEast,Saudi Arabia,2218818.0,thousand USD,energy,PETRONET
+2024-03-01,MiddleEast,Saudi Arabia,85.87,USD/bbl,energy,PETRONET
+2024-03-01,MiddleEast,UAE,13981.0,thousand bbl,energy,PETRONET
+2024-03-01,MiddleEast,UAE,1193372.0,thousand USD,energy,PETRONET
+2024-03-01,MiddleEast,UAE,85.35,USD/bbl,energy,PETRONET
+2024-03-01,Total,Total,82586.0,thousand bbl,energy,PETRONET
+2024-03-01,Total,Total,6944595.0,thousand USD,energy,PETRONET
+2024-03-01,Total,Total,84.09,USD/bbl,energy,PETRONET
+2024-04-01,Africa,Africa,1.54,percentage,energy,PETRONET
+2024-04-01,Africa,Africa,1290.0,thousand bbl,energy,PETRONET
+2024-04-01,Africa,Africa,121842.0,thousand USD,energy,PETRONET
+2024-04-01,Africa,Africa,38.484,USD/bbl,energy,PETRONET
+2024-04-01,Africa,Algeria,1047.0,thousand bbl,energy,PETRONET
+2024-04-01,Africa,Algeria,97757.0,thousand USD,energy,PETRONET
+2024-04-01,Africa,Algeria,93.34,USD/bbl,energy,PETRONET
+2024-04-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-04-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-04-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-04-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-04-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-04-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-04-01,Africa,Mozambique,243.0,thousand bbl,energy,PETRONET
+2024-04-01,Africa,Mozambique,24085.0,thousand USD,energy,PETRONET
+2024-04-01,Africa,Mozambique,99.08,USD/bbl,energy,PETRONET
+2024-04-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2024-04-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2024-04-01,America,America,18.74,percentage,energy,PETRONET
+2024-04-01,America,America,17118.0,thousand bbl,energy,PETRONET
+2024-04-01,America,America,1485127.0,thousand USD,energy,PETRONET
+2024-04-01,America,America,51.396,USD/bbl,energy,PETRONET
+2024-04-01,America,Brazil,2779.0,thousand bbl,energy,PETRONET
+2024-04-01,America,Brazil,261047.0,thousand USD,energy,PETRONET
+2024-04-01,America,Brazil,93.95,USD/bbl,energy,PETRONET
+2024-04-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-04-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-04-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-04-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-04-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-04-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-04-01,America,Mexico,1972.0,thousand bbl,energy,PETRONET
+2024-04-01,America,Mexico,150299.0,thousand USD,energy,PETRONET
+2024-04-01,America,Mexico,76.2,USD/bbl,energy,PETRONET
+2024-04-01,America,United States,12367.0,thousand bbl,energy,PETRONET
+2024-04-01,America,United States,1073781.0,thousand USD,energy,PETRONET
+2024-04-01,America,United States,86.83,USD/bbl,energy,PETRONET
+2024-04-01,Asia,Asia,5.1,percentage,energy,PETRONET
+2024-04-01,Asia,Asia,4583.0,thousand bbl,energy,PETRONET
+2024-04-01,Asia,Asia,403742.0,thousand USD,energy,PETRONET
+2024-04-01,Asia,Asia,50.12285714285714,USD/bbl,energy,PETRONET
+2024-04-01,Asia,Australia,2636.0,thousand bbl,energy,PETRONET
+2024-04-01,Asia,Australia,236400.0,thousand USD,energy,PETRONET
+2024-04-01,Asia,Australia,89.67,USD/bbl,energy,PETRONET
+2024-04-01,Asia,Indonesia,266.0,thousand bbl,energy,PETRONET
+2024-04-01,Asia,Indonesia,23583.0,thousand USD,energy,PETRONET
+2024-04-01,Asia,Indonesia,88.69,USD/bbl,energy,PETRONET
+2024-04-01,Asia,Kazakhstan,1093.0,thousand bbl,energy,PETRONET
+2024-04-01,Asia,Kazakhstan,91589.0,thousand USD,energy,PETRONET
+2024-04-01,Asia,Kazakhstan,83.81,USD/bbl,energy,PETRONET
+2024-04-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-04-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-04-01,Asia,New Zealand,588.0,thousand bbl,energy,PETRONET
+2024-04-01,Asia,New Zealand,52170.0,thousand USD,energy,PETRONET
+2024-04-01,Asia,New Zealand,88.69,USD/bbl,energy,PETRONET
+2024-04-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2024-04-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2024-04-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-04-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-04-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2024-04-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2024-04-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2024-04-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-04-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-04-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-04-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-04-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-04-01,MiddleEast,Iraq,7749.0,thousand bbl,energy,PETRONET
+2024-04-01,MiddleEast,Iraq,630685.0,thousand USD,energy,PETRONET
+2024-04-01,MiddleEast,Iraq,81.39,USD/bbl,energy,PETRONET
+2024-04-01,MiddleEast,Kuwait,4821.0,thousand bbl,energy,PETRONET
+2024-04-01,MiddleEast,Kuwait,426666.0,thousand USD,energy,PETRONET
+2024-04-01,MiddleEast,Kuwait,88.51,USD/bbl,energy,PETRONET
+2024-04-01,MiddleEast,MiddleEast,74.62,percentage,energy,PETRONET
+2024-04-01,MiddleEast,MiddleEast,67414.0,thousand bbl,energy,PETRONET
+2024-04-01,MiddleEast,MiddleEast,5912887.0,thousand USD,energy,PETRONET
+2024-04-01,MiddleEast,MiddleEast,86.92999999999999,USD/bbl,energy,PETRONET
+2024-04-01,MiddleEast,Neutral Zone,1819.0,thousand bbl,energy,PETRONET
+2024-04-01,MiddleEast,Neutral Zone,161205.0,thousand USD,energy,PETRONET
+2024-04-01,MiddleEast,Neutral Zone,88.63,USD/bbl,energy,PETRONET
+2024-04-01,MiddleEast,Oman,2000.0,thousand bbl,energy,PETRONET
+2024-04-01,MiddleEast,Oman,174171.0,thousand USD,energy,PETRONET
+2024-04-01,MiddleEast,Oman,87.08,USD/bbl,energy,PETRONET
+2024-04-01,MiddleEast,Qatar,6653.0,thousand bbl,energy,PETRONET
+2024-04-01,MiddleEast,Qatar,562860.0,thousand USD,energy,PETRONET
+2024-04-01,MiddleEast,Qatar,84.6,USD/bbl,energy,PETRONET
+2024-04-01,MiddleEast,Saudi Arabia,28277.0,thousand bbl,energy,PETRONET
+2024-04-01,MiddleEast,Saudi Arabia,2524466.0,thousand USD,energy,PETRONET
+2024-04-01,MiddleEast,Saudi Arabia,89.28,USD/bbl,energy,PETRONET
+2024-04-01,MiddleEast,UAE,16095.0,thousand bbl,energy,PETRONET
+2024-04-01,MiddleEast,UAE,1432834.0,thousand USD,energy,PETRONET
+2024-04-01,MiddleEast,UAE,89.02,USD/bbl,energy,PETRONET
+2024-04-01,Total,Total,90406.0,thousand bbl,energy,PETRONET
+2024-04-01,Total,Total,7923597.0,thousand USD,energy,PETRONET
+2024-04-01,Total,Total,87.64,USD/bbl,energy,PETRONET
+2024-05-01,Africa,Africa,2.18,percentage,energy,PETRONET
+2024-05-01,Africa,Africa,1848.0,thousand bbl,energy,PETRONET
+2024-05-01,Africa,Africa,170782.0,thousand USD,energy,PETRONET
+2024-05-01,Africa,Africa,18.478,USD/bbl,energy,PETRONET
+2024-05-01,Africa,Algeria,1848.0,thousand bbl,energy,PETRONET
+2024-05-01,Africa,Algeria,170782.0,thousand USD,energy,PETRONET
+2024-05-01,Africa,Algeria,92.39,USD/bbl,energy,PETRONET
+2024-05-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-05-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-05-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-05-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2024-05-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2024-05-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2024-05-01,America,America,26.68,percentage,energy,PETRONET
+2024-05-01,America,America,23214.0,thousand bbl,energy,PETRONET
+2024-05-01,America,America,2094630.0,thousand USD,energy,PETRONET
+2024-05-01,America,America,52.222,USD/bbl,energy,PETRONET
+2024-05-01,America,Brazil,2703.0,thousand bbl,energy,PETRONET
+2024-05-01,America,Brazil,247182.0,thousand USD,energy,PETRONET
+2024-05-01,America,Brazil,91.45,USD/bbl,energy,PETRONET
+2024-05-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-05-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-05-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-05-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-05-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-05-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-05-01,America,Mexico,1990.0,thousand bbl,energy,PETRONET
+2024-05-01,America,Mexico,155824.0,thousand USD,energy,PETRONET
+2024-05-01,America,Mexico,78.32,USD/bbl,energy,PETRONET
+2024-05-01,America,United States,18521.0,thousand bbl,energy,PETRONET
+2024-05-01,America,United States,1691624.0,thousand USD,energy,PETRONET
+2024-05-01,America,United States,91.34,USD/bbl,energy,PETRONET
+2024-05-01,Asia,Asia,3.89,percentage,energy,PETRONET
+2024-05-01,Asia,Asia,3413.0,thousand bbl,energy,PETRONET
+2024-05-01,Asia,Asia,305472.0,thousand USD,energy,PETRONET
+2024-05-01,Asia,Asia,25.75857142857143,USD/bbl,energy,PETRONET
+2024-05-01,Asia,Australia,1331.0,thousand bbl,energy,PETRONET
+2024-05-01,Asia,Australia,123984.0,thousand USD,energy,PETRONET
+2024-05-01,Asia,Australia,93.15,USD/bbl,energy,PETRONET
+2024-05-01,Asia,Indonesia,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Asia,Indonesia,0.0,thousand USD,energy,PETRONET
+2024-05-01,Asia,Indonesia,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Asia,Kazakhstan,2082.0,thousand bbl,energy,PETRONET
+2024-05-01,Asia,Kazakhstan,181488.0,thousand USD,energy,PETRONET
+2024-05-01,Asia,Kazakhstan,87.16,USD/bbl,energy,PETRONET
+2024-05-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-05-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2024-05-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2024-05-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-05-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2024-05-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2024-05-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-05-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-05-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-05-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-05-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-05-01,MiddleEast,Iraq,8317.0,thousand bbl,energy,PETRONET
+2024-05-01,MiddleEast,Iraq,722364.0,thousand USD,energy,PETRONET
+2024-05-01,MiddleEast,Iraq,86.86,USD/bbl,energy,PETRONET
+2024-05-01,MiddleEast,Kuwait,5696.0,thousand bbl,energy,PETRONET
+2024-05-01,MiddleEast,Kuwait,493298.0,thousand USD,energy,PETRONET
+2024-05-01,MiddleEast,Kuwait,86.61,USD/bbl,energy,PETRONET
+2024-05-01,MiddleEast,MiddleEast,67.25,percentage,energy,PETRONET
+2024-05-01,MiddleEast,MiddleEast,59689.0,thousand bbl,energy,PETRONET
+2024-05-01,MiddleEast,MiddleEast,5280116.0,thousand USD,energy,PETRONET
+2024-05-01,MiddleEast,MiddleEast,75.52571428571427,USD/bbl,energy,PETRONET
+2024-05-01,MiddleEast,Neutral Zone,1725.0,thousand bbl,energy,PETRONET
+2024-05-01,MiddleEast,Neutral Zone,149567.0,thousand USD,energy,PETRONET
+2024-05-01,MiddleEast,Neutral Zone,86.7,USD/bbl,energy,PETRONET
+2024-05-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2024-05-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2024-05-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2024-05-01,MiddleEast,Qatar,5262.0,thousand bbl,energy,PETRONET
+2024-05-01,MiddleEast,Qatar,471907.0,thousand USD,energy,PETRONET
+2024-05-01,MiddleEast,Qatar,89.69,USD/bbl,energy,PETRONET
+2024-05-01,MiddleEast,Saudi Arabia,29978.0,thousand bbl,energy,PETRONET
+2024-05-01,MiddleEast,Saudi Arabia,2657412.0,thousand USD,energy,PETRONET
+2024-05-01,MiddleEast,Saudi Arabia,88.64,USD/bbl,energy,PETRONET
+2024-05-01,MiddleEast,UAE,8711.0,thousand bbl,energy,PETRONET
+2024-05-01,MiddleEast,UAE,785568.0,thousand USD,energy,PETRONET
+2024-05-01,MiddleEast,UAE,90.18,USD/bbl,energy,PETRONET
+2024-05-01,Total,Total,88164.0,thousand bbl,energy,PETRONET
+2024-05-01,Total,Total,7851001.0,thousand USD,energy,PETRONET
+2024-05-01,Total,Total,89.05,USD/bbl,energy,PETRONET
+2024-06-01,Africa,Africa,0.51,percentage,energy,PETRONET
+2024-06-01,Africa,Africa,437.0,thousand bbl,energy,PETRONET
+2024-06-01,Africa,Africa,34548.0,thousand USD,energy,PETRONET
+2024-06-01,Africa,Africa,15.81,USD/bbl,energy,PETRONET
+2024-06-01,Africa,Algeria,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Africa,Algeria,0.0,thousand USD,energy,PETRONET
+2024-06-01,Africa,Algeria,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-06-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-06-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-06-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2024-06-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Africa,Nigeria,437.0,thousand bbl,energy,PETRONET
+2024-06-01,Africa,Nigeria,34548.0,thousand USD,energy,PETRONET
+2024-06-01,Africa,Nigeria,79.05,USD/bbl,energy,PETRONET
+2024-06-01,America,America,20.49,percentage,energy,PETRONET
+2024-06-01,America,America,15377.0,thousand bbl,energy,PETRONET
+2024-06-01,America,America,1387606.0,thousand USD,energy,PETRONET
+2024-06-01,America,America,34.868,USD/bbl,energy,PETRONET
+2024-06-01,America,Brazil,0.0,thousand bbl,energy,PETRONET
+2024-06-01,America,Brazil,0.0,thousand USD,energy,PETRONET
+2024-06-01,America,Brazil,0.0,USD/bbl,energy,PETRONET
+2024-06-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-06-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-06-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-06-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-06-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-06-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-06-01,America,Mexico,1443.0,thousand bbl,energy,PETRONET
+2024-06-01,America,Mexico,120394.0,thousand USD,energy,PETRONET
+2024-06-01,America,Mexico,83.4,USD/bbl,energy,PETRONET
+2024-06-01,America,United States,13934.0,thousand bbl,energy,PETRONET
+2024-06-01,America,United States,1267212.0,thousand USD,energy,PETRONET
+2024-06-01,America,United States,90.94,USD/bbl,energy,PETRONET
+2024-06-01,Asia,Asia,2.67,percentage,energy,PETRONET
+2024-06-01,Asia,Asia,2149.0,thousand bbl,energy,PETRONET
+2024-06-01,Asia,Asia,180782.0,thousand USD,energy,PETRONET
+2024-06-01,Asia,Asia,24.117142857142856,USD/bbl,energy,PETRONET
+2024-06-01,Asia,Australia,1849.0,thousand bbl,energy,PETRONET
+2024-06-01,Asia,Australia,155348.0,thousand USD,energy,PETRONET
+2024-06-01,Asia,Australia,84.02,USD/bbl,energy,PETRONET
+2024-06-01,Asia,Indonesia,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Asia,Indonesia,0.0,thousand USD,energy,PETRONET
+2024-06-01,Asia,Indonesia,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2024-06-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-06-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Asia,New Zealand,300.0,thousand bbl,energy,PETRONET
+2024-06-01,Asia,New Zealand,25434.0,thousand USD,energy,PETRONET
+2024-06-01,Asia,New Zealand,84.8,USD/bbl,energy,PETRONET
+2024-06-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2024-06-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-06-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2024-06-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2024-06-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-06-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-06-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-06-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-06-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-06-01,MiddleEast,Iraq,8849.0,thousand bbl,energy,PETRONET
+2024-06-01,MiddleEast,Iraq,736744.0,thousand USD,energy,PETRONET
+2024-06-01,MiddleEast,Iraq,83.26,USD/bbl,energy,PETRONET
+2024-06-01,MiddleEast,Kuwait,5616.0,thousand bbl,energy,PETRONET
+2024-06-01,MiddleEast,Kuwait,482072.0,thousand USD,energy,PETRONET
+2024-06-01,MiddleEast,Kuwait,85.84,USD/bbl,energy,PETRONET
+2024-06-01,MiddleEast,MiddleEast,76.33,percentage,energy,PETRONET
+2024-06-01,MiddleEast,MiddleEast,59811.0,thousand bbl,energy,PETRONET
+2024-06-01,MiddleEast,MiddleEast,5167817.0,thousand USD,energy,PETRONET
+2024-06-01,MiddleEast,MiddleEast,73.23428571428572,USD/bbl,energy,PETRONET
+2024-06-01,MiddleEast,Neutral Zone,2554.0,thousand bbl,energy,PETRONET
+2024-06-01,MiddleEast,Neutral Zone,214444.0,thousand USD,energy,PETRONET
+2024-06-01,MiddleEast,Neutral Zone,83.97,USD/bbl,energy,PETRONET
+2024-06-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2024-06-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2024-06-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2024-06-01,MiddleEast,Qatar,4518.0,thousand bbl,energy,PETRONET
+2024-06-01,MiddleEast,Qatar,379346.0,thousand USD,energy,PETRONET
+2024-06-01,MiddleEast,Qatar,83.96,USD/bbl,energy,PETRONET
+2024-06-01,MiddleEast,Saudi Arabia,24915.0,thousand bbl,energy,PETRONET
+2024-06-01,MiddleEast,Saudi Arabia,2176100.0,thousand USD,energy,PETRONET
+2024-06-01,MiddleEast,Saudi Arabia,87.34,USD/bbl,energy,PETRONET
+2024-06-01,MiddleEast,UAE,13359.0,thousand bbl,energy,PETRONET
+2024-06-01,MiddleEast,UAE,1179111.0,thousand USD,energy,PETRONET
+2024-06-01,MiddleEast,UAE,88.27,USD/bbl,energy,PETRONET
+2024-06-01,Total,Total,77774.0,thousand bbl,energy,PETRONET
+2024-06-01,Total,Total,6770754.0,thousand USD,energy,PETRONET
+2024-06-01,Total,Total,87.06,USD/bbl,energy,PETRONET
+2024-07-01,Africa,Africa,1.26,percentage,energy,PETRONET
+2024-07-01,Africa,Africa,1047.0,thousand bbl,energy,PETRONET
+2024-07-01,Africa,Africa,91438.0,thousand USD,energy,PETRONET
+2024-07-01,Africa,Africa,17.47,USD/bbl,energy,PETRONET
+2024-07-01,Africa,Algeria,1047.0,thousand bbl,energy,PETRONET
+2024-07-01,Africa,Algeria,91438.0,thousand USD,energy,PETRONET
+2024-07-01,Africa,Algeria,87.35,USD/bbl,energy,PETRONET
+2024-07-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-07-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-07-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-07-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2024-07-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2024-07-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2024-07-01,America,America,31.55,percentage,energy,PETRONET
+2024-07-01,America,America,26348.0,thousand bbl,energy,PETRONET
+2024-07-01,America,America,2284057.0,thousand USD,energy,PETRONET
+2024-07-01,America,America,51.022000000000006,USD/bbl,energy,PETRONET
+2024-07-01,America,Brazil,2746.0,thousand bbl,energy,PETRONET
+2024-07-01,America,Brazil,240301.0,thousand USD,energy,PETRONET
+2024-07-01,America,Brazil,87.5,USD/bbl,energy,PETRONET
+2024-07-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-07-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-07-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-07-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-07-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-07-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-07-01,America,Mexico,3537.0,thousand bbl,energy,PETRONET
+2024-07-01,America,Mexico,282359.0,thousand USD,energy,PETRONET
+2024-07-01,America,Mexico,79.83,USD/bbl,energy,PETRONET
+2024-07-01,America,United States,20065.0,thousand bbl,energy,PETRONET
+2024-07-01,America,United States,1761397.0,thousand USD,energy,PETRONET
+2024-07-01,America,United States,87.78,USD/bbl,energy,PETRONET
+2024-07-01,Asia,Asia,1.64,percentage,energy,PETRONET
+2024-07-01,Asia,Asia,1429.0,thousand bbl,energy,PETRONET
+2024-07-01,Asia,Asia,118896.0,thousand USD,energy,PETRONET
+2024-07-01,Asia,Asia,23.701428571428576,USD/bbl,energy,PETRONET
+2024-07-01,Asia,Australia,1101.0,thousand bbl,energy,PETRONET
+2024-07-01,Asia,Australia,91817.0,thousand USD,energy,PETRONET
+2024-07-01,Asia,Australia,83.43,USD/bbl,energy,PETRONET
+2024-07-01,Asia,Indonesia,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Asia,Indonesia,0.0,thousand USD,energy,PETRONET
+2024-07-01,Asia,Indonesia,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2024-07-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-07-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Asia,New Zealand,328.0,thousand bbl,energy,PETRONET
+2024-07-01,Asia,New Zealand,27079.0,thousand USD,energy,PETRONET
+2024-07-01,Asia,New Zealand,82.48,USD/bbl,energy,PETRONET
+2024-07-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2024-07-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-07-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2024-07-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2024-07-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-07-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-07-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-07-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-07-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-07-01,MiddleEast,Iraq,6946.0,thousand bbl,energy,PETRONET
+2024-07-01,MiddleEast,Iraq,576431.0,thousand USD,energy,PETRONET
+2024-07-01,MiddleEast,Iraq,82.99,USD/bbl,energy,PETRONET
+2024-07-01,MiddleEast,Kuwait,5530.0,thousand bbl,energy,PETRONET
+2024-07-01,MiddleEast,Kuwait,467037.0,thousand USD,energy,PETRONET
+2024-07-01,MiddleEast,Kuwait,84.46,USD/bbl,energy,PETRONET
+2024-07-01,MiddleEast,MiddleEast,65.55,percentage,energy,PETRONET
+2024-07-01,MiddleEast,MiddleEast,55272.0,thousand bbl,energy,PETRONET
+2024-07-01,MiddleEast,MiddleEast,4745473.0,thousand USD,energy,PETRONET
+2024-07-01,MiddleEast,MiddleEast,73.07000000000001,USD/bbl,energy,PETRONET
+2024-07-01,MiddleEast,Neutral Zone,1206.0,thousand bbl,energy,PETRONET
+2024-07-01,MiddleEast,Neutral Zone,105689.0,thousand USD,energy,PETRONET
+2024-07-01,MiddleEast,Neutral Zone,87.65,USD/bbl,energy,PETRONET
+2024-07-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2024-07-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2024-07-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2024-07-01,MiddleEast,Qatar,5831.0,thousand bbl,energy,PETRONET
+2024-07-01,MiddleEast,Qatar,471782.0,thousand USD,energy,PETRONET
+2024-07-01,MiddleEast,Qatar,80.91,USD/bbl,energy,PETRONET
+2024-07-01,MiddleEast,Saudi Arabia,28419.0,thousand bbl,energy,PETRONET
+2024-07-01,MiddleEast,Saudi Arabia,2475966.0,thousand USD,energy,PETRONET
+2024-07-01,MiddleEast,Saudi Arabia,87.12,USD/bbl,energy,PETRONET
+2024-07-01,MiddleEast,UAE,7340.0,thousand bbl,energy,PETRONET
+2024-07-01,MiddleEast,UAE,648568.0,thousand USD,energy,PETRONET
+2024-07-01,MiddleEast,UAE,88.36,USD/bbl,energy,PETRONET
+2024-07-01,Total,Total,84095.0,thousand bbl,energy,PETRONET
+2024-07-01,Total,Total,7239866.0,thousand USD,energy,PETRONET
+2024-07-01,Total,Total,86.09,USD/bbl,energy,PETRONET
+2024-08-01,Africa,Africa,1.85,percentage,energy,PETRONET
+2024-08-01,Africa,Africa,1769.0,thousand bbl,energy,PETRONET
+2024-08-01,Africa,Africa,148890.0,thousand USD,energy,PETRONET
+2024-08-01,Africa,Africa,49.872,USD/bbl,energy,PETRONET
+2024-08-01,Africa,Algeria,998.0,thousand bbl,energy,PETRONET
+2024-08-01,Africa,Algeria,88050.0,thousand USD,energy,PETRONET
+2024-08-01,Africa,Algeria,88.26,USD/bbl,energy,PETRONET
+2024-08-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-08-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-08-01,Africa,Equatorial Guinea,511.0,thousand bbl,energy,PETRONET
+2024-08-01,Africa,Equatorial Guinea,38607.0,thousand USD,energy,PETRONET
+2024-08-01,Africa,Equatorial Guinea,75.49,USD/bbl,energy,PETRONET
+2024-08-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-08-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-08-01,Africa,Mozambique,260.0,thousand bbl,energy,PETRONET
+2024-08-01,Africa,Mozambique,22233.0,thousand USD,energy,PETRONET
+2024-08-01,Africa,Mozambique,85.61,USD/bbl,energy,PETRONET
+2024-08-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2024-08-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2024-08-01,America,America,23.35,percentage,energy,PETRONET
+2024-08-01,America,America,21870.0,thousand bbl,energy,PETRONET
+2024-08-01,America,America,1883303.0,thousand USD,energy,PETRONET
+2024-08-01,America,America,84.04400000000001,USD/bbl,energy,PETRONET
+2024-08-01,America,Brazil,984.0,thousand bbl,energy,PETRONET
+2024-08-01,America,Brazil,88299.0,thousand USD,energy,PETRONET
+2024-08-01,America,Brazil,89.71,USD/bbl,energy,PETRONET
+2024-08-01,America,Canada,539.0,thousand bbl,energy,PETRONET
+2024-08-01,America,Canada,42931.0,thousand USD,energy,PETRONET
+2024-08-01,America,Canada,79.68,USD/bbl,energy,PETRONET
+2024-08-01,America,Ecuador,1034.0,thousand bbl,energy,PETRONET
+2024-08-01,America,Ecuador,87330.0,thousand USD,energy,PETRONET
+2024-08-01,America,Ecuador,84.48,USD/bbl,energy,PETRONET
+2024-08-01,America,Mexico,3430.0,thousand bbl,energy,PETRONET
+2024-08-01,America,Mexico,269245.0,thousand USD,energy,PETRONET
+2024-08-01,America,Mexico,78.49,USD/bbl,energy,PETRONET
+2024-08-01,America,United States,15883.0,thousand bbl,energy,PETRONET
+2024-08-01,America,United States,1395498.0,thousand USD,energy,PETRONET
+2024-08-01,America,United States,87.86,USD/bbl,energy,PETRONET
+2024-08-01,Asia,Asia,8.12,percentage,energy,PETRONET
+2024-08-01,Asia,Asia,7723.0,thousand bbl,energy,PETRONET
+2024-08-01,Asia,Asia,654729.0,thousand USD,energy,PETRONET
+2024-08-01,Asia,Asia,24.602857142857143,USD/bbl,energy,PETRONET
+2024-08-01,Asia,Australia,5174.0,thousand bbl,energy,PETRONET
+2024-08-01,Asia,Australia,425353.0,thousand USD,energy,PETRONET
+2024-08-01,Asia,Australia,82.22,USD/bbl,energy,PETRONET
+2024-08-01,Asia,Indonesia,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Asia,Indonesia,0.0,thousand USD,energy,PETRONET
+2024-08-01,Asia,Indonesia,0.0,USD/bbl,energy,PETRONET
+2024-08-01,Asia,Kazakhstan,2549.0,thousand bbl,energy,PETRONET
+2024-08-01,Asia,Kazakhstan,229376.0,thousand USD,energy,PETRONET
+2024-08-01,Asia,Kazakhstan,90.0,USD/bbl,energy,PETRONET
+2024-08-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-08-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-08-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2024-08-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2024-08-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2024-08-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2024-08-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-08-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-08-01,Europe,Europe,0.82,percentage,energy,PETRONET
+2024-08-01,Europe,Europe,801.0,thousand bbl,energy,PETRONET
+2024-08-01,Europe,Europe,66200.0,thousand USD,energy,PETRONET
+2024-08-01,Europe,Europe,41.305,USD/bbl,energy,PETRONET
+2024-08-01,Europe,Norway,801.0,thousand bbl,energy,PETRONET
+2024-08-01,Europe,Norway,66200.0,thousand USD,energy,PETRONET
+2024-08-01,Europe,Norway,82.61,USD/bbl,energy,PETRONET
+2024-08-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-08-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-08-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-08-01,MiddleEast,Iraq,8886.0,thousand bbl,energy,PETRONET
+2024-08-01,MiddleEast,Iraq,741945.0,thousand USD,energy,PETRONET
+2024-08-01,MiddleEast,Iraq,83.5,USD/bbl,energy,PETRONET
+2024-08-01,MiddleEast,Kuwait,8417.0,thousand bbl,energy,PETRONET
+2024-08-01,MiddleEast,Kuwait,674752.0,thousand USD,energy,PETRONET
+2024-08-01,MiddleEast,Kuwait,80.16,USD/bbl,energy,PETRONET
+2024-08-01,MiddleEast,MiddleEast,65.86,percentage,energy,PETRONET
+2024-08-01,MiddleEast,MiddleEast,64132.0,thousand bbl,energy,PETRONET
+2024-08-01,MiddleEast,MiddleEast,5311647.0,thousand USD,energy,PETRONET
+2024-08-01,MiddleEast,MiddleEast,82.34857142857143,USD/bbl,energy,PETRONET
+2024-08-01,MiddleEast,Neutral Zone,1921.0,thousand bbl,energy,PETRONET
+2024-08-01,MiddleEast,Neutral Zone,153468.0,thousand USD,energy,PETRONET
+2024-08-01,MiddleEast,Neutral Zone,79.89,USD/bbl,energy,PETRONET
+2024-08-01,MiddleEast,Oman,1351.0,thousand bbl,energy,PETRONET
+2024-08-01,MiddleEast,Oman,111850.0,thousand USD,energy,PETRONET
+2024-08-01,MiddleEast,Oman,82.81,USD/bbl,energy,PETRONET
+2024-08-01,MiddleEast,Qatar,5420.0,thousand bbl,energy,PETRONET
+2024-08-01,MiddleEast,Qatar,445528.0,thousand USD,energy,PETRONET
+2024-08-01,MiddleEast,Qatar,82.2,USD/bbl,energy,PETRONET
+2024-08-01,MiddleEast,Saudi Arabia,26036.0,thousand bbl,energy,PETRONET
+2024-08-01,MiddleEast,Saudi Arabia,2153470.0,thousand USD,energy,PETRONET
+2024-08-01,MiddleEast,Saudi Arabia,82.71,USD/bbl,energy,PETRONET
+2024-08-01,MiddleEast,UAE,12101.0,thousand bbl,energy,PETRONET
+2024-08-01,MiddleEast,UAE,1030634.0,thousand USD,energy,PETRONET
+2024-08-01,MiddleEast,UAE,85.17,USD/bbl,energy,PETRONET
+2024-08-01,Total,Total,96294.0,thousand bbl,energy,PETRONET
+2024-08-01,Total,Total,8064770.0,thousand USD,energy,PETRONET
+2024-08-01,Total,Total,83.75,USD/bbl,energy,PETRONET
+2024-09-01,Africa,Africa,2.45,percentage,energy,PETRONET
+2024-09-01,Africa,Africa,1859.0,thousand bbl,energy,PETRONET
+2024-09-01,Africa,Africa,156719.0,thousand USD,energy,PETRONET
+2024-09-01,Africa,Africa,33.516,USD/bbl,energy,PETRONET
+2024-09-01,Africa,Algeria,1000.0,thousand bbl,energy,PETRONET
+2024-09-01,Africa,Algeria,90582.0,thousand USD,energy,PETRONET
+2024-09-01,Africa,Algeria,90.62,USD/bbl,energy,PETRONET
+2024-09-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-09-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-09-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-09-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2024-09-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Africa,Nigeria,859.0,thousand bbl,energy,PETRONET
+2024-09-01,Africa,Nigeria,66137.0,thousand USD,energy,PETRONET
+2024-09-01,Africa,Nigeria,76.96,USD/bbl,energy,PETRONET
+2024-09-01,America,America,20.3,percentage,energy,PETRONET
+2024-09-01,America,America,15912.0,thousand bbl,energy,PETRONET
+2024-09-01,America,America,1300491.0,thousand USD,energy,PETRONET
+2024-09-01,America,America,63.766,USD/bbl,energy,PETRONET
+2024-09-01,America,Brazil,1954.0,thousand bbl,energy,PETRONET
+2024-09-01,America,Brazil,160405.0,thousand USD,energy,PETRONET
+2024-09-01,America,Brazil,82.11,USD/bbl,energy,PETRONET
+2024-09-01,America,Canada,834.0,thousand bbl,energy,PETRONET
+2024-09-01,America,Canada,61337.0,thousand USD,energy,PETRONET
+2024-09-01,America,Canada,73.57,USD/bbl,energy,PETRONET
+2024-09-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-09-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-09-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-09-01,America,Mexico,2494.0,thousand bbl,energy,PETRONET
+2024-09-01,America,Mexico,200962.0,thousand USD,energy,PETRONET
+2024-09-01,America,Mexico,80.57,USD/bbl,energy,PETRONET
+2024-09-01,America,United States,10630.0,thousand bbl,energy,PETRONET
+2024-09-01,America,United States,877787.0,thousand USD,energy,PETRONET
+2024-09-01,America,United States,82.58,USD/bbl,energy,PETRONET
+2024-09-01,Asia,Asia,5.56,percentage,energy,PETRONET
+2024-09-01,Asia,Asia,4453.0,thousand bbl,energy,PETRONET
+2024-09-01,Asia,Asia,356306.0,thousand USD,energy,PETRONET
+2024-09-01,Asia,Asia,34.84142857142857,USD/bbl,energy,PETRONET
+2024-09-01,Asia,Australia,3264.0,thousand bbl,energy,PETRONET
+2024-09-01,Asia,Australia,259655.0,thousand USD,energy,PETRONET
+2024-09-01,Asia,Australia,79.56,USD/bbl,energy,PETRONET
+2024-09-01,Asia,Indonesia,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Asia,Indonesia,0.0,thousand USD,energy,PETRONET
+2024-09-01,Asia,Indonesia,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Asia,Kazakhstan,507.0,thousand bbl,energy,PETRONET
+2024-09-01,Asia,Kazakhstan,44613.0,thousand USD,energy,PETRONET
+2024-09-01,Asia,Kazakhstan,88.06,USD/bbl,energy,PETRONET
+2024-09-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-09-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2024-09-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Asia,Papua New Guinea,682.0,thousand bbl,energy,PETRONET
+2024-09-01,Asia,Papua New Guinea,52038.0,thousand USD,energy,PETRONET
+2024-09-01,Asia,Papua New Guinea,76.27,USD/bbl,energy,PETRONET
+2024-09-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-09-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2024-09-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2024-09-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-09-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-09-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-09-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-09-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-09-01,MiddleEast,Iraq,6885.0,thousand bbl,energy,PETRONET
+2024-09-01,MiddleEast,Iraq,533785.0,thousand USD,energy,PETRONET
+2024-09-01,MiddleEast,Iraq,77.52,USD/bbl,energy,PETRONET
+2024-09-01,MiddleEast,Kuwait,6296.0,thousand bbl,energy,PETRONET
+2024-09-01,MiddleEast,Kuwait,481999.0,thousand USD,energy,PETRONET
+2024-09-01,MiddleEast,Kuwait,76.55,USD/bbl,energy,PETRONET
+2024-09-01,MiddleEast,MiddleEast,71.69,percentage,energy,PETRONET
+2024-09-01,MiddleEast,MiddleEast,58361.0,thousand bbl,energy,PETRONET
+2024-09-01,MiddleEast,MiddleEast,4593132.0,thousand USD,energy,PETRONET
+2024-09-01,MiddleEast,MiddleEast,78.40857142857143,USD/bbl,energy,PETRONET
+2024-09-01,MiddleEast,Neutral Zone,903.0,thousand bbl,energy,PETRONET
+2024-09-01,MiddleEast,Neutral Zone,69078.0,thousand USD,energy,PETRONET
+2024-09-01,MiddleEast,Neutral Zone,76.53,USD/bbl,energy,PETRONET
+2024-09-01,MiddleEast,Oman,501.0,thousand bbl,energy,PETRONET
+2024-09-01,MiddleEast,Oman,39994.0,thousand USD,energy,PETRONET
+2024-09-01,MiddleEast,Oman,79.88,USD/bbl,energy,PETRONET
+2024-09-01,MiddleEast,Qatar,4453.0,thousand bbl,energy,PETRONET
+2024-09-01,MiddleEast,Qatar,352351.0,thousand USD,energy,PETRONET
+2024-09-01,MiddleEast,Qatar,79.13,USD/bbl,energy,PETRONET
+2024-09-01,MiddleEast,Saudi Arabia,27693.0,thousand bbl,energy,PETRONET
+2024-09-01,MiddleEast,Saudi Arabia,2178854.0,thousand USD,energy,PETRONET
+2024-09-01,MiddleEast,Saudi Arabia,78.68,USD/bbl,energy,PETRONET
+2024-09-01,MiddleEast,UAE,11630.0,thousand bbl,energy,PETRONET
+2024-09-01,MiddleEast,UAE,937071.0,thousand USD,energy,PETRONET
+2024-09-01,MiddleEast,UAE,80.57,USD/bbl,energy,PETRONET
+2024-09-01,Total,Total,80583.0,thousand bbl,energy,PETRONET
+2024-09-01,Total,Total,6406647.0,thousand USD,energy,PETRONET
+2024-09-01,Total,Total,79.5,USD/bbl,energy,PETRONET
+2024-10-01,Africa,Africa,2.31,percentage,energy,PETRONET
+2024-10-01,Africa,Africa,1940.0,thousand bbl,energy,PETRONET
+2024-10-01,Africa,Africa,156072.0,thousand USD,energy,PETRONET
+2024-10-01,Africa,Africa,46.982,USD/bbl,energy,PETRONET
+2024-10-01,Africa,Algeria,1000.0,thousand bbl,energy,PETRONET
+2024-10-01,Africa,Algeria,86090.0,thousand USD,energy,PETRONET
+2024-10-01,Africa,Algeria,86.06,USD/bbl,energy,PETRONET
+2024-10-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-10-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-10-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-10-01,Africa,Equatorial Guinea,501.0,thousand bbl,energy,PETRONET
+2024-10-01,Africa,Equatorial Guinea,37232.0,thousand USD,energy,PETRONET
+2024-10-01,Africa,Equatorial Guinea,74.32,USD/bbl,energy,PETRONET
+2024-10-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-10-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-10-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-10-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2024-10-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2024-10-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2024-10-01,Africa,Nigeria,439.0,thousand bbl,energy,PETRONET
+2024-10-01,Africa,Nigeria,32750.0,thousand USD,energy,PETRONET
+2024-10-01,Africa,Nigeria,74.53,USD/bbl,energy,PETRONET
+2024-10-01,America,America,22.14,percentage,energy,PETRONET
+2024-10-01,America,America,18852.0,thousand bbl,energy,PETRONET
+2024-10-01,America,America,1497180.0,thousand USD,energy,PETRONET
+2024-10-01,America,America,46.614,USD/bbl,energy,PETRONET
+2024-10-01,America,Brazil,3485.0,thousand bbl,energy,PETRONET
+2024-10-01,America,Brazil,282854.0,thousand USD,energy,PETRONET
+2024-10-01,America,Brazil,81.16,USD/bbl,energy,PETRONET
+2024-10-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-10-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-10-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-10-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-10-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-10-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-10-01,America,Mexico,1974.0,thousand bbl,energy,PETRONET
+2024-10-01,America,Mexico,141823.0,thousand USD,energy,PETRONET
+2024-10-01,America,Mexico,71.83,USD/bbl,energy,PETRONET
+2024-10-01,America,United States,13393.0,thousand bbl,energy,PETRONET
+2024-10-01,America,United States,1072503.0,thousand USD,energy,PETRONET
+2024-10-01,America,United States,80.08,USD/bbl,energy,PETRONET
+2024-10-01,Asia,Asia,2.61,percentage,energy,PETRONET
+2024-10-01,Asia,Asia,2274.0,thousand bbl,energy,PETRONET
+2024-10-01,Asia,Asia,176601.0,thousand USD,energy,PETRONET
+2024-10-01,Asia,Asia,33.14857142857142,USD/bbl,energy,PETRONET
+2024-10-01,Asia,Australia,1361.0,thousand bbl,energy,PETRONET
+2024-10-01,Asia,Australia,105312.0,thousand USD,energy,PETRONET
+2024-10-01,Asia,Australia,77.39,USD/bbl,energy,PETRONET
+2024-10-01,Asia,Indonesia,231.0,thousand bbl,energy,PETRONET
+2024-10-01,Asia,Indonesia,17530.0,thousand USD,energy,PETRONET
+2024-10-01,Asia,Indonesia,75.88,USD/bbl,energy,PETRONET
+2024-10-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2024-10-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2024-10-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2024-10-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-10-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-10-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-10-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2024-10-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2024-10-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2024-10-01,Asia,Papua New Guinea,682.0,thousand bbl,energy,PETRONET
+2024-10-01,Asia,Papua New Guinea,53759.0,thousand USD,energy,PETRONET
+2024-10-01,Asia,Papua New Guinea,78.77,USD/bbl,energy,PETRONET
+2024-10-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-10-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-10-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-10-01,Europe,Europe,2.33,percentage,energy,PETRONET
+2024-10-01,Europe,Europe,2062.0,thousand bbl,energy,PETRONET
+2024-10-01,Europe,Europe,157544.0,thousand USD,energy,PETRONET
+2024-10-01,Europe,Europe,38.195,USD/bbl,energy,PETRONET
+2024-10-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-10-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-10-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-10-01,Europe,United Kingdom,2062.0,thousand bbl,energy,PETRONET
+2024-10-01,Europe,United Kingdom,157544.0,thousand USD,energy,PETRONET
+2024-10-01,Europe,United Kingdom,76.39,USD/bbl,energy,PETRONET
+2024-10-01,MiddleEast,Iraq,7678.0,thousand bbl,energy,PETRONET
+2024-10-01,MiddleEast,Iraq,557881.0,thousand USD,energy,PETRONET
+2024-10-01,MiddleEast,Iraq,72.66,USD/bbl,energy,PETRONET
+2024-10-01,MiddleEast,Kuwait,6735.0,thousand bbl,energy,PETRONET
+2024-10-01,MiddleEast,Kuwait,520368.0,thousand USD,energy,PETRONET
+2024-10-01,MiddleEast,Kuwait,77.26,USD/bbl,energy,PETRONET
+2024-10-01,MiddleEast,MiddleEast,70.61,percentage,energy,PETRONET
+2024-10-01,MiddleEast,MiddleEast,62132.0,thousand bbl,energy,PETRONET
+2024-10-01,MiddleEast,MiddleEast,4775280.0,thousand USD,energy,PETRONET
+2024-10-01,MiddleEast,MiddleEast,76.89,USD/bbl,energy,PETRONET
+2024-10-01,MiddleEast,Neutral Zone,2345.0,thousand bbl,energy,PETRONET
+2024-10-01,MiddleEast,Neutral Zone,181649.0,thousand USD,energy,PETRONET
+2024-10-01,MiddleEast,Neutral Zone,77.46,USD/bbl,energy,PETRONET
+2024-10-01,MiddleEast,Oman,208.0,thousand bbl,energy,PETRONET
+2024-10-01,MiddleEast,Oman,16787.0,thousand USD,energy,PETRONET
+2024-10-01,MiddleEast,Oman,80.7,USD/bbl,energy,PETRONET
+2024-10-01,MiddleEast,Qatar,3417.0,thousand bbl,energy,PETRONET
+2024-10-01,MiddleEast,Qatar,253899.0,thousand USD,energy,PETRONET
+2024-10-01,MiddleEast,Qatar,74.31,USD/bbl,energy,PETRONET
+2024-10-01,MiddleEast,Saudi Arabia,27878.0,thousand bbl,energy,PETRONET
+2024-10-01,MiddleEast,Saudi Arabia,2155515.0,thousand USD,energy,PETRONET
+2024-10-01,MiddleEast,Saudi Arabia,77.32,USD/bbl,energy,PETRONET
+2024-10-01,MiddleEast,UAE,13871.0,thousand bbl,energy,PETRONET
+2024-10-01,MiddleEast,UAE,1089181.0,thousand USD,energy,PETRONET
+2024-10-01,MiddleEast,UAE,78.52,USD/bbl,energy,PETRONET
+2024-10-01,Total,Total,87263.0,thousand bbl,energy,PETRONET
+2024-10-01,Total,Total,6762681.0,thousand USD,energy,PETRONET
+2024-10-01,Total,Total,77.5,USD/bbl,energy,PETRONET
+2024-11-01,Africa,Africa,2.46,percentage,energy,PETRONET
+2024-11-01,Africa,Africa,2019.0,thousand bbl,energy,PETRONET
+2024-11-01,Africa,Africa,159596.0,thousand USD,energy,PETRONET
+2024-11-01,Africa,Africa,47.23,USD/bbl,energy,PETRONET
+2024-11-01,Africa,Algeria,1047.0,thousand bbl,energy,PETRONET
+2024-11-01,Africa,Algeria,84179.0,thousand USD,energy,PETRONET
+2024-11-01,Africa,Algeria,80.39,USD/bbl,energy,PETRONET
+2024-11-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-11-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-11-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-11-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-11-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-11-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-11-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-11-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-11-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-11-01,Africa,Mozambique,207.0,thousand bbl,energy,PETRONET
+2024-11-01,Africa,Mozambique,16255.0,thousand USD,energy,PETRONET
+2024-11-01,Africa,Mozambique,78.4,USD/bbl,energy,PETRONET
+2024-11-01,Africa,Nigeria,765.0,thousand bbl,energy,PETRONET
+2024-11-01,Africa,Nigeria,59162.0,thousand USD,energy,PETRONET
+2024-11-01,Africa,Nigeria,77.36,USD/bbl,energy,PETRONET
+2024-11-01,America,America,17.36,percentage,energy,PETRONET
+2024-11-01,America,America,14588.0,thousand bbl,energy,PETRONET
+2024-11-01,America,America,1126400.0,thousand USD,energy,PETRONET
+2024-11-01,America,America,44.974,USD/bbl,energy,PETRONET
+2024-11-01,America,Brazil,1535.0,thousand bbl,energy,PETRONET
+2024-11-01,America,Brazil,120561.0,thousand USD,energy,PETRONET
+2024-11-01,America,Brazil,78.55,USD/bbl,energy,PETRONET
+2024-11-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-11-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-11-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-11-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-11-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-11-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-11-01,America,Mexico,1667.0,thousand bbl,energy,PETRONET
+2024-11-01,America,Mexico,113219.0,thousand USD,energy,PETRONET
+2024-11-01,America,Mexico,67.92,USD/bbl,energy,PETRONET
+2024-11-01,America,United States,11386.0,thousand bbl,energy,PETRONET
+2024-11-01,America,United States,892620.0,thousand USD,energy,PETRONET
+2024-11-01,America,United States,78.4,USD/bbl,energy,PETRONET
+2024-11-01,Asia,Asia,3.45,percentage,energy,PETRONET
+2024-11-01,Asia,Asia,2870.0,thousand bbl,energy,PETRONET
+2024-11-01,Asia,Asia,224008.0,thousand USD,energy,PETRONET
+2024-11-01,Asia,Asia,33.80428571428571,USD/bbl,energy,PETRONET
+2024-11-01,Asia,Australia,1980.0,thousand bbl,energy,PETRONET
+2024-11-01,Asia,Australia,152784.0,thousand USD,energy,PETRONET
+2024-11-01,Asia,Australia,77.15,USD/bbl,energy,PETRONET
+2024-11-01,Asia,Indonesia,240.0,thousand bbl,energy,PETRONET
+2024-11-01,Asia,Indonesia,19024.0,thousand USD,energy,PETRONET
+2024-11-01,Asia,Indonesia,79.22,USD/bbl,energy,PETRONET
+2024-11-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2024-11-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2024-11-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2024-11-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2024-11-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2024-11-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2024-11-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2024-11-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2024-11-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2024-11-01,Asia,Papua New Guinea,650.0,thousand bbl,energy,PETRONET
+2024-11-01,Asia,Papua New Guinea,52200.0,thousand USD,energy,PETRONET
+2024-11-01,Asia,Papua New Guinea,80.26,USD/bbl,energy,PETRONET
+2024-11-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-11-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-11-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-11-01,Europe,Europe,0.9,percentage,energy,PETRONET
+2024-11-01,Europe,Europe,771.0,thousand bbl,energy,PETRONET
+2024-11-01,Europe,Europe,58084.0,thousand USD,energy,PETRONET
+2024-11-01,Europe,Europe,37.69,USD/bbl,energy,PETRONET
+2024-11-01,Europe,Norway,771.0,thousand bbl,energy,PETRONET
+2024-11-01,Europe,Norway,58084.0,thousand USD,energy,PETRONET
+2024-11-01,Europe,Norway,75.38,USD/bbl,energy,PETRONET
+2024-11-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-11-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-11-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-11-01,MiddleEast,Iraq,7805.0,thousand bbl,energy,PETRONET
+2024-11-01,MiddleEast,Iraq,574455.0,thousand USD,energy,PETRONET
+2024-11-01,MiddleEast,Iraq,73.6,USD/bbl,energy,PETRONET
+2024-11-01,MiddleEast,Kuwait,8539.0,thousand bbl,energy,PETRONET
+2024-11-01,MiddleEast,Kuwait,646399.0,thousand USD,energy,PETRONET
+2024-11-01,MiddleEast,Kuwait,75.7,USD/bbl,energy,PETRONET
+2024-11-01,MiddleEast,MiddleEast,75.83,percentage,energy,PETRONET
+2024-11-01,MiddleEast,MiddleEast,64420.0,thousand bbl,energy,PETRONET
+2024-11-01,MiddleEast,MiddleEast,4919834.0,thousand USD,energy,PETRONET
+2024-11-01,MiddleEast,MiddleEast,76.24428571428571,USD/bbl,energy,PETRONET
+2024-11-01,MiddleEast,Neutral Zone,801.0,thousand bbl,energy,PETRONET
+2024-11-01,MiddleEast,Neutral Zone,60474.0,thousand USD,energy,PETRONET
+2024-11-01,MiddleEast,Neutral Zone,75.49,USD/bbl,energy,PETRONET
+2024-11-01,MiddleEast,Oman,951.0,thousand bbl,energy,PETRONET
+2024-11-01,MiddleEast,Oman,71985.0,thousand USD,energy,PETRONET
+2024-11-01,MiddleEast,Oman,75.69,USD/bbl,energy,PETRONET
+2024-11-01,MiddleEast,Qatar,5042.0,thousand bbl,energy,PETRONET
+2024-11-01,MiddleEast,Qatar,398644.0,thousand USD,energy,PETRONET
+2024-11-01,MiddleEast,Qatar,79.07,USD/bbl,energy,PETRONET
+2024-11-01,MiddleEast,Saudi Arabia,29318.0,thousand bbl,energy,PETRONET
+2024-11-01,MiddleEast,Saudi Arabia,2235984.0,thousand USD,energy,PETRONET
+2024-11-01,MiddleEast,Saudi Arabia,76.27,USD/bbl,energy,PETRONET
+2024-11-01,MiddleEast,UAE,11964.0,thousand bbl,energy,PETRONET
+2024-11-01,MiddleEast,UAE,931893.0,thousand USD,energy,PETRONET
+2024-11-01,MiddleEast,UAE,77.89,USD/bbl,energy,PETRONET
+2024-11-01,Total,Total,84669.0,thousand bbl,energy,PETRONET
+2024-11-01,Total,Total,6487921.0,thousand USD,energy,PETRONET
+2024-11-01,Total,Total,76.63,USD/bbl,energy,PETRONET
+2024-12-01,Africa,Africa,1.36,percentage,energy,PETRONET
+2024-12-01,Africa,Africa,999.0,thousand bbl,energy,PETRONET
+2024-12-01,Africa,Africa,82282.0,thousand USD,energy,PETRONET
+2024-12-01,Africa,Africa,16.472,USD/bbl,energy,PETRONET
+2024-12-01,Africa,Algeria,999.0,thousand bbl,energy,PETRONET
+2024-12-01,Africa,Algeria,82282.0,thousand USD,energy,PETRONET
+2024-12-01,Africa,Algeria,82.36,USD/bbl,energy,PETRONET
+2024-12-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2024-12-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2024-12-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2024-12-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2024-12-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2024-12-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2024-12-01,America,America,20.77,percentage,energy,PETRONET
+2024-12-01,America,America,16374.0,thousand bbl,energy,PETRONET
+2024-12-01,America,America,1257766.0,thousand USD,energy,PETRONET
+2024-12-01,America,America,44.728,USD/bbl,energy,PETRONET
+2024-12-01,America,Brazil,2213.0,thousand bbl,energy,PETRONET
+2024-12-01,America,Brazil,169525.0,thousand USD,energy,PETRONET
+2024-12-01,America,Brazil,76.59,USD/bbl,energy,PETRONET
+2024-12-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2024-12-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2024-12-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2024-12-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2024-12-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2024-12-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2024-12-01,America,Mexico,2027.0,thousand bbl,energy,PETRONET
+2024-12-01,America,Mexico,139627.0,thousand USD,energy,PETRONET
+2024-12-01,America,Mexico,68.87,USD/bbl,energy,PETRONET
+2024-12-01,America,United States,12134.0,thousand bbl,energy,PETRONET
+2024-12-01,America,United States,948614.0,thousand USD,energy,PETRONET
+2024-12-01,America,United States,78.18,USD/bbl,energy,PETRONET
+2024-12-01,Asia,Asia,4.91,percentage,energy,PETRONET
+2024-12-01,Asia,Asia,3869.0,thousand bbl,energy,PETRONET
+2024-12-01,Asia,Asia,297427.0,thousand USD,energy,PETRONET
+2024-12-01,Asia,Asia,43.64999999999999,USD/bbl,energy,PETRONET
+2024-12-01,Asia,Australia,2596.0,thousand bbl,energy,PETRONET
+2024-12-01,Asia,Australia,200285.0,thousand USD,energy,PETRONET
+2024-12-01,Asia,Australia,77.16,USD/bbl,energy,PETRONET
+2024-12-01,Asia,Indonesia,225.0,thousand bbl,energy,PETRONET
+2024-12-01,Asia,Indonesia,17195.0,thousand USD,energy,PETRONET
+2024-12-01,Asia,Indonesia,76.46,USD/bbl,energy,PETRONET
+2024-12-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2024-12-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Asia,Malaysia,366.0,thousand bbl,energy,PETRONET
+2024-12-01,Asia,Malaysia,27404.0,thousand USD,energy,PETRONET
+2024-12-01,Asia,Malaysia,74.93,USD/bbl,energy,PETRONET
+2024-12-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2024-12-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Asia,Papua New Guinea,682.0,thousand bbl,energy,PETRONET
+2024-12-01,Asia,Papua New Guinea,52543.0,thousand USD,energy,PETRONET
+2024-12-01,Asia,Papua New Guinea,77.0,USD/bbl,energy,PETRONET
+2024-12-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2024-12-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2024-12-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2024-12-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2024-12-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2024-12-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2024-12-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2024-12-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2024-12-01,MiddleEast,Iraq,9319.0,thousand bbl,energy,PETRONET
+2024-12-01,MiddleEast,Iraq,671221.0,thousand USD,energy,PETRONET
+2024-12-01,MiddleEast,Iraq,72.02,USD/bbl,energy,PETRONET
+2024-12-01,MiddleEast,Kuwait,5191.0,thousand bbl,energy,PETRONET
+2024-12-01,MiddleEast,Kuwait,392526.0,thousand USD,energy,PETRONET
+2024-12-01,MiddleEast,Kuwait,75.61,USD/bbl,energy,PETRONET
+2024-12-01,MiddleEast,MiddleEast,72.95,percentage,energy,PETRONET
+2024-12-01,MiddleEast,MiddleEast,58164.0,thousand bbl,energy,PETRONET
+2024-12-01,MiddleEast,MiddleEast,4417026.0,thousand USD,energy,PETRONET
+2024-12-01,MiddleEast,MiddleEast,64.98857142857143,USD/bbl,energy,PETRONET
+2024-12-01,MiddleEast,Neutral Zone,1206.0,thousand bbl,energy,PETRONET
+2024-12-01,MiddleEast,Neutral Zone,91112.0,thousand USD,energy,PETRONET
+2024-12-01,MiddleEast,Neutral Zone,75.57,USD/bbl,energy,PETRONET
+2024-12-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2024-12-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2024-12-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2024-12-01,MiddleEast,Qatar,2369.0,thousand bbl,energy,PETRONET
+2024-12-01,MiddleEast,Qatar,184889.0,thousand USD,energy,PETRONET
+2024-12-01,MiddleEast,Qatar,78.05,USD/bbl,energy,PETRONET
+2024-12-01,MiddleEast,Saudi Arabia,31061.0,thousand bbl,energy,PETRONET
+2024-12-01,MiddleEast,Saudi Arabia,2383378.0,thousand USD,energy,PETRONET
+2024-12-01,MiddleEast,Saudi Arabia,76.73,USD/bbl,energy,PETRONET
+2024-12-01,MiddleEast,UAE,9018.0,thousand bbl,energy,PETRONET
+2024-12-01,MiddleEast,UAE,693900.0,thousand USD,energy,PETRONET
+2024-12-01,MiddleEast,UAE,76.94,USD/bbl,energy,PETRONET
+2024-12-01,Total,Total,79407.0,thousand bbl,energy,PETRONET
+2024-12-01,Total,Total,6054503.0,thousand USD,energy,PETRONET
+2024-12-01,Total,Total,76.25,USD/bbl,energy,PETRONET
+2025-01-01,Africa,Africa,2.22,percentage,energy,PETRONET
+2025-01-01,Africa,Africa,2001.0,thousand bbl,energy,PETRONET
+2025-01-01,Africa,Africa,156298.0,thousand USD,energy,PETRONET
+2025-01-01,Africa,Africa,15.618,USD/bbl,energy,PETRONET
+2025-01-01,Africa,Algeria,2001.0,thousand bbl,energy,PETRONET
+2025-01-01,Africa,Algeria,156298.0,thousand USD,energy,PETRONET
+2025-01-01,Africa,Algeria,78.09,USD/bbl,energy,PETRONET
+2025-01-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2025-01-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2025-01-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2025-01-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2025-01-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2025-01-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2025-01-01,America,America,21.1,percentage,energy,PETRONET
+2025-01-01,America,America,19126.0,thousand bbl,energy,PETRONET
+2025-01-01,America,America,1483455.0,thousand USD,energy,PETRONET
+2025-01-01,America,America,46.11,USD/bbl,energy,PETRONET
+2025-01-01,America,Brazil,1906.0,thousand bbl,energy,PETRONET
+2025-01-01,America,Brazil,157580.0,thousand USD,energy,PETRONET
+2025-01-01,America,Brazil,82.67,USD/bbl,energy,PETRONET
+2025-01-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2025-01-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2025-01-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2025-01-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2025-01-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2025-01-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2025-01-01,America,Mexico,3262.0,thousand bbl,energy,PETRONET
+2025-01-01,America,Mexico,225123.0,thousand USD,energy,PETRONET
+2025-01-01,America,Mexico,69.02,USD/bbl,energy,PETRONET
+2025-01-01,America,United States,13958.0,thousand bbl,energy,PETRONET
+2025-01-01,America,United States,1100752.0,thousand USD,energy,PETRONET
+2025-01-01,America,United States,78.86,USD/bbl,energy,PETRONET
+2025-01-01,Asia,Asia,3.21,percentage,energy,PETRONET
+2025-01-01,Asia,Asia,2882.0,thousand bbl,energy,PETRONET
+2025-01-01,Asia,Asia,225600.0,thousand USD,energy,PETRONET
+2025-01-01,Asia,Asia,33.652857142857144,USD/bbl,energy,PETRONET
+2025-01-01,Asia,Australia,2034.0,thousand bbl,energy,PETRONET
+2025-01-01,Asia,Australia,157377.0,thousand USD,energy,PETRONET
+2025-01-01,Asia,Australia,77.38,USD/bbl,energy,PETRONET
+2025-01-01,Asia,Indonesia,198.0,thousand bbl,energy,PETRONET
+2025-01-01,Asia,Indonesia,15154.0,thousand USD,energy,PETRONET
+2025-01-01,Asia,Indonesia,76.61,USD/bbl,energy,PETRONET
+2025-01-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2025-01-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Asia,Malaysia,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Asia,Malaysia,0.0,thousand USD,energy,PETRONET
+2025-01-01,Asia,Malaysia,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2025-01-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Asia,Papua New Guinea,650.0,thousand bbl,energy,PETRONET
+2025-01-01,Asia,Papua New Guinea,53069.0,thousand USD,energy,PETRONET
+2025-01-01,Asia,Papua New Guinea,81.58,USD/bbl,energy,PETRONET
+2025-01-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2025-01-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2025-01-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2025-01-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2025-01-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2025-01-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2025-01-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2025-01-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2025-01-01,MiddleEast,Iraq,7808.0,thousand bbl,energy,PETRONET
+2025-01-01,MiddleEast,Iraq,571116.0,thousand USD,energy,PETRONET
+2025-01-01,MiddleEast,Iraq,73.14,USD/bbl,energy,PETRONET
+2025-01-01,MiddleEast,Kuwait,7655.0,thousand bbl,energy,PETRONET
+2025-01-01,MiddleEast,Kuwait,620967.0,thousand USD,energy,PETRONET
+2025-01-01,MiddleEast,Kuwait,81.12,USD/bbl,energy,PETRONET
+2025-01-01,MiddleEast,MiddleEast,73.46,percentage,energy,PETRONET
+2025-01-01,MiddleEast,MiddleEast,65619.74,thousand bbl,energy,PETRONET
+2025-01-01,MiddleEast,MiddleEast,5163994.0,thousand USD,energy,PETRONET
+2025-01-01,MiddleEast,MiddleEast,79.33285714285715,USD/bbl,energy,PETRONET
+2025-01-01,MiddleEast,Neutral Zone,45.74,thousand bbl,energy,PETRONET
+2025-01-01,MiddleEast,Neutral Zone,3754.0,thousand USD,energy,PETRONET
+2025-01-01,MiddleEast,Neutral Zone,82.08,USD/bbl,energy,PETRONET
+2025-01-01,MiddleEast,Oman,2069.0,thousand bbl,energy,PETRONET
+2025-01-01,MiddleEast,Oman,172439.0,thousand USD,energy,PETRONET
+2025-01-01,MiddleEast,Oman,83.34,USD/bbl,energy,PETRONET
+2025-01-01,MiddleEast,Qatar,6340.0,thousand bbl,energy,PETRONET
+2025-01-01,MiddleEast,Qatar,494977.0,thousand USD,energy,PETRONET
+2025-01-01,MiddleEast,Qatar,78.07,USD/bbl,energy,PETRONET
+2025-01-01,MiddleEast,Saudi Arabia,30073.0,thousand bbl,energy,PETRONET
+2025-01-01,MiddleEast,Saudi Arabia,2394028.0,thousand USD,energy,PETRONET
+2025-01-01,MiddleEast,Saudi Arabia,79.61,USD/bbl,energy,PETRONET
+2025-01-01,MiddleEast,UAE,11629.0,thousand bbl,energy,PETRONET
+2025-01-01,MiddleEast,UAE,906713.0,thousand USD,energy,PETRONET
+2025-01-01,MiddleEast,UAE,77.97,USD/bbl,energy,PETRONET
+2025-01-01,Total,Total,89629.0,thousand bbl,energy,PETRONET
+2025-01-01,Total,Total,7029347.0,thousand USD,energy,PETRONET
+2025-01-01,Total,Total,78.43,USD/bbl,energy,PETRONET
+2025-02-01,Africa,Africa,0.0,percentage,energy,PETRONET
+2025-02-01,Africa,Africa,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Africa,Africa,0.0,thousand USD,energy,PETRONET
+2025-02-01,Africa,Africa,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Africa,Algeria,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Africa,Algeria,0.0,thousand USD,energy,PETRONET
+2025-02-01,Africa,Algeria,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2025-02-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2025-02-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2025-02-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2025-02-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2025-02-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2025-02-01,America,America,21.28,percentage,energy,PETRONET
+2025-02-01,America,America,16122.0,thousand bbl,energy,PETRONET
+2025-02-01,America,America,1311925.0,thousand USD,energy,PETRONET
+2025-02-01,America,America,48.222,USD/bbl,energy,PETRONET
+2025-02-01,America,Brazil,1829.0,thousand bbl,energy,PETRONET
+2025-02-01,America,Brazil,152481.0,thousand USD,energy,PETRONET
+2025-02-01,America,Brazil,83.36,USD/bbl,energy,PETRONET
+2025-02-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2025-02-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2025-02-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2025-02-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2025-02-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2025-02-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2025-02-01,America,Mexico,1964.0,thousand bbl,energy,PETRONET
+2025-02-01,America,Mexico,148826.0,thousand USD,energy,PETRONET
+2025-02-01,America,Mexico,75.78,USD/bbl,energy,PETRONET
+2025-02-01,America,United States,12329.0,thousand bbl,energy,PETRONET
+2025-02-01,America,United States,1010618.0,thousand USD,energy,PETRONET
+2025-02-01,America,United States,81.97,USD/bbl,energy,PETRONET
+2025-02-01,Asia,Asia,4.83,percentage,energy,PETRONET
+2025-02-01,Asia,Asia,3684.0,thousand bbl,energy,PETRONET
+2025-02-01,Asia,Asia,297575.0,thousand USD,energy,PETRONET
+2025-02-01,Asia,Asia,34.128571428571426,USD/bbl,energy,PETRONET
+2025-02-01,Asia,Australia,3084.0,thousand bbl,energy,PETRONET
+2025-02-01,Asia,Australia,250369.0,thousand USD,energy,PETRONET
+2025-02-01,Asia,Australia,81.19,USD/bbl,energy,PETRONET
+2025-02-01,Asia,Indonesia,235.0,thousand bbl,energy,PETRONET
+2025-02-01,Asia,Indonesia,18736.0,thousand USD,energy,PETRONET
+2025-02-01,Asia,Indonesia,79.71,USD/bbl,energy,PETRONET
+2025-02-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2025-02-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Asia,Malaysia,365.0,thousand bbl,energy,PETRONET
+2025-02-01,Asia,Malaysia,28470.0,thousand USD,energy,PETRONET
+2025-02-01,Asia,Malaysia,78.0,USD/bbl,energy,PETRONET
+2025-02-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2025-02-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2025-02-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2025-02-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2025-02-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2025-02-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2025-02-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2025-02-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2025-02-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2025-02-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2025-02-01,MiddleEast,Iraq,9650.0,thousand bbl,energy,PETRONET
+2025-02-01,MiddleEast,Iraq,760546.0,thousand USD,energy,PETRONET
+2025-02-01,MiddleEast,Iraq,78.81,USD/bbl,energy,PETRONET
+2025-02-01,MiddleEast,Kuwait,5580.0,thousand bbl,energy,PETRONET
+2025-02-01,MiddleEast,Kuwait,445433.0,thousand USD,energy,PETRONET
+2025-02-01,MiddleEast,Kuwait,79.83,USD/bbl,energy,PETRONET
+2025-02-01,MiddleEast,MiddleEast,73.89,percentage,energy,PETRONET
+2025-02-01,MiddleEast,MiddleEast,56827.6,thousand bbl,energy,PETRONET
+2025-02-01,MiddleEast,MiddleEast,4554177.0,thousand USD,energy,PETRONET
+2025-02-01,MiddleEast,MiddleEast,69.06428571428572,USD/bbl,energy,PETRONET
+2025-02-01,MiddleEast,Neutral Zone,51.6,thousand bbl,energy,PETRONET
+2025-02-01,MiddleEast,Neutral Zone,4235.0,thousand USD,energy,PETRONET
+2025-02-01,MiddleEast,Neutral Zone,82.08,USD/bbl,energy,PETRONET
+2025-02-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2025-02-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2025-02-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2025-02-01,MiddleEast,Qatar,2558.0,thousand bbl,energy,PETRONET
+2025-02-01,MiddleEast,Qatar,207335.0,thousand USD,energy,PETRONET
+2025-02-01,MiddleEast,Qatar,81.06,USD/bbl,energy,PETRONET
+2025-02-01,MiddleEast,Saudi Arabia,27133.0,thousand bbl,energy,PETRONET
+2025-02-01,MiddleEast,Saudi Arabia,2166636.0,thousand USD,energy,PETRONET
+2025-02-01,MiddleEast,Saudi Arabia,79.85,USD/bbl,energy,PETRONET
+2025-02-01,MiddleEast,UAE,11855.0,thousand bbl,energy,PETRONET
+2025-02-01,MiddleEast,UAE,969992.0,thousand USD,energy,PETRONET
+2025-02-01,MiddleEast,UAE,81.82,USD/bbl,energy,PETRONET
+2025-02-01,Total,Total,76634.0,thousand bbl,energy,PETRONET
+2025-02-01,Total,Total,6163675.0,thousand USD,energy,PETRONET
+2025-02-01,Total,Total,80.43,USD/bbl,energy,PETRONET
+2025-03-01,Africa,Africa,4.01,percentage,energy,PETRONET
+2025-03-01,Africa,Africa,3170.0,thousand bbl,energy,PETRONET
+2025-03-01,Africa,Africa,254615.0,thousand USD,energy,PETRONET
+2025-03-01,Africa,Africa,47.612,USD/bbl,energy,PETRONET
+2025-03-01,Africa,Algeria,2003.0,thousand bbl,energy,PETRONET
+2025-03-01,Africa,Algeria,163287.0,thousand USD,energy,PETRONET
+2025-03-01,Africa,Algeria,81.54,USD/bbl,energy,PETRONET
+2025-03-01,Africa,Congo,920.0,thousand bbl,energy,PETRONET
+2025-03-01,Africa,Congo,72005.0,thousand USD,energy,PETRONET
+2025-03-01,Africa,Congo,78.25,USD/bbl,energy,PETRONET
+2025-03-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2025-03-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2025-03-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2025-03-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2025-03-01,Africa,Mozambique,247.0,thousand bbl,energy,PETRONET
+2025-03-01,Africa,Mozambique,19323.0,thousand USD,energy,PETRONET
+2025-03-01,Africa,Mozambique,78.27,USD/bbl,energy,PETRONET
+2025-03-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2025-03-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2025-03-01,America,America,19.43,percentage,energy,PETRONET
+2025-03-01,America,America,15317.0,thousand bbl,energy,PETRONET
+2025-03-01,America,America,1233362.0,thousand USD,energy,PETRONET
+2025-03-01,America,America,47.27,USD/bbl,energy,PETRONET
+2025-03-01,America,Brazil,3769.0,thousand bbl,energy,PETRONET
+2025-03-01,America,Brazil,302990.0,thousand USD,energy,PETRONET
+2025-03-01,America,Brazil,80.4,USD/bbl,energy,PETRONET
+2025-03-01,America,Canada,0.0,thousand bbl,energy,PETRONET
+2025-03-01,America,Canada,0.0,thousand USD,energy,PETRONET
+2025-03-01,America,Canada,0.0,USD/bbl,energy,PETRONET
+2025-03-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2025-03-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2025-03-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2025-03-01,America,Mexico,1918.0,thousand bbl,energy,PETRONET
+2025-03-01,America,Mexico,142122.0,thousand USD,energy,PETRONET
+2025-03-01,America,Mexico,74.1,USD/bbl,energy,PETRONET
+2025-03-01,America,United States,9630.0,thousand bbl,energy,PETRONET
+2025-03-01,America,United States,788250.0,thousand USD,energy,PETRONET
+2025-03-01,America,United States,81.85,USD/bbl,energy,PETRONET
+2025-03-01,Asia,Asia,2.19,percentage,energy,PETRONET
+2025-03-01,Asia,Asia,1802.0,thousand bbl,energy,PETRONET
+2025-03-01,Asia,Asia,139261.0,thousand USD,energy,PETRONET
+2025-03-01,Asia,Asia,22.272857142857145,USD/bbl,energy,PETRONET
+2025-03-01,Asia,Australia,1348.0,thousand bbl,energy,PETRONET
+2025-03-01,Asia,Australia,103290.0,thousand USD,energy,PETRONET
+2025-03-01,Asia,Australia,76.62,USD/bbl,energy,PETRONET
+2025-03-01,Asia,Indonesia,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Asia,Indonesia,0.0,thousand USD,energy,PETRONET
+2025-03-01,Asia,Indonesia,0.0,USD/bbl,energy,PETRONET
+2025-03-01,Asia,Kazakhstan,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Asia,Kazakhstan,0.0,thousand USD,energy,PETRONET
+2025-03-01,Asia,Kazakhstan,0.0,USD/bbl,energy,PETRONET
+2025-03-01,Asia,Malaysia,454.0,thousand bbl,energy,PETRONET
+2025-03-01,Asia,Malaysia,35971.0,thousand USD,energy,PETRONET
+2025-03-01,Asia,Malaysia,79.29,USD/bbl,energy,PETRONET
+2025-03-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2025-03-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2025-03-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2025-03-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2025-03-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2025-03-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2025-03-01,Europe,Europe,1.26,percentage,energy,PETRONET
+2025-03-01,Europe,Europe,996.0,thousand bbl,energy,PETRONET
+2025-03-01,Europe,Europe,79861.0,thousand USD,energy,PETRONET
+2025-03-01,Europe,Europe,40.11,USD/bbl,energy,PETRONET
+2025-03-01,Europe,Norway,996.0,thousand bbl,energy,PETRONET
+2025-03-01,Europe,Norway,79861.0,thousand USD,energy,PETRONET
+2025-03-01,Europe,Norway,80.22,USD/bbl,energy,PETRONET
+2025-03-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2025-03-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2025-03-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2025-03-01,MiddleEast,Iraq,7786.0,thousand bbl,energy,PETRONET
+2025-03-01,MiddleEast,Iraq,598028.0,thousand USD,energy,PETRONET
+2025-03-01,MiddleEast,Iraq,76.81,USD/bbl,energy,PETRONET
+2025-03-01,MiddleEast,Kuwait,6108.0,thousand bbl,energy,PETRONET
+2025-03-01,MiddleEast,Kuwait,471396.0,thousand USD,energy,PETRONET
+2025-03-01,MiddleEast,Kuwait,77.18,USD/bbl,energy,PETRONET
+2025-03-01,MiddleEast,MiddleEast,73.11,percentage,energy,PETRONET
+2025-03-01,MiddleEast,MiddleEast,59002.0,thousand bbl,energy,PETRONET
+2025-03-01,MiddleEast,MiddleEast,4640699.0,thousand USD,energy,PETRONET
+2025-03-01,MiddleEast,MiddleEast,56.03285714285715,USD/bbl,energy,PETRONET
+2025-03-01,MiddleEast,Neutral Zone,0.0,thousand bbl,energy,PETRONET
+2025-03-01,MiddleEast,Neutral Zone,0.0,thousand USD,energy,PETRONET
+2025-03-01,MiddleEast,Neutral Zone,0.0,USD/bbl,energy,PETRONET
+2025-03-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2025-03-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2025-03-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2025-03-01,MiddleEast,Qatar,3348.0,thousand bbl,energy,PETRONET
+2025-03-01,MiddleEast,Qatar,264602.0,thousand USD,energy,PETRONET
+2025-03-01,MiddleEast,Qatar,79.03,USD/bbl,energy,PETRONET
+2025-03-01,MiddleEast,Saudi Arabia,28473.0,thousand bbl,energy,PETRONET
+2025-03-01,MiddleEast,Saudi Arabia,2233643.0,thousand USD,energy,PETRONET
+2025-03-01,MiddleEast,Saudi Arabia,78.45,USD/bbl,energy,PETRONET
+2025-03-01,MiddleEast,UAE,13287.0,thousand bbl,energy,PETRONET
+2025-03-01,MiddleEast,UAE,1073030.0,thousand USD,energy,PETRONET
+2025-03-01,MiddleEast,UAE,80.76,USD/bbl,energy,PETRONET
+2025-03-01,Total,Total,80286.0,thousand bbl,energy,PETRONET
+2025-03-01,Total,Total,6347798.0,thousand USD,energy,PETRONET
+2025-03-01,Total,Total,79.06,USD/bbl,energy,PETRONET
+2025-04-01,Africa,Africa,0.63,percentage,energy,PETRONET
+2025-04-01,Africa,Africa,512.0,thousand bbl,energy,PETRONET
+2025-04-01,Africa,Africa,38475.0,thousand USD,energy,PETRONET
+2025-04-01,Africa,Africa,15.026,USD/bbl,energy,PETRONET
+2025-04-01,Africa,Algeria,0.0,thousand bbl,energy,PETRONET
+2025-04-01,Africa,Algeria,0.0,thousand USD,energy,PETRONET
+2025-04-01,Africa,Algeria,0.0,USD/bbl,energy,PETRONET
+2025-04-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2025-04-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2025-04-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2025-04-01,Africa,Equatorial Guinea,512.0,thousand bbl,energy,PETRONET
+2025-04-01,Africa,Equatorial Guinea,38475.0,thousand USD,energy,PETRONET
+2025-04-01,Africa,Equatorial Guinea,75.13,USD/bbl,energy,PETRONET
+2025-04-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2025-04-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2025-04-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2025-04-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2025-04-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2025-04-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2025-04-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2025-04-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2025-04-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2025-04-01,America,America,27.35,percentage,energy,PETRONET
+2025-04-01,America,America,21920.0,thousand bbl,energy,PETRONET
+2025-04-01,America,America,1667300.0,thousand USD,energy,PETRONET
+2025-04-01,America,America,73.146,USD/bbl,energy,PETRONET
+2025-04-01,America,Brazil,3819.0,thousand bbl,energy,PETRONET
+2025-04-01,America,Brazil,284935.0,thousand USD,energy,PETRONET
+2025-04-01,America,Brazil,74.61,USD/bbl,energy,PETRONET
+2025-04-01,America,Canada,548.0,thousand bbl,energy,PETRONET
+2025-04-01,America,Canada,38223.0,thousand USD,energy,PETRONET
+2025-04-01,America,Canada,69.77,USD/bbl,energy,PETRONET
+2025-04-01,America,Ecuador,669.0,thousand bbl,energy,PETRONET
+2025-04-01,America,Ecuador,48837.0,thousand USD,energy,PETRONET
+2025-04-01,America,Ecuador,73.04,USD/bbl,energy,PETRONET
+2025-04-01,America,Mexico,1964.0,thousand bbl,energy,PETRONET
+2025-04-01,America,Mexico,139055.0,thousand USD,energy,PETRONET
+2025-04-01,America,Mexico,70.81,USD/bbl,energy,PETRONET
+2025-04-01,America,United States,14920.0,thousand bbl,energy,PETRONET
+2025-04-01,America,United States,1156250.0,thousand USD,energy,PETRONET
+2025-04-01,America,United States,77.5,USD/bbl,energy,PETRONET
+2025-04-01,Asia,Asia,5.74,percentage,energy,PETRONET
+2025-04-01,Asia,Asia,4568.0,thousand bbl,energy,PETRONET
+2025-04-01,Asia,Asia,349827.0,thousand USD,energy,PETRONET
+2025-04-01,Asia,Asia,54.737142857142864,USD/bbl,energy,PETRONET
+2025-04-01,Asia,Australia,1944.0,thousand bbl,energy,PETRONET
+2025-04-01,Asia,Australia,148484.0,thousand USD,energy,PETRONET
+2025-04-01,Asia,Australia,76.36,USD/bbl,energy,PETRONET
+2025-04-01,Asia,Indonesia,0.0,thousand bbl,energy,PETRONET
+2025-04-01,Asia,Indonesia,0.0,thousand USD,energy,PETRONET
+2025-04-01,Asia,Indonesia,0.0,USD/bbl,energy,PETRONET
+2025-04-01,Asia,Kazakhstan,1066.0,thousand bbl,energy,PETRONET
+2025-04-01,Asia,Kazakhstan,82302.0,thousand USD,energy,PETRONET
+2025-04-01,Asia,Kazakhstan,77.21,USD/bbl,energy,PETRONET
+2025-04-01,Asia,Malaysia,314.0,thousand bbl,energy,PETRONET
+2025-04-01,Asia,Malaysia,24300.0,thousand USD,energy,PETRONET
+2025-04-01,Asia,Malaysia,77.5,USD/bbl,energy,PETRONET
+2025-04-01,Asia,New Zealand,594.0,thousand bbl,energy,PETRONET
+2025-04-01,Asia,New Zealand,43964.0,thousand USD,energy,PETRONET
+2025-04-01,Asia,New Zealand,73.99,USD/bbl,energy,PETRONET
+2025-04-01,Asia,Papua New Guinea,650.0,thousand bbl,energy,PETRONET
+2025-04-01,Asia,Papua New Guinea,50777.0,thousand USD,energy,PETRONET
+2025-04-01,Asia,Papua New Guinea,78.1,USD/bbl,energy,PETRONET
+2025-04-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2025-04-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2025-04-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2025-04-01,Europe,Europe,3.03,percentage,energy,PETRONET
+2025-04-01,Europe,Europe,2440.0,thousand bbl,energy,PETRONET
+2025-04-01,Europe,Europe,184631.0,thousand USD,energy,PETRONET
+2025-04-01,Europe,Europe,75.645,USD/bbl,energy,PETRONET
+2025-04-01,Europe,Norway,980.0,thousand bbl,energy,PETRONET
+2025-04-01,Europe,Norway,74050.0,thousand USD,energy,PETRONET
+2025-04-01,Europe,Norway,75.55,USD/bbl,energy,PETRONET
+2025-04-01,Europe,United Kingdom,1460.0,thousand bbl,energy,PETRONET
+2025-04-01,Europe,United Kingdom,110581.0,thousand USD,energy,PETRONET
+2025-04-01,Europe,United Kingdom,75.74,USD/bbl,energy,PETRONET
+2025-04-01,MiddleEast,Iraq,9604.0,thousand bbl,energy,PETRONET
+2025-04-01,MiddleEast,Iraq,708664.0,thousand USD,energy,PETRONET
+2025-04-01,MiddleEast,Iraq,73.79,USD/bbl,energy,PETRONET
+2025-04-01,MiddleEast,Kuwait,5310.0,thousand bbl,energy,PETRONET
+2025-04-01,MiddleEast,Kuwait,384555.0,thousand USD,energy,PETRONET
+2025-04-01,MiddleEast,Kuwait,72.42,USD/bbl,energy,PETRONET
+2025-04-01,MiddleEast,MiddleEast,63.25,percentage,energy,PETRONET
+2025-04-01,MiddleEast,MiddleEast,51236.0,thousand bbl,energy,PETRONET
+2025-04-01,MiddleEast,MiddleEast,3856090.0,thousand USD,energy,PETRONET
+2025-04-01,MiddleEast,MiddleEast,76.34142857142857,USD/bbl,energy,PETRONET
+2025-04-01,MiddleEast,Neutral Zone,601.0,thousand bbl,energy,PETRONET
+2025-04-01,MiddleEast,Neutral Zone,49322.0,thousand USD,energy,PETRONET
+2025-04-01,MiddleEast,Neutral Zone,82.08,USD/bbl,energy,PETRONET
+2025-04-01,MiddleEast,Oman,1900.0,thousand bbl,energy,PETRONET
+2025-04-01,MiddleEast,Oman,147255.0,thousand USD,energy,PETRONET
+2025-04-01,MiddleEast,Oman,77.5,USD/bbl,energy,PETRONET
+2025-04-01,MiddleEast,Qatar,4674.0,thousand bbl,energy,PETRONET
+2025-04-01,MiddleEast,Qatar,352988.0,thousand USD,energy,PETRONET
+2025-04-01,MiddleEast,Qatar,75.52,USD/bbl,energy,PETRONET
+2025-04-01,MiddleEast,Saudi Arabia,24318.0,thousand bbl,energy,PETRONET
+2025-04-01,MiddleEast,Saudi Arabia,1839330.0,thousand USD,energy,PETRONET
+2025-04-01,MiddleEast,Saudi Arabia,75.64,USD/bbl,energy,PETRONET
+2025-04-01,MiddleEast,UAE,4829.0,thousand bbl,energy,PETRONET
+2025-04-01,MiddleEast,UAE,373976.0,thousand USD,energy,PETRONET
+2025-04-01,MiddleEast,UAE,77.44,USD/bbl,energy,PETRONET
+2025-04-01,Total,Total,80676.0,thousand bbl,energy,PETRONET
+2025-04-01,Total,Total,6096324.0,thousand USD,energy,PETRONET
+2025-04-01,Total,Total,75.57,USD/bbl,energy,PETRONET
+2025-05-01,Africa,Africa,3.16,percentage,energy,PETRONET
+2025-05-01,Africa,Africa,2980.0,thousand bbl,energy,PETRONET
+2025-05-01,Africa,Africa,213032.0,thousand USD,energy,PETRONET
+2025-05-01,Africa,Africa,28.078,USD/bbl,energy,PETRONET
+2025-05-01,Africa,Algeria,2477.0,thousand bbl,energy,PETRONET
+2025-05-01,Africa,Algeria,178711.0,thousand USD,energy,PETRONET
+2025-05-01,Africa,Algeria,72.16,USD/bbl,energy,PETRONET
+2025-05-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2025-05-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2025-05-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2025-05-01,Africa,Equatorial Guinea,0.0,thousand bbl,energy,PETRONET
+2025-05-01,Africa,Equatorial Guinea,0.0,thousand USD,energy,PETRONET
+2025-05-01,Africa,Equatorial Guinea,0.0,USD/bbl,energy,PETRONET
+2025-05-01,Africa,Gabon,951.0,thousand bbl,energy,PETRONET
+2025-05-01,Africa,Gabon,71052.0,thousand USD,energy,PETRONET
+2025-05-01,Africa,Gabon,74.74,USD/bbl,energy,PETRONET
+2025-05-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2025-05-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2025-05-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2025-05-01,Africa,Nigeria,503.0,thousand bbl,energy,PETRONET
+2025-05-01,Africa,Nigeria,34321.0,thousand USD,energy,PETRONET
+2025-05-01,Africa,Nigeria,68.23,USD/bbl,energy,PETRONET
+2025-05-01,America,America,25.63,percentage,energy,PETRONET
+2025-05-01,America,America,24144.0,thousand bbl,energy,PETRONET
+2025-05-01,America,America,1730013.0,thousand USD,energy,PETRONET
+2025-05-01,America,America,54.926,USD/bbl,energy,PETRONET
+2025-05-01,America,Brazil,2893.0,thousand bbl,energy,PETRONET
+2025-05-01,America,Brazil,209691.0,thousand USD,energy,PETRONET
+2025-05-01,America,Brazil,72.48,USD/bbl,energy,PETRONET
+2025-05-01,America,Canada,574.0,thousand bbl,energy,PETRONET
+2025-05-01,America,Canada,38093.0,thousand USD,energy,PETRONET
+2025-05-01,America,Canada,66.34,USD/bbl,energy,PETRONET
+2025-05-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2025-05-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2025-05-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2025-05-01,America,Mexico,1997.0,thousand bbl,energy,PETRONET
+2025-05-01,America,Mexico,126279.0,thousand USD,energy,PETRONET
+2025-05-01,America,Mexico,63.22,USD/bbl,energy,PETRONET
+2025-05-01,America,United States,18680.0,thousand bbl,energy,PETRONET
+2025-05-01,America,United States,1355950.0,thousand USD,energy,PETRONET
+2025-05-01,America,United States,72.59,USD/bbl,energy,PETRONET
+2025-05-01,Asia,Asia,8.06,percentage,energy,PETRONET
+2025-05-01,Asia,Asia,7684.0,thousand bbl,energy,PETRONET
+2025-05-01,Asia,Asia,544285.0,thousand USD,energy,PETRONET
+2025-05-01,Asia,Asia,49.65,USD/bbl,energy,PETRONET
+2025-05-01,Asia,Australia,1931.0,thousand bbl,energy,PETRONET
+2025-05-01,Asia,Australia,130642.0,thousand USD,energy,PETRONET
+2025-05-01,Asia,Australia,67.64,USD/bbl,energy,PETRONET
+2025-05-01,Asia,Indonesia,160.0,thousand bbl,energy,PETRONET
+2025-05-01,Asia,Indonesia,11709.0,thousand USD,energy,PETRONET
+2025-05-01,Asia,Indonesia,73.08,USD/bbl,energy,PETRONET
+2025-05-01,Asia,Kazakhstan,4185.0,thousand bbl,energy,PETRONET
+2025-05-01,Asia,Kazakhstan,307797.0,thousand USD,energy,PETRONET
+2025-05-01,Asia,Kazakhstan,73.55,USD/bbl,energy,PETRONET
+2025-05-01,Asia,Malaysia,1080.0,thousand bbl,energy,PETRONET
+2025-05-01,Asia,Malaysia,72401.0,thousand USD,energy,PETRONET
+2025-05-01,Asia,Malaysia,67.01,USD/bbl,energy,PETRONET
+2025-05-01,Asia,New Zealand,328.0,thousand bbl,energy,PETRONET
+2025-05-01,Asia,New Zealand,21736.0,thousand USD,energy,PETRONET
+2025-05-01,Asia,New Zealand,66.27,USD/bbl,energy,PETRONET
+2025-05-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2025-05-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2025-05-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2025-05-01,Asia,Philippines,0.0,thousand bbl,energy,PETRONET
+2025-05-01,Asia,Philippines,0.0,thousand USD,energy,PETRONET
+2025-05-01,Asia,Philippines,0.0,USD/bbl,energy,PETRONET
+2025-05-01,Europe,Europe,0.62,percentage,energy,PETRONET
+2025-05-01,Europe,Europe,556.0,thousand bbl,energy,PETRONET
+2025-05-01,Europe,Europe,42109.0,thousand USD,energy,PETRONET
+2025-05-01,Europe,Europe,37.87,USD/bbl,energy,PETRONET
+2025-05-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2025-05-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2025-05-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2025-05-01,Europe,United Kingdom,556.0,thousand bbl,energy,PETRONET
+2025-05-01,Europe,United Kingdom,42109.0,thousand USD,energy,PETRONET
+2025-05-01,Europe,United Kingdom,75.74,USD/bbl,energy,PETRONET
+2025-05-01,MiddleEast,Iraq,10778.0,thousand bbl,energy,PETRONET
+2025-05-01,MiddleEast,Iraq,744424.0,thousand USD,energy,PETRONET
+2025-05-01,MiddleEast,Iraq,69.07,USD/bbl,energy,PETRONET
+2025-05-01,MiddleEast,Kuwait,9391.0,thousand bbl,energy,PETRONET
+2025-05-01,MiddleEast,Kuwait,643537.0,thousand USD,energy,PETRONET
+2025-05-01,MiddleEast,Kuwait,68.53,USD/bbl,energy,PETRONET
+2025-05-01,MiddleEast,MiddleEast,61.47,percentage,energy,PETRONET
+2025-05-01,MiddleEast,MiddleEast,59225.0,thousand bbl,energy,PETRONET
+2025-05-01,MiddleEast,MiddleEast,4149172.0,thousand USD,energy,PETRONET
+2025-05-01,MiddleEast,MiddleEast,60.29285714285715,USD/bbl,energy,PETRONET
+2025-05-01,MiddleEast,Neutral Zone,372.0,thousand bbl,energy,PETRONET
+2025-05-01,MiddleEast,Neutral Zone,26472.0,thousand USD,energy,PETRONET
+2025-05-01,MiddleEast,Neutral Zone,71.23,USD/bbl,energy,PETRONET
+2025-05-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2025-05-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2025-05-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2025-05-01,MiddleEast,Qatar,5075.0,thousand bbl,energy,PETRONET
+2025-05-01,MiddleEast,Qatar,352904.0,thousand USD,energy,PETRONET
+2025-05-01,MiddleEast,Qatar,69.53,USD/bbl,energy,PETRONET
+2025-05-01,MiddleEast,Saudi Arabia,26141.0,thousand bbl,energy,PETRONET
+2025-05-01,MiddleEast,Saudi Arabia,1832196.0,thousand USD,energy,PETRONET
+2025-05-01,MiddleEast,Saudi Arabia,70.09,USD/bbl,energy,PETRONET
+2025-05-01,MiddleEast,UAE,7468.0,thousand bbl,energy,PETRONET
+2025-05-01,MiddleEast,UAE,549639.0,thousand USD,energy,PETRONET
+2025-05-01,MiddleEast,UAE,73.6,USD/bbl,energy,PETRONET
+2025-05-01,Total,Total,95541.0,thousand bbl,energy,PETRONET
+2025-05-01,Total,Total,6749664.0,thousand USD,energy,PETRONET
+2025-05-01,Total,Total,70.65,USD/bbl,energy,PETRONET
+2025-06-01,Africa,Africa,0.56,percentage,energy,PETRONET
+2025-06-01,Africa,Africa,510.0,thousand bbl,energy,PETRONET
+2025-06-01,Africa,Africa,32492.0,thousand USD,energy,PETRONET
+2025-06-01,Africa,Africa,12.748,USD/bbl,energy,PETRONET
+2025-06-01,Africa,Algeria,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Africa,Algeria,0.0,thousand USD,energy,PETRONET
+2025-06-01,Africa,Algeria,0.0,USD/bbl,energy,PETRONET
+2025-06-01,Africa,Congo,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Africa,Congo,0.0,thousand USD,energy,PETRONET
+2025-06-01,Africa,Congo,0.0,USD/bbl,energy,PETRONET
+2025-06-01,Africa,Equatorial Guinea,510.0,thousand bbl,energy,PETRONET
+2025-06-01,Africa,Equatorial Guinea,32492.0,thousand USD,energy,PETRONET
+2025-06-01,Africa,Equatorial Guinea,63.74,USD/bbl,energy,PETRONET
+2025-06-01,Africa,Gabon,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Africa,Gabon,0.0,thousand USD,energy,PETRONET
+2025-06-01,Africa,Gabon,0.0,USD/bbl,energy,PETRONET
+2025-06-01,Africa,Mozambique,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Africa,Mozambique,0.0,thousand USD,energy,PETRONET
+2025-06-01,Africa,Mozambique,0.0,USD/bbl,energy,PETRONET
+2025-06-01,Africa,Nigeria,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Africa,Nigeria,0.0,thousand USD,energy,PETRONET
+2025-06-01,Africa,Nigeria,0.0,USD/bbl,energy,PETRONET
+2025-06-01,America,America,25.73,percentage,energy,PETRONET
+2025-06-01,America,America,22077.0,thousand bbl,energy,PETRONET
+2025-06-01,America,America,1488046.0,thousand USD,energy,PETRONET
+2025-06-01,America,America,53.17,USD/bbl,energy,PETRONET
+2025-06-01,America,Brazil,1964.0,thousand bbl,energy,PETRONET
+2025-06-01,America,Brazil,140830.0,thousand USD,energy,PETRONET
+2025-06-01,America,Brazil,71.71,USD/bbl,energy,PETRONET
+2025-06-01,America,Canada,1723.0,thousand bbl,energy,PETRONET
+2025-06-01,America,Canada,105501.0,thousand USD,energy,PETRONET
+2025-06-01,America,Canada,61.24,USD/bbl,energy,PETRONET
+2025-06-01,America,Ecuador,0.0,thousand bbl,energy,PETRONET
+2025-06-01,America,Ecuador,0.0,thousand USD,energy,PETRONET
+2025-06-01,America,Ecuador,0.0,USD/bbl,energy,PETRONET
+2025-06-01,America,Mexico,3918.0,thousand bbl,energy,PETRONET
+2025-06-01,America,Mexico,253051.0,thousand USD,energy,PETRONET
+2025-06-01,America,Mexico,64.59,USD/bbl,energy,PETRONET
+2025-06-01,America,United States,14472.0,thousand bbl,energy,PETRONET
+2025-06-01,America,United States,988664.0,thousand USD,energy,PETRONET
+2025-06-01,America,United States,68.31,USD/bbl,energy,PETRONET
+2025-06-01,Asia,Asia,6.27,percentage,energy,PETRONET
+2025-06-01,Asia,Asia,5265.0,thousand bbl,energy,PETRONET
+2025-06-01,Asia,Asia,362747.0,thousand USD,energy,PETRONET
+2025-06-01,Asia,Asia,49.34142857142859,USD/bbl,energy,PETRONET
+2025-06-01,Asia,Australia,2621.0,thousand bbl,energy,PETRONET
+2025-06-01,Asia,Australia,181074.0,thousand USD,energy,PETRONET
+2025-06-01,Asia,Australia,69.09,USD/bbl,energy,PETRONET
+2025-06-01,Asia,Indonesia,151.0,thousand bbl,energy,PETRONET
+2025-06-01,Asia,Indonesia,10570.0,thousand USD,energy,PETRONET
+2025-06-01,Asia,Indonesia,70.17,USD/bbl,energy,PETRONET
+2025-06-01,Asia,Kazakhstan,2074.0,thousand bbl,energy,PETRONET
+2025-06-01,Asia,Kazakhstan,141707.0,thousand USD,energy,PETRONET
+2025-06-01,Asia,Kazakhstan,68.34,USD/bbl,energy,PETRONET
+2025-06-01,Asia,Malaysia,296.0,thousand bbl,energy,PETRONET
+2025-06-01,Asia,Malaysia,21250.0,thousand USD,energy,PETRONET
+2025-06-01,Asia,Malaysia,71.76,USD/bbl,energy,PETRONET
+2025-06-01,Asia,New Zealand,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Asia,New Zealand,0.0,thousand USD,energy,PETRONET
+2025-06-01,Asia,New Zealand,0.0,USD/bbl,energy,PETRONET
+2025-06-01,Asia,Papua New Guinea,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Asia,Papua New Guinea,0.0,thousand USD,energy,PETRONET
+2025-06-01,Asia,Papua New Guinea,0.0,USD/bbl,energy,PETRONET
+2025-06-01,Asia,Philippines,123.0,thousand bbl,energy,PETRONET
+2025-06-01,Asia,Philippines,8146.0,thousand USD,energy,PETRONET
+2025-06-01,Asia,Philippines,66.03,USD/bbl,energy,PETRONET
+2025-06-01,Europe,Europe,0.0,percentage,energy,PETRONET
+2025-06-01,Europe,Europe,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Europe,Europe,0.0,thousand USD,energy,PETRONET
+2025-06-01,Europe,Europe,0.0,USD/bbl,energy,PETRONET
+2025-06-01,Europe,Norway,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Europe,Norway,0.0,thousand USD,energy,PETRONET
+2025-06-01,Europe,Norway,0.0,USD/bbl,energy,PETRONET
+2025-06-01,Europe,United Kingdom,0.0,thousand bbl,energy,PETRONET
+2025-06-01,Europe,United Kingdom,0.0,thousand USD,energy,PETRONET
+2025-06-01,Europe,United Kingdom,0.0,USD/bbl,energy,PETRONET
+2025-06-01,MiddleEast,Iraq,4953.0,thousand bbl,energy,PETRONET
+2025-06-01,MiddleEast,Iraq,311317.0,thousand USD,energy,PETRONET
+2025-06-01,MiddleEast,Iraq,62.85,USD/bbl,energy,PETRONET
+2025-06-01,MiddleEast,Kuwait,5959.0,thousand bbl,energy,PETRONET
+2025-06-01,MiddleEast,Kuwait,423534.0,thousand USD,energy,PETRONET
+2025-06-01,MiddleEast,Kuwait,71.07,USD/bbl,energy,PETRONET
+2025-06-01,MiddleEast,MiddleEast,67.44,percentage,energy,PETRONET
+2025-06-01,MiddleEast,MiddleEast,56384.0,thousand bbl,energy,PETRONET
+2025-06-01,MiddleEast,MiddleEast,3900407.0,thousand USD,energy,PETRONET
+2025-06-01,MiddleEast,MiddleEast,48.66714285714285,USD/bbl,energy,PETRONET
+2025-06-01,MiddleEast,Neutral Zone,0.0,thousand bbl,energy,PETRONET
+2025-06-01,MiddleEast,Neutral Zone,0.0,thousand USD,energy,PETRONET
+2025-06-01,MiddleEast,Neutral Zone,0.0,USD/bbl,energy,PETRONET
+2025-06-01,MiddleEast,Oman,0.0,thousand bbl,energy,PETRONET
+2025-06-01,MiddleEast,Oman,0.0,thousand USD,energy,PETRONET
+2025-06-01,MiddleEast,Oman,0.0,USD/bbl,energy,PETRONET
+2025-06-01,MiddleEast,Qatar,2009.0,thousand bbl,energy,PETRONET
+2025-06-01,MiddleEast,Qatar,136902.0,thousand USD,energy,PETRONET
+2025-06-01,MiddleEast,Qatar,68.14,USD/bbl,energy,PETRONET
+2025-06-01,MiddleEast,Saudi Arabia,32074.0,thousand bbl,energy,PETRONET
+2025-06-01,MiddleEast,Saudi Arabia,2248329.0,thousand USD,energy,PETRONET
+2025-06-01,MiddleEast,Saudi Arabia,70.1,USD/bbl,energy,PETRONET
+2025-06-01,MiddleEast,UAE,11389.0,thousand bbl,energy,PETRONET
+2025-06-01,MiddleEast,UAE,780325.0,thousand USD,energy,PETRONET
+2025-06-01,MiddleEast,UAE,68.51,USD/bbl,energy,PETRONET
+2025-06-01,Total,Total,84236.0,thousand bbl,energy,PETRONET
+2025-06-01,Total,Total,5783692.0,thousand USD,energy,PETRONET
+2025-06-01,Total,Total,68.66,USD/bbl,energy,PETRONET

@@ -1,0 +1,1221 @@
+﻿date,indicator,value,unit,source
+2000-01-01,KOSPI,943.8800048828124,index,ECOS
+2000-01-01,Coincident Index,100.4,index,ECOS
+2000-01-01,Leading Index,105.1,index,ECOS
+2000-01-01,Leading–Coincident Spread,4.699999999999989,index,ECOS
+2000-02-01,KOSPI,828.3800048828125,index,ECOS
+2000-02-01,Coincident Index,100.4,index,ECOS
+2000-02-01,Leading Index,105.1,index,ECOS
+2000-02-01,Leading–Coincident Spread,4.699999999999989,index,ECOS
+2000-03-01,KOSPI,860.9400024414062,index,ECOS
+2000-03-01,Coincident Index,100.7,index,ECOS
+2000-03-01,Leading Index,105.2,index,ECOS
+2000-03-01,Leading–Coincident Spread,4.5,index,ECOS
+2000-04-01,KOSPI,725.3900146484375,index,ECOS
+2000-04-01,Coincident Index,100.9,index,ECOS
+2000-04-01,Leading Index,104.5,index,ECOS
+2000-04-01,Leading–Coincident Spread,3.5999999999999943,index,ECOS
+2000-05-01,KOSPI,731.8800048828125,index,ECOS
+2000-05-01,Coincident Index,101.4,index,ECOS
+2000-05-01,Leading Index,104.2,index,ECOS
+2000-05-01,Leading–Coincident Spread,2.799999999999997,index,ECOS
+2000-06-01,KOSPI,821.219970703125,index,ECOS
+2000-06-01,Coincident Index,101.7,index,ECOS
+2000-06-01,Leading Index,104.2,index,ECOS
+2000-06-01,Leading–Coincident Spread,2.5,index,ECOS
+2000-07-01,KOSPI,705.969970703125,index,ECOS
+2000-07-01,Coincident Index,102.6,index,ECOS
+2000-07-01,Leading Index,104.1,index,ECOS
+2000-07-01,Leading–Coincident Spread,1.5,index,ECOS
+2000-08-01,KOSPI,688.6199951171875,index,ECOS
+2000-08-01,Coincident Index,102.6,index,ECOS
+2000-08-01,Leading Index,104.6,index,ECOS
+2000-08-01,Leading–Coincident Spread,2.0,index,ECOS
+2000-09-01,KOSPI,613.219970703125,index,ECOS
+2000-09-01,Coincident Index,102.3,index,ECOS
+2000-09-01,Leading Index,103.7,index,ECOS
+2000-09-01,Leading–Coincident Spread,1.4000000000000057,index,ECOS
+2000-10-01,KOSPI,514.47998046875,index,ECOS
+2000-10-01,Coincident Index,101.7,index,ECOS
+2000-10-01,Leading Index,102.2,index,ECOS
+2000-10-01,Leading–Coincident Spread,0.5,index,ECOS
+2000-11-01,KOSPI,509.2300109863281,index,ECOS
+2000-11-01,Coincident Index,101.2,index,ECOS
+2000-11-01,Leading Index,99.7,index,ECOS
+2000-11-01,Leading–Coincident Spread,-1.5,index,ECOS
+2000-12-01,KOSPI,504.6199951171875,index,ECOS
+2000-12-01,Coincident Index,100.7,index,ECOS
+2000-12-01,Leading Index,98.4,index,ECOS
+2000-12-01,Leading–Coincident Spread,-2.299999999999997,index,ECOS
+2001-01-01,KOSPI,617.9099731445312,index,ECOS
+2001-01-01,Coincident Index,100.3,index,ECOS
+2001-01-01,Leading Index,96.9,index,ECOS
+2001-01-01,Leading–Coincident Spread,-3.3999999999999915,index,ECOS
+2001-02-01,KOSPI,578.0999755859375,index,ECOS
+2001-02-01,Coincident Index,99.9,index,ECOS
+2001-02-01,Leading Index,96.7,index,ECOS
+2001-02-01,Leading–Coincident Spread,-3.200000000000003,index,ECOS
+2001-03-01,KOSPI,523.219970703125,index,ECOS
+2001-03-01,Coincident Index,99.8,index,ECOS
+2001-03-01,Leading Index,96.7,index,ECOS
+2001-03-01,Leading–Coincident Spread,-3.0999999999999943,index,ECOS
+2001-04-01,KOSPI,577.3599853515625,index,ECOS
+2001-04-01,Coincident Index,99.6,index,ECOS
+2001-04-01,Leading Index,96.8,index,ECOS
+2001-04-01,Leading–Coincident Spread,-2.799999999999997,index,ECOS
+2001-05-01,KOSPI,612.1599731445312,index,ECOS
+2001-05-01,Coincident Index,99.8,index,ECOS
+2001-05-01,Leading Index,97.2,index,ECOS
+2001-05-01,Leading–Coincident Spread,-2.5999999999999943,index,ECOS
+2001-06-01,KOSPI,595.1300048828125,index,ECOS
+2001-06-01,Coincident Index,99.8,index,ECOS
+2001-06-01,Leading Index,97.3,index,ECOS
+2001-06-01,Leading–Coincident Spread,-2.5,index,ECOS
+2001-07-01,KOSPI,541.5499877929688,index,ECOS
+2001-07-01,Coincident Index,99.2,index,ECOS
+2001-07-01,Leading Index,97.0,index,ECOS
+2001-07-01,Leading–Coincident Spread,-2.200000000000003,index,ECOS
+2001-08-01,KOSPI,545.1099853515625,index,ECOS
+2001-08-01,Coincident Index,99.0,index,ECOS
+2001-08-01,Leading Index,96.7,index,ECOS
+2001-08-01,Leading–Coincident Spread,-2.299999999999997,index,ECOS
+2001-09-01,KOSPI,479.6799926757813,index,ECOS
+2001-09-01,Coincident Index,99.4,index,ECOS
+2001-09-01,Leading Index,96.7,index,ECOS
+2001-09-01,Leading–Coincident Spread,-2.700000000000003,index,ECOS
+2001-10-01,KOSPI,537.8099975585938,index,ECOS
+2001-10-01,Coincident Index,99.8,index,ECOS
+2001-10-01,Leading Index,97.0,index,ECOS
+2001-10-01,Leading–Coincident Spread,-2.799999999999997,index,ECOS
+2001-11-01,KOSPI,643.8900146484375,index,ECOS
+2001-11-01,Coincident Index,100.1,index,ECOS
+2001-11-01,Leading Index,98.1,index,ECOS
+2001-11-01,Leading–Coincident Spread,-2.0,index,ECOS
+2001-12-01,KOSPI,693.7000122070312,index,ECOS
+2001-12-01,Coincident Index,99.7,index,ECOS
+2001-12-01,Leading Index,99.4,index,ECOS
+2001-12-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2002-01-01,KOSPI,748.0700073242188,index,ECOS
+2002-01-01,Coincident Index,100.1,index,ECOS
+2002-01-01,Leading Index,101.1,index,ECOS
+2002-01-01,Leading–Coincident Spread,1.0,index,ECOS
+2002-02-01,KOSPI,819.989990234375,index,ECOS
+2002-02-01,Coincident Index,100.6,index,ECOS
+2002-02-01,Leading Index,102.4,index,ECOS
+2002-02-01,Leading–Coincident Spread,1.8000000000000114,index,ECOS
+2002-03-01,KOSPI,895.5800170898438,index,ECOS
+2002-03-01,Coincident Index,101.4,index,ECOS
+2002-03-01,Leading Index,103.7,index,ECOS
+2002-03-01,Leading–Coincident Spread,2.299999999999997,index,ECOS
+2002-04-01,KOSPI,842.3400268554688,index,ECOS
+2002-04-01,Coincident Index,101.7,index,ECOS
+2002-04-01,Leading Index,104.0,index,ECOS
+2002-04-01,Leading–Coincident Spread,2.299999999999997,index,ECOS
+2002-05-01,KOSPI,796.4000244140625,index,ECOS
+2002-05-01,Coincident Index,101.5,index,ECOS
+2002-05-01,Leading Index,103.7,index,ECOS
+2002-05-01,Leading–Coincident Spread,2.200000000000003,index,ECOS
+2002-06-01,KOSPI,742.719970703125,index,ECOS
+2002-06-01,Coincident Index,101.0,index,ECOS
+2002-06-01,Leading Index,102.7,index,ECOS
+2002-06-01,Leading–Coincident Spread,1.7000000000000028,index,ECOS
+2002-07-01,KOSPI,717.989990234375,index,ECOS
+2002-07-01,Coincident Index,101.0,index,ECOS
+2002-07-01,Leading Index,102.1,index,ECOS
+2002-07-01,Leading–Coincident Spread,1.0999999999999943,index,ECOS
+2002-08-01,KOSPI,736.4000244140625,index,ECOS
+2002-08-01,Coincident Index,101.0,index,ECOS
+2002-08-01,Leading Index,101.6,index,ECOS
+2002-08-01,Leading–Coincident Spread,0.5999999999999943,index,ECOS
+2002-09-01,KOSPI,646.4199829101562,index,ECOS
+2002-09-01,Coincident Index,101.3,index,ECOS
+2002-09-01,Leading Index,101.2,index,ECOS
+2002-09-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2002-10-01,KOSPI,658.9199829101562,index,ECOS
+2002-10-01,Coincident Index,101.2,index,ECOS
+2002-10-01,Leading Index,100.3,index,ECOS
+2002-10-01,Leading–Coincident Spread,-0.9000000000000057,index,ECOS
+2002-11-01,KOSPI,724.7999877929688,index,ECOS
+2002-11-01,Coincident Index,101.5,index,ECOS
+2002-11-01,Leading Index,100.2,index,ECOS
+2002-11-01,Leading–Coincident Spread,-1.2999999999999972,index,ECOS
+2002-12-01,KOSPI,627.5499877929688,index,ECOS
+2002-12-01,Coincident Index,101.3,index,ECOS
+2002-12-01,Leading Index,100.3,index,ECOS
+2002-12-01,Leading–Coincident Spread,-1.0,index,ECOS
+2003-01-01,KOSPI,591.8599853515625,index,ECOS
+2003-01-01,Coincident Index,101.2,index,ECOS
+2003-01-01,Leading Index,100.1,index,ECOS
+2003-01-01,Leading–Coincident Spread,-1.1000000000000083,index,ECOS
+2003-02-01,KOSPI,575.4299926757812,index,ECOS
+2003-02-01,Coincident Index,100.7,index,ECOS
+2003-02-01,Leading Index,99.9,index,ECOS
+2003-02-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2003-03-01,KOSPI,535.7000122070312,index,ECOS
+2003-03-01,Coincident Index,100.4,index,ECOS
+2003-03-01,Leading Index,99.6,index,ECOS
+2003-03-01,Leading–Coincident Spread,-0.8000000000000114,index,ECOS
+2003-04-01,KOSPI,599.3499755859375,index,ECOS
+2003-04-01,Coincident Index,99.8,index,ECOS
+2003-04-01,Leading Index,99.2,index,ECOS
+2003-04-01,Leading–Coincident Spread,-0.5999999999999943,index,ECOS
+2003-05-01,KOSPI,633.4199829101562,index,ECOS
+2003-05-01,Coincident Index,99.7,index,ECOS
+2003-05-01,Leading Index,99.0,index,ECOS
+2003-05-01,Leading–Coincident Spread,-0.7000000000000028,index,ECOS
+2003-06-01,KOSPI,669.9299926757812,index,ECOS
+2003-06-01,Coincident Index,99.8,index,ECOS
+2003-06-01,Leading Index,99.3,index,ECOS
+2003-06-01,Leading–Coincident Spread,-0.5,index,ECOS
+2003-07-01,KOSPI,713.52001953125,index,ECOS
+2003-07-01,Coincident Index,99.7,index,ECOS
+2003-07-01,Leading Index,99.3,index,ECOS
+2003-07-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2003-08-01,KOSPI,759.469970703125,index,ECOS
+2003-08-01,Coincident Index,99.8,index,ECOS
+2003-08-01,Leading Index,99.7,index,ECOS
+2003-08-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2003-09-01,KOSPI,697.52001953125,index,ECOS
+2003-09-01,Coincident Index,99.8,index,ECOS
+2003-09-01,Leading Index,99.9,index,ECOS
+2003-09-01,Leading–Coincident Spread,0.1000000000000085,index,ECOS
+2003-10-01,KOSPI,782.3599853515625,index,ECOS
+2003-10-01,Coincident Index,100.2,index,ECOS
+2003-10-01,Leading Index,100.4,index,ECOS
+2003-10-01,Leading–Coincident Spread,0.2000000000000028,index,ECOS
+2003-11-01,KOSPI,796.1799926757812,index,ECOS
+2003-11-01,Coincident Index,100.3,index,ECOS
+2003-11-01,Leading Index,100.4,index,ECOS
+2003-11-01,Leading–Coincident Spread,0.1000000000000085,index,ECOS
+2003-12-01,KOSPI,810.7100219726562,index,ECOS
+2003-12-01,Coincident Index,100.6,index,ECOS
+2003-12-01,Leading Index,100.5,index,ECOS
+2003-12-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2004-01-01,KOSPI,848.5,index,ECOS
+2004-01-01,Coincident Index,100.9,index,ECOS
+2004-01-01,Leading Index,100.7,index,ECOS
+2004-01-01,Leading–Coincident Spread,-0.2000000000000028,index,ECOS
+2004-02-01,KOSPI,883.4199829101562,index,ECOS
+2004-02-01,Coincident Index,101.4,index,ECOS
+2004-02-01,Leading Index,101.0,index,ECOS
+2004-02-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2004-03-01,KOSPI,880.5,index,ECOS
+2004-03-01,Coincident Index,101.6,index,ECOS
+2004-03-01,Leading Index,101.1,index,ECOS
+2004-03-01,Leading–Coincident Spread,-0.5,index,ECOS
+2004-04-01,KOSPI,862.8400268554688,index,ECOS
+2004-04-01,Coincident Index,101.6,index,ECOS
+2004-04-01,Leading Index,101.2,index,ECOS
+2004-04-01,Leading–Coincident Spread,-0.3999999999999915,index,ECOS
+2004-05-01,KOSPI,803.8400268554688,index,ECOS
+2004-05-01,Coincident Index,101.2,index,ECOS
+2004-05-01,Leading Index,100.8,index,ECOS
+2004-05-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2004-06-01,KOSPI,785.7899780273438,index,ECOS
+2004-06-01,Coincident Index,101.0,index,ECOS
+2004-06-01,Leading Index,100.5,index,ECOS
+2004-06-01,Leading–Coincident Spread,-0.5,index,ECOS
+2004-07-01,KOSPI,735.3400268554688,index,ECOS
+2004-07-01,Coincident Index,100.5,index,ECOS
+2004-07-01,Leading Index,100.1,index,ECOS
+2004-07-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2004-08-01,KOSPI,803.5700073242188,index,ECOS
+2004-08-01,Coincident Index,100.1,index,ECOS
+2004-08-01,Leading Index,99.8,index,ECOS
+2004-08-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2004-09-01,KOSPI,835.0900268554688,index,ECOS
+2004-09-01,Coincident Index,99.9,index,ECOS
+2004-09-01,Leading Index,99.8,index,ECOS
+2004-09-01,Leading–Coincident Spread,-0.1000000000000085,index,ECOS
+2004-10-01,KOSPI,834.8400268554688,index,ECOS
+2004-10-01,Coincident Index,99.9,index,ECOS
+2004-10-01,Leading Index,99.8,index,ECOS
+2004-10-01,Leading–Coincident Spread,-0.1000000000000085,index,ECOS
+2004-11-01,KOSPI,878.0599975585938,index,ECOS
+2004-11-01,Coincident Index,99.7,index,ECOS
+2004-11-01,Leading Index,99.6,index,ECOS
+2004-11-01,Leading–Coincident Spread,-0.1000000000000085,index,ECOS
+2004-12-01,KOSPI,895.9199829101562,index,ECOS
+2004-12-01,Coincident Index,99.3,index,ECOS
+2004-12-01,Leading Index,99.5,index,ECOS
+2004-12-01,Leading–Coincident Spread,0.2000000000000028,index,ECOS
+2005-01-01,KOSPI,932.7000122070312,index,ECOS
+2005-01-01,Coincident Index,99.1,index,ECOS
+2005-01-01,Leading Index,99.3,index,ECOS
+2005-01-01,Leading–Coincident Spread,0.2000000000000028,index,ECOS
+2005-02-01,KOSPI,1011.3599853515624,index,ECOS
+2005-02-01,Coincident Index,98.9,index,ECOS
+2005-02-01,Leading Index,99.6,index,ECOS
+2005-02-01,Leading–Coincident Spread,0.6999999999999886,index,ECOS
+2005-03-01,KOSPI,965.6799926757812,index,ECOS
+2005-03-01,Coincident Index,99.0,index,ECOS
+2005-03-01,Leading Index,100.1,index,ECOS
+2005-03-01,Leading–Coincident Spread,1.0999999999999943,index,ECOS
+2005-04-01,KOSPI,911.2999877929688,index,ECOS
+2005-04-01,Coincident Index,98.8,index,ECOS
+2005-04-01,Leading Index,100.2,index,ECOS
+2005-04-01,Leading–Coincident Spread,1.4000000000000057,index,ECOS
+2005-05-01,KOSPI,970.2100219726562,index,ECOS
+2005-05-01,Coincident Index,98.8,index,ECOS
+2005-05-01,Leading Index,99.9,index,ECOS
+2005-05-01,Leading–Coincident Spread,1.1000000000000083,index,ECOS
+2005-06-01,KOSPI,1008.1599731445312,index,ECOS
+2005-06-01,Coincident Index,98.7,index,ECOS
+2005-06-01,Leading Index,99.5,index,ECOS
+2005-06-01,Leading–Coincident Spread,0.7999999999999972,index,ECOS
+2005-07-01,KOSPI,1111.2900390625,index,ECOS
+2005-07-01,Coincident Index,98.6,index,ECOS
+2005-07-01,Leading Index,99.6,index,ECOS
+2005-07-01,Leading–Coincident Spread,1.0,index,ECOS
+2005-08-01,KOSPI,1083.3299560546875,index,ECOS
+2005-08-01,Coincident Index,98.6,index,ECOS
+2005-08-01,Leading Index,99.8,index,ECOS
+2005-08-01,Leading–Coincident Spread,1.2000000000000028,index,ECOS
+2005-09-01,KOSPI,1221.010009765625,index,ECOS
+2005-09-01,Coincident Index,98.5,index,ECOS
+2005-09-01,Leading Index,99.9,index,ECOS
+2005-09-01,Leading–Coincident Spread,1.4000000000000057,index,ECOS
+2005-10-01,KOSPI,1158.1099853515625,index,ECOS
+2005-10-01,Coincident Index,98.5,index,ECOS
+2005-10-01,Leading Index,99.9,index,ECOS
+2005-10-01,Leading–Coincident Spread,1.4000000000000057,index,ECOS
+2005-11-01,KOSPI,1297.43994140625,index,ECOS
+2005-11-01,Coincident Index,99.1,index,ECOS
+2005-11-01,Leading Index,100.1,index,ECOS
+2005-11-01,Leading–Coincident Spread,1.0,index,ECOS
+2005-12-01,KOSPI,1379.3699951171875,index,ECOS
+2005-12-01,Coincident Index,99.5,index,ECOS
+2005-12-01,Leading Index,100.5,index,ECOS
+2005-12-01,Leading–Coincident Spread,1.0,index,ECOS
+2006-01-01,KOSPI,1399.8299560546875,index,ECOS
+2006-01-01,Coincident Index,99.8,index,ECOS
+2006-01-01,Leading Index,100.9,index,ECOS
+2006-01-01,Leading–Coincident Spread,1.1000000000000083,index,ECOS
+2006-02-01,KOSPI,1371.5899658203125,index,ECOS
+2006-02-01,Coincident Index,99.7,index,ECOS
+2006-02-01,Leading Index,101.0,index,ECOS
+2006-02-01,Leading–Coincident Spread,1.2999999999999972,index,ECOS
+2006-03-01,KOSPI,1359.5999755859375,index,ECOS
+2006-03-01,Coincident Index,99.9,index,ECOS
+2006-03-01,Leading Index,100.8,index,ECOS
+2006-03-01,Leading–Coincident Spread,0.8999999999999915,index,ECOS
+2006-04-01,KOSPI,1419.72998046875,index,ECOS
+2006-04-01,Coincident Index,99.9,index,ECOS
+2006-04-01,Leading Index,100.6,index,ECOS
+2006-04-01,Leading–Coincident Spread,0.6999999999999886,index,ECOS
+2006-05-01,KOSPI,1317.699951171875,index,ECOS
+2006-05-01,Coincident Index,100.0,index,ECOS
+2006-05-01,Leading Index,100.5,index,ECOS
+2006-05-01,Leading–Coincident Spread,0.5,index,ECOS
+2006-06-01,KOSPI,1295.1500244140625,index,ECOS
+2006-06-01,Coincident Index,99.8,index,ECOS
+2006-06-01,Leading Index,100.1,index,ECOS
+2006-06-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2006-07-01,KOSPI,1297.8199462890625,index,ECOS
+2006-07-01,Coincident Index,99.1,index,ECOS
+2006-07-01,Leading Index,99.5,index,ECOS
+2006-07-01,Leading–Coincident Spread,0.4000000000000057,index,ECOS
+2006-08-01,KOSPI,1352.739990234375,index,ECOS
+2006-08-01,Coincident Index,99.0,index,ECOS
+2006-08-01,Leading Index,99.0,index,ECOS
+2006-08-01,Leading–Coincident Spread,0.0,index,ECOS
+2006-09-01,KOSPI,1371.4100341796875,index,ECOS
+2006-09-01,Coincident Index,99.4,index,ECOS
+2006-09-01,Leading Index,99.3,index,ECOS
+2006-09-01,Leading–Coincident Spread,-0.1000000000000085,index,ECOS
+2006-10-01,KOSPI,1364.550048828125,index,ECOS
+2006-10-01,Coincident Index,100.3,index,ECOS
+2006-10-01,Leading Index,99.7,index,ECOS
+2006-10-01,Leading–Coincident Spread,-0.5999999999999943,index,ECOS
+2006-11-01,KOSPI,1432.2099609375,index,ECOS
+2006-11-01,Coincident Index,100.8,index,ECOS
+2006-11-01,Leading Index,100.0,index,ECOS
+2006-11-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2006-12-01,KOSPI,1434.4599609375,index,ECOS
+2006-12-01,Coincident Index,100.9,index,ECOS
+2006-12-01,Leading Index,99.9,index,ECOS
+2006-12-01,Leading–Coincident Spread,-1.0,index,ECOS
+2007-01-01,KOSPI,1360.22998046875,index,ECOS
+2007-01-01,Coincident Index,100.9,index,ECOS
+2007-01-01,Leading Index,100.0,index,ECOS
+2007-01-01,Leading–Coincident Spread,-0.9000000000000057,index,ECOS
+2007-02-01,KOSPI,1417.3399658203125,index,ECOS
+2007-02-01,Coincident Index,101.0,index,ECOS
+2007-02-01,Leading Index,100.2,index,ECOS
+2007-02-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2007-03-01,KOSPI,1452.550048828125,index,ECOS
+2007-03-01,Coincident Index,101.1,index,ECOS
+2007-03-01,Leading Index,100.3,index,ECOS
+2007-03-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2007-04-01,KOSPI,1542.239990234375,index,ECOS
+2007-04-01,Coincident Index,101.3,index,ECOS
+2007-04-01,Leading Index,100.4,index,ECOS
+2007-04-01,Leading–Coincident Spread,-0.8999999999999915,index,ECOS
+2007-05-01,KOSPI,1700.9100341796875,index,ECOS
+2007-05-01,Coincident Index,101.4,index,ECOS
+2007-05-01,Leading Index,100.6,index,ECOS
+2007-05-01,Leading–Coincident Spread,-0.8000000000000114,index,ECOS
+2007-06-01,KOSPI,1743.5999755859375,index,ECOS
+2007-06-01,Coincident Index,101.3,index,ECOS
+2007-06-01,Leading Index,101.0,index,ECOS
+2007-06-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2007-07-01,KOSPI,1933.27001953125,index,ECOS
+2007-07-01,Coincident Index,101.4,index,ECOS
+2007-07-01,Leading Index,101.4,index,ECOS
+2007-07-01,Leading–Coincident Spread,0.0,index,ECOS
+2007-08-01,KOSPI,1873.239990234375,index,ECOS
+2007-08-01,Coincident Index,101.5,index,ECOS
+2007-08-01,Leading Index,101.5,index,ECOS
+2007-08-01,Leading–Coincident Spread,0.0,index,ECOS
+2007-09-01,KOSPI,1946.47998046875,index,ECOS
+2007-09-01,Coincident Index,101.3,index,ECOS
+2007-09-01,Leading Index,101.5,index,ECOS
+2007-09-01,Leading–Coincident Spread,0.2000000000000028,index,ECOS
+2007-10-01,KOSPI,2064.85009765625,index,ECOS
+2007-10-01,Coincident Index,101.6,index,ECOS
+2007-10-01,Leading Index,101.4,index,ECOS
+2007-10-01,Leading–Coincident Spread,-0.1999999999999886,index,ECOS
+2007-11-01,KOSPI,1906.0,index,ECOS
+2007-11-01,Coincident Index,101.8,index,ECOS
+2007-11-01,Leading Index,101.5,index,ECOS
+2007-11-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2007-12-01,KOSPI,1897.1300048828125,index,ECOS
+2007-12-01,Coincident Index,102.2,index,ECOS
+2007-12-01,Leading Index,101.5,index,ECOS
+2007-12-01,Leading–Coincident Spread,-0.7000000000000028,index,ECOS
+2008-01-01,KOSPI,1624.6800537109375,index,ECOS
+2008-01-01,Coincident Index,102.5,index,ECOS
+2008-01-01,Leading Index,101.1,index,ECOS
+2008-01-01,Leading–Coincident Spread,-1.4000000000000057,index,ECOS
+2008-02-01,KOSPI,1711.6199951171875,index,ECOS
+2008-02-01,Coincident Index,102.5,index,ECOS
+2008-02-01,Leading Index,100.6,index,ECOS
+2008-02-01,Leading–Coincident Spread,-1.9000000000000057,index,ECOS
+2008-03-01,KOSPI,1703.989990234375,index,ECOS
+2008-03-01,Coincident Index,102.4,index,ECOS
+2008-03-01,Leading Index,100.2,index,ECOS
+2008-03-01,Leading–Coincident Spread,-2.200000000000003,index,ECOS
+2008-04-01,KOSPI,1825.469970703125,index,ECOS
+2008-04-01,Coincident Index,102.0,index,ECOS
+2008-04-01,Leading Index,100.0,index,ECOS
+2008-04-01,Leading–Coincident Spread,-2.0,index,ECOS
+2008-05-01,KOSPI,1852.02001953125,index,ECOS
+2008-05-01,Coincident Index,101.8,index,ECOS
+2008-05-01,Leading Index,99.7,index,ECOS
+2008-05-01,Leading–Coincident Spread,-2.0999999999999943,index,ECOS
+2008-06-01,KOSPI,1674.9200439453125,index,ECOS
+2008-06-01,Coincident Index,101.2,index,ECOS
+2008-06-01,Leading Index,99.3,index,ECOS
+2008-06-01,Leading–Coincident Spread,-1.9000000000000057,index,ECOS
+2008-07-01,KOSPI,1594.6700439453125,index,ECOS
+2008-07-01,Coincident Index,100.9,index,ECOS
+2008-07-01,Leading Index,98.9,index,ECOS
+2008-07-01,Leading–Coincident Spread,-2.0,index,ECOS
+2008-08-01,KOSPI,1474.239990234375,index,ECOS
+2008-08-01,Coincident Index,100.7,index,ECOS
+2008-08-01,Leading Index,98.5,index,ECOS
+2008-08-01,Leading–Coincident Spread,-2.200000000000003,index,ECOS
+2008-09-01,KOSPI,1448.06005859375,index,ECOS
+2008-09-01,Coincident Index,100.6,index,ECOS
+2008-09-01,Leading Index,98.3,index,ECOS
+2008-09-01,Leading–Coincident Spread,-2.299999999999997,index,ECOS
+2008-10-01,KOSPI,1113.06005859375,index,ECOS
+2008-10-01,Coincident Index,100.3,index,ECOS
+2008-10-01,Leading Index,97.9,index,ECOS
+2008-10-01,Leading–Coincident Spread,-2.3999999999999915,index,ECOS
+2008-11-01,KOSPI,1076.0699462890625,index,ECOS
+2008-11-01,Coincident Index,99.6,index,ECOS
+2008-11-01,Leading Index,97.4,index,ECOS
+2008-11-01,Leading–Coincident Spread,-2.1999999999999886,index,ECOS
+2008-12-01,KOSPI,1124.469970703125,index,ECOS
+2008-12-01,Coincident Index,98.5,index,ECOS
+2008-12-01,Leading Index,97.2,index,ECOS
+2008-12-01,Leading–Coincident Spread,-1.2999999999999972,index,ECOS
+2009-01-01,KOSPI,1162.1099853515625,index,ECOS
+2009-01-01,Coincident Index,97.7,index,ECOS
+2009-01-01,Leading Index,97.0,index,ECOS
+2009-01-01,Leading–Coincident Spread,-0.7000000000000028,index,ECOS
+2009-02-01,KOSPI,1063.030029296875,index,ECOS
+2009-02-01,Coincident Index,97.6,index,ECOS
+2009-02-01,Leading Index,97.5,index,ECOS
+2009-02-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2009-03-01,KOSPI,1206.260009765625,index,ECOS
+2009-03-01,Coincident Index,97.6,index,ECOS
+2009-03-01,Leading Index,97.9,index,ECOS
+2009-03-01,Leading–Coincident Spread,0.3000000000000113,index,ECOS
+2009-04-01,KOSPI,1369.3599853515625,index,ECOS
+2009-04-01,Coincident Index,97.8,index,ECOS
+2009-04-01,Leading Index,99.1,index,ECOS
+2009-04-01,Leading–Coincident Spread,1.2999999999999972,index,ECOS
+2009-05-01,KOSPI,1395.8900146484375,index,ECOS
+2009-05-01,Coincident Index,97.8,index,ECOS
+2009-05-01,Leading Index,99.7,index,ECOS
+2009-05-01,Leading–Coincident Spread,1.9000000000000057,index,ECOS
+2009-06-01,KOSPI,1390.0699462890625,index,ECOS
+2009-06-01,Coincident Index,98.4,index,ECOS
+2009-06-01,Leading Index,100.5,index,ECOS
+2009-06-01,Leading–Coincident Spread,2.0999999999999943,index,ECOS
+2009-07-01,KOSPI,1557.2900390625,index,ECOS
+2009-07-01,Coincident Index,98.6,index,ECOS
+2009-07-01,Leading Index,100.6,index,ECOS
+2009-07-01,Leading–Coincident Spread,2.0,index,ECOS
+2009-08-01,KOSPI,1591.8499755859375,index,ECOS
+2009-08-01,Coincident Index,98.7,index,ECOS
+2009-08-01,Leading Index,100.8,index,ECOS
+2009-08-01,Leading–Coincident Spread,2.0999999999999943,index,ECOS
+2009-09-01,KOSPI,1673.1400146484375,index,ECOS
+2009-09-01,Coincident Index,98.9,index,ECOS
+2009-09-01,Leading Index,101.0,index,ECOS
+2009-09-01,Leading–Coincident Spread,2.0999999999999943,index,ECOS
+2009-10-01,KOSPI,1580.68994140625,index,ECOS
+2009-10-01,Coincident Index,99.1,index,ECOS
+2009-10-01,Leading Index,101.5,index,ECOS
+2009-10-01,Leading–Coincident Spread,2.4000000000000057,index,ECOS
+2009-11-01,KOSPI,1555.5999755859375,index,ECOS
+2009-11-01,Coincident Index,99.2,index,ECOS
+2009-11-01,Leading Index,102.1,index,ECOS
+2009-11-01,Leading–Coincident Spread,2.8999999999999915,index,ECOS
+2009-12-01,KOSPI,1682.77001953125,index,ECOS
+2009-12-01,Coincident Index,99.1,index,ECOS
+2009-12-01,Leading Index,102.4,index,ECOS
+2009-12-01,Leading–Coincident Spread,3.300000000000012,index,ECOS
+2010-01-01,KOSPI,1602.4300537109375,index,ECOS
+2010-01-01,Coincident Index,99.3,index,ECOS
+2010-01-01,Leading Index,102.6,index,ECOS
+2010-01-01,Leading–Coincident Spread,3.299999999999997,index,ECOS
+2010-02-01,KOSPI,1594.5799560546875,index,ECOS
+2010-02-01,Coincident Index,99.8,index,ECOS
+2010-02-01,Leading Index,102.4,index,ECOS
+2010-02-01,Leading–Coincident Spread,2.6000000000000085,index,ECOS
+2010-03-01,KOSPI,1692.8499755859375,index,ECOS
+2010-03-01,Coincident Index,100.2,index,ECOS
+2010-03-01,Leading Index,102.1,index,ECOS
+2010-03-01,Leading–Coincident Spread,1.899999999999992,index,ECOS
+2010-04-01,KOSPI,1741.56005859375,index,ECOS
+2010-04-01,Coincident Index,100.4,index,ECOS
+2010-04-01,Leading Index,101.9,index,ECOS
+2010-04-01,Leading–Coincident Spread,1.5,index,ECOS
+2010-05-01,KOSPI,1641.25,index,ECOS
+2010-05-01,Coincident Index,100.8,index,ECOS
+2010-05-01,Leading Index,102.0,index,ECOS
+2010-05-01,Leading–Coincident Spread,1.2000000000000028,index,ECOS
+2010-06-01,KOSPI,1698.2900390625,index,ECOS
+2010-06-01,Coincident Index,100.9,index,ECOS
+2010-06-01,Leading Index,102.0,index,ECOS
+2010-06-01,Leading–Coincident Spread,1.0999999999999943,index,ECOS
+2010-07-01,KOSPI,1759.3299560546875,index,ECOS
+2010-07-01,Coincident Index,101.1,index,ECOS
+2010-07-01,Leading Index,101.9,index,ECOS
+2010-07-01,Leading–Coincident Spread,0.8000000000000114,index,ECOS
+2010-08-01,KOSPI,1742.75,index,ECOS
+2010-08-01,Coincident Index,100.7,index,ECOS
+2010-08-01,Leading Index,101.7,index,ECOS
+2010-08-01,Leading–Coincident Spread,1.0,index,ECOS
+2010-09-01,KOSPI,1872.81005859375,index,ECOS
+2010-09-01,Coincident Index,100.3,index,ECOS
+2010-09-01,Leading Index,101.4,index,ECOS
+2010-09-01,Leading–Coincident Spread,1.1000000000000083,index,ECOS
+2010-10-01,KOSPI,1882.949951171875,index,ECOS
+2010-10-01,Coincident Index,99.8,index,ECOS
+2010-10-01,Leading Index,100.9,index,ECOS
+2010-10-01,Leading–Coincident Spread,1.1000000000000083,index,ECOS
+2010-11-01,KOSPI,1904.6300048828125,index,ECOS
+2010-11-01,Coincident Index,99.9,index,ECOS
+2010-11-01,Leading Index,100.9,index,ECOS
+2010-11-01,Leading–Coincident Spread,1.0,index,ECOS
+2010-12-01,KOSPI,2051.0,index,ECOS
+2010-12-01,Coincident Index,100.2,index,ECOS
+2010-12-01,Leading Index,100.7,index,ECOS
+2010-12-01,Leading–Coincident Spread,0.5,index,ECOS
+2011-01-01,KOSPI,2069.72998046875,index,ECOS
+2011-01-01,Coincident Index,100.9,index,ECOS
+2011-01-01,Leading Index,101.1,index,ECOS
+2011-01-01,Leading–Coincident Spread,0.1999999999999886,index,ECOS
+2011-02-01,KOSPI,1939.300048828125,index,ECOS
+2011-02-01,Coincident Index,100.7,index,ECOS
+2011-02-01,Leading Index,101.1,index,ECOS
+2011-02-01,Leading–Coincident Spread,0.3999999999999915,index,ECOS
+2011-03-01,KOSPI,2106.699951171875,index,ECOS
+2011-03-01,Coincident Index,100.9,index,ECOS
+2011-03-01,Leading Index,101.1,index,ECOS
+2011-03-01,Leading–Coincident Spread,0.1999999999999886,index,ECOS
+2011-04-01,KOSPI,2192.360107421875,index,ECOS
+2011-04-01,Coincident Index,100.4,index,ECOS
+2011-04-01,Leading Index,100.9,index,ECOS
+2011-04-01,Leading–Coincident Spread,0.5,index,ECOS
+2011-05-01,KOSPI,2142.469970703125,index,ECOS
+2011-05-01,Coincident Index,100.9,index,ECOS
+2011-05-01,Leading Index,100.8,index,ECOS
+2011-05-01,Leading–Coincident Spread,-0.1000000000000085,index,ECOS
+2011-06-01,KOSPI,2100.68994140625,index,ECOS
+2011-06-01,Coincident Index,101.0,index,ECOS
+2011-06-01,Leading Index,100.7,index,ECOS
+2011-06-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2011-07-01,KOSPI,2133.2099609375,index,ECOS
+2011-07-01,Coincident Index,101.0,index,ECOS
+2011-07-01,Leading Index,100.6,index,ECOS
+2011-07-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2011-08-01,KOSPI,1880.1099853515625,index,ECOS
+2011-08-01,Coincident Index,101.2,index,ECOS
+2011-08-01,Leading Index,100.4,index,ECOS
+2011-08-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2011-09-01,KOSPI,1769.6500244140625,index,ECOS
+2011-09-01,Coincident Index,100.8,index,ECOS
+2011-09-01,Leading Index,100.1,index,ECOS
+2011-09-01,Leading–Coincident Spread,-0.7000000000000028,index,ECOS
+2011-10-01,KOSPI,1909.030029296875,index,ECOS
+2011-10-01,Coincident Index,101.0,index,ECOS
+2011-10-01,Leading Index,100.0,index,ECOS
+2011-10-01,Leading–Coincident Spread,-1.0,index,ECOS
+2011-11-01,KOSPI,1847.510009765625,index,ECOS
+2011-11-01,Coincident Index,100.7,index,ECOS
+2011-11-01,Leading Index,99.8,index,ECOS
+2011-11-01,Leading–Coincident Spread,-0.9000000000000057,index,ECOS
+2011-12-01,KOSPI,1825.739990234375,index,ECOS
+2011-12-01,Coincident Index,100.6,index,ECOS
+2011-12-01,Leading Index,99.7,index,ECOS
+2011-12-01,Leading–Coincident Spread,-0.8999999999999915,index,ECOS
+2012-01-01,KOSPI,1955.7900390625,index,ECOS
+2012-01-01,Coincident Index,100.2,index,ECOS
+2012-01-01,Leading Index,99.8,index,ECOS
+2012-01-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2012-02-01,KOSPI,2030.25,index,ECOS
+2012-02-01,Coincident Index,100.7,index,ECOS
+2012-02-01,Leading Index,100.2,index,ECOS
+2012-02-01,Leading–Coincident Spread,-0.5,index,ECOS
+2012-03-01,KOSPI,2014.0400390625,index,ECOS
+2012-03-01,Coincident Index,100.5,index,ECOS
+2012-03-01,Leading Index,100.4,index,ECOS
+2012-03-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2012-04-01,KOSPI,1981.989990234375,index,ECOS
+2012-04-01,Coincident Index,100.6,index,ECOS
+2012-04-01,Leading Index,100.5,index,ECOS
+2012-04-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2012-05-01,KOSPI,1843.469970703125,index,ECOS
+2012-05-01,Coincident Index,100.6,index,ECOS
+2012-05-01,Leading Index,100.2,index,ECOS
+2012-05-01,Leading–Coincident Spread,-0.3999999999999915,index,ECOS
+2012-06-01,KOSPI,1854.010009765625,index,ECOS
+2012-06-01,Coincident Index,100.6,index,ECOS
+2012-06-01,Leading Index,100.3,index,ECOS
+2012-06-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2012-07-01,KOSPI,1881.989990234375,index,ECOS
+2012-07-01,Coincident Index,100.8,index,ECOS
+2012-07-01,Leading Index,100.0,index,ECOS
+2012-07-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2012-08-01,KOSPI,1905.1199951171875,index,ECOS
+2012-08-01,Coincident Index,100.2,index,ECOS
+2012-08-01,Leading Index,99.7,index,ECOS
+2012-08-01,Leading–Coincident Spread,-0.5,index,ECOS
+2012-09-01,KOSPI,1996.2099609375,index,ECOS
+2012-09-01,Coincident Index,100.1,index,ECOS
+2012-09-01,Leading Index,99.4,index,ECOS
+2012-09-01,Leading–Coincident Spread,-0.6999999999999886,index,ECOS
+2012-10-01,KOSPI,1912.06005859375,index,ECOS
+2012-10-01,Coincident Index,99.8,index,ECOS
+2012-10-01,Leading Index,99.3,index,ECOS
+2012-10-01,Leading–Coincident Spread,-0.5,index,ECOS
+2012-11-01,KOSPI,1932.9000244140625,index,ECOS
+2012-11-01,Coincident Index,100.0,index,ECOS
+2012-11-01,Leading Index,99.3,index,ECOS
+2012-11-01,Leading–Coincident Spread,-0.7000000000000028,index,ECOS
+2012-12-01,KOSPI,1997.050048828125,index,ECOS
+2012-12-01,Coincident Index,100.1,index,ECOS
+2012-12-01,Leading Index,99.4,index,ECOS
+2012-12-01,Leading–Coincident Spread,-0.6999999999999886,index,ECOS
+2013-01-01,KOSPI,1961.93994140625,index,ECOS
+2013-01-01,Coincident Index,100.1,index,ECOS
+2013-01-01,Leading Index,99.4,index,ECOS
+2013-01-01,Leading–Coincident Spread,-0.6999999999999886,index,ECOS
+2013-02-01,KOSPI,2026.489990234375,index,ECOS
+2013-02-01,Coincident Index,100.1,index,ECOS
+2013-02-01,Leading Index,99.4,index,ECOS
+2013-02-01,Leading–Coincident Spread,-0.6999999999999886,index,ECOS
+2013-03-01,KOSPI,2004.8900146484373,index,ECOS
+2013-03-01,Coincident Index,99.8,index,ECOS
+2013-03-01,Leading Index,99.4,index,ECOS
+2013-03-01,Leading–Coincident Spread,-0.3999999999999915,index,ECOS
+2013-04-01,KOSPI,1963.949951171875,index,ECOS
+2013-04-01,Coincident Index,99.8,index,ECOS
+2013-04-01,Leading Index,99.4,index,ECOS
+2013-04-01,Leading–Coincident Spread,-0.3999999999999915,index,ECOS
+2013-05-01,KOSPI,2001.050048828125,index,ECOS
+2013-05-01,Coincident Index,99.7,index,ECOS
+2013-05-01,Leading Index,99.5,index,ECOS
+2013-05-01,Leading–Coincident Spread,-0.2000000000000028,index,ECOS
+2013-06-01,KOSPI,1863.3199462890625,index,ECOS
+2013-06-01,Coincident Index,100.0,index,ECOS
+2013-06-01,Leading Index,99.6,index,ECOS
+2013-06-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2013-07-01,KOSPI,1914.030029296875,index,ECOS
+2013-07-01,Coincident Index,99.9,index,ECOS
+2013-07-01,Leading Index,99.8,index,ECOS
+2013-07-01,Leading–Coincident Spread,-0.1000000000000085,index,ECOS
+2013-08-01,KOSPI,1926.3599853515625,index,ECOS
+2013-08-01,Coincident Index,99.9,index,ECOS
+2013-08-01,Leading Index,99.8,index,ECOS
+2013-08-01,Leading–Coincident Spread,-0.1000000000000085,index,ECOS
+2013-09-01,KOSPI,1996.9599609375,index,ECOS
+2013-09-01,Coincident Index,99.7,index,ECOS
+2013-09-01,Leading Index,99.7,index,ECOS
+2013-09-01,Leading–Coincident Spread,0.0,index,ECOS
+2013-10-01,KOSPI,2030.0899658203125,index,ECOS
+2013-10-01,Coincident Index,100.0,index,ECOS
+2013-10-01,Leading Index,99.7,index,ECOS
+2013-10-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2013-11-01,KOSPI,2044.8699951171875,index,ECOS
+2013-11-01,Coincident Index,100.0,index,ECOS
+2013-11-01,Leading Index,99.8,index,ECOS
+2013-11-01,Leading–Coincident Spread,-0.2000000000000028,index,ECOS
+2013-12-01,KOSPI,2011.3399658203125,index,ECOS
+2013-12-01,Coincident Index,100.2,index,ECOS
+2013-12-01,Leading Index,99.9,index,ECOS
+2013-12-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2014-01-01,KOSPI,1941.1500244140625,index,ECOS
+2014-01-01,Coincident Index,100.4,index,ECOS
+2014-01-01,Leading Index,99.8,index,ECOS
+2014-01-01,Leading–Coincident Spread,-0.6000000000000085,index,ECOS
+2014-02-01,KOSPI,1979.989990234375,index,ECOS
+2014-02-01,Coincident Index,100.4,index,ECOS
+2014-02-01,Leading Index,99.8,index,ECOS
+2014-02-01,Leading–Coincident Spread,-0.6000000000000085,index,ECOS
+2014-03-01,KOSPI,1985.6099853515625,index,ECOS
+2014-03-01,Coincident Index,100.6,index,ECOS
+2014-03-01,Leading Index,99.7,index,ECOS
+2014-03-01,Leading–Coincident Spread,-0.8999999999999915,index,ECOS
+2014-04-01,KOSPI,1961.7900390625,index,ECOS
+2014-04-01,Coincident Index,100.4,index,ECOS
+2014-04-01,Leading Index,99.6,index,ECOS
+2014-04-01,Leading–Coincident Spread,-0.8000000000000114,index,ECOS
+2014-05-01,KOSPI,1994.9599609375,index,ECOS
+2014-05-01,Coincident Index,100.1,index,ECOS
+2014-05-01,Leading Index,99.5,index,ECOS
+2014-05-01,Leading–Coincident Spread,-0.5999999999999943,index,ECOS
+2014-06-01,KOSPI,2002.2099609375,index,ECOS
+2014-06-01,Coincident Index,100.0,index,ECOS
+2014-06-01,Leading Index,99.5,index,ECOS
+2014-06-01,Leading–Coincident Spread,-0.5,index,ECOS
+2014-07-01,KOSPI,2076.1201171875,index,ECOS
+2014-07-01,Coincident Index,100.0,index,ECOS
+2014-07-01,Leading Index,99.4,index,ECOS
+2014-07-01,Leading–Coincident Spread,-0.5999999999999943,index,ECOS
+2014-08-01,KOSPI,2068.5400390625,index,ECOS
+2014-08-01,Coincident Index,100.1,index,ECOS
+2014-08-01,Leading Index,99.5,index,ECOS
+2014-08-01,Leading–Coincident Spread,-0.5999999999999943,index,ECOS
+2014-09-01,KOSPI,2020.0899658203125,index,ECOS
+2014-09-01,Coincident Index,99.8,index,ECOS
+2014-09-01,Leading Index,99.6,index,ECOS
+2014-09-01,Leading–Coincident Spread,-0.2000000000000028,index,ECOS
+2014-10-01,KOSPI,1964.4300537109373,index,ECOS
+2014-10-01,Coincident Index,99.4,index,ECOS
+2014-10-01,Leading Index,99.7,index,ECOS
+2014-10-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2014-11-01,KOSPI,1980.780029296875,index,ECOS
+2014-11-01,Coincident Index,99.2,index,ECOS
+2014-11-01,Leading Index,99.8,index,ECOS
+2014-11-01,Leading–Coincident Spread,0.5999999999999943,index,ECOS
+2014-12-01,KOSPI,1915.5899658203125,index,ECOS
+2014-12-01,Coincident Index,99.5,index,ECOS
+2014-12-01,Leading Index,99.8,index,ECOS
+2014-12-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2015-01-01,KOSPI,1949.260009765625,index,ECOS
+2015-01-01,Coincident Index,99.5,index,ECOS
+2015-01-01,Leading Index,100.1,index,ECOS
+2015-01-01,Leading–Coincident Spread,0.5999999999999943,index,ECOS
+2015-02-01,KOSPI,1985.800048828125,index,ECOS
+2015-02-01,Coincident Index,99.8,index,ECOS
+2015-02-01,Leading Index,100.2,index,ECOS
+2015-02-01,Leading–Coincident Spread,0.4000000000000057,index,ECOS
+2015-03-01,KOSPI,2041.030029296875,index,ECOS
+2015-03-01,Coincident Index,99.4,index,ECOS
+2015-03-01,Leading Index,100.4,index,ECOS
+2015-03-01,Leading–Coincident Spread,1.0,index,ECOS
+2015-04-01,KOSPI,2127.169921875,index,ECOS
+2015-04-01,Coincident Index,99.3,index,ECOS
+2015-04-01,Leading Index,100.5,index,ECOS
+2015-04-01,Leading–Coincident Spread,1.2000000000000028,index,ECOS
+2015-05-01,KOSPI,2114.800048828125,index,ECOS
+2015-05-01,Coincident Index,98.8,index,ECOS
+2015-05-01,Leading Index,100.6,index,ECOS
+2015-05-01,Leading–Coincident Spread,1.7999999999999972,index,ECOS
+2015-06-01,KOSPI,2074.199951171875,index,ECOS
+2015-06-01,Coincident Index,98.7,index,ECOS
+2015-06-01,Leading Index,100.5,index,ECOS
+2015-06-01,Leading–Coincident Spread,1.7999999999999972,index,ECOS
+2015-07-01,KOSPI,2030.1600341796875,index,ECOS
+2015-07-01,Coincident Index,98.6,index,ECOS
+2015-07-01,Leading Index,100.3,index,ECOS
+2015-07-01,Leading–Coincident Spread,1.7000000000000028,index,ECOS
+2015-08-01,KOSPI,1941.489990234375,index,ECOS
+2015-08-01,Coincident Index,99.1,index,ECOS
+2015-08-01,Leading Index,100.3,index,ECOS
+2015-08-01,Leading–Coincident Spread,1.2000000000000028,index,ECOS
+2015-09-01,KOSPI,1962.81005859375,index,ECOS
+2015-09-01,Coincident Index,99.7,index,ECOS
+2015-09-01,Leading Index,100.4,index,ECOS
+2015-09-01,Leading–Coincident Spread,0.7000000000000028,index,ECOS
+2015-10-01,KOSPI,2029.469970703125,index,ECOS
+2015-10-01,Coincident Index,100.2,index,ECOS
+2015-10-01,Leading Index,100.4,index,ECOS
+2015-10-01,Leading–Coincident Spread,0.2000000000000028,index,ECOS
+2015-11-01,KOSPI,1991.969970703125,index,ECOS
+2015-11-01,Coincident Index,100.0,index,ECOS
+2015-11-01,Leading Index,100.2,index,ECOS
+2015-11-01,Leading–Coincident Spread,0.2000000000000028,index,ECOS
+2015-12-01,KOSPI,1961.31005859375,index,ECOS
+2015-12-01,Coincident Index,99.9,index,ECOS
+2015-12-01,Leading Index,99.8,index,ECOS
+2015-12-01,Leading–Coincident Spread,-0.1000000000000085,index,ECOS
+2016-01-01,KOSPI,1912.06005859375,index,ECOS
+2016-01-01,Coincident Index,99.6,index,ECOS
+2016-01-01,Leading Index,99.5,index,ECOS
+2016-01-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2016-02-01,KOSPI,1916.6600341796875,index,ECOS
+2016-02-01,Coincident Index,99.5,index,ECOS
+2016-02-01,Leading Index,99.1,index,ECOS
+2016-02-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2016-03-01,KOSPI,1995.8499755859373,index,ECOS
+2016-03-01,Coincident Index,99.3,index,ECOS
+2016-03-01,Leading Index,99.2,index,ECOS
+2016-03-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2016-04-01,KOSPI,1994.1500244140625,index,ECOS
+2016-04-01,Coincident Index,99.2,index,ECOS
+2016-04-01,Leading Index,99.2,index,ECOS
+2016-04-01,Leading–Coincident Spread,0.0,index,ECOS
+2016-05-01,KOSPI,1983.4000244140625,index,ECOS
+2016-05-01,Coincident Index,99.5,index,ECOS
+2016-05-01,Leading Index,99.3,index,ECOS
+2016-05-01,Leading–Coincident Spread,-0.2000000000000028,index,ECOS
+2016-06-01,KOSPI,1970.3499755859373,index,ECOS
+2016-06-01,Coincident Index,99.7,index,ECOS
+2016-06-01,Leading Index,99.3,index,ECOS
+2016-06-01,Leading–Coincident Spread,-0.4000000000000057,index,ECOS
+2016-07-01,KOSPI,2016.18994140625,index,ECOS
+2016-07-01,Coincident Index,99.9,index,ECOS
+2016-07-01,Leading Index,99.3,index,ECOS
+2016-07-01,Leading–Coincident Spread,-0.6000000000000085,index,ECOS
+2016-08-01,KOSPI,2034.6500244140625,index,ECOS
+2016-08-01,Coincident Index,100.1,index,ECOS
+2016-08-01,Leading Index,99.5,index,ECOS
+2016-08-01,Leading–Coincident Spread,-0.5999999999999943,index,ECOS
+2016-09-01,KOSPI,2043.6300048828125,index,ECOS
+2016-09-01,Coincident Index,99.9,index,ECOS
+2016-09-01,Leading Index,99.7,index,ECOS
+2016-09-01,Leading–Coincident Spread,-0.2000000000000028,index,ECOS
+2016-10-01,KOSPI,2008.18994140625,index,ECOS
+2016-10-01,Coincident Index,99.8,index,ECOS
+2016-10-01,Leading Index,99.9,index,ECOS
+2016-10-01,Leading–Coincident Spread,0.1000000000000085,index,ECOS
+2016-11-01,KOSPI,1983.47998046875,index,ECOS
+2016-11-01,Coincident Index,100.1,index,ECOS
+2016-11-01,Leading Index,100.1,index,ECOS
+2016-11-01,Leading–Coincident Spread,0.0,index,ECOS
+2016-12-01,KOSPI,2026.4599609375,index,ECOS
+2016-12-01,Coincident Index,100.3,index,ECOS
+2016-12-01,Leading Index,100.3,index,ECOS
+2016-12-01,Leading–Coincident Spread,0.0,index,ECOS
+2017-01-01,KOSPI,2067.570068359375,index,ECOS
+2017-01-01,Coincident Index,100.6,index,ECOS
+2017-01-01,Leading Index,100.5,index,ECOS
+2017-01-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2017-02-01,KOSPI,2091.639892578125,index,ECOS
+2017-02-01,Coincident Index,100.7,index,ECOS
+2017-02-01,Leading Index,100.7,index,ECOS
+2017-02-01,Leading–Coincident Spread,0.0,index,ECOS
+2017-03-01,KOSPI,2160.22998046875,index,ECOS
+2017-03-01,Coincident Index,100.8,index,ECOS
+2017-03-01,Leading Index,100.9,index,ECOS
+2017-03-01,Leading–Coincident Spread,0.1000000000000085,index,ECOS
+2017-04-01,KOSPI,2205.43994140625,index,ECOS
+2017-04-01,Coincident Index,100.9,index,ECOS
+2017-04-01,Leading Index,101.2,index,ECOS
+2017-04-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2017-05-01,KOSPI,2347.3798828125,index,ECOS
+2017-05-01,Coincident Index,101.0,index,ECOS
+2017-05-01,Leading Index,101.3,index,ECOS
+2017-05-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2017-06-01,KOSPI,2391.7900390625,index,ECOS
+2017-06-01,Coincident Index,101.0,index,ECOS
+2017-06-01,Leading Index,101.5,index,ECOS
+2017-06-01,Leading–Coincident Spread,0.5,index,ECOS
+2017-07-01,KOSPI,2402.7099609375,index,ECOS
+2017-07-01,Coincident Index,100.9,index,ECOS
+2017-07-01,Leading Index,101.6,index,ECOS
+2017-07-01,Leading–Coincident Spread,0.6999999999999886,index,ECOS
+2017-08-01,KOSPI,2363.18994140625,index,ECOS
+2017-08-01,Coincident Index,101.0,index,ECOS
+2017-08-01,Leading Index,101.8,index,ECOS
+2017-08-01,Leading–Coincident Spread,0.7999999999999972,index,ECOS
+2017-09-01,KOSPI,2394.469970703125,index,ECOS
+2017-09-01,Coincident Index,101.3,index,ECOS
+2017-09-01,Leading Index,101.8,index,ECOS
+2017-09-01,Leading–Coincident Spread,0.5,index,ECOS
+2017-10-01,KOSPI,2523.429931640625,index,ECOS
+2017-10-01,Coincident Index,101.1,index,ECOS
+2017-10-01,Leading Index,101.8,index,ECOS
+2017-10-01,Leading–Coincident Spread,0.7000000000000028,index,ECOS
+2017-11-01,KOSPI,2476.3701171875,index,ECOS
+2017-11-01,Coincident Index,101.3,index,ECOS
+2017-11-01,Leading Index,101.6,index,ECOS
+2017-11-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2017-12-01,KOSPI,2467.489990234375,index,ECOS
+2017-12-01,Coincident Index,100.7,index,ECOS
+2017-12-01,Leading Index,101.4,index,ECOS
+2017-12-01,Leading–Coincident Spread,0.7000000000000028,index,ECOS
+2018-01-01,KOSPI,2566.4599609375,index,ECOS
+2018-01-01,Coincident Index,100.9,index,ECOS
+2018-01-01,Leading Index,101.5,index,ECOS
+2018-01-01,Leading–Coincident Spread,0.5999999999999943,index,ECOS
+2018-02-01,KOSPI,2427.360107421875,index,ECOS
+2018-02-01,Coincident Index,101.0,index,ECOS
+2018-02-01,Leading Index,101.4,index,ECOS
+2018-02-01,Leading–Coincident Spread,0.4000000000000057,index,ECOS
+2018-03-01,KOSPI,2445.85009765625,index,ECOS
+2018-03-01,Coincident Index,100.9,index,ECOS
+2018-03-01,Leading Index,101.4,index,ECOS
+2018-03-01,Leading–Coincident Spread,0.5,index,ECOS
+2018-04-01,KOSPI,2515.3798828125,index,ECOS
+2018-04-01,Coincident Index,100.8,index,ECOS
+2018-04-01,Leading Index,101.1,index,ECOS
+2018-04-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2018-05-01,KOSPI,2423.010009765625,index,ECOS
+2018-05-01,Coincident Index,100.7,index,ECOS
+2018-05-01,Leading Index,101.1,index,ECOS
+2018-05-01,Leading–Coincident Spread,0.3999999999999915,index,ECOS
+2018-06-01,KOSPI,2326.1298828125,index,ECOS
+2018-06-01,Coincident Index,100.7,index,ECOS
+2018-06-01,Leading Index,101.0,index,ECOS
+2018-06-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2018-07-01,KOSPI,2295.260009765625,index,ECOS
+2018-07-01,Coincident Index,100.6,index,ECOS
+2018-07-01,Leading Index,100.9,index,ECOS
+2018-07-01,Leading–Coincident Spread,0.3000000000000113,index,ECOS
+2018-08-01,KOSPI,2322.8798828125,index,ECOS
+2018-08-01,Coincident Index,100.5,index,ECOS
+2018-08-01,Leading Index,100.5,index,ECOS
+2018-08-01,Leading–Coincident Spread,0.0,index,ECOS
+2018-09-01,KOSPI,2343.070068359375,index,ECOS
+2018-09-01,Coincident Index,100.2,index,ECOS
+2018-09-01,Leading Index,100.3,index,ECOS
+2018-09-01,Leading–Coincident Spread,0.0999999999999943,index,ECOS
+2018-10-01,KOSPI,2029.68994140625,index,ECOS
+2018-10-01,Coincident Index,100.1,index,ECOS
+2018-10-01,Leading Index,100.1,index,ECOS
+2018-10-01,Leading–Coincident Spread,0.0,index,ECOS
+2018-11-01,KOSPI,2096.860107421875,index,ECOS
+2018-11-01,Coincident Index,100.0,index,ECOS
+2018-11-01,Leading Index,99.7,index,ECOS
+2018-11-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2018-12-01,KOSPI,2041.0400390625,index,ECOS
+2018-12-01,Coincident Index,99.8,index,ECOS
+2018-12-01,Leading Index,99.4,index,ECOS
+2018-12-01,Leading–Coincident Spread,-0.3999999999999915,index,ECOS
+2019-01-01,KOSPI,2204.85009765625,index,ECOS
+2019-01-01,Coincident Index,100.0,index,ECOS
+2019-01-01,Leading Index,99.3,index,ECOS
+2019-01-01,Leading–Coincident Spread,-0.7000000000000028,index,ECOS
+2019-02-01,KOSPI,2195.43994140625,index,ECOS
+2019-02-01,Coincident Index,99.4,index,ECOS
+2019-02-01,Leading Index,99.1,index,ECOS
+2019-02-01,Leading–Coincident Spread,-0.3000000000000113,index,ECOS
+2019-03-01,KOSPI,2140.669921875,index,ECOS
+2019-03-01,Coincident Index,99.3,index,ECOS
+2019-03-01,Leading Index,99.2,index,ECOS
+2019-03-01,Leading–Coincident Spread,-0.0999999999999943,index,ECOS
+2019-04-01,KOSPI,2203.590087890625,index,ECOS
+2019-04-01,Coincident Index,99.1,index,ECOS
+2019-04-01,Leading Index,99.2,index,ECOS
+2019-04-01,Leading–Coincident Spread,0.1000000000000085,index,ECOS
+2019-05-01,KOSPI,2041.739990234375,index,ECOS
+2019-05-01,Coincident Index,99.5,index,ECOS
+2019-05-01,Leading Index,99.0,index,ECOS
+2019-05-01,Leading–Coincident Spread,-0.5,index,ECOS
+2019-06-01,KOSPI,2130.6201171875,index,ECOS
+2019-06-01,Coincident Index,99.5,index,ECOS
+2019-06-01,Leading Index,98.7,index,ECOS
+2019-06-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2019-07-01,KOSPI,2024.550048828125,index,ECOS
+2019-07-01,Coincident Index,99.5,index,ECOS
+2019-07-01,Leading Index,98.4,index,ECOS
+2019-07-01,Leading–Coincident Spread,-1.0999999999999943,index,ECOS
+2019-08-01,KOSPI,1967.7900390625,index,ECOS
+2019-08-01,Coincident Index,99.6,index,ECOS
+2019-08-01,Leading Index,98.3,index,ECOS
+2019-08-01,Leading–Coincident Spread,-1.2999999999999972,index,ECOS
+2019-09-01,KOSPI,2063.050048828125,index,ECOS
+2019-09-01,Coincident Index,99.8,index,ECOS
+2019-09-01,Leading Index,98.4,index,ECOS
+2019-09-01,Leading–Coincident Spread,-1.3999999999999917,index,ECOS
+2019-10-01,KOSPI,2083.47998046875,index,ECOS
+2019-10-01,Coincident Index,99.8,index,ECOS
+2019-10-01,Leading Index,98.7,index,ECOS
+2019-10-01,Leading–Coincident Spread,-1.0999999999999943,index,ECOS
+2019-11-01,KOSPI,2087.9599609375,index,ECOS
+2019-11-01,Coincident Index,99.7,index,ECOS
+2019-11-01,Leading Index,98.9,index,ECOS
+2019-11-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2019-12-01,KOSPI,2197.669921875,index,ECOS
+2019-12-01,Coincident Index,100.1,index,ECOS
+2019-12-01,Leading Index,99.2,index,ECOS
+2019-12-01,Leading–Coincident Spread,-0.8999999999999915,index,ECOS
+2020-01-01,KOSPI,2119.010009765625,index,ECOS
+2020-01-01,Coincident Index,100.2,index,ECOS
+2020-01-01,Leading Index,99.3,index,ECOS
+2020-01-01,Leading–Coincident Spread,-0.9000000000000057,index,ECOS
+2020-02-01,KOSPI,1987.010009765625,index,ECOS
+2020-02-01,Coincident Index,99.5,index,ECOS
+2020-02-01,Leading Index,99.3,index,ECOS
+2020-02-01,Leading–Coincident Spread,-0.2000000000000028,index,ECOS
+2020-03-01,KOSPI,1754.6400146484375,index,ECOS
+2020-03-01,Coincident Index,98.4,index,ECOS
+2020-03-01,Leading Index,98.9,index,ECOS
+2020-03-01,Leading–Coincident Spread,0.5,index,ECOS
+2020-04-01,KOSPI,1947.56005859375,index,ECOS
+2020-04-01,Coincident Index,97.3,index,ECOS
+2020-04-01,Leading Index,98.6,index,ECOS
+2020-04-01,Leading–Coincident Spread,1.2999999999999972,index,ECOS
+2020-05-01,KOSPI,2029.5999755859373,index,ECOS
+2020-05-01,Coincident Index,96.3,index,ECOS
+2020-05-01,Leading Index,98.2,index,ECOS
+2020-05-01,Leading–Coincident Spread,1.9000000000000057,index,ECOS
+2020-06-01,KOSPI,2108.330078125,index,ECOS
+2020-06-01,Coincident Index,96.4,index,ECOS
+2020-06-01,Leading Index,98.5,index,ECOS
+2020-06-01,Leading–Coincident Spread,2.0999999999999943,index,ECOS
+2020-07-01,KOSPI,2249.3701171875,index,ECOS
+2020-07-01,Coincident Index,96.6,index,ECOS
+2020-07-01,Leading Index,98.8,index,ECOS
+2020-07-01,Leading–Coincident Spread,2.200000000000003,index,ECOS
+2020-08-01,KOSPI,2326.169921875,index,ECOS
+2020-08-01,Coincident Index,97.0,index,ECOS
+2020-08-01,Leading Index,99.4,index,ECOS
+2020-08-01,Leading–Coincident Spread,2.4000000000000057,index,ECOS
+2020-09-01,KOSPI,2327.889892578125,index,ECOS
+2020-09-01,Coincident Index,97.6,index,ECOS
+2020-09-01,Leading Index,99.7,index,ECOS
+2020-09-01,Leading–Coincident Spread,2.1000000000000085,index,ECOS
+2020-10-01,KOSPI,2267.14990234375,index,ECOS
+2020-10-01,Coincident Index,97.9,index,ECOS
+2020-10-01,Leading Index,100.0,index,ECOS
+2020-10-01,Leading–Coincident Spread,2.0999999999999943,index,ECOS
+2020-11-01,KOSPI,2591.340087890625,index,ECOS
+2020-11-01,Coincident Index,98.5,index,ECOS
+2020-11-01,Leading Index,100.5,index,ECOS
+2020-11-01,Leading–Coincident Spread,2.0,index,ECOS
+2020-12-01,KOSPI,2873.469970703125,index,ECOS
+2020-12-01,Coincident Index,98.4,index,ECOS
+2020-12-01,Leading Index,100.8,index,ECOS
+2020-12-01,Leading–Coincident Spread,2.3999999999999915,index,ECOS
+2021-01-01,KOSPI,2976.2099609375,index,ECOS
+2021-01-01,Coincident Index,98.1,index,ECOS
+2021-01-01,Leading Index,101.2,index,ECOS
+2021-01-01,Leading–Coincident Spread,3.1000000000000085,index,ECOS
+2021-02-01,KOSPI,3012.949951171875,index,ECOS
+2021-02-01,Coincident Index,98.1,index,ECOS
+2021-02-01,Leading Index,101.5,index,ECOS
+2021-02-01,Leading–Coincident Spread,3.4000000000000057,index,ECOS
+2021-03-01,KOSPI,3061.419921875,index,ECOS
+2021-03-01,Coincident Index,98.6,index,ECOS
+2021-03-01,Leading Index,101.9,index,ECOS
+2021-03-01,Leading–Coincident Spread,3.300000000000012,index,ECOS
+2021-04-01,KOSPI,3147.860107421875,index,ECOS
+2021-04-01,Coincident Index,99.4,index,ECOS
+2021-04-01,Leading Index,102.3,index,ECOS
+2021-04-01,Leading–Coincident Spread,2.8999999999999915,index,ECOS
+2021-05-01,KOSPI,3203.919921875,index,ECOS
+2021-05-01,Coincident Index,99.6,index,ECOS
+2021-05-01,Leading Index,102.7,index,ECOS
+2021-05-01,Leading–Coincident Spread,3.1000000000000085,index,ECOS
+2021-06-01,KOSPI,3296.679931640625,index,ECOS
+2021-06-01,Coincident Index,99.6,index,ECOS
+2021-06-01,Leading Index,103.0,index,ECOS
+2021-06-01,Leading–Coincident Spread,3.4000000000000057,index,ECOS
+2021-07-01,KOSPI,3202.320068359375,index,ECOS
+2021-07-01,Coincident Index,99.6,index,ECOS
+2021-07-01,Leading Index,102.9,index,ECOS
+2021-07-01,Leading–Coincident Spread,3.300000000000012,index,ECOS
+2021-08-01,KOSPI,3199.27001953125,index,ECOS
+2021-08-01,Coincident Index,99.6,index,ECOS
+2021-08-01,Leading Index,102.7,index,ECOS
+2021-08-01,Leading–Coincident Spread,3.1000000000000085,index,ECOS
+2021-09-01,KOSPI,3068.820068359375,index,ECOS
+2021-09-01,Coincident Index,99.6,index,ECOS
+2021-09-01,Leading Index,102.3,index,ECOS
+2021-09-01,Leading–Coincident Spread,2.700000000000003,index,ECOS
+2021-10-01,KOSPI,2970.679931640625,index,ECOS
+2021-10-01,Coincident Index,99.7,index,ECOS
+2021-10-01,Leading Index,101.9,index,ECOS
+2021-10-01,Leading–Coincident Spread,2.200000000000003,index,ECOS
+2021-11-01,KOSPI,2839.010009765625,index,ECOS
+2021-11-01,Coincident Index,100.0,index,ECOS
+2021-11-01,Leading Index,101.5,index,ECOS
+2021-11-01,Leading–Coincident Spread,1.5,index,ECOS
+2021-12-01,KOSPI,2977.64990234375,index,ECOS
+2021-12-01,Coincident Index,100.7,index,ECOS
+2021-12-01,Leading Index,101.4,index,ECOS
+2021-12-01,Leading–Coincident Spread,0.7000000000000028,index,ECOS
+2022-01-01,KOSPI,2663.340087890625,index,ECOS
+2022-01-01,Coincident Index,101.2,index,ECOS
+2022-01-01,Leading Index,101.5,index,ECOS
+2022-01-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2022-02-01,KOSPI,2699.179931640625,index,ECOS
+2022-02-01,Coincident Index,101.2,index,ECOS
+2022-02-01,Leading Index,101.3,index,ECOS
+2022-02-01,Leading–Coincident Spread,0.0999999999999943,index,ECOS
+2022-03-01,KOSPI,2757.64990234375,index,ECOS
+2022-03-01,Coincident Index,101.0,index,ECOS
+2022-03-01,Leading Index,101.1,index,ECOS
+2022-03-01,Leading–Coincident Spread,0.0999999999999943,index,ECOS
+2022-04-01,KOSPI,2695.050048828125,index,ECOS
+2022-04-01,Coincident Index,100.7,index,ECOS
+2022-04-01,Leading Index,101.0,index,ECOS
+2022-04-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2022-05-01,KOSPI,2685.89990234375,index,ECOS
+2022-05-01,Coincident Index,100.9,index,ECOS
+2022-05-01,Leading Index,101.2,index,ECOS
+2022-05-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2022-06-01,KOSPI,2332.639892578125,index,ECOS
+2022-06-01,Coincident Index,101.0,index,ECOS
+2022-06-01,Leading Index,101.2,index,ECOS
+2022-06-01,Leading–Coincident Spread,0.2000000000000028,index,ECOS
+2022-07-01,KOSPI,2451.5,index,ECOS
+2022-07-01,Coincident Index,101.2,index,ECOS
+2022-07-01,Leading Index,100.9,index,ECOS
+2022-07-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2022-08-01,KOSPI,2472.050048828125,index,ECOS
+2022-08-01,Coincident Index,101.5,index,ECOS
+2022-08-01,Leading Index,100.8,index,ECOS
+2022-08-01,Leading–Coincident Spread,-0.7000000000000028,index,ECOS
+2022-09-01,KOSPI,2155.489990234375,index,ECOS
+2022-09-01,Coincident Index,101.6,index,ECOS
+2022-09-01,Leading Index,100.7,index,ECOS
+2022-09-01,Leading–Coincident Spread,-0.8999999999999915,index,ECOS
+2022-10-01,KOSPI,2293.610107421875,index,ECOS
+2022-10-01,Coincident Index,101.5,index,ECOS
+2022-10-01,Leading Index,100.7,index,ECOS
+2022-10-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2022-11-01,KOSPI,2472.530029296875,index,ECOS
+2022-11-01,Coincident Index,101.0,index,ECOS
+2022-11-01,Leading Index,100.4,index,ECOS
+2022-11-01,Leading–Coincident Spread,-0.5999999999999943,index,ECOS
+2022-12-01,KOSPI,2236.39990234375,index,ECOS
+2022-12-01,Coincident Index,100.4,index,ECOS
+2022-12-01,Leading Index,99.9,index,ECOS
+2022-12-01,Leading–Coincident Spread,-0.5,index,ECOS
+2023-01-01,KOSPI,2425.080078125,index,ECOS
+2023-01-01,Coincident Index,99.9,index,ECOS
+2023-01-01,Leading Index,99.6,index,ECOS
+2023-01-01,Leading–Coincident Spread,-0.3000000000000113,index,ECOS
+2023-02-01,KOSPI,2412.85009765625,index,ECOS
+2023-02-01,Coincident Index,100.1,index,ECOS
+2023-02-01,Leading Index,99.3,index,ECOS
+2023-02-01,Leading–Coincident Spread,-0.7999999999999972,index,ECOS
+2023-03-01,KOSPI,2476.860107421875,index,ECOS
+2023-03-01,Coincident Index,100.5,index,ECOS
+2023-03-01,Leading Index,99.1,index,ECOS
+2023-03-01,Leading–Coincident Spread,-1.4000000000000057,index,ECOS
+2023-04-01,KOSPI,2501.530029296875,index,ECOS
+2023-04-01,Coincident Index,100.7,index,ECOS
+2023-04-01,Leading Index,98.9,index,ECOS
+2023-04-01,Leading–Coincident Spread,-1.7999999999999972,index,ECOS
+2023-05-01,KOSPI,2577.1201171875,index,ECOS
+2023-05-01,Coincident Index,100.8,index,ECOS
+2023-05-01,Leading Index,99.1,index,ECOS
+2023-05-01,Leading–Coincident Spread,-1.7000000000000028,index,ECOS
+2023-06-01,KOSPI,2564.280029296875,index,ECOS
+2023-06-01,Coincident Index,100.8,index,ECOS
+2023-06-01,Leading Index,99.4,index,ECOS
+2023-06-01,Leading–Coincident Spread,-1.3999999999999917,index,ECOS
+2023-07-01,KOSPI,2632.580078125,index,ECOS
+2023-07-01,Coincident Index,100.5,index,ECOS
+2023-07-01,Leading Index,99.8,index,ECOS
+2023-07-01,Leading–Coincident Spread,-0.7000000000000028,index,ECOS
+2023-08-01,KOSPI,2556.27001953125,index,ECOS
+2023-08-01,Coincident Index,100.4,index,ECOS
+2023-08-01,Leading Index,99.8,index,ECOS
+2023-08-01,Leading–Coincident Spread,-0.6000000000000085,index,ECOS
+2023-09-01,KOSPI,2465.070068359375,index,ECOS
+2023-09-01,Coincident Index,100.3,index,ECOS
+2023-09-01,Leading Index,99.8,index,ECOS
+2023-09-01,Leading–Coincident Spread,-0.5,index,ECOS
+2023-10-01,KOSPI,2277.989990234375,index,ECOS
+2023-10-01,Coincident Index,100.3,index,ECOS
+2023-10-01,Leading Index,100.0,index,ECOS
+2023-10-01,Leading–Coincident Spread,-0.2999999999999971,index,ECOS
+2023-11-01,KOSPI,2535.2900390625,index,ECOS
+2023-11-01,Coincident Index,100.4,index,ECOS
+2023-11-01,Leading Index,100.2,index,ECOS
+2023-11-01,Leading–Coincident Spread,-0.2000000000000028,index,ECOS
+2023-12-01,KOSPI,2655.280029296875,index,ECOS
+2023-12-01,Coincident Index,100.2,index,ECOS
+2023-12-01,Leading Index,100.4,index,ECOS
+2023-12-01,Leading–Coincident Spread,0.2000000000000028,index,ECOS
+2024-01-01,KOSPI,2497.090087890625,index,ECOS
+2024-01-01,Coincident Index,100.3,index,ECOS
+2024-01-01,Leading Index,100.4,index,ECOS
+2024-01-01,Leading–Coincident Spread,0.1000000000000085,index,ECOS
+2024-02-01,KOSPI,2642.360107421875,index,ECOS
+2024-02-01,Coincident Index,100.3,index,ECOS
+2024-02-01,Leading Index,100.6,index,ECOS
+2024-02-01,Leading–Coincident Spread,0.2999999999999971,index,ECOS
+2024-03-01,KOSPI,2746.6298828125,index,ECOS
+2024-03-01,Coincident Index,100.1,index,ECOS
+2024-03-01,Leading Index,100.5,index,ECOS
+2024-03-01,Leading–Coincident Spread,0.4000000000000057,index,ECOS
+2024-04-01,KOSPI,2692.06005859375,index,ECOS
+2024-04-01,Coincident Index,100.0,index,ECOS
+2024-04-01,Leading Index,100.7,index,ECOS
+2024-04-01,Leading–Coincident Spread,0.7000000000000028,index,ECOS
+2024-05-01,KOSPI,2636.52001953125,index,ECOS
+2024-05-01,Coincident Index,99.7,index,ECOS
+2024-05-01,Leading Index,100.8,index,ECOS
+2024-05-01,Leading–Coincident Spread,1.0999999999999943,index,ECOS
+2024-06-01,KOSPI,2797.820068359375,index,ECOS
+2024-06-01,Coincident Index,99.6,index,ECOS
+2024-06-01,Leading Index,100.9,index,ECOS
+2024-06-01,Leading–Coincident Spread,1.3000000000000114,index,ECOS
+2024-07-01,KOSPI,2770.68994140625,index,ECOS
+2024-07-01,Coincident Index,99.1,index,ECOS
+2024-07-01,Leading Index,100.9,index,ECOS
+2024-07-01,Leading–Coincident Spread,1.8000000000000114,index,ECOS
+2024-08-01,KOSPI,2674.31005859375,index,ECOS
+2024-08-01,Coincident Index,99.0,index,ECOS
+2024-08-01,Leading Index,100.8,index,ECOS
+2024-08-01,Leading–Coincident Spread,1.7999999999999972,index,ECOS
+2024-09-01,KOSPI,2593.27001953125,index,ECOS
+2024-09-01,Coincident Index,99.0,index,ECOS
+2024-09-01,Leading Index,100.8,index,ECOS
+2024-09-01,Leading–Coincident Spread,1.7999999999999972,index,ECOS
+2024-10-01,KOSPI,2556.14990234375,index,ECOS
+2024-10-01,Coincident Index,99.3,index,ECOS
+2024-10-01,Leading Index,100.8,index,ECOS
+2024-10-01,Leading–Coincident Spread,1.5,index,ECOS
+2024-11-01,KOSPI,2455.909912109375,index,ECOS
+2024-11-01,Coincident Index,98.9,index,ECOS
+2024-11-01,Leading Index,100.8,index,ECOS
+2024-11-01,Leading–Coincident Spread,1.899999999999992,index,ECOS
+2024-12-01,KOSPI,2399.489990234375,index,ECOS
+2024-12-01,Coincident Index,98.8,index,ECOS
+2024-12-01,Leading Index,100.7,index,ECOS
+2024-12-01,Leading–Coincident Spread,1.9000000000000057,index,ECOS
+2025-01-01,KOSPI,2517.3701171875,index,ECOS
+2025-01-01,Coincident Index,98.4,index,ECOS
+2025-01-01,Leading Index,100.3,index,ECOS
+2025-01-01,Leading–Coincident Spread,1.899999999999992,index,ECOS
+2025-02-01,KOSPI,2532.780029296875,index,ECOS
+2025-02-01,Coincident Index,98.5,index,ECOS
+2025-02-01,Leading Index,100.4,index,ECOS
+2025-02-01,Leading–Coincident Spread,1.9000000000000057,index,ECOS
+2025-03-01,KOSPI,2481.1201171875,index,ECOS
+2025-03-01,Coincident Index,98.7,index,ECOS
+2025-03-01,Leading Index,100.6,index,ECOS
+2025-03-01,Leading–Coincident Spread,1.899999999999992,index,ECOS
+2025-04-01,KOSPI,2556.610107421875,index,ECOS
+2025-04-01,Coincident Index,98.9,index,ECOS
+2025-04-01,Leading Index,101.0,index,ECOS
+2025-04-01,Leading–Coincident Spread,2.0999999999999943,index,ECOS
+2025-05-01,KOSPI,2697.669921875,index,ECOS
+2025-05-01,Coincident Index,98.5,index,ECOS
+2025-05-01,Leading Index,100.9,index,ECOS
+2025-05-01,Leading–Coincident Spread,2.4000000000000057,index,ECOS

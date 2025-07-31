@@ -1,0 +1,6 @@
+date,country,commodity_full_name,change_type,export_value_thousand_usd,yoy_change_percent
+2024-01-01,World,Natural Gas(271121),decrease,195294018851.0,-41.71662
+2024-01-01,World,Bituminous Coal(270112),decrease,104352572975.0,-40.40275
+2024-01-01,World,Crude Oil(270900),decrease,1267033737071.0,-38.12998
+2024-01-01,World,Natural Gas(271111),decrease,247792097183.0,-38.00203
+2024-01-01,World,Light Oil and Preparations(271012),decrease,334239623767.0,-36.32839

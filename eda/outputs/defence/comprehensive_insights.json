@@ -1,0 +1,157 @@
+{
+  "summary_statistics": {
+    "total_contracts_analysed": 77,
+    "total_contract_value": 2385888544618.09,
+    "average_contract_value": 30985565514.52065
+  },
+  "category_breakdown": {
+    "high_value_contracts": 23,
+    "emergency_contracts": 3,
+    "frequent_items": 67
+  },
+  "value_analysis": {
+    "contract_value_distribution": {
+      "count": 77.0,
+      "mean": 30985565514.52065,
+      "std": 105082458318.54584,
+      "min": 55600000.0,
+      "25%": 1253395800.0,
+      "50%": 3150000000.0,
+      "75%": 12763235000.0,
+      "max": 731937714445.0
+    },
+    "category_value_stats": {
+      "Emergency Procurement": {
+        "count": 3,
+        "mean": 64425866.67,
+        "median": 64398400.0,
+        "sum": 193277600.0
+      },
+      "Frequent Items (3 times)": {
+        "count": 11,
+        "mean": 3597534179.27,
+        "median": 2575530043.96,
+        "sum": 39572875971.96
+      },
+      "Frequent Items (4 times)": {
+        "count": 4,
+        "mean": 949731342.0,
+        "median": 755332484.0,
+        "sum": 3798925368.0
+      },
+      "Frequent Items (5 times)": {
+        "count": 12,
+        "mean": 2726587600.0,
+        "median": 1568046392.5,
+        "sum": 32719051200.0
+      },
+      "Frequent Items (7 times)": {
+        "count": 11,
+        "mean": 1643753895.64,
+        "median": 1172604492.0,
+        "sum": 18081292852.0
+      },
+      "Frequent Items (8 times)": {
+        "count": 13,
+        "mean": 3550074670.77,
+        "median": 3055525000.0,
+        "sum": 46150970720.0
+      },
+      "High-Value (≥ 10B KRW)": {
+        "count": 23,
+        "mean": 97624876126.35,
+        "median": 24960090266.0,
+        "sum": 2245372150906.13
+      }
+    }
+  },
+  "frequency_analysis": {
+    "top_10_frequent_words": [
+      "천궁",
+      "II",
+      "성능개량",
+      "mm",
+      "발칸",
+      "장갑차",
+      "밀리",
+      "연습예광탄",
+      "천무유도탄",
+      "항공기"
+    ],
+    "total_unique_words": 297,
+    "words_appearing_5plus_times": 8
+  },
+  "temporal_analysis": {
+    "date_range": {
+      "earliest": "2025-07-01",
+      "latest": "2025-08-01"
+    },
+    "contracts_by_year": {
+      "2025": 77
+    }
+  },
+  "top_contracts": {
+    "highest_value_contracts": [
+      {
+        "indicator": "L-SAM 양산(발사대,ABM)",
+        "value": 731937714445.0,
+        "date": "2025-08-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "L-SAM 양산(다기능레이더)",
+        "value": 505901459516.0,
+        "date": "2025-08-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "천마 체계 외주정비(방산)",
+        "value": 208379067864.0,
+        "date": "2025-07-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "장애물개척전차 2차 양산",
+        "value": 203623631149.0,
+        "date": "2025-08-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "L-SAM 양산(통제소,AAM,체계통합)",
+        "value": 140632280000.0,
+        "date": "2025-08-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "155mm 단위장약 등",
+        "value": 72904819200.0,
+        "date": "2025-07-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "F- 기관 부품(D)",
+        "value": 52177368076.0,
+        "date": "2025-07-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "엔진,디젤식(장개차용)",
+        "value": 38760000000.0,
+        "date": "2025-08-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "C-130/CN-2 기관/모듈 창정비(D)",
+        "value": 35073290162.0,
+        "date": "2025-07-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      },
+      {
+        "indicator": "KUH-1 헬기 엔진 (제조)",
+        "value": 34787848662.0,
+        "date": "2025-08-01 00:00:00",
+        "category": "High-Value (≥ 10B KRW)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "market_indicators": {
+    "kospi": {
+      "latest": 2697.669921875,
+      "trend_3m": 4.280016048177238
+    },
+    "leading_index": {
+      "latest": 100.9,
+      "trend_3m": 0.14930220656261262
+    },
+    "coincident_index": {
+      "latest": 98.5,
+      "trend_3m": -0.10090734656704736
+    },
+    "leading_coincident_spread": {
+      "average": 0.23213114754098402,
+      "latest": 2.4000000000000057,
+      "interpretation": "positive_leading"
+    }
+  },
+  "fx_analysis": {
+    "volatility_data": [
+      {
+        "date": "2025-06-01",
+        "indicator": "EUR/KRW Volatility (3M)",
+        "value": 3.251025957457126,
+        "category": "FX Volatility",
+        "pair": "EUR/KRW",
+        "current_rate": 1574.56,
+        "rate_range": 46.25999999999999,
+        "data_points": 4
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "EUR/KRW Volatility (12M)",
+        "value": 1.7700266169147543,
+        "category": "FX Volatility",
+        "pair": "EUR/KRW",
+        "current_rate": 1574.56,
+        "rate_range": 136.36000000000013,
+        "data_points": 13
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "EUR/USD Volatility (3M)",
+        "value": 1.497289493874045,
+        "category": "FX Volatility",
+        "pair": "EUR/USD",
+        "current_rate": 1.15191,
+        "rate_range": 0.07024000000000008,
+        "data_points": 4
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "EUR/USD Volatility (12M)",
+        "value": 1.9824923470955411,
+        "category": "FX Volatility",
+        "pair": "EUR/USD",
+        "current_rate": 1.15191,
+        "rate_range": 0.11868999999999996,
+        "data_points": 13
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "JPY/KRW Volatility (3M)",
+        "value": 3.134515988882235,
+        "category": "FX Volatility",
+        "pair": "JPY/KRW",
+        "current_rate": 944.94,
+        "rate_range": 55.01999999999998,
+        "data_points": 4
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "JPY/KRW Volatility (12M)",
+        "value": 2.5919025951453274,
+        "category": "FX Volatility",
+        "pair": "JPY/KRW",
+        "current_rate": 944.94,
+        "rate_range": 125.63999999999999,
+        "data_points": 13
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "USD/KRW Volatility (3M)",
+        "value": 1.788740445579275,
+        "category": "FX Volatility",
+        "pair": "USD/KRW",
+        "current_rate": 1366.95,
+        "rate_range": 90.0,
+        "data_points": 4
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "USD/KRW Volatility (12M)",
+        "value": 1.953235730756083,
+        "category": "FX Volatility",
+        "pair": "USD/KRW",
+        "current_rate": 1366.95,
+        "rate_range": 122.13000000000011,
+        "data_points": 13
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "CNY/KRW Volatility (3M)",
+        "value": 1.5101242873201393,
+        "category": "FX Volatility",
+        "pair": "CNY/KRW",
+        "current_rate": 190.3,
+        "rate_range": 10.48999999999998,
+        "data_points": 4
+      },
+      {
+        "date": "2025-06-01",
+        "indicator": "CNY/KRW Volatility (12M)",
+        "value": 1.2781956238979053,
+        "category": "FX Volatility",
+        "pair": "CNY/KRW",
+        "current_rate": 190.3,
+        "rate_range": 12.259999999999991,
+        "data_points": 13
+      }
+    ],
+    "usd_krw_latest": null,
+    "available_pairs": [
+      "EUR/KRW",
+      "EUR/USD",
+      "JPY/KRW",
+      "USD/KRW",
+      "CNY/KRW"
+    ],
+    "data_points": 1338
+  },
+  "sentiment_analysis": {
+    "available_indicators": [
+      "Economic Sentiment Index (Adjusted)",
+      "Economic Sentiment Index (Raw)",
+      "News Sentiment Index"
+    ],
+    "latest_sentiment": {
+      "Economic Sentiment Index (Adjusted)": 90.9,
+      "Economic Sentiment Index (Raw)": 92.9,
+      "News Sentiment Index": 107.78
+    },
+    "data_points": 561
+  },
+  "correlations": {
+    "results": [
+      {
+        "indicator_1": "KOSPI",
+        "indicator_2": "USD/KRW",
+        "correlation": 0.0815475673542601,
+        "p_value": 0.1554079512493565,
+        "significance": "Not Significant",
+        "data_points": 305,
+        "category": "Cross-Asset Correlation"
+      },
+      {
+        "indicator_1": "Leading Index",
+        "indicator_2": "Coincident Index",
+        "correlation": 0.40230198407058215,
+        "p_value": 2.7083904040383626e-13,
+        "significance": "Significant",
+        "data_points": 305,
+        "category": "Economic Indices Correlation"
+      }
+    ],
+    "significant_correlations": 1,
+    "total_correlations": 2
+  },
+  "data_quality": {
+    "economic_indicators": {
+      "total_records": 1220,
+      "date_range": {
+        "earliest": "2000-01-01",
+        "latest": "2025-05-01"
+      },
+      "unique_indicators": 4
+    },
+    "fx_data": {
+      "total_records": 1338,
+      "currency_pairs": 5
+    },
+    "sentiment_data": {
+      "total_records": 561,
+      "unique_indicators": 3
+    }
+  },
+  "health_check": {
+    "has_market_data": true,
+    "has_fx_data": true,
+    "has_sentiment_data": true,
+    "has_correlations": true,
+    "complete_dataset": true
+  }
+}

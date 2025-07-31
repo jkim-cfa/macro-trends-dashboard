@@ -1,0 +1,3 @@
+﻿category,total_data_points,avg_mom_change,avg_yoy_change,months_above_3m_ma,months_above_12m_ma,significant_mom_increases,significant_mom_decreases,positive_momentum_3m,positive_momentum_6m,mom_volatility,yoy_volatility,current_trend
+Equipment Investment Index,65,0.6263797216997335,3.439499185199749,33,40,10,8,32,36,7.602257922841791,9.159397792041984,Negative
+Manufacturing Inventory Ratio,65,0.13879253357426202,1.9201407864297102,31,32,11,9,30,31,4.217463476882257,9.913014125944507,Positive

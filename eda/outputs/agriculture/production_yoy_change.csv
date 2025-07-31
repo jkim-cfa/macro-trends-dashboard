@@ -1,0 +1,157 @@
+date,country,sector,indicator,commodity,value,unit,source,domain,file_source,yoy_change
+2000-06-01,World,agriculture,Production,Cattle,285331.0,1000 Head,USDA PSD,agriculture,crop_production_processed,
+2001-06-01,World,agriculture,Production,Cattle,283520.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-0.6347014519978544
+2002-06-01,World,agriculture,Production,Cattle,286882.0,1000 Head,USDA PSD,agriculture,crop_production_processed,1.1858069977426666
+2003-06-01,World,agriculture,Production,Cattle,287278.0,1000 Head,USDA PSD,agriculture,crop_production_processed,0.13803584749130238
+2004-06-01,World,agriculture,Production,Cattle,291981.0,1000 Head,USDA PSD,agriculture,crop_production_processed,1.6370902053063574
+2005-06-01,World,agriculture,Production,Cattle,287703.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-1.465163829153271
+2006-06-01,World,agriculture,Production,Cattle,285705.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-0.6944661682359965
+2007-06-01,World,agriculture,Production,Cattle,290774.0,1000 Head,USDA PSD,agriculture,crop_production_processed,1.7742076617490055
+2008-06-01,World,agriculture,Production,Cattle,286047.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-1.6256611664041465
+2009-06-01,World,agriculture,Production,Cattle,285376.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-0.23457683527532414
+2010-06-01,World,agriculture,Production,Cattle,277186.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-2.869897959183676
+2011-06-01,World,agriculture,Production,Cattle,278615.0,1000 Head,USDA PSD,agriculture,crop_production_processed,0.5155383028002891
+2012-06-01,World,agriculture,Production,Cattle,280287.0,1000 Head,USDA PSD,agriculture,crop_production_processed,0.6001112646483397
+2013-06-01,World,agriculture,Production,Cattle,284883.0,1000 Head,USDA PSD,agriculture,crop_production_processed,1.6397478299029267
+2014-06-01,World,agriculture,Production,Cattle,288768.0,1000 Head,USDA PSD,agriculture,crop_production_processed,1.363717736755099
+2015-06-01,World,agriculture,Production,Cattle,284569.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-1.454108488475181
+2016-06-01,World,agriculture,Production,Cattle,277993.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-2.3108630947151654
+2017-06-01,World,agriculture,Production,Cattle,283424.0,1000 Head,USDA PSD,agriculture,crop_production_processed,1.9536463148352556
+2018-06-01,World,agriculture,Production,Cattle,283871.0,1000 Head,USDA PSD,agriculture,crop_production_processed,0.15771423732640066
+2019-06-01,World,agriculture,Production,Cattle,290205.0,1000 Head,USDA PSD,agriculture,crop_production_processed,2.2312952009891918
+2020-06-01,World,agriculture,Production,Cattle,290465.0,1000 Head,USDA PSD,agriculture,crop_production_processed,0.08959184025085776
+2021-06-01,World,agriculture,Production,Cattle,286382.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-1.4056771039540061
+2022-06-01,World,agriculture,Production,Cattle,290358.0,1000 Head,USDA PSD,agriculture,crop_production_processed,1.3883554133988785
+2023-06-01,World,agriculture,Production,Cattle,289431.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-0.31926105015188666
+2024-06-01,World,agriculture,Production,Cattle,285499.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-1.3585275937960994
+2025-06-01,World,agriculture,Production,Cattle,283790.0,1000 Head,USDA PSD,agriculture,crop_production_processed,-0.5986010458880808
+2000-06-01,World,agriculture,Production,Corn,591538.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,
+2001-06-01,World,agriculture,Production,Corn,601652.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.7097802677089158
+2002-06-01,World,agriculture,Production,Corn,604110.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.40854181486973395
+2003-06-01,World,agriculture,Production,Corn,627532.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.8771084736223482
+2004-06-01,World,agriculture,Production,Corn,716904.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,14.2418235245374
+2005-06-01,World,agriculture,Production,Corn,699896.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-2.372423643890953
+2006-06-01,World,agriculture,Production,Corn,715299.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.2007555408232182
+2007-06-01,World,agriculture,Production,Corn,798462.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,11.626326892670068
+2008-06-01,World,agriculture,Production,Corn,806306.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.9823886421645556
+2009-06-01,World,agriculture,Production,Corn,833716.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.3994538053790935
+2010-06-01,World,agriculture,Production,Corn,849170.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.8536288136487666
+2011-06-01,World,agriculture,Production,Corn,910355.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,7.205271029358085
+2012-06-01,World,agriculture,Production,Corn,903265.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-0.7788170548851836
+2013-06-01,World,agriculture,Production,Corn,1033821.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,14.453787094595727
+2014-06-01,World,agriculture,Production,Corn,1061041.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.632950965399239
+2015-06-01,World,agriculture,Production,Corn,1021192.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-3.7556512896297134
+2016-06-01,World,agriculture,Production,Corn,1129359.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,10.592229473008018
+2017-06-01,World,agriculture,Production,Corn,1087284.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-3.7255646787248353
+2018-06-01,World,agriculture,Production,Corn,1132822.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,4.188234168809624
+2019-06-01,World,agriculture,Production,Corn,1128285.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-0.40050422749557946
+2020-06-01,World,agriculture,Production,Corn,1134439.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.5454295678839927
+2021-06-01,World,agriculture,Production,Corn,1221050.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,7.634698736556134
+2022-06-01,World,agriculture,Production,Corn,1165641.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-4.537815814258217
+2023-06-01,World,agriculture,Production,Corn,1230733.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,5.584223616019002
+2024-06-01,World,agriculture,Production,Corn,1225295.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-0.44185050697429507
+2025-06-01,World,agriculture,Production,Corn,1263660.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.131082718855449
+2000-06-01,World,agriculture,Production,Rice,399325.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,
+2001-06-01,World,agriculture,Production,Rice,399518.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.04833155950667578
+2002-06-01,World,agriculture,Production,Rice,377979.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-5.391246451974629
+2003-06-01,World,agriculture,Production,Rice,392368.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.8068252469052544
+2004-06-01,World,agriculture,Production,Rice,401016.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.2040533376829874
+2005-06-01,World,agriculture,Production,Rice,418045.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,4.246463981487025
+2006-06-01,World,agriculture,Production,Rice,420026.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.4738724300015651
+2007-06-01,World,agriculture,Production,Rice,434115.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.3543161613804884
+2008-06-01,World,agriculture,Production,Rice,450140.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.691418172604033
+2009-06-01,World,agriculture,Production,Rice,440889.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-2.055138401386236
+2010-06-01,World,agriculture,Production,Rice,451393.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.382459077001231
+2011-06-01,World,agriculture,Production,Rice,469557.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,4.023987966140363
+2012-06-01,World,agriculture,Production,Rice,476040.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.3806630504922701
+2013-06-01,World,agriculture,Production,Rice,481266.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.0978069069826013
+2014-06-01,World,agriculture,Production,Rice,482800.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.3187426495950163
+2015-06-01,World,agriculture,Production,Rice,476741.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-1.2549710024855054
+2016-06-01,World,agriculture,Production,Rice,492076.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.216631252608848
+2017-06-01,World,agriculture,Production,Rice,494796.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.5527601427421702
+2018-06-01,World,agriculture,Production,Rice,498359.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.7200947461175833
+2019-06-01,World,agriculture,Production,Rice,498705.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.06942786224388708
+2020-06-01,World,agriculture,Production,Rice,509407.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.145958031301065
+2021-06-01,World,agriculture,Production,Rice,514233.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.947376066681449
+2022-06-01,World,agriculture,Production,Rice,516928.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.5240814961311235
+2023-06-01,World,agriculture,Production,Rice,523648.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.2999876191655213
+2024-06-01,World,agriculture,Production,Rice,541508.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.4106880958201025
+2025-06-01,World,agriculture,Production,Rice,541273.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-0.043397327463301494
+2000-06-01,World,agriculture,Production,Soybean,175775.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,
+2001-06-01,World,agriculture,Production,Soybean,184897.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,5.189588963163128
+2002-06-01,World,agriculture,Production,Soybean,196827.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,6.452240977409041
+2003-06-01,World,agriculture,Production,Soybean,186479.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-5.25740879046066
+2004-06-01,World,agriculture,Production,Soybean,215491.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,15.557783986400619
+2005-06-01,World,agriculture,Production,Soybean,220777.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.45300267760602
+2006-06-01,World,agriculture,Production,Soybean,235776.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,6.793733042844141
+2007-06-01,World,agriculture,Production,Soybean,219309.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-6.984171416938112
+2008-06-01,World,agriculture,Production,Soybean,212295.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-3.1982271589401257
+2009-06-01,World,agriculture,Production,Soybean,260986.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,22.93553781294897
+2010-06-01,World,agriculture,Production,Soybean,265046.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.5556389997930964
+2011-06-01,World,agriculture,Production,Soybean,241166.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-9.009756796933367
+2012-06-01,World,agriculture,Production,Soybean,268923.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,11.509499680717838
+2013-06-01,World,agriculture,Production,Soybean,283320.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,5.3535770462176835
+2014-06-01,World,agriculture,Production,Soybean,321444.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,13.45616264294791
+2015-06-01,World,agriculture,Production,Soybean,316072.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-1.6712086708726925
+2016-06-01,World,agriculture,Production,Soybean,350805.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,10.988951884380782
+2017-06-01,World,agriculture,Production,Soybean,343632.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-2.044725702313255
+2018-06-01,World,agriculture,Production,Soybean,363451.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,5.767507100619262
+2019-06-01,World,agriculture,Production,Soybean,341728.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-5.976871710354348
+2020-06-01,World,agriculture,Production,Soybean,369626.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,8.163802790523466
+2021-06-01,World,agriculture,Production,Soybean,360538.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-2.4587014982712208
+2022-06-01,World,agriculture,Production,Soybean,378360.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,4.943168265203668
+2023-06-01,World,agriculture,Production,Soybean,396931.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,4.908288402579553
+2024-06-01,World,agriculture,Production,Soybean,421997.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,6.314951465116114
+2025-06-01,World,agriculture,Production,Soybean,427681.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.3469290066043138
+2000-06-01,World,agriculture,Production,Sugar,130764.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,
+2001-06-01,World,agriculture,Production,Sugar,134398.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.7790523385641253
+2002-06-01,World,agriculture,Production,Sugar,148552.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,10.531406717361858
+2003-06-01,World,agriculture,Production,Sugar,142487.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-4.082745435941626
+2004-06-01,World,agriculture,Production,Sugar,140734.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-1.2302876753668701
+2005-06-01,World,agriculture,Production,Sugar,144303.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.5359898816206483
+2006-06-01,World,agriculture,Production,Sugar,164278.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,13.842401058883036
+2007-06-01,World,agriculture,Production,Sugar,163257.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-0.6215074446974
+2008-06-01,World,agriculture,Production,Sugar,143833.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-11.897805300844677
+2009-06-01,World,agriculture,Production,Sugar,153184.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,6.501289690126755
+2010-06-01,World,agriculture,Production,Sugar,162221.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,5.899441194902866
+2011-06-01,World,agriculture,Production,Sugar,172349.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,6.2433347100560255
+2012-06-01,World,agriculture,Production,Sugar,177833.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,3.1819157639440876
+2013-06-01,World,agriculture,Production,Sugar,175971.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-1.0470497601682505
+2014-06-01,World,agriculture,Production,Sugar,177582.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.9154917571645438
+2015-06-01,World,agriculture,Production,Sugar,164972.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-7.1009449155882916
+2016-06-01,World,agriculture,Production,Sugar,172143.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,4.346798244550598
+2017-06-01,World,agriculture,Production,Sugar,194222.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,12.825964459780526
+2018-06-01,World,agriculture,Production,Sugar,179158.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-7.756072947451886
+2019-06-01,World,agriculture,Production,Sugar,166559.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-7.03234016901283
+2020-06-01,World,agriculture,Production,Sugar,180262.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,8.227114716106598
+2021-06-01,World,agriculture,Production,Sugar,180700.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.24297966293507223
+2022-06-01,World,agriculture,Production,Sugar,179247.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-0.8040951853901523
+2023-06-01,World,agriculture,Production,Sugar,175663.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-1.9994755839707223
+2024-06-01,World,agriculture,Production,Sugar,180754.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.898162959758177
+2025-06-01,World,agriculture,Production,Sugar,189318.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,4.73793111079146
+2000-06-01,World,agriculture,Production,Wheat,582813.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,
+2001-06-01,World,agriculture,Production,Wheat,583791.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.16780682654642387
+2002-06-01,World,agriculture,Production,Wheat,570058.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-2.352382958969901
+2003-06-01,World,agriculture,Production,Wheat,556088.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-2.4506278308523033
+2004-06-01,World,agriculture,Production,Wheat,627061.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,12.762908028945063
+2005-06-01,World,agriculture,Production,Wheat,619105.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-1.2687760839854456
+2006-06-01,World,agriculture,Production,Wheat,596834.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-3.597289635845291
+2007-06-01,World,agriculture,Production,Wheat,611710.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.4924853476846254
+2008-06-01,World,agriculture,Production,Wheat,684262.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,11.860522142845475
+2009-06-01,World,agriculture,Production,Wheat,687531.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.4777409822553258
+2010-06-01,World,agriculture,Production,Wheat,650300.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-5.41517400669933
+2011-06-01,World,agriculture,Production,Wheat,698743.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,7.4493310779640165
+2012-06-01,World,agriculture,Production,Wheat,660810.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-5.428748481201239
+2013-06-01,World,agriculture,Production,Wheat,718132.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,8.674505531090638
+2014-06-01,World,agriculture,Production,Wheat,732116.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.947274317256431
+2015-06-01,World,agriculture,Production,Wheat,739036.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.9452054046080072
+2016-06-01,World,agriculture,Production,Wheat,757269.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,2.4671328595629927
+2017-06-01,World,agriculture,Production,Wheat,760308.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.40131049864711166
+2018-06-01,World,agriculture,Production,Wheat,729893.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,-4.000352488728254
+2019-06-01,World,agriculture,Production,Wheat,759308.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,4.030042759692165
+2020-06-01,World,agriculture,Production,Wheat,772759.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.7714814014866187
+2021-06-01,World,agriculture,Production,Wheat,780747.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.0336987340166859
+2022-06-01,World,agriculture,Production,Wheat,790403.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.2367642783129407
+2023-06-01,World,agriculture,Production,Wheat,791953.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,0.1961024945502432
+2024-06-01,World,agriculture,Production,Wheat,799915.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.005362691977929
+2025-06-01,World,agriculture,Production,Wheat,808551.0,1000 Metric Ton,USDA PSD,agriculture,crop_production_processed,1.0796147090628372

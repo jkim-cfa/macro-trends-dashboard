@@ -1,0 +1,129 @@
+{
+  "stock_analysis": {
+    "total_countries": 31,
+    "date_range": {
+      "earliest": "2025-01-01",
+      "latest": "2025-04-01"
+    },
+    "top_stockpilers": [
+      {
+        "country": "Netherlands",
+        "avg_stock": 525.25,
+        "latest_stock": 660,
+        "min_stock": 458,
+        "max_stock": 660
+      },
+      {
+        "country": "Denmark",
+        "avg_stock": 313.0,
+        "latest_stock": 341,
+        "min_stock": 287,
+        "max_stock": 341
+      },
+      {
+        "country": "Finland",
+        "avg_stock": 231.5,
+        "latest_stock": 286,
+        "min_stock": 213,
+        "max_stock": 286
+      },
+      {
+        "country": "Hungary",
+        "avg_stock": 216.5,
+        "latest_stock": 214,
+        "min_stock": 214,
+        "max_stock": 219
+      },
+      {
+        "country": "Japan",
+        "avg_stock": 199.5,
+        "latest_stock": 206,
+        "min_stock": 195,
+        "max_stock": 206
+      }
+    ],
+    "volatility_leaders": [
+      {
+        "country": "Netherlands",
+        "volatility": 91.97599324461429,
+        "avg_stock": 525.25,
+        "data_points": 4
+      },
+      {
+        "country": "Finland",
+        "volatility": 36.33639130862245,
+        "avg_stock": 231.5,
+        "data_points": 4
+      },
+      {
+        "country": "Denmark",
+        "volatility": 23.266571155486865,
+        "avg_stock": 313.0,
+        "data_points": 4
+      },
+      {
+        "country": "Sweden",
+        "volatility": 9.83192080250175,
+        "avg_stock": 188.0,
+        "data_points": 4
+      },
+      {
+        "country": "Latvia",
+        "volatility": 8.906926143924926,
+        "avg_stock": 119.0,
+        "data_points": 4
+      }
+    ]
+  },
+  "import_analysis": {
+    "total_records": 1872,
+    "regions_covered": 6,
+    "metric_types": [
+      "percentage",
+      "thousand bbl",
+      "thousand USD",
+      "USD/bbl"
+    ],
+    "dependency_risk": {
+      "dominant_supplier": "MiddleEast",
+      "max_dependency": 67.44,
+      "supplier_count": 5,
+      "data_date": "2025-06-01"
+    }
+  },
+  "data_quality": {
+    "stocks_data_completeness": 1.0,
+    "imports_data_completeness": 1.0,
+    "has_complete_dataset": true
+  },
+  "summary_statistics": {
+    "total_iea_stocks_latest_value": 660.0,
+    "top_import_region_volume": "MiddleEast",
+    "top_import_volume_value": 134828.0,
+    "avg_import_price_latest": 32.42108571428572
+  },
+  "value_analysis": {
+    "stock_value_distribution": {
+      "min": 50.0,
+      "max": 660.0,
+      "mean": 172.9516129032258,
+      "std": 109.24112621130367
+    },
+    "import_value_distribution": {
+      "min": 0.0,
+      "max": 8064770.0,
+      "mean": 623312.7171717172,
+      "std": 1449051.9693337902
+    }
+  },
+  "temporal_analysis": {
+    "stock_dates": {
+      "earliest": "2025-01-01",
+      "latest": "2025-04-01"
+    },
+    "import_dates": {
+      "earliest": "2024-01-01",
+      "latest": "2025-06-01"
+    }
+  }
+}

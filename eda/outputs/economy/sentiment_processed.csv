@@ -1,0 +1,562 @@
+﻿date,category,indicator,value,unit,source,momentum,value_lag1,value_change,ma_3m,ma_6m,sentiment_strength
+2010-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),114.7,index,ECOS,,,,114.7,114.7,Very Positive
+2010-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.3,index,ECOS,0.005231037489102031,114.7,0.5999999999999943,115.0,115.0,Very Positive
+2010-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.6,index,ECOS,0.002601908065914982,115.3,0.29999999999999716,115.2,115.2,Very Positive
+2010-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.9,index,ECOS,0.002595155709342656,115.6,0.30000000000001137,115.60000000000001,115.375,Very Positive
+2010-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),116.1,index,ECOS,0.0017256255392579245,115.9,0.19999999999998863,115.86666666666667,115.52000000000001,Very Positive
+2010-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),116.2,index,ECOS,0.0008613264427219658,116.1,0.10000000000000853,116.06666666666666,115.63333333333333,Very Positive
+2010-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),116.1,index,ECOS,-0.000860585197934638,116.2,-0.10000000000000853,116.13333333333333,115.86666666666666,Very Positive
+2010-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.9,index,ECOS,-0.0017226528854434875,116.1,-0.19999999999998863,116.06666666666666,115.96666666666665,Very Positive
+2010-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.4,index,ECOS,-0.004314063848144922,115.9,-0.5,115.80000000000001,115.93333333333334,Very Positive
+2010-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),114.9,index,ECOS,-0.004332755632582286,115.4,-0.5,115.39999999999999,115.76666666666667,Very Positive
+2010-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),114.2,index,ECOS,-0.006092254134029584,114.9,-0.7000000000000028,114.83333333333333,115.45,Very Positive
+2010-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),113.4,index,ECOS,-0.007005253940455369,114.2,-0.7999999999999972,114.16666666666667,114.98333333333335,Very Positive
+2011-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),112.6,index,ECOS,-0.007054673721340499,113.4,-0.8000000000000114,113.40000000000002,114.40000000000002,Very Positive
+2011-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),111.7,index,ECOS,-0.007992895204262829,112.6,-0.8999999999999915,112.56666666666666,113.7,Very Positive
+2011-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),111.0,index,ECOS,-0.006266786034019756,111.7,-0.7000000000000028,111.76666666666667,112.96666666666665,Very Positive
+2011-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),110.3,index,ECOS,-0.006306306306306353,111.0,-0.7000000000000028,111.0,112.2,Very Positive
+2011-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),109.7,index,ECOS,-0.005439709882139598,110.3,-0.5999999999999943,110.33333333333333,111.44999999999999,Positive
+2011-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),109.1,index,ECOS,-0.005469462169553352,109.7,-0.6000000000000085,109.7,110.73333333333333,Positive
+2011-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),108.4,index,ECOS,-0.006416131989000817,109.1,-0.6999999999999886,109.06666666666666,110.03333333333332,Positive
+2011-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.8,index,ECOS,-0.005535055350553542,108.4,-0.6000000000000085,108.43333333333334,109.38333333333333,Positive
+2011-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.0,index,ECOS,-0.007421150278293154,107.8,-0.7999999999999972,107.73333333333333,108.71666666666665,Positive
+2011-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),106.3,index,ECOS,-0.006542056074766434,107.0,-0.7000000000000028,107.03333333333335,108.05000000000001,Positive
+2011-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),105.6,index,ECOS,-0.006585136406397019,106.3,-0.7000000000000028,106.3,107.36666666666667,Positive
+2011-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),104.9,index,ECOS,-0.006628787878787734,105.6,-0.6999999999999886,105.60000000000001,106.66666666666667,Neutral
+2012-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),104.2,index,ECOS,-0.006673021925643452,104.9,-0.7000000000000028,104.89999999999999,105.96666666666665,Neutral
+2012-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),103.7,index,ECOS,-0.004798464491362786,104.2,-0.5,104.26666666666667,105.28333333333335,Neutral
+2012-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),103.1,index,ECOS,-0.005785920925747479,103.7,-0.6000000000000085,103.66666666666667,104.63333333333334,Neutral
+2012-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),102.3,index,ECOS,-0.007759456838021261,103.1,-0.7999999999999972,103.03333333333335,103.96666666666665,Neutral
+2012-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.3,index,ECOS,-0.009775171065493637,102.3,-1.0,102.23333333333333,103.25,Neutral
+2012-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.1,index,ECOS,-0.01184600197433372,101.3,-1.2000000000000028,101.23333333333333,102.44999999999999,Neutral
+2012-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.7,index,ECOS,-0.013986013986013957,100.1,-1.3999999999999915,100.03333333333335,101.53333333333335,Neutral
+2012-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.4,index,ECOS,-0.01317122593718334,98.7,-1.2999999999999972,98.73333333333333,100.48333333333333,Neutral
+2012-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.2,index,ECOS,-0.012320328542094527,97.4,-1.2000000000000028,97.43333333333334,99.33333333333333,Neutral
+2012-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.3,index,ECOS,-0.00935550935550944,96.2,-0.9000000000000057,96.3,98.16666666666667,Neutral
+2012-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.7,index,ECOS,-0.006295907660020972,95.3,-0.5999999999999943,95.39999999999999,97.06666666666666,Negative
+2012-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.5,index,ECOS,-0.002111932418162654,94.7,-0.20000000000000284,94.83333333333333,96.13333333333333,Negative
+2013-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.6,index,ECOS,0.0010582010582009804,94.5,0.09999999999999432,94.60000000000001,95.45,Negative
+2013-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.8,index,ECOS,0.0021141649048626032,94.6,0.20000000000000284,94.63333333333333,95.01666666666667,Negative
+2013-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.3,index,ECOS,0.0052742616033756295,94.8,0.5,94.89999999999999,94.86666666666666,Neutral
+2013-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.7,index,ECOS,0.0041972717733473885,95.3,0.4000000000000057,95.26666666666665,94.93333333333334,Neutral
+2013-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.3,index,ECOS,0.006269592476489061,95.7,0.5999999999999943,95.76666666666667,95.19999999999999,Neutral
+2013-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.8,index,ECOS,0.005192107995846351,96.3,0.5,96.26666666666665,95.58333333333333,Neutral
+2013-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.4,index,ECOS,0.006198347107438051,96.8,0.6000000000000085,96.83333333333333,96.05,Neutral
+2013-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.0,index,ECOS,0.006160164271047153,97.4,0.5999999999999943,97.39999999999999,96.58333333333333,Neutral
+2013-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.6,index,ECOS,0.006122448979591688,98.0,0.5999999999999943,98.0,97.13333333333333,Neutral
+2013-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.1,index,ECOS,0.005070993914807254,98.6,0.5,98.56666666666666,97.7,Neutral
+2013-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.5,index,ECOS,0.004036326942482349,99.1,0.4000000000000057,99.06666666666666,98.23333333333333,Neutral
+2013-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.9,index,ECOS,0.004020100502512669,99.5,0.4000000000000057,99.5,98.75,Neutral
+2014-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.0,index,ECOS,0.0010010010010008674,99.9,0.09999999999999432,99.8,99.18333333333334,Neutral
+2014-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.0,index,ECOS,0.0,100.0,0.0,99.96666666666665,99.51666666666667,Neutral
+2014-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.9,index,ECOS,-0.0009999999999998899,100.0,-0.09999999999999432,99.96666666666665,99.73333333333333,Neutral
+2014-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.7,index,ECOS,-0.002002002002002068,99.9,-0.20000000000000284,99.86666666666667,99.83333333333333,Neutral
+2014-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.5,index,ECOS,-0.0020060180541625616,99.7,-0.20000000000000284,99.7,99.83333333333333,Neutral
+2014-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.3,index,ECOS,-0.0020100502512563345,99.5,-0.20000000000000284,99.5,99.73333333333335,Neutral
+2014-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS,-0.001007049345417843,99.3,-0.09999999999999432,99.33333333333333,99.60000000000001,Neutral
+2014-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.1,index,ECOS,-0.0010080645161291146,99.2,-0.10000000000000853,99.2,99.45,Neutral
+2014-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS,0.0010090817356207538,99.1,0.10000000000000853,99.16666666666667,99.33333333333333,Neutral
+2014-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS,0.0,99.2,0.0,99.16666666666667,99.25,Neutral
+2014-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS,0.0,99.2,0.0,99.2,99.2,Neutral
+2014-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.3,index,ECOS,0.0010080645161290036,99.2,0.09999999999999432,99.23333333333333,99.2,Neutral
+2015-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.3,index,ECOS,0.0,99.3,0.0,99.26666666666667,99.21666666666665,Neutral
+2015-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.3,index,ECOS,0.0,99.3,0.0,99.3,99.25,Neutral
+2015-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.1,index,ECOS,-0.002014098690835908,99.3,-0.20000000000000284,99.23333333333333,99.23333333333333,Neutral
+2015-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.9,index,ECOS,-0.0020181634712410634,99.1,-0.19999999999998863,99.10000000000001,99.18333333333334,Neutral
+2015-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.4,index,ECOS,-0.005055611729019249,98.9,-0.5,98.8,99.05,Neutral
+2015-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.0,index,ECOS,-0.004065040650406582,98.4,-0.4000000000000057,98.43333333333334,98.83333333333333,Neutral
+2015-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.6,index,ECOS,-0.004081632653061273,98.0,-0.4000000000000057,98.0,98.55,Neutral
+2015-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.3,index,ECOS,-0.0030737704918032405,97.6,-0.29999999999999716,97.63333333333333,98.21666666666665,Neutral
+2015-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.9,index,ECOS,-0.004110996916752208,97.3,-0.3999999999999915,97.26666666666667,97.85000000000001,Neutral
+2015-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.5,index,ECOS,-0.0041279669762642746,96.9,-0.4000000000000057,96.89999999999999,97.45,Neutral
+2015-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.0,index,ECOS,-0.005181347150259086,96.5,-0.5,96.46666666666665,97.05,Neutral
+2015-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.4,index,ECOS,-0.006249999999999978,96.0,-0.5999999999999943,95.96666666666665,96.61666666666667,Neutral
+2016-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.9,index,ECOS,-0.00524109014675056,95.4,-0.5,95.43333333333334,96.16666666666667,Negative
+2016-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.6,index,ECOS,-0.0031612223393046035,94.9,-0.30000000000001137,94.96666666666665,95.71666666666668,Negative
+2016-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.5,index,ECOS,-0.0010570824524311906,94.6,-0.09999999999999432,94.66666666666667,95.31666666666666,Negative
+2016-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.7,index,ECOS,0.002116402116402183,94.5,0.20000000000000284,94.60000000000001,95.01666666666667,Negative
+2016-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.0,index,ECOS,0.0031678986272438703,94.7,0.29999999999999716,94.73333333333333,94.85000000000001,Neutral
+2016-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.5,index,ECOS,0.0052631578947368585,95.0,0.5,95.06666666666666,94.86666666666667,Neutral
+2016-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.0,index,ECOS,0.005235602094240788,95.5,0.5,95.5,95.05,Neutral
+2016-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.5,index,ECOS,0.005208333333333259,96.0,0.5,96.0,95.36666666666666,Neutral
+2016-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.9,index,ECOS,0.004145077720207224,96.5,0.4000000000000057,96.46666666666668,95.76666666666667,Neutral
+2016-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.1,index,ECOS,0.0020639834881319707,96.9,0.19999999999998863,96.83333333333333,96.16666666666667,Neutral
+2016-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.3,index,ECOS,0.002059732234809486,97.1,0.20000000000000284,97.10000000000001,96.55,Neutral
+2016-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.5,index,ECOS,0.0020554984583762703,97.3,0.20000000000000284,97.3,96.88333333333333,Neutral
+2017-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.8,index,ECOS,0.003076923076922977,97.5,0.29999999999999716,97.53333333333335,97.18333333333334,Neutral
+2017-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.2,index,ECOS,0.004089979550102374,97.8,0.4000000000000057,97.83333333333333,97.46666666666665,Neutral
+2017-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.7,index,ECOS,0.005091649694501044,98.2,0.5,98.23333333333333,97.76666666666667,Neutral
+2017-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS,0.005065856129685908,98.7,0.5,98.7,98.11666666666667,Neutral
+2017-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.7,index,ECOS,0.00504032258064524,99.2,0.5,99.2,98.51666666666667,Neutral
+2017-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.3,index,ECOS,0.006018054162487463,99.7,0.5999999999999943,99.73333333333335,98.98333333333335,Neutral
+2017-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.8,index,ECOS,0.004985044865403854,100.3,0.5,100.26666666666667,99.48333333333333,Neutral
+2017-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.3,index,ECOS,0.004960317460317443,100.8,0.5,100.8,100.0,Neutral
+2017-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.6,index,ECOS,0.0029615004935834577,101.3,0.29999999999999716,101.23333333333333,100.48333333333333,Neutral
+2017-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.8,index,ECOS,0.0019685039370078705,101.6,0.20000000000000284,101.56666666666666,100.91666666666667,Neutral
+2017-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.9,index,ECOS,0.0009823182711199419,101.8,0.10000000000000853,101.76666666666667,101.28333333333335,Neutral
+2017-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.7,index,ECOS,-0.001962708537782132,101.9,-0.20000000000000284,101.8,101.51666666666667,Neutral
+2018-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.3,index,ECOS,-0.003933136676499527,101.7,-0.4000000000000057,101.63333333333333,101.60000000000001,Neutral
+2018-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.8,index,ECOS,-0.0049358341559723184,101.3,-0.5,101.26666666666667,101.51666666666667,Neutral
+2018-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.2,index,ECOS,-0.005952380952380931,100.8,-0.5999999999999943,100.76666666666667,101.28333333333335,Neutral
+2018-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.7,index,ECOS,-0.004990019960079861,100.2,-0.5,100.23333333333333,100.93333333333334,Neutral
+2018-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS,-0.005015045135406182,99.7,-0.5,99.7,100.48333333333333,Neutral
+2018-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.8,index,ECOS,-0.0040322580645162365,99.2,-0.4000000000000057,99.23333333333335,100.0,Neutral
+2018-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.3,index,ECOS,-0.005060728744939236,98.8,-0.5,98.76666666666667,99.5,Neutral
+2018-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.8,index,ECOS,-0.0050864699898270915,98.3,-0.5,98.3,99.0,Neutral
+2018-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.4,index,ECOS,-0.004089979550102152,97.8,-0.3999999999999915,97.83333333333333,98.53333333333335,Neutral
+2018-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.9,index,ECOS,-0.005133470225872738,97.4,-0.5,97.36666666666667,98.06666666666666,Neutral
+2018-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.5,index,ECOS,-0.0041279669762642746,96.9,-0.4000000000000057,96.93333333333334,97.61666666666667,Neutral
+2018-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.1,index,ECOS,-0.004145077720207335,96.5,-0.4000000000000057,96.5,97.16666666666667,Neutral
+2019-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.8,index,ECOS,-0.003121748178980255,96.1,-0.29999999999999716,96.13333333333333,96.75,Neutral
+2019-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.6,index,ECOS,-0.0020876826722338038,95.8,-0.20000000000000284,95.83333333333333,96.38333333333333,Neutral
+2019-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.4,index,ECOS,-0.0020920502092048876,95.6,-0.19999999999998863,95.60000000000001,96.05000000000001,Neutral
+2019-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.3,index,ECOS,-0.0010482180293501786,95.4,-0.10000000000000853,95.43333333333332,95.78333333333335,Neutral
+2019-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.2,index,ECOS,-0.0010493179433367361,95.3,-0.09999999999999432,95.30000000000001,95.56666666666666,Neutral
+2019-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.0,index,ECOS,-0.0021008403361344463,95.2,-0.20000000000000284,95.16666666666667,95.38333333333333,Neutral
+2019-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.8,index,ECOS,-0.002105263157894721,95.0,-0.20000000000000284,95.0,95.21666666666665,Negative
+2019-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.5,index,ECOS,-0.0031645569620253333,94.8,-0.29999999999999716,94.76666666666667,95.03333333333335,Negative
+2019-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.0,index,ECOS,-0.005291005291005346,94.5,-0.5,94.43333333333334,94.8,Negative
+2019-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.0,index,ECOS,-0.010638297872340385,94.0,-1.0,93.83333333333333,94.41666666666667,Negative
+2019-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),91.3,index,ECOS,-0.018279569892473146,93.0,-1.7000000000000028,92.76666666666667,93.76666666666667,Negative
+2019-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),88.9,index,ECOS,-0.026286966046002114,91.3,-2.3999999999999915,91.06666666666666,92.75,Very Negative
+2020-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),85.7,index,ECOS,-0.03599550056242973,88.9,-3.200000000000003,88.63333333333333,91.23333333333333,Very Negative
+2020-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),81.8,index,ECOS,-0.04550758459743298,85.7,-3.9000000000000057,85.46666666666665,89.11666666666667,Very Negative
+2020-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),78.0,index,ECOS,-0.046454767726161306,81.8,-3.799999999999997,81.83333333333333,86.45,Very Negative
+2020-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),75.1,index,ECOS,-0.03717948717948727,78.0,-2.9000000000000057,78.3,83.46666666666667,Very Negative
+2020-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),73.7,index,ECOS,-0.018641810918774815,75.1,-1.3999999999999915,75.6,80.53333333333333,Very Negative
+2020-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),73.9,index,ECOS,0.0027137042062415073,73.7,0.20000000000000284,74.23333333333333,78.03333333333335,Very Negative
+2020-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),75.5,index,ECOS,0.021650879566982306,73.9,1.5999999999999943,74.36666666666667,76.33333333333333,Very Negative
+2020-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),77.9,index,ECOS,0.03178807947019879,75.5,2.4000000000000057,75.76666666666667,75.68333333333334,Very Negative
+2020-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),80.9,index,ECOS,0.038510911424903815,77.9,3.0,78.10000000000001,76.16666666666667,Very Negative
+2020-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),84.2,index,ECOS,0.040791100123609425,80.9,3.299999999999997,81.0,77.68333333333334,Very Negative
+2020-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),87.6,index,ECOS,0.040380047505938155,84.2,3.3999999999999915,84.23333333333333,80.0,Very Negative
+2020-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.8,index,ECOS,0.0365296803652968,87.6,3.200000000000003,87.53333333333335,82.81666666666668,Negative
+2021-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.0,index,ECOS,0.03524229074889873,90.8,3.200000000000003,90.8,85.89999999999999,Negative
+2021-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.9,index,ECOS,0.030851063829787195,94.0,2.9000000000000057,93.89999999999999,89.06666666666666,Neutral
+2021-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.6,index,ECOS,0.02786377708978316,96.9,2.6999999999999886,96.83333333333333,92.18333333333334,Neutral
+2021-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.9,index,ECOS,0.02309236947791171,99.6,2.3000000000000114,99.46666666666665,95.13333333333333,Neutral
+2021-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),103.8,index,ECOS,0.018645731108930308,101.9,1.8999999999999915,101.76666666666667,97.83333333333333,Neutral
+2021-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),105.3,index,ECOS,0.014450867052023142,103.8,1.5,103.66666666666667,100.25,Positive
+2021-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),106.2,index,ECOS,0.008547008547008517,105.3,0.9000000000000057,105.10000000000001,102.28333333333335,Positive
+2021-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),106.9,index,ECOS,0.006591337099811634,106.2,0.7000000000000028,106.13333333333333,103.95,Positive
+2021-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.3,index,ECOS,0.0037418147801682178,106.9,0.3999999999999915,106.8,105.23333333333333,Positive
+2021-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.6,index,ECOS,0.002795899347623365,107.3,0.29999999999999716,107.26666666666667,106.18333333333334,Positive
+2021-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.6,index,ECOS,0.0,107.6,0.0,107.5,106.81666666666666,Positive
+2021-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.4,index,ECOS,-0.0018587360594793934,107.6,-0.19999999999998863,107.53333333333335,107.16666666666667,Positive
+2022-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.0,index,ECOS,-0.003724394785847407,107.4,-0.4000000000000057,107.33333333333333,107.3,Positive
+2022-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),106.3,index,ECOS,-0.006542056074766434,107.0,-0.7000000000000028,106.89999999999999,107.19999999999999,Positive
+2022-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),105.4,index,ECOS,-0.008466603951081786,106.3,-0.8999999999999915,106.23333333333333,106.88333333333334,Positive
+2022-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),104.4,index,ECOS,-0.009487666034155628,105.4,-1.0,105.36666666666667,106.35000000000001,Neutral
+2022-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),103.2,index,ECOS,-0.011494252873563204,104.4,-1.2000000000000028,104.33333333333333,105.61666666666667,Neutral
+2022-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.9,index,ECOS,-0.012596899224806224,103.2,-1.2999999999999972,103.16666666666667,104.7,Neutral
+2022-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.4,index,ECOS,-0.014720314033366044,101.9,-1.5,101.83333333333333,103.60000000000001,Neutral
+2022-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.0,index,ECOS,-0.01394422310756982,100.4,-1.4000000000000057,100.43333333333334,102.38333333333334,Neutral
+2022-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.6,index,ECOS,-0.014141414141414232,99.0,-1.4000000000000057,99.0,101.08333333333333,Neutral
+2022-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.2,index,ECOS,-0.0143442622950819,97.6,-1.3999999999999915,97.60000000000001,99.71666666666665,Neutral
+2022-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.1,index,ECOS,-0.011434511434511574,96.2,-1.1000000000000085,96.3,98.36666666666667,Neutral
+2022-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.1,index,ECOS,-0.01051524710830709,95.1,-1.0,95.13333333333333,97.06666666666666,Negative
+2023-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.5,index,ECOS,-0.006376195536663021,94.1,-0.5999999999999943,94.23333333333333,95.91666666666667,Negative
+2023-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.1,index,ECOS,-0.004278074866310266,93.5,-0.4000000000000057,93.56666666666666,94.93333333333334,Negative
+2023-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),92.9,index,ECOS,-0.002148227712137407,93.1,-0.19999999999998863,93.16666666666667,94.14999999999999,Negative
+2023-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.0,index,ECOS,0.0010764262648008671,92.9,0.09999999999999432,93.0,93.61666666666666,Negative
+2023-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.1,index,ECOS,0.0010752688172042113,93.0,0.09999999999999432,93.0,93.28333333333335,Negative
+2023-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.2,index,ECOS,0.0010741138560688146,93.1,0.10000000000000853,93.10000000000001,93.13333333333333,Negative
+2023-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.3,index,ECOS,0.001072961373390413,93.2,0.09999999999999432,93.2,93.10000000000001,Negative
+2023-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS,0.001071811361200492,93.3,0.10000000000000853,93.3,93.14999999999999,Negative
+2023-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS,0.0,93.4,0.0,93.36666666666667,93.23333333333333,Negative
+2023-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS,0.0,93.4,0.0,93.4,93.3,Negative
+2023-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.3,index,ECOS,-0.0010706638115632883,93.4,-0.10000000000000853,93.36666666666667,93.33333333333333,Negative
+2023-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS,0.001071811361200492,93.3,0.10000000000000853,93.36666666666667,93.36666666666667,Negative
+2024-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS,0.0,93.4,0.0,93.36666666666667,93.38333333333334,Negative
+2024-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.5,index,ECOS,0.0010706638115631772,93.4,0.09999999999999432,93.43333333333334,93.39999999999999,Negative
+2024-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.6,index,ECOS,0.0010695187165774556,93.5,0.09999999999999432,93.5,93.43333333333334,Negative
+2024-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.6,index,ECOS,0.0,93.6,0.0,93.56666666666666,93.46666666666665,Negative
+2024-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.6,index,ECOS,0.0,93.6,0.0,93.6,93.51666666666667,Negative
+2024-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.5,index,ECOS,-0.0010683760683759536,93.6,-0.09999999999999432,93.56666666666666,93.53333333333335,Negative
+2024-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.3,index,ECOS,-0.002139037433155133,93.5,-0.20000000000000284,93.46666666666665,93.51666666666667,Negative
+2024-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),92.9,index,ECOS,-0.004287245444801635,93.3,-0.3999999999999915,93.23333333333333,93.41666666666667,Negative
+2024-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),92.3,index,ECOS,-0.006458557588805314,92.9,-0.6000000000000085,92.83333333333333,93.2,Negative
+2024-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),91.6,index,ECOS,-0.007583965330444253,92.3,-0.7000000000000028,92.26666666666665,92.86666666666666,Negative
+2024-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.8,index,ECOS,-0.008733624454148492,91.6,-0.7999999999999972,91.56666666666666,92.39999999999999,Negative
+2024-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.0,index,ECOS,-0.008810572687224627,90.8,-0.7999999999999972,90.8,91.81666666666666,Negative
+2025-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.5,index,ECOS,-0.005555555555555536,90.0,-0.5,90.10000000000001,91.18333333333334,Very Negative
+2025-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.2,index,ECOS,-0.003351955307262511,89.5,-0.29999999999999716,89.56666666666666,90.56666666666666,Very Negative
+2025-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.2,index,ECOS,0.0,89.2,0.0,89.3,90.05,Very Negative
+2025-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.4,index,ECOS,0.0022421524663678305,89.2,0.20000000000000284,89.26666666666667,89.68333333333334,Very Negative
+2025-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.8,index,ECOS,0.004474272930648615,89.4,0.3999999999999915,89.46666666666665,89.51666666666667,Very Negative
+2025-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.3,index,ECOS,0.0055679287305121505,89.8,0.5,89.83333333333333,89.56666666666666,Negative
+2025-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.9,index,ECOS,0.006644518272425293,90.3,0.6000000000000085,90.33333333333333,89.80000000000001,Negative
+2010-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),114.0,index,ECOS,,,,114.0,114.0,Very Positive
+2010-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),117.3,index,ECOS,0.02894736842105261,114.0,3.299999999999997,115.65,115.65,Very Positive
+2010-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),116.1,index,ECOS,-0.010230179028133057,117.3,-1.2000000000000028,115.8,115.8,Very Positive
+2010-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),117.5,index,ECOS,0.012058570198105079,116.1,1.4000000000000057,116.96666666666665,116.225,Very Positive
+2010-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),116.8,index,ECOS,-0.005957446808510625,117.5,-0.7000000000000028,116.8,116.34,Very Positive
+2010-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),115.5,index,ECOS,-0.011130136986301387,116.8,-1.2999999999999972,116.60000000000001,116.2,Very Positive
+2010-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),115.8,index,ECOS,0.0025974025974024872,115.5,0.29999999999999716,116.03333333333335,116.5,Very Positive
+2010-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),114.2,index,ECOS,-0.013816925734024155,115.8,-1.5999999999999943,115.16666666666667,115.98333333333335,Very Positive
+2010-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),114.5,index,ECOS,0.0026269702276706663,114.2,0.29999999999999716,114.83333333333333,115.71666666666665,Very Positive
+2010-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),112.3,index,ECOS,-0.019213973799126705,114.5,-2.200000000000003,113.66666666666667,114.85000000000001,Very Positive
+2010-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),113.8,index,ECOS,0.013357079252003468,112.3,1.5,113.53333333333335,114.34999999999998,Very Positive
+2010-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),112.2,index,ECOS,-0.014059753954305698,113.8,-1.5999999999999943,112.76666666666667,113.8,Very Positive
+2011-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),112.1,index,ECOS,-0.0008912655971480277,112.2,-0.10000000000000853,112.69999999999999,113.18333333333334,Very Positive
+2011-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),113.6,index,ECOS,0.01338090990187335,112.1,1.5,112.63333333333333,113.08333333333333,Very Positive
+2011-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),110.2,index,ECOS,-0.029929577464788637,113.6,-3.3999999999999915,111.96666666666665,112.36666666666667,Very Positive
+2011-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),113.9,index,ECOS,0.03357531760435584,110.2,3.700000000000003,112.56666666666666,112.63333333333333,Very Positive
+2011-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),111.7,index,ECOS,-0.019315188762072055,113.9,-2.200000000000003,111.93333333333334,112.28333333333335,Very Positive
+2011-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),108.7,index,ECOS,-0.026857654431513,111.7,-3.0,111.43333333333334,111.7,Positive
+2011-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),107.8,index,ECOS,-0.008279668813247487,108.7,-0.9000000000000057,109.39999999999999,110.98333333333333,Positive
+2011-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.7,index,ECOS,-0.010204081632652962,107.8,-1.0999999999999943,107.73333333333335,109.83333333333333,Positive
+2011-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.3,index,ECOS,-0.0037488284910965897,106.7,-0.4000000000000057,106.93333333333334,109.18333333333334,Positive
+2011-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),104.4,index,ECOS,-0.017873941674506066,106.3,-1.8999999999999915,105.8,107.60000000000001,Neutral
+2011-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),104.5,index,ECOS,0.0009578544061301653,104.4,0.09999999999999432,105.06666666666666,106.39999999999999,Neutral
+2011-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.3,index,ECOS,-0.04019138755980867,104.5,-4.200000000000003,103.06666666666666,105.0,Neutral
+2012-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.3,index,ECOS,0.009970089730807485,100.3,1.0,102.03333333333335,103.91666666666667,Neutral
+2012-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.0,index,ECOS,0.036525172754195534,101.3,3.700000000000003,102.2,103.63333333333333,Neutral
+2012-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.3,index,ECOS,0.012380952380952381,105.0,1.2999999999999972,104.2,103.63333333333333,Positive
+2012-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),109.7,index,ECOS,0.0319849482596426,106.3,3.4000000000000057,107.0,104.51666666666667,Positive
+2012-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.8,index,ECOS,-0.03555150410209673,109.7,-3.9000000000000057,107.26666666666665,104.73333333333333,Positive
+2012-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.2,index,ECOS,-0.04347826086956519,105.8,-4.599999999999994,105.56666666666666,104.88333333333333,Neutral
+2012-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.7,index,ECOS,-0.0444664031620553,101.2,-4.5,101.23333333333335,104.11666666666667,Neutral
+2012-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.1,index,ECOS,-0.016546018614271074,96.7,-1.6000000000000085,97.66666666666667,102.46666666666665,Neutral
+2012-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.9,index,ECOS,-0.012618296529968376,95.1,-1.1999999999999886,95.23333333333335,100.40000000000002,Negative
+2012-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.8,index,ECOS,-0.022364217252396235,93.9,-2.1000000000000085,93.60000000000001,97.41666666666667,Negative
+2012-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.0,index,ECOS,-0.008714596949891074,91.8,-0.7999999999999972,92.23333333333333,94.95,Negative
+2012-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.7,index,ECOS,0.007692307692307665,91.0,0.7000000000000028,91.5,93.36666666666667,Negative
+2013-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.9,index,ECOS,0.034896401308615044,91.7,3.200000000000003,92.53333333333335,93.06666666666666,Negative
+2013-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.9,index,ECOS,0.021074815595363505,94.9,2.0,94.5,93.36666666666667,Neutral
+2013-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.9,index,ECOS,0.02063983488132104,96.9,2.0,96.90000000000002,94.2,Neutral
+2013-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.6,index,ECOS,-0.0030333670374116384,98.9,-0.30000000000001137,98.13333333333333,95.33333333333333,Neutral
+2013-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.9,index,ECOS,-0.007099391480730133,98.6,-0.6999999999999886,98.46666666666665,96.48333333333333,Neutral
+2013-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.0,index,ECOS,-0.009193054136874435,97.9,-0.9000000000000057,97.83333333333333,97.36666666666667,Neutral
+2013-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.2,index,ECOS,-0.008247422680412342,97.0,-0.7999999999999972,97.03333333333335,97.58333333333333,Neutral
+2013-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.1,index,ECOS,-0.0010395010395011228,96.2,-0.10000000000000853,96.43333333333334,97.45,Neutral
+2013-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.9,index,ECOS,0.008324661810614087,96.1,0.8000000000000114,96.39999999999999,97.11666666666667,Neutral
+2013-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.2,index,ECOS,0.013415892672858698,96.9,1.2999999999999972,97.06666666666668,97.05,Neutral
+2013-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.6,index,ECOS,0.004073319755600657,98.2,0.3999999999999915,97.89999999999999,97.16666666666667,Neutral
+2013-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.4,index,ECOS,-0.002028397565922768,98.6,-0.19999999999998863,98.40000000000002,97.40000000000002,Neutral
+2014-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.0,index,ECOS,0.026422764227642226,98.4,2.5999999999999943,99.33333333333333,98.2,Neutral
+2014-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.2,index,ECOS,0.0217821782178218,101.0,2.200000000000003,100.86666666666667,99.38333333333334,Neutral
+2014-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.3,index,ECOS,-0.018410852713178327,103.2,-1.9000000000000057,101.83333333333333,100.11666666666667,Neutral
+2014-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.0,index,ECOS,0.016781836130306038,101.3,1.7000000000000028,102.5,100.91666666666667,Neutral
+2014-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.2,index,ECOS,-0.01747572815533982,103.0,-1.7999999999999972,101.83333333333333,101.35000000000001,Neutral
+2014-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.8,index,ECOS,-0.03359683794466406,101.2,-3.4000000000000057,100.66666666666667,101.25,Neutral
+2014-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.0,index,ECOS,-0.018404907975460127,97.8,-1.7999999999999972,98.33333333333333,100.41666666666667,Neutral
+2014-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.3,index,ECOS,0.023958333333333304,96.0,2.299999999999997,97.36666666666667,99.60000000000001,Neutral
+2014-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.1,index,ECOS,0.0284842319430314,98.3,2.799999999999997,98.46666666666665,99.56666666666666,Neutral
+2014-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.3,index,ECOS,-0.047477744807121636,101.1,-4.799999999999997,98.56666666666666,98.45,Neutral
+2014-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.8,index,ECOS,0.015576323987538832,96.3,1.5,98.39999999999999,97.88333333333333,Neutral
+2014-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.6,index,ECOS,-0.012269938650306789,97.8,-1.2000000000000028,96.89999999999999,97.68333333333334,Neutral
+2015-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.5,index,ECOS,0.019668737060041463,96.6,1.9000000000000057,97.63333333333333,98.10000000000001,Neutral
+2015-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.1,index,ECOS,0.04670050761421307,98.5,4.599999999999994,99.39999999999999,98.89999999999999,Neutral
+2015-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.3,index,ECOS,-0.01745877788554795,103.1,-1.7999999999999972,100.96666666666665,98.93333333333334,Neutral
+2015-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.7,index,ECOS,0.02369200394866744,101.3,2.4000000000000057,102.7,100.16666666666667,Neutral
+2015-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.2,index,ECOS,-0.014464802314368419,103.7,-1.5,102.39999999999999,100.89999999999999,Neutral
+2015-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.6,index,ECOS,-0.10371819960861062,102.2,-10.600000000000009,99.16666666666667,100.06666666666666,Negative
+2015-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.7,index,ECOS,0.044759825327510994,91.6,4.1000000000000085,96.5,99.60000000000001,Neutral
+2015-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.3,index,ECOS,0.016718913270637348,95.7,1.5999999999999943,94.86666666666667,98.63333333333333,Neutral
+2015-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.0,index,ECOS,-0.0030832476875641834,97.3,-0.29999999999999716,96.66666666666667,97.91666666666667,Neutral
+2015-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.5,index,ECOS,0.005154639175257714,97.0,0.5,97.26666666666667,96.88333333333333,Neutral
+2015-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.1,index,ECOS,-0.004102564102564155,97.5,-0.4000000000000057,97.2,96.03333333333335,Neutral
+2015-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.0,index,ECOS,-0.03192584963954681,97.1,-3.0999999999999943,96.2,96.43333333333332,Negative
+2016-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.9,index,ECOS,-0.0010638297872339608,94.0,-0.09999999999999432,95.0,96.13333333333333,Negative
+2016-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.8,index,ECOS,-0.011714589989350488,93.9,-1.1000000000000085,93.56666666666666,95.38333333333334,Negative
+2016-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.4,index,ECOS,0.017241379310344973,92.8,1.6000000000000085,93.7,94.95,Negative
+2016-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.1,index,ECOS,0.028601694915254106,94.4,2.6999999999999886,94.76666666666667,94.88333333333334,Neutral
+2016-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.4,index,ECOS,-0.01750772399588041,97.1,-1.6999999999999886,95.63333333333333,94.60000000000001,Neutral
+2016-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.1,index,ECOS,-0.003144654088050425,95.4,-0.30000000000001137,95.86666666666667,94.78333333333335,Neutral
+2016-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.2,index,ECOS,0.0115667718191379,95.1,1.1000000000000085,95.56666666666666,95.16666666666667,Neutral
+2016-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.1,index,ECOS,0.01975051975051967,96.2,1.8999999999999915,96.46666666666665,96.05,Neutral
+2016-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.1,index,ECOS,0.0,98.1,0.0,97.46666666666665,96.66666666666667,Neutral
+2016-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.6,index,ECOS,-0.015290519877675823,98.1,-1.5,97.59999999999998,96.58333333333333,Neutral
+2016-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.3,index,ECOS,-0.0031055900621117516,96.6,-0.29999999999999716,97.0,96.73333333333333,Neutral
+2016-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.1,index,ECOS,-0.022845275181723856,96.3,-2.200000000000003,95.66666666666667,96.56666666666666,Negative
+2017-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.4,index,ECOS,0.02444208289054206,94.1,2.3000000000000114,95.60000000000001,96.59999999999998,Neutral
+2017-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.2,index,ECOS,0.018672199170124415,96.4,1.7999999999999972,96.23333333333333,96.61666666666667,Neutral
+2017-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.7,index,ECOS,0.025458248472504996,98.2,2.5,98.43333333333334,97.05,Neutral
+2017-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.3,index,ECOS,-0.003972194637537285,100.7,-0.4000000000000057,99.73333333333333,97.66666666666667,Neutral
+2017-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.3,index,ECOS,0.009970089730807485,100.3,1.0,100.76666666666667,98.5,Neutral
+2017-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.7,index,ECOS,-0.005923000987166804,101.3,-0.5999999999999943,100.76666666666667,99.60000000000001,Neutral
+2017-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),99.9,index,ECOS,-0.00794438927507446,100.7,-0.7999999999999972,100.63333333333333,100.18333333333334,Neutral
+2017-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.1,index,ECOS,0.012012012012011963,99.9,1.1999999999999886,100.56666666666666,100.66666666666667,Neutral
+2017-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),99.7,index,ECOS,-0.013847675568743778,101.1,-1.3999999999999915,100.23333333333333,100.5,Neutral
+2017-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.8,index,ECOS,0.031093279839518484,99.7,3.0999999999999943,101.2,100.91666666666667,Neutral
+2017-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.8,index,ECOS,0.0,102.8,0.0,101.76666666666667,101.16666666666667,Neutral
+2017-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.7,index,ECOS,-0.0009727626459143934,102.8,-0.09999999999999432,102.76666666666667,101.5,Neutral
+2018-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.1,index,ECOS,-0.025316455696202667,102.7,-2.6000000000000085,101.86666666666667,101.53333333333335,Neutral
+2018-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.6,index,ECOS,0.014985014985015033,100.1,1.5,101.46666666666665,101.61666666666667,Neutral
+2018-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.4,index,ECOS,-0.03149606299212593,101.6,-3.1999999999999886,100.03333333333335,101.39999999999999,Neutral
+2018-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.5,index,ECOS,0.021341463414634054,98.4,2.0999999999999943,100.16666666666667,101.01666666666667,Neutral
+2018-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.5,index,ECOS,0.01990049751243772,100.5,2.0,100.46666666666665,100.96666666666665,Neutral
+2018-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.5,index,ECOS,-0.019512195121951237,102.5,-2.0,101.16666666666667,100.60000000000001,Neutral
+2018-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.2,index,ECOS,-0.042786069651741254,100.5,-4.299999999999997,99.73333333333333,99.94999999999999,Neutral
+2018-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.3,index,ECOS,0.011434511434511352,96.2,1.0999999999999943,98.0,99.23333333333333,Neutral
+2018-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),99.8,index,ECOS,0.025693730729702047,97.3,2.5,97.76666666666667,99.46666666666668,Neutral
+2018-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.5,index,ECOS,-0.043086172344689366,99.8,-4.299999999999997,97.53333333333335,98.63333333333334,Neutral
+2018-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.4,index,ECOS,-0.011518324607329822,95.5,-1.0999999999999943,96.56666666666666,97.28333333333335,Negative
+2018-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.0,index,ECOS,0.0063559322033897026,94.4,0.5999999999999943,94.96666666666665,96.36666666666667,Neutral
+2019-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.2,index,ECOS,-0.02947368421052632,95.0,-2.799999999999997,93.86666666666667,95.7,Negative
+2019-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.7,index,ECOS,0.05965292841648595,92.2,5.5,94.96666666666668,95.76666666666667,Neutral
+2019-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.8,index,ECOS,-0.0092118730808598,97.7,-0.9000000000000057,95.56666666666668,95.26666666666667,Neutral
+2019-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.1,index,ECOS,0.013429752066115741,96.8,1.2999999999999972,97.53333333333335,95.7,Neutral
+2019-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.5,index,ECOS,-0.03669724770642191,98.1,-3.5999999999999943,96.46666666666665,95.71666666666665,Negative
+2019-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.1,index,ECOS,0.006349206349206327,94.5,0.5999999999999943,95.89999999999999,95.73333333333333,Neutral
+2019-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.3,index,ECOS,-0.029442691903259655,95.1,-2.799999999999997,93.96666666666665,95.75,Negative
+2019-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.5,index,ECOS,-0.008667388949079036,92.3,-0.7999999999999972,92.96666666666665,94.71666666666665,Negative
+2019-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.5,index,ECOS,0.032786885245901676,91.5,3.0,92.76666666666667,94.33333333333333,Negative
+2019-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.4,index,ECOS,-0.011640211640211562,94.5,-1.0999999999999943,93.13333333333333,93.55,Negative
+2019-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.8,index,ECOS,0.01498929336188426,93.4,1.3999999999999915,94.23333333333333,93.59999999999998,Negative
+2019-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.3,index,ECOS,0.0052742616033756295,94.8,0.5,94.5,93.63333333333333,Neutral
+2020-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.0,index,ECOS,0.02833158447009443,95.3,2.700000000000003,96.03333333333335,94.58333333333333,Neutral
+2020-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),90.0,index,ECOS,-0.08163265306122447,98.0,-8.0,94.43333333333334,94.33333333333333,Negative
+2020-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),68.6,index,ECOS,-0.23777777777777787,90.0,-21.400000000000006,85.53333333333332,90.01666666666667,Very Negative
+2020-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),61.3,index,ECOS,-0.10641399416909614,68.6,-7.299999999999997,73.3,84.66666666666667,Very Negative
+2020-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),63.5,index,ECOS,0.03588907014681908,61.3,2.200000000000003,64.46666666666665,79.45,Very Negative
+2020-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),68.2,index,ECOS,0.07401574803149602,63.5,4.700000000000003,64.33333333333333,74.93333333333332,Very Negative
+2020-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),76.8,index,ECOS,0.12609970674486792,68.2,8.599999999999994,69.5,71.39999999999999,Very Negative
+2020-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),83.1,index,ECOS,0.08203125,76.8,6.299999999999997,76.03333333333332,70.25,Very Negative
+2020-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),77.4,index,ECOS,-0.06859205776173272,83.1,-5.699999999999989,79.10000000000001,71.71666666666667,Very Negative
+2020-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),88.8,index,ECOS,0.14728682170542617,77.4,11.399999999999991,83.1,76.3,Very Negative
+2020-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.9,index,ECOS,0.03490990990990994,88.8,3.1000000000000085,86.03333333333335,81.03333333333333,Negative
+2020-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),85.7,index,ECOS,-0.06746463547334058,91.9,-6.200000000000003,88.80000000000001,83.95,Very Negative
+2021-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.9,index,ECOS,0.08401400233372236,85.7,7.200000000000003,90.16666666666667,86.63333333333333,Negative
+2021-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.8,index,ECOS,0.041980624327233595,92.9,3.8999999999999915,91.8,88.91666666666667,Neutral
+2021-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.7,index,ECOS,0.05061983471074383,96.8,4.900000000000006,97.13333333333334,92.96666666666665,Neutral
+2021-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.0,index,ECOS,0.04228121927236961,101.7,4.299999999999997,101.5,95.83333333333333,Positive
+2021-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.9,index,ECOS,-0.0009433962264150386,106.0,-0.09999999999999432,104.53333333333335,98.16666666666667,Positive
+2021-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),110.1,index,ECOS,0.03966005665722361,105.9,4.199999999999989,107.33333333333333,102.23333333333333,Very Positive
+2021-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),104.6,index,ECOS,-0.049954586739327844,110.1,-5.5,106.86666666666667,104.18333333333334,Neutral
+2021-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.8,index,ECOS,0.01147227533460815,104.6,1.2000000000000028,106.83333333333333,105.68333333333334,Positive
+2021-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.3,index,ECOS,-0.00472589792060496,105.8,-0.5,105.23333333333333,106.28333333333335,Positive
+2021-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.6,index,ECOS,0.012345679012345734,105.3,1.2999999999999972,105.89999999999999,106.38333333333333,Positive
+2021-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),107.4,index,ECOS,0.0075046904315199114,106.6,0.8000000000000114,106.43333333333334,106.63333333333333,Positive
+2021-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.3,index,ECOS,-0.019553072625698387,107.4,-2.1000000000000085,106.43333333333332,105.83333333333333,Positive
+2022-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.4,index,ECOS,0.010446343779677125,105.3,1.1000000000000085,106.36666666666667,106.13333333333333,Positive
+2022-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.7,index,ECOS,0.0028195488721804995,106.4,0.29999999999999716,106.13333333333333,106.28333333333335,Positive
+2022-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),104.3,index,ECOS,-0.022492970946579205,106.7,-2.4000000000000057,105.8,106.11666666666667,Neutral
+2022-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.6,index,ECOS,0.022051773729625967,104.3,2.299999999999997,105.86666666666667,106.11666666666667,Positive
+2022-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),107.6,index,ECOS,0.009380863039399667,106.6,1.0,106.16666666666667,106.14999999999999,Positive
+2022-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.4,index,ECOS,-0.03903345724907048,107.6,-4.199999999999989,105.86666666666667,105.83333333333333,Neutral
+2022-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.5,index,ECOS,-0.047388781431334626,103.4,-4.900000000000006,103.16666666666667,104.51666666666667,Neutral
+2022-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),99.9,index,ECOS,0.014213197969543234,98.5,1.4000000000000057,100.60000000000001,103.38333333333333,Neutral
+2022-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.6,index,ECOS,-0.013013013013013164,99.9,-1.3000000000000114,99.0,102.43333333333334,Neutral
+2022-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.7,index,ECOS,-0.02941176470588225,98.6,-2.8999999999999915,98.06666666666666,100.61666666666667,Neutral
+2022-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.9,index,ECOS,-0.03970741901776387,95.7,-3.799999999999997,95.39999999999999,98.0,Negative
+2022-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.1,index,ECOS,0.0021762785636560977,91.9,0.19999999999998863,93.23333333333333,96.11666666666667,Negative
+2023-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),90.7,index,ECOS,-0.015200868621063957,92.1,-1.3999999999999915,91.56666666666668,94.81666666666666,Negative
+2023-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.8,index,ECOS,0.012127894156560126,90.7,1.0999999999999943,91.53333333333332,93.46666666666665,Negative
+2023-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.9,index,ECOS,0.0010893246187364536,91.8,0.10000000000000853,91.46666666666668,92.35000000000001,Negative
+2023-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.5,index,ECOS,0.028291621327529937,91.9,2.5999999999999943,92.73333333333333,92.14999999999999,Negative
+2023-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.9,index,ECOS,0.004232804232804366,94.5,0.4000000000000057,93.76666666666667,92.65000000000002,Negative
+2023-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.4,index,ECOS,0.015806111696522684,94.9,1.5,95.26666666666667,93.36666666666667,Neutral
+2023-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.8,index,ECOS,-0.016597510373444035,96.4,-1.6000000000000085,95.36666666666667,94.05000000000001,Negative
+2023-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.7,index,ECOS,-0.001054852320675037,94.8,-0.09999999999999432,95.3,94.53333333333335,Negative
+2023-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.4,index,ECOS,-0.01372756071805703,94.7,-1.2999999999999972,94.30000000000001,94.78333333333335,Negative
+2023-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.4,index,ECOS,-0.010706638115631661,93.4,-1.0,93.5,94.43333333333334,Negative
+2023-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.8,index,ECOS,-0.006493506493506551,92.4,-0.6000000000000085,92.53333333333335,93.91666666666667,Negative
+2023-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.7,index,ECOS,-0.0010893246187363426,91.8,-0.09999999999999432,91.96666666666665,93.13333333333334,Negative
+2024-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.8,index,ECOS,0.0010905125408942062,91.7,0.09999999999999432,91.76666666666667,92.63333333333334,Negative
+2024-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.7,index,ECOS,0.020697167755991286,91.8,1.9000000000000057,92.39999999999999,92.46666666666665,Negative
+2024-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.5,index,ECOS,-0.012806830309498474,93.7,-1.2000000000000028,92.66666666666667,92.31666666666666,Negative
+2024-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.8,index,ECOS,0.024864864864864833,92.5,2.299999999999997,93.66666666666667,92.71666666666668,Negative
+2024-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.1,index,ECOS,-0.007383966244725815,94.8,-0.7000000000000028,93.8,93.10000000000001,Negative
+2024-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.0,index,ECOS,0.009564293304994642,94.1,0.9000000000000057,94.63333333333333,93.64999999999999,Neutral
+2024-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.3,index,ECOS,0.013684210526315743,95.0,1.2999999999999972,95.13333333333333,94.39999999999999,Neutral
+2024-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.5,index,ECOS,-0.01869158878504673,96.3,-1.7999999999999972,95.26666666666667,94.53333333333332,Negative
+2024-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.0,index,ECOS,-0.005291005291005346,94.5,-0.5,94.93333333333334,94.78333333333332,Negative
+2024-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.8,index,ECOS,-0.012765957446808529,94.0,-1.2000000000000028,93.76666666666665,94.45,Negative
+2024-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.0,index,ECOS,0.0021551724137931494,92.8,0.20000000000000284,93.26666666666665,94.26666666666667,Negative
+2024-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),83.3,index,ECOS,-0.10430107526881727,93.0,-9.700000000000003,89.69999999999999,92.31666666666666,Very Negative
+2025-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),86.7,index,ECOS,0.04081632653061229,83.3,3.4000000000000057,87.66666666666667,90.71666666666668,Very Negative
+2025-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),90.2,index,ECOS,0.04036908881199541,86.7,3.5,86.73333333333333,90.0,Negative
+2025-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),87.2,index,ECOS,-0.03325942350332589,90.2,-3.0,88.03333333333335,88.86666666666667,Very Negative
+2025-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),87.5,index,ECOS,0.0034403669724769603,87.2,0.29999999999999716,88.3,87.98333333333333,Very Negative
+2025-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.2,index,ECOS,0.053714285714285825,87.5,4.700000000000003,88.96666666666668,87.85000000000001,Negative
+2025-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.8,index,ECOS,0.006507592190889255,92.2,0.5999999999999943,90.83333333333333,89.43333333333334,Negative
+2025-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.9,index,ECOS,0.0010775862068965747,92.8,0.10000000000000853,92.63333333333333,90.46666666666668,Negative
+2010-01-01,News Sentiment Index,News Sentiment Index,113.62,index,ECOS,,,,113.62,113.62,Very Positive
+2010-02-01,News Sentiment Index,News Sentiment Index,105.01,index,ECOS,-0.07577891216335153,113.62,-8.61,109.315,109.315,Positive
+2010-03-01,News Sentiment Index,News Sentiment Index,109.19,index,ECOS,0.039805732787353554,105.01,4.179999999999993,109.27333333333333,109.27333333333333,Positive
+2010-04-01,News Sentiment Index,News Sentiment Index,113.16,index,ECOS,0.03635864090118135,109.19,3.969999999999999,109.12,110.245,Very Positive
+2010-05-01,News Sentiment Index,News Sentiment Index,108.12,index,ECOS,-0.0445387062566277,113.16,-5.039999999999992,110.15666666666668,109.82000000000001,Positive
+2010-06-01,News Sentiment Index,News Sentiment Index,110.22,index,ECOS,0.01942286348501665,108.12,2.0999999999999943,110.5,109.88666666666667,Very Positive
+2010-07-01,News Sentiment Index,News Sentiment Index,109.86,index,ECOS,-0.003266194882961315,110.22,-0.35999999999999943,109.39999999999999,109.25999999999999,Positive
+2010-08-01,News Sentiment Index,News Sentiment Index,105.16,index,ECOS,-0.04278172219188059,109.86,-4.700000000000003,108.41333333333334,109.28500000000001,Positive
+2010-09-01,News Sentiment Index,News Sentiment Index,110.26,index,ECOS,0.048497527577025634,105.16,5.1000000000000085,108.42666666666668,109.46333333333332,Very Positive
+2010-10-01,News Sentiment Index,News Sentiment Index,108.74,index,ECOS,-0.013785597678215189,110.26,-1.5200000000000102,108.05333333333333,108.72666666666667,Positive
+2010-11-01,News Sentiment Index,News Sentiment Index,111.29,index,ECOS,0.02345043222365284,108.74,2.5500000000000114,110.09666666666668,109.255,Very Positive
+2010-12-01,News Sentiment Index,News Sentiment Index,112.56,index,ECOS,0.01141162728007905,111.29,1.269999999999996,110.86333333333334,109.645,Very Positive
+2011-01-01,News Sentiment Index,News Sentiment Index,115.92,index,ECOS,0.029850746268656803,112.56,3.3599999999999994,113.25666666666666,110.65499999999999,Very Positive
+2011-02-01,News Sentiment Index,News Sentiment Index,102.19,index,ECOS,-0.11844375431331955,115.92,-13.730000000000004,110.22333333333331,110.16000000000001,Neutral
+2011-03-01,News Sentiment Index,News Sentiment Index,97.06,index,ECOS,-0.05020060671298554,102.19,-5.1299999999999955,105.05666666666666,107.96,Neutral
+2011-04-01,News Sentiment Index,News Sentiment Index,108.02,index,ECOS,0.1129198433958376,97.06,10.959999999999994,102.42333333333333,107.83999999999999,Positive
+2011-05-01,News Sentiment Index,News Sentiment Index,103.9,index,ECOS,-0.03814108498426205,108.02,-4.11999999999999,102.99333333333334,106.60833333333333,Neutral
+2011-06-01,News Sentiment Index,News Sentiment Index,100.76,index,ECOS,-0.030221366698748753,103.9,-3.1400000000000006,104.22666666666667,104.64166666666665,Neutral
+2011-07-01,News Sentiment Index,News Sentiment Index,106.28,index,ECOS,0.054783644303294965,100.76,5.519999999999996,103.64666666666669,103.03500000000001,Positive
+2011-08-01,News Sentiment Index,News Sentiment Index,84.96,index,ECOS,-0.20060218291305987,106.28,-21.320000000000007,97.33333333333333,100.16333333333331,Very Negative
+2011-09-01,News Sentiment Index,News Sentiment Index,88.36,index,ECOS,0.04001883239171389,84.96,3.4000000000000057,93.2,98.71333333333332,Very Negative
+2011-10-01,News Sentiment Index,News Sentiment Index,97.67,index,ECOS,0.10536441828881848,88.36,9.310000000000002,90.33,96.98833333333334,Neutral
+2011-11-01,News Sentiment Index,News Sentiment Index,96.07,index,ECOS,-0.01638169345756124,97.67,-1.6000000000000085,94.03333333333335,95.68333333333334,Neutral
+2011-12-01,News Sentiment Index,News Sentiment Index,96.88,index,ECOS,0.008431352139065318,96.07,0.8100000000000023,96.87333333333333,95.03666666666668,Neutral
+2012-01-01,News Sentiment Index,News Sentiment Index,102.48,index,ECOS,0.05780346820809257,96.88,5.6000000000000085,98.47666666666665,94.40333333333335,Neutral
+2012-02-01,News Sentiment Index,News Sentiment Index,97.42,index,ECOS,-0.04937548790007806,102.48,-5.060000000000002,98.92666666666666,96.48,Neutral
+2012-03-01,News Sentiment Index,News Sentiment Index,105.38,index,ECOS,0.08170806815848897,97.42,7.959999999999994,101.75999999999999,99.31666666666666,Positive
+2012-04-01,News Sentiment Index,News Sentiment Index,103.18,index,ECOS,-0.02087682672233815,105.38,-2.1999999999999886,101.99333333333334,100.235,Neutral
+2012-05-01,News Sentiment Index,News Sentiment Index,93.89,index,ECOS,-0.09003682884279907,103.18,-9.290000000000006,100.81666666666666,99.87166666666667,Negative
+2012-06-01,News Sentiment Index,News Sentiment Index,94.03,index,ECOS,0.0014911066141229945,93.89,0.14000000000000057,97.03333333333335,99.39666666666666,Negative
+2012-07-01,News Sentiment Index,News Sentiment Index,90.74,index,ECOS,-0.03498883335105829,94.03,-3.2900000000000063,92.88666666666666,97.44,Negative
+2012-08-01,News Sentiment Index,News Sentiment Index,89.14,index,ECOS,-0.017632797002424483,90.74,-1.5999999999999943,91.30333333333333,96.06,Very Negative
+2012-09-01,News Sentiment Index,News Sentiment Index,94.98,index,ECOS,0.06551492035001116,89.14,5.840000000000003,91.62,94.32666666666667,Negative
+2012-10-01,News Sentiment Index,News Sentiment Index,92.13,index,ECOS,-0.03000631711939361,94.98,-2.8500000000000085,92.08333333333333,92.485,Negative
+2012-11-01,News Sentiment Index,News Sentiment Index,97.04,index,ECOS,0.05329425811353539,92.13,4.910000000000011,94.71666666666665,93.00999999999999,Neutral
+2012-12-01,News Sentiment Index,News Sentiment Index,98.22,index,ECOS,0.012159934047815346,97.04,1.1799999999999926,95.79666666666667,93.70833333333333,Neutral
+2013-01-01,News Sentiment Index,News Sentiment Index,99.06,index,ECOS,0.008552229688454593,98.22,0.8400000000000034,98.10666666666667,95.09500000000001,Neutral
+2013-02-01,News Sentiment Index,News Sentiment Index,92.89,index,ECOS,-0.06228548354532604,99.06,-6.170000000000002,96.72333333333334,95.72000000000001,Negative
+2013-03-01,News Sentiment Index,News Sentiment Index,96.11,index,ECOS,0.03466465712132627,92.89,3.219999999999999,96.02,95.90833333333335,Neutral
+2013-04-01,News Sentiment Index,News Sentiment Index,92.19,index,ECOS,-0.04078659868900225,96.11,-3.9200000000000017,93.73,95.91833333333334,Negative
+2013-05-01,News Sentiment Index,News Sentiment Index,97.76,index,ECOS,0.06041870050981668,92.19,5.570000000000007,95.35333333333334,96.03833333333334,Neutral
+2013-06-01,News Sentiment Index,News Sentiment Index,89.42,index,ECOS,-0.08531096563011464,97.76,-8.340000000000003,93.12333333333333,94.57166666666666,Very Negative
+2013-07-01,News Sentiment Index,News Sentiment Index,95.14,index,ECOS,0.06396779244017003,89.42,5.719999999999999,94.10666666666667,93.91833333333334,Neutral
+2013-08-01,News Sentiment Index,News Sentiment Index,91.93,index,ECOS,-0.03373975194450274,95.14,-3.2099999999999937,92.16333333333334,93.75833333333333,Negative
+2013-09-01,News Sentiment Index,News Sentiment Index,103.94,index,ECOS,0.13064288045251815,91.93,12.009999999999991,97.00333333333333,95.06333333333333,Neutral
+2013-10-01,News Sentiment Index,News Sentiment Index,94.61,index,ECOS,-0.08976332499518946,103.94,-9.329999999999998,96.82666666666667,95.46666666666668,Negative
+2013-11-01,News Sentiment Index,News Sentiment Index,100.92,index,ECOS,0.06669485255258434,94.61,6.310000000000002,99.82333333333334,95.99333333333334,Neutral
+2013-12-01,News Sentiment Index,News Sentiment Index,96.39,index,ECOS,-0.04488703923900117,100.92,-4.530000000000001,97.30666666666667,97.15500000000002,Neutral
+2014-01-01,News Sentiment Index,News Sentiment Index,93.26,index,ECOS,-0.032472248158522676,96.39,-3.1299999999999955,96.85666666666667,96.84166666666665,Negative
+2014-02-01,News Sentiment Index,News Sentiment Index,97.35,index,ECOS,0.04385588676817487,93.26,4.089999999999989,95.66666666666667,97.745,Neutral
+2014-03-01,News Sentiment Index,News Sentiment Index,104.19,index,ECOS,0.07026194144838227,97.35,6.840000000000003,98.26666666666667,97.78666666666668,Neutral
+2014-04-01,News Sentiment Index,News Sentiment Index,104.89,index,ECOS,0.00671849505710731,104.19,0.7000000000000028,102.14333333333333,99.5,Neutral
+2014-05-01,News Sentiment Index,News Sentiment Index,102.95,index,ECOS,-0.018495566784250128,104.89,-1.9399999999999977,104.00999999999999,99.83833333333332,Neutral
+2014-06-01,News Sentiment Index,News Sentiment Index,101.99,index,ECOS,-0.009324915007285162,102.95,-0.960000000000008,103.27666666666666,100.77166666666666,Neutral
+2014-07-01,News Sentiment Index,News Sentiment Index,104.5,index,ECOS,0.024610255907441925,101.99,2.510000000000005,103.14666666666666,102.645,Neutral
+2014-08-01,News Sentiment Index,News Sentiment Index,108.84,index,ECOS,0.04153110047846886,104.5,4.340000000000003,105.11000000000001,104.55999999999999,Positive
+2014-09-01,News Sentiment Index,News Sentiment Index,102.22,index,ECOS,-0.06082322675486962,108.84,-6.6200000000000045,105.18666666666667,104.23166666666667,Neutral
+2014-10-01,News Sentiment Index,News Sentiment Index,96.31,index,ECOS,-0.05781647427117975,102.22,-5.909999999999997,102.45666666666666,102.80166666666668,Neutral
+2014-11-01,News Sentiment Index,News Sentiment Index,105.25,index,ECOS,0.09282525179109125,96.31,8.939999999999998,101.25999999999999,103.185,Positive
+2014-12-01,News Sentiment Index,News Sentiment Index,100.02,index,ECOS,-0.049691211401425184,105.25,-5.230000000000004,100.52666666666666,102.85666666666667,Neutral
+2015-01-01,News Sentiment Index,News Sentiment Index,104.57,index,ECOS,0.04549090181963611,100.02,4.549999999999997,103.27999999999999,102.86833333333333,Neutral
+2015-02-01,News Sentiment Index,News Sentiment Index,106.43,index,ECOS,0.01778712823945705,104.57,1.8600000000000136,103.67333333333333,102.46666666666665,Positive
+2015-03-01,News Sentiment Index,News Sentiment Index,113.08,index,ECOS,0.06248238278680818,106.43,6.6499999999999915,108.02666666666669,104.27666666666666,Very Positive
+2015-04-01,News Sentiment Index,News Sentiment Index,115.76,index,ECOS,0.0237000353731871,113.08,2.680000000000007,111.75666666666667,107.51833333333333,Very Positive
+2015-05-01,News Sentiment Index,News Sentiment Index,109.51,index,ECOS,-0.05399101589495503,115.76,-6.25,112.78333333333335,108.22833333333334,Positive
+2015-06-01,News Sentiment Index,News Sentiment Index,100.87,index,ECOS,-0.07889690439229291,109.51,-8.64,108.71333333333332,108.37,Neutral
+2015-07-01,News Sentiment Index,News Sentiment Index,102.92,index,ECOS,0.02032318826211954,100.87,2.049999999999997,104.43333333333334,108.09500000000001,Neutral
+2015-08-01,News Sentiment Index,News Sentiment Index,95.39,index,ECOS,-0.07316362223085893,102.92,-7.530000000000001,99.72666666666667,106.25500000000001,Neutral
+2015-09-01,News Sentiment Index,News Sentiment Index,100.71,index,ECOS,0.05577104518293319,95.39,5.319999999999993,99.67333333333333,104.19333333333333,Neutral
+2015-10-01,News Sentiment Index,News Sentiment Index,109.93,index,ECOS,0.09154999503524985,100.71,9.220000000000013,102.00999999999999,103.22166666666668,Positive
+2015-11-01,News Sentiment Index,News Sentiment Index,106.27,index,ECOS,-0.03329391430910589,109.93,-3.660000000000011,105.63666666666666,102.68166666666667,Positive
+2015-12-01,News Sentiment Index,News Sentiment Index,101.37,index,ECOS,-0.04610896772372253,106.27,-4.8999999999999915,105.85666666666668,102.765,Neutral
+2016-01-01,News Sentiment Index,News Sentiment Index,96.11,index,ECOS,-0.05188911906875804,101.37,-5.260000000000005,101.25,101.63,Neutral
+2016-02-01,News Sentiment Index,News Sentiment Index,94.4,index,ECOS,-0.01779211320362084,96.11,-1.7099999999999937,97.29333333333334,101.46499999999999,Negative
+2016-03-01,News Sentiment Index,News Sentiment Index,103.79,index,ECOS,0.09947033898305091,94.4,9.39,98.10000000000001,101.97833333333334,Neutral
+2016-04-01,News Sentiment Index,News Sentiment Index,100.76,index,ECOS,-0.02919356392716066,103.79,-3.030000000000001,99.64999999999999,100.45,Neutral
+2016-05-01,News Sentiment Index,News Sentiment Index,96.7,index,ECOS,-0.040293767368003164,100.76,-4.060000000000002,100.41666666666667,98.855,Neutral
+2016-06-01,News Sentiment Index,News Sentiment Index,91.17,index,ECOS,-0.05718717683557395,96.7,-5.530000000000001,96.21,97.15500000000002,Negative
+2016-07-01,News Sentiment Index,News Sentiment Index,105.04,index,ECOS,0.1521333772074147,91.17,13.870000000000005,97.63666666666667,98.64333333333333,Positive
+2016-08-01,News Sentiment Index,News Sentiment Index,98.3,index,ECOS,-0.06416603198781423,105.04,-6.740000000000009,98.17,99.29333333333334,Neutral
+2016-09-01,News Sentiment Index,News Sentiment Index,89.96,index,ECOS,-0.0848423194303154,98.3,-8.340000000000003,97.76666666666665,96.98833333333334,Very Negative
+2016-10-01,News Sentiment Index,News Sentiment Index,91.02,index,ECOS,0.011783014673188097,89.96,1.0600000000000023,93.09333333333332,95.36500000000001,Negative
+2016-11-01,News Sentiment Index,News Sentiment Index,91.11,index,ECOS,0.0009887936717205559,91.02,0.09000000000000341,90.69666666666666,94.43333333333332,Negative
+2016-12-01,News Sentiment Index,News Sentiment Index,94.06,index,ECOS,0.032378443639556664,91.11,2.950000000000003,92.06333333333333,94.915,Negative
+2017-01-01,News Sentiment Index,News Sentiment Index,98.4,index,ECOS,0.046140761216244996,94.06,4.340000000000003,94.52333333333335,93.80833333333334,Neutral
+2017-02-01,News Sentiment Index,News Sentiment Index,97.98,index,ECOS,-0.004268292682926833,98.4,-0.4200000000000017,96.81333333333333,93.755,Neutral
+2017-03-01,News Sentiment Index,News Sentiment Index,100.66,index,ECOS,0.02735252092263729,97.98,2.6799999999999926,99.01333333333334,95.53833333333334,Neutral
+2017-04-01,News Sentiment Index,News Sentiment Index,114.51,index,ECOS,0.13759189350288104,100.66,13.850000000000009,104.38333333333333,99.45333333333333,Very Positive
+2017-05-01,News Sentiment Index,News Sentiment Index,116.15,index,ECOS,0.014321893284429343,114.51,1.6400000000000006,110.44,103.62666666666667,Very Positive
+2017-06-01,News Sentiment Index,News Sentiment Index,111.71,index,ECOS,-0.038226431338786115,116.15,-4.440000000000012,114.12333333333333,106.56833333333334,Very Positive
+2017-07-01,News Sentiment Index,News Sentiment Index,111.64,index,ECOS,-0.000626622504699581,111.71,-0.06999999999999318,113.16666666666667,108.77499999999999,Very Positive
+2017-08-01,News Sentiment Index,News Sentiment Index,95.79,index,ECOS,-0.1419742027946972,111.64,-15.849999999999994,106.38,108.40999999999998,Neutral
+2017-09-01,News Sentiment Index,News Sentiment Index,101.24,index,ECOS,0.05689529178411101,95.79,5.449999999999989,102.89,108.50666666666666,Neutral
+2017-10-01,News Sentiment Index,News Sentiment Index,110.08,index,ECOS,0.0873172659028052,101.24,8.840000000000003,102.37,107.76833333333333,Very Positive
+2017-11-01,News Sentiment Index,News Sentiment Index,117.48,index,ECOS,0.06722383720930236,110.08,7.400000000000006,109.59999999999998,107.99000000000001,Very Positive
+2017-12-01,News Sentiment Index,News Sentiment Index,109.47,index,ECOS,-0.06818181818181823,117.48,-8.010000000000005,112.34333333333332,107.61666666666667,Positive
+2018-01-01,News Sentiment Index,News Sentiment Index,113.18,index,ECOS,0.033890563624737524,109.47,3.710000000000008,113.37666666666667,107.87333333333333,Very Positive
+2018-02-01,News Sentiment Index,News Sentiment Index,105.17,index,ECOS,-0.07077222124050186,113.18,-8.010000000000005,109.27333333333333,109.43666666666667,Positive
+2018-03-01,News Sentiment Index,News Sentiment Index,103.43,index,ECOS,-0.01654464200817718,105.17,-1.7399999999999949,107.26,109.80166666666668,Neutral
+2018-04-01,News Sentiment Index,News Sentiment Index,105.25,index,ECOS,0.017596442038093407,103.43,1.8199999999999932,104.61666666666667,108.99666666666667,Positive
+2018-05-01,News Sentiment Index,News Sentiment Index,105.76,index,ECOS,0.004845605700712685,105.25,0.5100000000000051,104.81333333333333,107.04333333333334,Positive
+2018-06-01,News Sentiment Index,News Sentiment Index,101.76,index,ECOS,-0.03782148260211804,105.76,-4.0,104.25666666666666,105.75833333333333,Neutral
+2018-07-01,News Sentiment Index,News Sentiment Index,91.01,index,ECOS,-0.10564072327044027,101.76,-10.75,99.50999999999999,102.06333333333333,Negative
+2018-08-01,News Sentiment Index,News Sentiment Index,96.2,index,ECOS,0.05702670036259749,91.01,5.189999999999998,96.32333333333334,100.56833333333333,Neutral
+2018-09-01,News Sentiment Index,News Sentiment Index,101.05,index,ECOS,0.050415800415800405,96.2,4.849999999999994,96.08666666666666,100.17166666666667,Neutral
+2018-10-01,News Sentiment Index,News Sentiment Index,86.86,index,ECOS,-0.1404255319148936,101.05,-14.189999999999998,94.70333333333333,97.10666666666667,Very Negative
+2018-11-01,News Sentiment Index,News Sentiment Index,93.53,index,ECOS,0.07679023716325117,86.86,6.670000000000002,93.81333333333333,95.06833333333333,Negative
+2018-12-01,News Sentiment Index,News Sentiment Index,92.17,index,ECOS,-0.014540789051641134,93.53,-1.3599999999999994,90.85333333333334,93.47000000000001,Negative
+2019-01-01,News Sentiment Index,News Sentiment Index,97.23,index,ECOS,0.05489855701421287,92.17,5.060000000000002,94.31,94.50666666666667,Neutral
+2019-02-01,News Sentiment Index,News Sentiment Index,95.8,index,ECOS,-0.014707394836984578,97.23,-1.4300000000000068,95.06666666666668,94.44,Neutral
+2019-03-01,News Sentiment Index,News Sentiment Index,95.68,index,ECOS,-0.0012526096033401712,95.8,-0.11999999999999034,96.23666666666668,93.545,Neutral
+2019-04-01,News Sentiment Index,News Sentiment Index,101.7,index,ECOS,0.06291806020066892,95.68,6.019999999999996,97.72666666666667,96.01833333333333,Neutral
+2019-05-01,News Sentiment Index,News Sentiment Index,94.68,index,ECOS,-0.0690265486725663,101.7,-7.019999999999996,97.35333333333334,96.21,Negative
+2019-06-01,News Sentiment Index,News Sentiment Index,94.76,index,ECOS,0.0008449514152935045,94.68,0.0799999999999983,97.04666666666667,96.64166666666667,Negative
+2019-07-01,News Sentiment Index,News Sentiment Index,89.13,index,ECOS,-0.05941325453777979,94.76,-5.63000000000001,92.85666666666668,95.29166666666667,Very Negative
+2019-08-01,News Sentiment Index,News Sentiment Index,82.84,index,ECOS,-0.07057107595646794,89.13,-6.289999999999992,88.91000000000001,93.13166666666666,Very Negative
+2019-09-01,News Sentiment Index,News Sentiment Index,95.08,index,ECOS,0.14775470787059386,82.84,12.239999999999995,89.01666666666667,93.03166666666668,Neutral
+2019-10-01,News Sentiment Index,News Sentiment Index,92.66,index,ECOS,-0.02545225073622215,95.08,-2.4200000000000017,90.19333333333333,91.52499999999999,Negative
+2019-11-01,News Sentiment Index,News Sentiment Index,104.08,index,ECOS,0.12324627671055466,92.66,11.420000000000002,97.27333333333333,93.09166666666665,Neutral
+2019-12-01,News Sentiment Index,News Sentiment Index,105.71,index,ECOS,0.015661029976940855,104.08,1.6299999999999955,100.81666666666666,94.91666666666667,Positive
+2020-01-01,News Sentiment Index,News Sentiment Index,102.02,index,ECOS,-0.03490682054677885,105.71,-3.6899999999999977,103.93666666666665,97.065,Neutral
+2020-02-01,News Sentiment Index,News Sentiment Index,81.32,index,ECOS,-0.2029013918839444,102.02,-20.700000000000003,96.34999999999998,96.81166666666667,Very Negative
+2020-03-01,News Sentiment Index,News Sentiment Index,70.11,index,ECOS,-0.1378504672897196,81.32,-11.209999999999994,84.48333333333333,92.64999999999999,Very Negative
+2020-04-01,News Sentiment Index,News Sentiment Index,79.63,index,ECOS,0.135786621024105,70.11,9.519999999999996,77.02,90.47833333333334,Very Negative
+2020-05-01,News Sentiment Index,News Sentiment Index,89.94,index,ECOS,0.12947381640085398,79.63,10.310000000000002,79.89333333333333,88.12166666666667,Very Negative
+2020-06-01,News Sentiment Index,News Sentiment Index,98.72,index,ECOS,0.09762063597954196,89.94,8.780000000000001,89.42999999999999,86.95666666666666,Neutral
+2020-07-01,News Sentiment Index,News Sentiment Index,106.16,index,ECOS,0.07536466774716377,98.72,7.439999999999998,98.27333333333333,87.64666666666666,Positive
+2020-08-01,News Sentiment Index,News Sentiment Index,99.38,index,ECOS,-0.06386586284853057,106.16,-6.780000000000001,101.42,90.65666666666665,Neutral
+2020-09-01,News Sentiment Index,News Sentiment Index,99.3,index,ECOS,-0.000804990943851891,99.38,-0.0799999999999983,101.61333333333334,95.52166666666666,Neutral
+2020-10-01,News Sentiment Index,News Sentiment Index,104.85,index,ECOS,0.0558912386706949,99.3,5.549999999999997,101.17666666666666,99.72500000000001,Neutral
+2020-11-01,News Sentiment Index,News Sentiment Index,113.05,index,ECOS,0.07820696232713398,104.85,8.200000000000003,105.73333333333333,103.57666666666667,Very Positive
+2020-12-01,News Sentiment Index,News Sentiment Index,113.75,index,ECOS,0.006191950464396356,113.05,0.7000000000000028,110.55,106.08166666666666,Very Positive
+2021-01-01,News Sentiment Index,News Sentiment Index,114.43,index,ECOS,0.005978021978022108,113.75,0.6800000000000068,113.74333333333334,107.46,Very Positive
+2021-02-01,News Sentiment Index,News Sentiment Index,107.32,index,ECOS,-0.06213405575460995,114.43,-7.110000000000014,111.83333333333333,108.78333333333335,Positive
+2021-03-01,News Sentiment Index,News Sentiment Index,114.5,index,ECOS,0.06690272083488646,107.32,7.180000000000007,112.08333333333333,111.31666666666668,Very Positive
+2021-04-01,News Sentiment Index,News Sentiment Index,120.04,index,ECOS,0.04838427947598256,114.5,5.540000000000006,113.95333333333333,113.84833333333334,Very Positive
+2021-05-01,News Sentiment Index,News Sentiment Index,116.02,index,ECOS,-0.03348883705431527,120.04,-4.02000000000001,116.85333333333334,114.34333333333332,Very Positive
+2021-06-01,News Sentiment Index,News Sentiment Index,119.01,index,ECOS,0.025771418720910377,116.02,2.990000000000009,118.35666666666667,115.21999999999998,Very Positive
+2021-07-01,News Sentiment Index,News Sentiment Index,117.85,index,ECOS,-0.009747080077304515,119.01,-1.1600000000000108,117.62666666666667,115.79,Very Positive
+2021-08-01,News Sentiment Index,News Sentiment Index,110.06,index,ECOS,-0.06610097581671615,117.85,-7.789999999999992,115.64,116.24666666666667,Very Positive
+2021-09-01,News Sentiment Index,News Sentiment Index,106.56,index,ECOS,-0.031800835907686675,110.06,-3.5,111.49000000000001,114.92333333333333,Positive
+2021-10-01,News Sentiment Index,News Sentiment Index,104.52,index,ECOS,-0.019144144144144226,106.56,-2.0400000000000063,107.04666666666667,112.33666666666666,Neutral
+2021-11-01,News Sentiment Index,News Sentiment Index,111.1,index,ECOS,0.06295445847684644,104.52,6.579999999999998,107.39333333333333,111.51666666666667,Very Positive
+2021-12-01,News Sentiment Index,News Sentiment Index,111.81,index,ECOS,0.006390639063906356,111.1,0.710000000000008,109.14333333333333,110.31666666666666,Very Positive
+2022-01-01,News Sentiment Index,News Sentiment Index,103.32,index,ECOS,-0.07593238529648516,111.81,-8.490000000000009,108.74333333333334,107.895,Neutral
+2022-02-01,News Sentiment Index,News Sentiment Index,103.7,index,ECOS,0.0036778939217965156,103.32,0.38000000000000966,106.27666666666666,106.835,Neutral
+2022-03-01,News Sentiment Index,News Sentiment Index,103.7,index,ECOS,0.0,103.7,0.0,103.57333333333332,106.35833333333333,Neutral
+2022-04-01,News Sentiment Index,News Sentiment Index,104.78,index,ECOS,0.010414657666345306,103.7,1.0799999999999983,104.06,106.40166666666666,Neutral
+2022-05-01,News Sentiment Index,News Sentiment Index,103.25,index,ECOS,-0.014602023286886867,104.78,-1.5300000000000011,103.91000000000001,105.09333333333332,Neutral
+2022-06-01,News Sentiment Index,News Sentiment Index,83.99,index,ECOS,-0.1865375302663439,103.25,-19.260000000000005,97.33999999999999,100.45666666666666,Very Negative
+2022-07-01,News Sentiment Index,News Sentiment Index,91.0,index,ECOS,0.08346231694249329,83.99,7.010000000000005,92.74666666666667,98.40333333333332,Negative
+2022-08-01,News Sentiment Index,News Sentiment Index,97.77,index,ECOS,0.07439560439560444,91.0,6.769999999999996,90.92,97.415,Neutral
+2022-09-01,News Sentiment Index,News Sentiment Index,85.57,index,ECOS,-0.12478265316559278,97.77,-12.200000000000003,91.44666666666666,94.39333333333333,Very Negative
+2022-10-01,News Sentiment Index,News Sentiment Index,79.37,index,ECOS,-0.07245529975458675,85.57,-6.199999999999989,87.57,90.15833333333332,Very Negative
+2022-11-01,News Sentiment Index,News Sentiment Index,88.04,index,ECOS,0.1092352274159003,79.37,8.670000000000002,84.32666666666667,87.62333333333333,Very Negative
+2022-12-01,News Sentiment Index,News Sentiment Index,82.72,index,ECOS,-0.06042707860063612,88.04,-5.320000000000007,83.37666666666668,87.41166666666668,Very Negative
+2023-01-01,News Sentiment Index,News Sentiment Index,93.5,index,ECOS,0.13031914893617014,82.72,10.780000000000001,88.08666666666666,87.82833333333333,Negative
+2023-02-01,News Sentiment Index,News Sentiment Index,97.31,index,ECOS,0.0407486631016043,93.5,3.8100000000000023,91.17666666666666,87.75166666666667,Neutral
+2023-03-01,News Sentiment Index,News Sentiment Index,93.89,index,ECOS,-0.03514541157126705,97.31,-3.4200000000000017,94.89999999999999,89.13833333333334,Negative
+2023-04-01,News Sentiment Index,News Sentiment Index,94.78,index,ECOS,0.00947917776120999,93.89,0.8900000000000006,95.32666666666667,91.70666666666666,Negative
+2023-05-01,News Sentiment Index,News Sentiment Index,96.33,index,ECOS,0.016353661109938855,94.78,1.5499999999999972,95.0,93.08833333333332,Neutral
+2023-06-01,News Sentiment Index,News Sentiment Index,101.63,index,ECOS,0.05501920481677569,96.33,5.299999999999997,97.58,96.24000000000001,Neutral
+2023-07-01,News Sentiment Index,News Sentiment Index,102.08,index,ECOS,0.004427826429203918,101.63,0.45000000000000284,100.01333333333332,97.67,Neutral
+2023-08-01,News Sentiment Index,News Sentiment Index,98.92,index,ECOS,-0.03095611285266453,102.08,-3.1599999999999966,100.87666666666667,97.93833333333333,Neutral
+2023-09-01,News Sentiment Index,News Sentiment Index,100.74,index,ECOS,0.018398706025070766,98.92,1.8199999999999932,100.58,99.08,Neutral
+2023-10-01,News Sentiment Index,News Sentiment Index,95.29,index,ECOS,-0.0540996624975183,100.74,-5.449999999999989,98.31666666666668,99.165,Neutral
+2023-11-01,News Sentiment Index,News Sentiment Index,102.35,index,ECOS,0.07408962115646966,95.29,7.059999999999988,99.46,100.16833333333334,Neutral
+2023-12-01,News Sentiment Index,News Sentiment Index,103.38,index,ECOS,0.010063507572056762,102.35,1.0300000000000011,100.33999999999999,100.46,Neutral
+2024-01-01,News Sentiment Index,News Sentiment Index,99.45,index,ECOS,-0.03801508995937308,103.38,-3.9299999999999926,101.72666666666667,100.02166666666666,Neutral
+2024-02-01,News Sentiment Index,News Sentiment Index,107.82,index,ECOS,0.08416289592760173,99.45,8.36999999999999,103.55,101.505,Positive
+2024-03-01,News Sentiment Index,News Sentiment Index,110.61,index,ECOS,0.025876460767946696,107.82,2.7900000000000063,105.96,103.14999999999999,Very Positive
+2024-04-01,News Sentiment Index,News Sentiment Index,107.78,index,ECOS,-0.025585390109393313,110.61,-2.8299999999999983,108.73666666666668,105.23166666666667,Positive
+2024-05-01,News Sentiment Index,News Sentiment Index,109.41,index,ECOS,0.015123399517535718,107.78,1.6299999999999955,109.26666666666667,106.40833333333335,Positive
+2024-06-01,News Sentiment Index,News Sentiment Index,109.34,index,ECOS,-0.0006397952655149419,109.41,-0.06999999999999318,108.84333333333332,107.40166666666666,Positive
+2024-07-01,News Sentiment Index,News Sentiment Index,106.58,index,ECOS,-0.02524236327053231,109.34,-2.760000000000005,108.44333333333333,108.58999999999999,Positive
+2024-08-01,News Sentiment Index,News Sentiment Index,99.3,index,ECOS,-0.06830549821730159,106.58,-7.280000000000001,105.07333333333334,107.17,Neutral
+2024-09-01,News Sentiment Index,News Sentiment Index,98.67,index,ECOS,-0.006344410876132911,99.3,-0.6299999999999955,101.51666666666667,105.18,Neutral
+2024-10-01,News Sentiment Index,News Sentiment Index,100.46,index,ECOS,0.01814127901084417,98.67,1.789999999999992,99.47666666666667,103.96,Neutral
+2024-11-01,News Sentiment Index,News Sentiment Index,100.47,index,ECOS,9.954210631102356e-05,100.46,0.010000000000005116,99.86666666666667,102.46999999999998,Neutral
+2024-12-01,News Sentiment Index,News Sentiment Index,85.75,index,ECOS,-0.14651139643674727,100.47,-14.719999999999999,95.55999999999999,98.53833333333334,Very Negative
+2025-01-01,News Sentiment Index,News Sentiment Index,99.32,index,ECOS,0.15825072886297376,85.75,13.569999999999993,95.17999999999999,97.32833333333333,Neutral
+2025-02-01,News Sentiment Index,News Sentiment Index,99.85,index,ECOS,0.005336286749899388,99.32,0.5300000000000011,94.97333333333331,97.42,Neutral
+2025-03-01,News Sentiment Index,News Sentiment Index,93.73,index,ECOS,-0.06129193790686016,99.85,-6.11999999999999,97.63333333333333,96.59666666666668,Negative
+2025-04-01,News Sentiment Index,News Sentiment Index,97.94,index,ECOS,0.044916248799743874,93.73,4.209999999999994,97.17333333333333,96.17666666666666,Neutral
+2025-05-01,News Sentiment Index,News Sentiment Index,101.71,index,ECOS,0.03849295487032878,97.94,3.769999999999996,97.79333333333334,96.38333333333333,Neutral
+2025-06-01,News Sentiment Index,News Sentiment Index,107.96,index,ECOS,0.061449218365942304,101.71,6.25,102.53666666666665,100.085,Positive
+2025-07-01,News Sentiment Index,News Sentiment Index,107.78,index,ECOS,-0.001667284179325601,107.96,-0.1799999999999926,105.81666666666666,101.495,Positive

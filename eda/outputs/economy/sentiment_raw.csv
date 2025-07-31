@@ -1,0 +1,562 @@
+﻿date,category,indicator,value,unit,source
+2010-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),114.7,index,ECOS
+2010-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),114.0,index,ECOS
+2010-01-01,News Sentiment Index,News Sentiment Index,113.62,index,ECOS
+2010-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.3,index,ECOS
+2010-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),117.3,index,ECOS
+2010-02-01,News Sentiment Index,News Sentiment Index,105.01,index,ECOS
+2010-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.6,index,ECOS
+2010-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),116.1,index,ECOS
+2010-03-01,News Sentiment Index,News Sentiment Index,109.19,index,ECOS
+2010-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.9,index,ECOS
+2010-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),117.5,index,ECOS
+2010-04-01,News Sentiment Index,News Sentiment Index,113.16,index,ECOS
+2010-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),116.1,index,ECOS
+2010-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),116.8,index,ECOS
+2010-05-01,News Sentiment Index,News Sentiment Index,108.12,index,ECOS
+2010-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),116.2,index,ECOS
+2010-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),115.5,index,ECOS
+2010-06-01,News Sentiment Index,News Sentiment Index,110.22,index,ECOS
+2010-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),116.1,index,ECOS
+2010-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),115.8,index,ECOS
+2010-07-01,News Sentiment Index,News Sentiment Index,109.86,index,ECOS
+2010-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.9,index,ECOS
+2010-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),114.2,index,ECOS
+2010-08-01,News Sentiment Index,News Sentiment Index,105.16,index,ECOS
+2010-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),115.4,index,ECOS
+2010-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),114.5,index,ECOS
+2010-09-01,News Sentiment Index,News Sentiment Index,110.26,index,ECOS
+2010-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),114.9,index,ECOS
+2010-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),112.3,index,ECOS
+2010-10-01,News Sentiment Index,News Sentiment Index,108.74,index,ECOS
+2010-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),114.2,index,ECOS
+2010-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),113.8,index,ECOS
+2010-11-01,News Sentiment Index,News Sentiment Index,111.29,index,ECOS
+2010-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),113.4,index,ECOS
+2010-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),112.2,index,ECOS
+2010-12-01,News Sentiment Index,News Sentiment Index,112.56,index,ECOS
+2011-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),112.6,index,ECOS
+2011-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),112.1,index,ECOS
+2011-01-01,News Sentiment Index,News Sentiment Index,115.92,index,ECOS
+2011-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),111.7,index,ECOS
+2011-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),113.6,index,ECOS
+2011-02-01,News Sentiment Index,News Sentiment Index,102.19,index,ECOS
+2011-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),111.0,index,ECOS
+2011-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),110.2,index,ECOS
+2011-03-01,News Sentiment Index,News Sentiment Index,97.06,index,ECOS
+2011-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),110.3,index,ECOS
+2011-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),113.9,index,ECOS
+2011-04-01,News Sentiment Index,News Sentiment Index,108.02,index,ECOS
+2011-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),109.7,index,ECOS
+2011-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),111.7,index,ECOS
+2011-05-01,News Sentiment Index,News Sentiment Index,103.9,index,ECOS
+2011-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),109.1,index,ECOS
+2011-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),108.7,index,ECOS
+2011-06-01,News Sentiment Index,News Sentiment Index,100.76,index,ECOS
+2011-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),108.4,index,ECOS
+2011-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),107.8,index,ECOS
+2011-07-01,News Sentiment Index,News Sentiment Index,106.28,index,ECOS
+2011-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.8,index,ECOS
+2011-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.7,index,ECOS
+2011-08-01,News Sentiment Index,News Sentiment Index,84.96,index,ECOS
+2011-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.0,index,ECOS
+2011-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.3,index,ECOS
+2011-09-01,News Sentiment Index,News Sentiment Index,88.36,index,ECOS
+2011-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),106.3,index,ECOS
+2011-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),104.4,index,ECOS
+2011-10-01,News Sentiment Index,News Sentiment Index,97.67,index,ECOS
+2011-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),105.6,index,ECOS
+2011-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),104.5,index,ECOS
+2011-11-01,News Sentiment Index,News Sentiment Index,96.07,index,ECOS
+2011-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),104.9,index,ECOS
+2011-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.3,index,ECOS
+2011-12-01,News Sentiment Index,News Sentiment Index,96.88,index,ECOS
+2012-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),104.2,index,ECOS
+2012-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.3,index,ECOS
+2012-01-01,News Sentiment Index,News Sentiment Index,102.48,index,ECOS
+2012-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),103.7,index,ECOS
+2012-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.0,index,ECOS
+2012-02-01,News Sentiment Index,News Sentiment Index,97.42,index,ECOS
+2012-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),103.1,index,ECOS
+2012-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.3,index,ECOS
+2012-03-01,News Sentiment Index,News Sentiment Index,105.38,index,ECOS
+2012-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),102.3,index,ECOS
+2012-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),109.7,index,ECOS
+2012-04-01,News Sentiment Index,News Sentiment Index,103.18,index,ECOS
+2012-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.3,index,ECOS
+2012-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.8,index,ECOS
+2012-05-01,News Sentiment Index,News Sentiment Index,93.89,index,ECOS
+2012-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.1,index,ECOS
+2012-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.2,index,ECOS
+2012-06-01,News Sentiment Index,News Sentiment Index,94.03,index,ECOS
+2012-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.7,index,ECOS
+2012-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.7,index,ECOS
+2012-07-01,News Sentiment Index,News Sentiment Index,90.74,index,ECOS
+2012-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.4,index,ECOS
+2012-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.1,index,ECOS
+2012-08-01,News Sentiment Index,News Sentiment Index,89.14,index,ECOS
+2012-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.2,index,ECOS
+2012-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.9,index,ECOS
+2012-09-01,News Sentiment Index,News Sentiment Index,94.98,index,ECOS
+2012-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.3,index,ECOS
+2012-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.8,index,ECOS
+2012-10-01,News Sentiment Index,News Sentiment Index,92.13,index,ECOS
+2012-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.7,index,ECOS
+2012-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.0,index,ECOS
+2012-11-01,News Sentiment Index,News Sentiment Index,97.04,index,ECOS
+2012-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.5,index,ECOS
+2012-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.7,index,ECOS
+2012-12-01,News Sentiment Index,News Sentiment Index,98.22,index,ECOS
+2013-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.6,index,ECOS
+2013-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.9,index,ECOS
+2013-01-01,News Sentiment Index,News Sentiment Index,99.06,index,ECOS
+2013-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.8,index,ECOS
+2013-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.9,index,ECOS
+2013-02-01,News Sentiment Index,News Sentiment Index,92.89,index,ECOS
+2013-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.3,index,ECOS
+2013-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.9,index,ECOS
+2013-03-01,News Sentiment Index,News Sentiment Index,96.11,index,ECOS
+2013-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.7,index,ECOS
+2013-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.6,index,ECOS
+2013-04-01,News Sentiment Index,News Sentiment Index,92.19,index,ECOS
+2013-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.3,index,ECOS
+2013-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.9,index,ECOS
+2013-05-01,News Sentiment Index,News Sentiment Index,97.76,index,ECOS
+2013-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.8,index,ECOS
+2013-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.0,index,ECOS
+2013-06-01,News Sentiment Index,News Sentiment Index,89.42,index,ECOS
+2013-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.4,index,ECOS
+2013-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.2,index,ECOS
+2013-07-01,News Sentiment Index,News Sentiment Index,95.14,index,ECOS
+2013-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.0,index,ECOS
+2013-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.1,index,ECOS
+2013-08-01,News Sentiment Index,News Sentiment Index,91.93,index,ECOS
+2013-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.6,index,ECOS
+2013-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.9,index,ECOS
+2013-09-01,News Sentiment Index,News Sentiment Index,103.94,index,ECOS
+2013-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.1,index,ECOS
+2013-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.2,index,ECOS
+2013-10-01,News Sentiment Index,News Sentiment Index,94.61,index,ECOS
+2013-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.5,index,ECOS
+2013-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.6,index,ECOS
+2013-11-01,News Sentiment Index,News Sentiment Index,100.92,index,ECOS
+2013-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.9,index,ECOS
+2013-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.4,index,ECOS
+2013-12-01,News Sentiment Index,News Sentiment Index,96.39,index,ECOS
+2014-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.0,index,ECOS
+2014-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.0,index,ECOS
+2014-01-01,News Sentiment Index,News Sentiment Index,93.26,index,ECOS
+2014-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.0,index,ECOS
+2014-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.2,index,ECOS
+2014-02-01,News Sentiment Index,News Sentiment Index,97.35,index,ECOS
+2014-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.9,index,ECOS
+2014-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.3,index,ECOS
+2014-03-01,News Sentiment Index,News Sentiment Index,104.19,index,ECOS
+2014-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.7,index,ECOS
+2014-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.0,index,ECOS
+2014-04-01,News Sentiment Index,News Sentiment Index,104.89,index,ECOS
+2014-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.5,index,ECOS
+2014-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.2,index,ECOS
+2014-05-01,News Sentiment Index,News Sentiment Index,102.95,index,ECOS
+2014-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.3,index,ECOS
+2014-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.8,index,ECOS
+2014-06-01,News Sentiment Index,News Sentiment Index,101.99,index,ECOS
+2014-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS
+2014-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.0,index,ECOS
+2014-07-01,News Sentiment Index,News Sentiment Index,104.5,index,ECOS
+2014-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.1,index,ECOS
+2014-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.3,index,ECOS
+2014-08-01,News Sentiment Index,News Sentiment Index,108.84,index,ECOS
+2014-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS
+2014-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.1,index,ECOS
+2014-09-01,News Sentiment Index,News Sentiment Index,102.22,index,ECOS
+2014-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS
+2014-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.3,index,ECOS
+2014-10-01,News Sentiment Index,News Sentiment Index,96.31,index,ECOS
+2014-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS
+2014-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.8,index,ECOS
+2014-11-01,News Sentiment Index,News Sentiment Index,105.25,index,ECOS
+2014-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.3,index,ECOS
+2014-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.6,index,ECOS
+2014-12-01,News Sentiment Index,News Sentiment Index,100.02,index,ECOS
+2015-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.3,index,ECOS
+2015-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.5,index,ECOS
+2015-01-01,News Sentiment Index,News Sentiment Index,104.57,index,ECOS
+2015-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.3,index,ECOS
+2015-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.1,index,ECOS
+2015-02-01,News Sentiment Index,News Sentiment Index,106.43,index,ECOS
+2015-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.1,index,ECOS
+2015-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.3,index,ECOS
+2015-03-01,News Sentiment Index,News Sentiment Index,113.08,index,ECOS
+2015-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.9,index,ECOS
+2015-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.7,index,ECOS
+2015-04-01,News Sentiment Index,News Sentiment Index,115.76,index,ECOS
+2015-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.4,index,ECOS
+2015-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.2,index,ECOS
+2015-05-01,News Sentiment Index,News Sentiment Index,109.51,index,ECOS
+2015-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.0,index,ECOS
+2015-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.6,index,ECOS
+2015-06-01,News Sentiment Index,News Sentiment Index,100.87,index,ECOS
+2015-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.6,index,ECOS
+2015-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.7,index,ECOS
+2015-07-01,News Sentiment Index,News Sentiment Index,102.92,index,ECOS
+2015-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.3,index,ECOS
+2015-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.3,index,ECOS
+2015-08-01,News Sentiment Index,News Sentiment Index,95.39,index,ECOS
+2015-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.9,index,ECOS
+2015-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.0,index,ECOS
+2015-09-01,News Sentiment Index,News Sentiment Index,100.71,index,ECOS
+2015-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.5,index,ECOS
+2015-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.5,index,ECOS
+2015-10-01,News Sentiment Index,News Sentiment Index,109.93,index,ECOS
+2015-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.0,index,ECOS
+2015-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.1,index,ECOS
+2015-11-01,News Sentiment Index,News Sentiment Index,106.27,index,ECOS
+2015-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.4,index,ECOS
+2015-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.0,index,ECOS
+2015-12-01,News Sentiment Index,News Sentiment Index,101.37,index,ECOS
+2016-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.9,index,ECOS
+2016-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.9,index,ECOS
+2016-01-01,News Sentiment Index,News Sentiment Index,96.11,index,ECOS
+2016-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.6,index,ECOS
+2016-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.8,index,ECOS
+2016-02-01,News Sentiment Index,News Sentiment Index,94.4,index,ECOS
+2016-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.5,index,ECOS
+2016-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.4,index,ECOS
+2016-03-01,News Sentiment Index,News Sentiment Index,103.79,index,ECOS
+2016-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.7,index,ECOS
+2016-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.1,index,ECOS
+2016-04-01,News Sentiment Index,News Sentiment Index,100.76,index,ECOS
+2016-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.0,index,ECOS
+2016-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.4,index,ECOS
+2016-05-01,News Sentiment Index,News Sentiment Index,96.7,index,ECOS
+2016-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.5,index,ECOS
+2016-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.1,index,ECOS
+2016-06-01,News Sentiment Index,News Sentiment Index,91.17,index,ECOS
+2016-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.0,index,ECOS
+2016-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.2,index,ECOS
+2016-07-01,News Sentiment Index,News Sentiment Index,105.04,index,ECOS
+2016-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.5,index,ECOS
+2016-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.1,index,ECOS
+2016-08-01,News Sentiment Index,News Sentiment Index,98.3,index,ECOS
+2016-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.9,index,ECOS
+2016-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.1,index,ECOS
+2016-09-01,News Sentiment Index,News Sentiment Index,89.96,index,ECOS
+2016-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.1,index,ECOS
+2016-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.6,index,ECOS
+2016-10-01,News Sentiment Index,News Sentiment Index,91.02,index,ECOS
+2016-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.3,index,ECOS
+2016-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.3,index,ECOS
+2016-11-01,News Sentiment Index,News Sentiment Index,91.11,index,ECOS
+2016-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.5,index,ECOS
+2016-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.1,index,ECOS
+2016-12-01,News Sentiment Index,News Sentiment Index,94.06,index,ECOS
+2017-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.8,index,ECOS
+2017-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.4,index,ECOS
+2017-01-01,News Sentiment Index,News Sentiment Index,98.4,index,ECOS
+2017-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.2,index,ECOS
+2017-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.2,index,ECOS
+2017-02-01,News Sentiment Index,News Sentiment Index,97.98,index,ECOS
+2017-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.7,index,ECOS
+2017-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.7,index,ECOS
+2017-03-01,News Sentiment Index,News Sentiment Index,100.66,index,ECOS
+2017-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS
+2017-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.3,index,ECOS
+2017-04-01,News Sentiment Index,News Sentiment Index,114.51,index,ECOS
+2017-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.7,index,ECOS
+2017-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.3,index,ECOS
+2017-05-01,News Sentiment Index,News Sentiment Index,116.15,index,ECOS
+2017-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.3,index,ECOS
+2017-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.7,index,ECOS
+2017-06-01,News Sentiment Index,News Sentiment Index,111.71,index,ECOS
+2017-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.8,index,ECOS
+2017-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),99.9,index,ECOS
+2017-07-01,News Sentiment Index,News Sentiment Index,111.64,index,ECOS
+2017-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.3,index,ECOS
+2017-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.1,index,ECOS
+2017-08-01,News Sentiment Index,News Sentiment Index,95.79,index,ECOS
+2017-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.6,index,ECOS
+2017-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),99.7,index,ECOS
+2017-09-01,News Sentiment Index,News Sentiment Index,101.24,index,ECOS
+2017-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.8,index,ECOS
+2017-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.8,index,ECOS
+2017-10-01,News Sentiment Index,News Sentiment Index,110.08,index,ECOS
+2017-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.9,index,ECOS
+2017-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.8,index,ECOS
+2017-11-01,News Sentiment Index,News Sentiment Index,117.48,index,ECOS
+2017-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.7,index,ECOS
+2017-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.7,index,ECOS
+2017-12-01,News Sentiment Index,News Sentiment Index,109.47,index,ECOS
+2018-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.3,index,ECOS
+2018-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.1,index,ECOS
+2018-01-01,News Sentiment Index,News Sentiment Index,113.18,index,ECOS
+2018-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.8,index,ECOS
+2018-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.6,index,ECOS
+2018-02-01,News Sentiment Index,News Sentiment Index,105.17,index,ECOS
+2018-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.2,index,ECOS
+2018-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.4,index,ECOS
+2018-03-01,News Sentiment Index,News Sentiment Index,103.43,index,ECOS
+2018-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.7,index,ECOS
+2018-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.5,index,ECOS
+2018-04-01,News Sentiment Index,News Sentiment Index,105.25,index,ECOS
+2018-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.2,index,ECOS
+2018-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),102.5,index,ECOS
+2018-05-01,News Sentiment Index,News Sentiment Index,105.76,index,ECOS
+2018-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.8,index,ECOS
+2018-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),100.5,index,ECOS
+2018-06-01,News Sentiment Index,News Sentiment Index,101.76,index,ECOS
+2018-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),98.3,index,ECOS
+2018-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.2,index,ECOS
+2018-07-01,News Sentiment Index,News Sentiment Index,91.01,index,ECOS
+2018-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.8,index,ECOS
+2018-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.3,index,ECOS
+2018-08-01,News Sentiment Index,News Sentiment Index,96.2,index,ECOS
+2018-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.4,index,ECOS
+2018-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),99.8,index,ECOS
+2018-09-01,News Sentiment Index,News Sentiment Index,101.05,index,ECOS
+2018-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.9,index,ECOS
+2018-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.5,index,ECOS
+2018-10-01,News Sentiment Index,News Sentiment Index,86.86,index,ECOS
+2018-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.5,index,ECOS
+2018-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.4,index,ECOS
+2018-11-01,News Sentiment Index,News Sentiment Index,93.53,index,ECOS
+2018-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.1,index,ECOS
+2018-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.0,index,ECOS
+2018-12-01,News Sentiment Index,News Sentiment Index,92.17,index,ECOS
+2019-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.8,index,ECOS
+2019-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.2,index,ECOS
+2019-01-01,News Sentiment Index,News Sentiment Index,97.23,index,ECOS
+2019-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.6,index,ECOS
+2019-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),97.7,index,ECOS
+2019-02-01,News Sentiment Index,News Sentiment Index,95.8,index,ECOS
+2019-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.4,index,ECOS
+2019-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.8,index,ECOS
+2019-03-01,News Sentiment Index,News Sentiment Index,95.68,index,ECOS
+2019-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.3,index,ECOS
+2019-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.1,index,ECOS
+2019-04-01,News Sentiment Index,News Sentiment Index,101.7,index,ECOS
+2019-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.2,index,ECOS
+2019-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.5,index,ECOS
+2019-05-01,News Sentiment Index,News Sentiment Index,94.68,index,ECOS
+2019-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.0,index,ECOS
+2019-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.1,index,ECOS
+2019-06-01,News Sentiment Index,News Sentiment Index,94.76,index,ECOS
+2019-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.8,index,ECOS
+2019-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.3,index,ECOS
+2019-07-01,News Sentiment Index,News Sentiment Index,89.13,index,ECOS
+2019-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.5,index,ECOS
+2019-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.5,index,ECOS
+2019-08-01,News Sentiment Index,News Sentiment Index,82.84,index,ECOS
+2019-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.0,index,ECOS
+2019-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.5,index,ECOS
+2019-09-01,News Sentiment Index,News Sentiment Index,95.08,index,ECOS
+2019-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.0,index,ECOS
+2019-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.4,index,ECOS
+2019-10-01,News Sentiment Index,News Sentiment Index,92.66,index,ECOS
+2019-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),91.3,index,ECOS
+2019-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.8,index,ECOS
+2019-11-01,News Sentiment Index,News Sentiment Index,104.08,index,ECOS
+2019-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),88.9,index,ECOS
+2019-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.3,index,ECOS
+2019-12-01,News Sentiment Index,News Sentiment Index,105.71,index,ECOS
+2020-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),85.7,index,ECOS
+2020-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.0,index,ECOS
+2020-01-01,News Sentiment Index,News Sentiment Index,102.02,index,ECOS
+2020-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),81.8,index,ECOS
+2020-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),90.0,index,ECOS
+2020-02-01,News Sentiment Index,News Sentiment Index,81.32,index,ECOS
+2020-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),78.0,index,ECOS
+2020-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),68.6,index,ECOS
+2020-03-01,News Sentiment Index,News Sentiment Index,70.11,index,ECOS
+2020-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),75.1,index,ECOS
+2020-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),61.3,index,ECOS
+2020-04-01,News Sentiment Index,News Sentiment Index,79.63,index,ECOS
+2020-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),73.7,index,ECOS
+2020-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),63.5,index,ECOS
+2020-05-01,News Sentiment Index,News Sentiment Index,89.94,index,ECOS
+2020-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),73.9,index,ECOS
+2020-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),68.2,index,ECOS
+2020-06-01,News Sentiment Index,News Sentiment Index,98.72,index,ECOS
+2020-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),75.5,index,ECOS
+2020-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),76.8,index,ECOS
+2020-07-01,News Sentiment Index,News Sentiment Index,106.16,index,ECOS
+2020-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),77.9,index,ECOS
+2020-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),83.1,index,ECOS
+2020-08-01,News Sentiment Index,News Sentiment Index,99.38,index,ECOS
+2020-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),80.9,index,ECOS
+2020-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),77.4,index,ECOS
+2020-09-01,News Sentiment Index,News Sentiment Index,99.3,index,ECOS
+2020-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),84.2,index,ECOS
+2020-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),88.8,index,ECOS
+2020-10-01,News Sentiment Index,News Sentiment Index,104.85,index,ECOS
+2020-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),87.6,index,ECOS
+2020-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.9,index,ECOS
+2020-11-01,News Sentiment Index,News Sentiment Index,113.05,index,ECOS
+2020-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.8,index,ECOS
+2020-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),85.7,index,ECOS
+2020-12-01,News Sentiment Index,News Sentiment Index,113.75,index,ECOS
+2021-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.0,index,ECOS
+2021-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.9,index,ECOS
+2021-01-01,News Sentiment Index,News Sentiment Index,114.43,index,ECOS
+2021-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.9,index,ECOS
+2021-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.8,index,ECOS
+2021-02-01,News Sentiment Index,News Sentiment Index,107.32,index,ECOS
+2021-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.6,index,ECOS
+2021-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),101.7,index,ECOS
+2021-03-01,News Sentiment Index,News Sentiment Index,114.5,index,ECOS
+2021-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.9,index,ECOS
+2021-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.0,index,ECOS
+2021-04-01,News Sentiment Index,News Sentiment Index,120.04,index,ECOS
+2021-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),103.8,index,ECOS
+2021-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.9,index,ECOS
+2021-05-01,News Sentiment Index,News Sentiment Index,116.02,index,ECOS
+2021-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),105.3,index,ECOS
+2021-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),110.1,index,ECOS
+2021-06-01,News Sentiment Index,News Sentiment Index,119.01,index,ECOS
+2021-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),106.2,index,ECOS
+2021-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),104.6,index,ECOS
+2021-07-01,News Sentiment Index,News Sentiment Index,117.85,index,ECOS
+2021-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),106.9,index,ECOS
+2021-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.8,index,ECOS
+2021-08-01,News Sentiment Index,News Sentiment Index,110.06,index,ECOS
+2021-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.3,index,ECOS
+2021-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.3,index,ECOS
+2021-09-01,News Sentiment Index,News Sentiment Index,106.56,index,ECOS
+2021-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.6,index,ECOS
+2021-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.6,index,ECOS
+2021-10-01,News Sentiment Index,News Sentiment Index,104.52,index,ECOS
+2021-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.6,index,ECOS
+2021-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),107.4,index,ECOS
+2021-11-01,News Sentiment Index,News Sentiment Index,111.1,index,ECOS
+2021-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.4,index,ECOS
+2021-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),105.3,index,ECOS
+2021-12-01,News Sentiment Index,News Sentiment Index,111.81,index,ECOS
+2022-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),107.0,index,ECOS
+2022-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.4,index,ECOS
+2022-01-01,News Sentiment Index,News Sentiment Index,103.32,index,ECOS
+2022-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),106.3,index,ECOS
+2022-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.7,index,ECOS
+2022-02-01,News Sentiment Index,News Sentiment Index,103.7,index,ECOS
+2022-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),105.4,index,ECOS
+2022-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),104.3,index,ECOS
+2022-03-01,News Sentiment Index,News Sentiment Index,103.7,index,ECOS
+2022-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),104.4,index,ECOS
+2022-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),106.6,index,ECOS
+2022-04-01,News Sentiment Index,News Sentiment Index,104.78,index,ECOS
+2022-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),103.2,index,ECOS
+2022-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),107.6,index,ECOS
+2022-05-01,News Sentiment Index,News Sentiment Index,103.25,index,ECOS
+2022-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),101.9,index,ECOS
+2022-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),103.4,index,ECOS
+2022-06-01,News Sentiment Index,News Sentiment Index,83.99,index,ECOS
+2022-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),100.4,index,ECOS
+2022-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.5,index,ECOS
+2022-07-01,News Sentiment Index,News Sentiment Index,91.0,index,ECOS
+2022-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),99.0,index,ECOS
+2022-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),99.9,index,ECOS
+2022-08-01,News Sentiment Index,News Sentiment Index,97.77,index,ECOS
+2022-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),97.6,index,ECOS
+2022-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),98.6,index,ECOS
+2022-09-01,News Sentiment Index,News Sentiment Index,85.57,index,ECOS
+2022-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),96.2,index,ECOS
+2022-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.7,index,ECOS
+2022-10-01,News Sentiment Index,News Sentiment Index,79.37,index,ECOS
+2022-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),95.1,index,ECOS
+2022-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.9,index,ECOS
+2022-11-01,News Sentiment Index,News Sentiment Index,88.04,index,ECOS
+2022-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),94.1,index,ECOS
+2022-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.1,index,ECOS
+2022-12-01,News Sentiment Index,News Sentiment Index,82.72,index,ECOS
+2023-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.5,index,ECOS
+2023-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),90.7,index,ECOS
+2023-01-01,News Sentiment Index,News Sentiment Index,93.5,index,ECOS
+2023-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.1,index,ECOS
+2023-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.8,index,ECOS
+2023-02-01,News Sentiment Index,News Sentiment Index,97.31,index,ECOS
+2023-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),92.9,index,ECOS
+2023-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.9,index,ECOS
+2023-03-01,News Sentiment Index,News Sentiment Index,93.89,index,ECOS
+2023-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.0,index,ECOS
+2023-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.5,index,ECOS
+2023-04-01,News Sentiment Index,News Sentiment Index,94.78,index,ECOS
+2023-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.1,index,ECOS
+2023-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.9,index,ECOS
+2023-05-01,News Sentiment Index,News Sentiment Index,96.33,index,ECOS
+2023-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.2,index,ECOS
+2023-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.4,index,ECOS
+2023-06-01,News Sentiment Index,News Sentiment Index,101.63,index,ECOS
+2023-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.3,index,ECOS
+2023-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.8,index,ECOS
+2023-07-01,News Sentiment Index,News Sentiment Index,102.08,index,ECOS
+2023-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS
+2023-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.7,index,ECOS
+2023-08-01,News Sentiment Index,News Sentiment Index,98.92,index,ECOS
+2023-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS
+2023-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.4,index,ECOS
+2023-09-01,News Sentiment Index,News Sentiment Index,100.74,index,ECOS
+2023-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS
+2023-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.4,index,ECOS
+2023-10-01,News Sentiment Index,News Sentiment Index,95.29,index,ECOS
+2023-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.3,index,ECOS
+2023-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.8,index,ECOS
+2023-11-01,News Sentiment Index,News Sentiment Index,102.35,index,ECOS
+2023-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS
+2023-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.7,index,ECOS
+2023-12-01,News Sentiment Index,News Sentiment Index,103.38,index,ECOS
+2024-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.4,index,ECOS
+2024-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),91.8,index,ECOS
+2024-01-01,News Sentiment Index,News Sentiment Index,99.45,index,ECOS
+2024-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.5,index,ECOS
+2024-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.7,index,ECOS
+2024-02-01,News Sentiment Index,News Sentiment Index,107.82,index,ECOS
+2024-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.6,index,ECOS
+2024-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.5,index,ECOS
+2024-03-01,News Sentiment Index,News Sentiment Index,110.61,index,ECOS
+2024-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.6,index,ECOS
+2024-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.8,index,ECOS
+2024-04-01,News Sentiment Index,News Sentiment Index,107.78,index,ECOS
+2024-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.6,index,ECOS
+2024-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.1,index,ECOS
+2024-05-01,News Sentiment Index,News Sentiment Index,109.41,index,ECOS
+2024-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.5,index,ECOS
+2024-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),95.0,index,ECOS
+2024-06-01,News Sentiment Index,News Sentiment Index,109.34,index,ECOS
+2024-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),93.3,index,ECOS
+2024-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),96.3,index,ECOS
+2024-07-01,News Sentiment Index,News Sentiment Index,106.58,index,ECOS
+2024-08-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),92.9,index,ECOS
+2024-08-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.5,index,ECOS
+2024-08-01,News Sentiment Index,News Sentiment Index,99.3,index,ECOS
+2024-09-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),92.3,index,ECOS
+2024-09-01,Economic Sentiment Index,Economic Sentiment Index (Raw),94.0,index,ECOS
+2024-09-01,News Sentiment Index,News Sentiment Index,98.67,index,ECOS
+2024-10-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),91.6,index,ECOS
+2024-10-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.8,index,ECOS
+2024-10-01,News Sentiment Index,News Sentiment Index,100.46,index,ECOS
+2024-11-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.8,index,ECOS
+2024-11-01,Economic Sentiment Index,Economic Sentiment Index (Raw),93.0,index,ECOS
+2024-11-01,News Sentiment Index,News Sentiment Index,100.47,index,ECOS
+2024-12-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.0,index,ECOS
+2024-12-01,Economic Sentiment Index,Economic Sentiment Index (Raw),83.3,index,ECOS
+2024-12-01,News Sentiment Index,News Sentiment Index,85.75,index,ECOS
+2025-01-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.5,index,ECOS
+2025-01-01,Economic Sentiment Index,Economic Sentiment Index (Raw),86.7,index,ECOS
+2025-01-01,News Sentiment Index,News Sentiment Index,99.32,index,ECOS
+2025-02-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.2,index,ECOS
+2025-02-01,Economic Sentiment Index,Economic Sentiment Index (Raw),90.2,index,ECOS
+2025-02-01,News Sentiment Index,News Sentiment Index,99.85,index,ECOS
+2025-03-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.2,index,ECOS
+2025-03-01,Economic Sentiment Index,Economic Sentiment Index (Raw),87.2,index,ECOS
+2025-03-01,News Sentiment Index,News Sentiment Index,93.73,index,ECOS
+2025-04-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.4,index,ECOS
+2025-04-01,Economic Sentiment Index,Economic Sentiment Index (Raw),87.5,index,ECOS
+2025-04-01,News Sentiment Index,News Sentiment Index,97.94,index,ECOS
+2025-05-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),89.8,index,ECOS
+2025-05-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.2,index,ECOS
+2025-05-01,News Sentiment Index,News Sentiment Index,101.71,index,ECOS
+2025-06-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.3,index,ECOS
+2025-06-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.8,index,ECOS
+2025-06-01,News Sentiment Index,News Sentiment Index,107.96,index,ECOS
+2025-07-01,Economic Sentiment Index,Economic Sentiment Index (Adjusted),90.9,index,ECOS
+2025-07-01,Economic Sentiment Index,Economic Sentiment Index (Raw),92.9,index,ECOS
+2025-07-01,News Sentiment Index,News Sentiment Index,107.78,index,ECOS

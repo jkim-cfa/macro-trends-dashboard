@@ -1,0 +1,3 @@
+﻿indicator_1,indicator_2,correlation,p_value,significance,data_points,category
+KOSPI,USD/KRW,0.0815475673542601,0.1554079512493565,Not Significant,305,Cross-Asset Correlation
+Leading Index,Coincident Index,0.40230198407058215,2.7083904040383626e-13,Significant,305,Economic Indices Correlation

@@ -1,0 +1,148 @@
+{
+  "summary_statistics": {
+    "Top 5 YoY Decrease Items": [
+      {
+        "commodity_full_name": "Natural Gas(271121)",
+        "export_value_thousand_usd": 195294018851.0,
+        "yoy_change_percent": -41.71662
+      },
+      {
+        "commodity_full_name": "Bituminous Coal(270112)",
+        "export_value_thousand_usd": 104352572975.0,
+        "yoy_change_percent": -40.40275
+      },
+      {
+        "commodity_full_name": "Crude Oil(270900)",
+        "export_value_thousand_usd": 1267033737071.0,
+        "yoy_change_percent": -38.12998
+      },
+      {
+        "commodity_full_name": "Natural Gas(271111)",
+        "export_value_thousand_usd": 247792097183.0,
+        "yoy_change_percent": -38.00203
+      },
+      {
+        "commodity_full_name": "Light Oil and Preparations(271012)",
+        "export_value_thousand_usd": 334239623767.0,
+        "yoy_change_percent": -36.32839
+      }
+    ],
+    "Top 5 YoY Increase Items": [
+      {
+        "commodity_full_name": "Processing Units (non-8471.41/49)(847150)",
+        "export_value_thousand_usd": 166502119489.0,
+        "yoy_change_percent": 54.56324
+      },
+      {
+        "commodity_full_name": "Immunological Products (Dosage/Retail)(300215)",
+        "export_value_thousand_usd": 297822987838.0,
+        "yoy_change_percent": 51.85031
+      },
+      {
+        "commodity_full_name": "Other Hybrid Vehicles (non-Plug-in)(870340)",
+        "export_value_thousand_usd": 162060546702.0,
+        "yoy_change_percent": 45.83869
+      },
+      {
+        "commodity_full_name": "Immunological Serum & Blood Fractions(300212)",
+        "export_value_thousand_usd": 73732879214.0,
+        "yoy_change_percent": 36.76778
+      },
+      {
+        "commodity_full_name": "Parts for HS8471 Machines(847330)",
+        "export_value_thousand_usd": 195692507329.0,
+        "yoy_change_percent": 34.53138
+      }
+    ],
+    "Top 5 Export Increase Countries": [
+      {
+        "country": "Hong Kong",
+        "partner": "China",
+        "export_value_thousand_usd": 375071581326.0,
+        "yoy_change_percent": 1340.24684
+      },
+      {
+        "country": "Taiwan, Province of China",
+        "partner": "United States",
+        "export_value_thousand_usd": 118730454766.0,
+        "yoy_change_percent": 31.9506
+      },
+      {
+        "country": "Ireland",
+        "partner": "United States",
+        "export_value_thousand_usd": 104873387993.0,
+        "yoy_change_percent": 24.5045
+      },
+      {
+        "country": "China",
+        "partner": "Brazil",
+        "export_value_thousand_usd": 69186022713.0,
+        "yoy_change_percent": 21.21972
+      },
+      {
+        "country": "Viet Nam",
+        "partner": "United States",
+        "export_value_thousand_usd": 142475987338.0,
+        "yoy_change_percent": 19.20139
+      }
+    ],
+    "Top Trade Partners by Export Value": [
+      {
+        "country": "Mexico",
+        "partner": "United States",
+        "export_value_thousand_usd": 512529723730.0
+      },
+      {
+        "country": "China",
+        "partner": "United States",
+        "export_value_thousand_usd": 462620339617.0
+      },
+      {
+        "country": "Canada",
+        "partner": "United States",
+        "export_value_thousand_usd": 421345067673.0
+      },
+      {
+        "country": "Hong Kong",
+        "partner": "China",
+        "export_value_thousand_usd": 375071581326.0
+      },
+      {
+        "country": "China",
+        "partner": "Hong Kong",
+        "export_value_thousand_usd": 285645307184.0
+      }
+    ]
+  },
+  "shipping_index": {
+    "correlation_matrix": {
+      "BDI": {
+        "BDI": 1.0,
+        "CCFI": 0.18,
+        "HRCI": -0.39,
+        "SCFI": 0.29
+      },
+      "CCFI": {
+        "BDI": 0.18,
+        "CCFI": 1.0,
+        "HRCI": 0.19,
+        "SCFI": 0.87
+      },
+      "HRCI": {
+        "BDI": -0.39,
+        "CCFI": 0.19,
+        "HRCI": 1.0,
+        "SCFI": 0.02
+      },
+      "SCFI": {
+        "BDI": 0.29,
+        "CCFI": 0.87,
+        "HRCI": 0.02,
+        "SCFI": 1.0
+      }
+    },
+    "volatility_3m_std": {
+      "value": 121.6
+    }
+  }
+}
