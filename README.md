@@ -1,100 +1,121 @@
-# 🌐 Global Macro Insight Engine  
-*A Data Pipeline for Second-Order Macroeconomic Intelligence*  
-**Automates the collection, analysis, and interpretation of global economic data—revealing hidden trends and cascading effects.**  
+# 🌐 Global Macro Insight Engine
+
+A modular, AI-powered macroeconomic intelligence platform that integrates structured datasets, real-time insights, and generative AI to surface second-order effects, track strategic trends, and support economic, trade, and defense analysis.
 
 ---
 
-## 📌 Key Features  
-✔ **Automated Data Ingestion** – APIs, web scraping, and PDF parsing (IEA, IMF, Bank of Korea, USDA)  
-✔ **Second-Order Insight Generation** – Identifies ripple effects across sectors (e.g., *steel production → shipping rates*)  
-✔ **Structured Metadata & Cataloguing** – Standardised taxonomy for indicators (country, sector, unit, source)  
-✔ **AI-Powered Analysis** *(Planned)* – NLP summarisation of central bank reports using LangChain/OpenAI  
+## 🚀 Project Summary
+
+**Global Macro Insight Engine** is a full-stack data platform designed to:
+- Ingest and standardize macroeconomic, trade, defense, and energy datasets.
+- Generate LLM-based insights for each sector across multiple analytical dimensions.
+- Visualize key signals with interactive, recruiter-friendly dashboards.
+- Support economic intelligence, policy foresight, and global risk monitoring use cases.
 
 ---
 
-## 🧠 Why Second-Order Thinking?  
-Traditional macro tracking asks: *"What happened?"*  
-This project answers: *"What will happen next?"*  
+## 🧱 Architecture
 
-**Example:**  
-```
-↓ Chinese factory activity slows  
-→ Reduced demand for Australian iron ore  
-→ Dry bulk freight rates decline (BDI Index)  
-→ Shipping companies defer new vessel orders  
-→ Shipyard stocks underperform  
-```
----
+### 1. **Data Pipeline**
+- **Sources**: World Bank, IMF, OPEC, USDA, Korea Customs, ECOS, DAPA, World Steel, SIPRI, etc.
+- **Methods**: REST APIs, BeautifulSoup/Selenium scraping, PDF parsing, CSV ingestion.
+- **Processing**:
+  - Clean, normalize, standardize all inputs.
+  - Load to **PostgreSQL** under a unified schema `unified_macro_view`.
+  - Key columns: `date`, `sector`, `indicator`, `country`, `partner`, `value`, `unit`, `domain`, etc.
 
-## 🛠️ Tech Stack  
-| Layer                | Tools                                                                 |  
-|----------------------|-----------------------------------------------------------------------|  
-| **Data Extraction**  | `requests`, `BeautifulSoup`, `selenium`, `PyMuPDF` (PDFs)            |  
-| **Data Processing**  | `pandas`, `numpy`, `openpyxl`                                        |  
-| **AI/NLP**           | `LangChain`, `transformers`, OpenAI API *(Planned)*                  |  
-| **Orchestration**    | Custom scripts → **Airflow** *(Planned)*                             |  
-| **Visualisation**    | `Streamlit` *(Planned)*                                              |  
+### 2. **Insight Engine**
+- Uses **Google Gemini LLM** to analyze:
+  - 📊 Core Trends
+  - 🔍 Hidden Effects
+  - 🎯 Strategic Recommendations
+  - ⚠️ Risk Assessments
+  - 📈 Market Intelligence
+- Prompts are engineered with sector-specific metadata, summaries, and trend descriptors.
 
----
-
-## 🔄 Pipeline Architecture  
-```mermaid  
-graph LR  
-A[Raw Data] --> B(Extract: APIs/Scraping/PDFs)  
-B --> C(Transform: Clean, Metadata, Normalise)  
-C --> D[Structured CSV/DB]  
-D --> E(Analyse: Second-Order Logic)  
-E --> F[Insights Dashboard]  
-```  
-
-## 🔄 Pipeline Architecture  
-
-1. **Extract**  
-   - **Government/Institutional Sources**  
-     - `ECOS` (Bank of Korea):  
-       - Economy confidence indices  
-       - Leading/coincident indicators  
-       - FX rates  
-       - Manufacturing inventories  
-       - Trade statistics (YoY by country/item)  
-     - `USDA`: Crop production data (wheat, corn, soybean, etc.)  
-     - `IEA`: Monthly oil stock reports  
-     - `Defense Acquisition Program Administration`: Bid information  
-
-   - **Trade/Industry Reports**  
-     - `KOTRA`:  
-       - Global/Korean export/import trends  
-       - Top commodity flows  
-       - Trade partner variations  
-     - `World Steel Association`: Regional steel production  
-     - `WSTS`: Semiconductor billing statistics  
-
-   - **Energy Markets**  
-     - `PetroNet`: Korean oil imports by origin  
-     - `OPEC`: Monthly Oil Market Reports (PDF)  
-
-   - **Shipping/Logistics**  
-     - `KCLA`: Daily shipping indices (CCFI, SCFI, BDI)  
-
-2. **Transform**  
-   - Standardise date formats and units  
-   - Add metadata tags (sector, geography, frequency)  
-   - Handle multi-language fields (Korean/English)  
-
-3. **Analyse** *(Planned)*  
-   - Cross-dataset correlations (e.g., steel production → shipping rates)  
-   - NLP processing for PDF reports (OPEC, WSTS)  
-
-4. **Visualise** *(Planned)*  
-   - Commodity flow dashboards  
-   - Leading indicator alerts  
+### 3. **Interactive Dashboards**
+- Built using **Streamlit** + **Plotly**
+- Features:
+  - Dual-axis trends
+  - Volatility rankings
+  - Growth analysis
+  - Sector-specific layouts
+- Fully responsive and visually optimized for recruiters and decision-makers.
 
 ---
 
-## 🔭 Roadmap  
-- [ ] **PDF Insight Extraction** 
-- [ ] **Airflow Orchestration** 
-- [ ] **Streamlit Dashboard**
-- [ ] **Forecasting Module**
+## 🛠️ Tech Stack
 
---- 
+| Area         | Tools                                          |
+|--------------|------------------------------------------------|
+| Backend      | Python, PostgreSQL, SQLAlchemy, Docker         |
+| ETL          | Pandas, NumPy, batch loaders                   |
+| AI & Insight | Gemini LLM, Google Generative AI API           |
+| Frontend     | Streamlit, Plotly, custom HTML/CSS             |
+| Deployment   | Streamlit Cloud, Docker Compose (local dev)    |
+
+---
+
+## 🎯 Core Skills Demonstrated
+
+| Domain        | Focus                                         |
+|---------------|-----------------------------------------------|
+| Data & AI     | ETL pipelines, LLM prompt engineering          |
+| Visualization | UI/UX design, dynamic dashboards               |
+| Strategy      | Economic signal detection, trade intelligence  |
+| Engineering   | Containerization, modular pipelines            |
+
+---
+
+## 📊 Coverage
+
+- ✅ **7 Sector Dashboards**:
+  - 🌾 Agriculture
+  - 🛡 Defence
+  - 💹 Economy
+  - ⚡ Energy
+  - 🌍 Global Trade
+  - 🇰🇷 Korea Trade
+  - 🏭 Industry
+
+- ✅ **92 Standardized Indicators**
+- ✅ **160K+ Data Records**
+- ✅ Real-time AI insight generation with sector sub-tabs
+
+---
+
+## 📌 Why It Matters
+
+This platform bridges the gap between raw data and strategic understanding by combining:
+- Full-stack engineering
+- Economic logic
+- Generative AI
+
+It is tailored for roles in:
+- Strategic Data Analysis
+- Economic Intelligence
+- AI Product or Data Product Management
+
+---
+
+## 📎 Contact
+
+For questions, feedback, or opportunities:
+- 📧 [https://www.linkedin.com/in/jaeha-kim16]
+- 🔗 [LinkedIn/GitHub](https://github.com/emailoneid)
+
+---
+
+## ✅ To Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/emailoneid/Global_Macro_Insight_Engine
+cd global-macro-engine
+
+# Setup environment variables
+cp .env.example .env
+# (Fill in your DB credentials, Gemini API key, etc.)
+
+# Run Streamlit
+streamlit run app/Home.py

@@ -1,5 +1,13 @@
 pandas
+numpy
+plotly
 requests
 beautifulsoup4
-openai
 streamlit
+openai
+google-generativeai
+psycopg2-binary
+sqlalchemy
+python-dotenv
+selenium
+scipy

@@ -4,10 +4,10 @@ import os
 
 def main():
     try:
-        os.chdir("streamlit")
+        # os.chdir("streamlit")  # Removed to keep working directory at project root
         
         subprocess.run([
-            sys.executable, "-m", "streamlit", "run", "Home.py",
+            sys.executable, "-m", "streamlit", "run", "streamlit/Home.py",
             "--server.port", "8501",
             "--server.address", "localhost"
         ])
