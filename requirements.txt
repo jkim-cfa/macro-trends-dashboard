@@ -11,3 +11,4 @@ sqlalchemy
 python-dotenv
 selenium
 scipy
+matplotlib
