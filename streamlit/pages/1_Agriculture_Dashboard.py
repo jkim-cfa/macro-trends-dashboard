@@ -656,49 +656,50 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-# Enhanced Raw Data Preview (Data Explorer) - moved below AI section
-st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', unsafe_allow_html=True)
-
+# Data Explorer Section
 if not ready_data.empty:
+    st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', unsafe_allow_html=True)
+
+    # Format data
     ready_data_display = format_dates_for_display(ready_data)
-    with st.expander("📊 Interactive Data Analysis", expanded=False):
-        # Export functionality in top right corner
-        col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
-        with col4:
-            if st.button("📥 Export Data", type="primary"):
-                csv = ready_data_display.to_csv(index=False)
-                st.download_button(
-                    label="Download CSV",
-                    data=csv,
-                    file_name=f"agriculture_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                    mime="text/csv"
-                )
-        
-        # Add search and filter capabilities
-        search_term = st.text_input("🔍 Search data:", placeholder="Enter commodity name...")
-        
-        if search_term:
-            filtered_data = ready_data_display[
-                ready_data_display.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
-            ]
-        else:
-            filtered_data = ready_data_display
-        
-        # Add pagination
-        page_size = st.selectbox("📄 Records per page:", [10, 25, 50, 100], index=0)
-        total_records = len(filtered_data)
-        total_pages = (total_records + page_size - 1) // page_size
-        
-        if total_pages > 1:
-            page = st.selectbox("📖 Page:", range(1, total_pages + 1), index=0) - 1
-            start_idx = page * page_size
-            end_idx = min(start_idx + page_size, total_records)
-            display_data = filtered_data.iloc[start_idx:end_idx]
-        else:
-            display_data = filtered_data
-        
-        st.dataframe(display_data, use_container_width=True)
-        st.caption(f"Showing {len(display_data)} of {total_records} records")
+
+    # Export CSV
+    csv = ready_data_display.to_csv(index=False)
+    st.download_button(
+        label="📥 Export Data",
+        data=csv,
+        file_name=f"agriculture_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+        mime="text/csv",
+        type="primary"
+    )
+
+    # Search
+    search_term = st.text_input("🔍 Search data:", placeholder="Enter commodity name...")
+
+    if search_term:
+        filtered_data = ready_data_display[
+            ready_data_display.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+        ]
+    else:
+        filtered_data = ready_data_display
+
+    # Pagination
+    page_size = st.selectbox("📄 Records per page:", [10, 25, 50, 100], index=0)
+    total_records = len(filtered_data)
+    total_pages = (total_records + page_size - 1) // page_size
+
+    if total_pages > 1:
+        page = st.selectbox("📖 Page:", range(1, total_pages + 1), index=0) - 1
+        start_idx = page * page_size
+        end_idx = min(start_idx + page_size, total_records)
+        display_data = filtered_data.iloc[start_idx:end_idx]
+    else:
+        display_data = filtered_data
+
+    # Display data
+    st.dataframe(display_data, use_container_width=True)
+    st.caption(f"Showing {len(display_data)} of {total_records} records")
+
 else:
     st.markdown("""
     <div class="alert-box">

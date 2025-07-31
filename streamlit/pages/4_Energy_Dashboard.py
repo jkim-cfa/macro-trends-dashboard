@@ -780,14 +780,15 @@ if not iea_stocks_raw.empty or not oil_imports_raw.empty or not opec_summary_raw
             with st.expander("🛢️ IEA Oil Stocks Data", expanded=False):
                 col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
                 with col4:
-                    if st.button("📥 Export Data", type="primary", key="export_iea"):
-                        csv = iea_stocks_raw.to_csv(index=False)
-                        st.download_button(
-                            label="Download CSV",
-                            data=csv,
-                            file_name=f"iea_stocks_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                            mime="text/csv"
-                        )
+                    csv = iea_stocks_raw.to_csv(index=False)
+                    st.download_button(
+                        label="📥 Export Data",
+                        data=csv,
+                        file_name=f"iea_stocks_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv",
+                        type="primary",
+                        key="export_iea"
+                    )
                 search_term = st.text_input("🔍 Search countries:", placeholder="Enter country name...", key="search_iea")
                 if search_term:
                     filtered_data = iea_stocks_raw[
@@ -803,14 +804,15 @@ if not iea_stocks_raw.empty or not oil_imports_raw.empty or not opec_summary_raw
             with st.expander("🚢 Oil Imports Data", expanded=False):
                 col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
                 with col4:
-                    if st.button("📥 Export Data", type="primary", key="export_imports"):
-                        csv = oil_imports_raw.to_csv(index=False)
-                        st.download_button(
-                            label="Download CSV",
-                            data=csv,
-                            file_name=f"oil_imports_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                            mime="text/csv"
-                        )
+                    csv = oil_imports_raw.to_csv(index=False)
+                    st.download_button(
+                        label="📥 Export Data",
+                        data=csv,
+                        file_name=f"oil_imports_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv",
+                        type="primary",
+                        key="export_imports"
+                    )
                 search_term = st.text_input("🔍 Search regions/countries:", placeholder="Enter region or country...", key="search_imports")
                 if search_term:
                     filtered_data = oil_imports_raw[
@@ -826,14 +828,15 @@ if not iea_stocks_raw.empty or not oil_imports_raw.empty or not opec_summary_raw
             with st.expander("🛢️ OPEC Insights Data", expanded=False):
                 col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
                 with col4:
-                    if st.button("📥 Export Data", type="primary", key="export_opec"):
-                        csv = opec_summary_raw.to_csv(index=False)
-                        st.download_button(
-                            label="Download CSV",
-                            data=csv,
-                            file_name=f"opec_insights_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                            mime="text/csv"
-                        )
+                    csv = opec_summary_raw.to_csv(index=False)
+                    st.download_button(
+                        label="📥 Export Data",
+                        data=csv,
+                        file_name=f"opec_insights_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv",
+                        type="primary",
+                        key="export_opec"
+                    )
                 search_term = st.text_input("🔍 Search topics/insights:", placeholder="Enter topic or keyword...", key="search_opec")
                 if search_term:
                     filtered_data = opec_summary_raw[

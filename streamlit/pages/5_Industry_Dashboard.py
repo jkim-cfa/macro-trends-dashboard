@@ -713,14 +713,15 @@ with tab1:
         with st.expander("📦 Manufacturing Inventory Raw Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_inventory"):
-                    csv = manufacturing_inventory_raw.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"manufacturing_inventory_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = manufacturing_inventory_raw.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"manufacturing_inventory_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_inventory"
+                )
             search_term = st.text_input("🔍 Search categories:", placeholder="Enter category name...", key="search_inventory")
             if search_term:
                 filtered_data = manufacturing_inventory_raw[
@@ -737,14 +738,15 @@ with tab2:
         with st.expander("🏭 Steel Production Raw Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_steel"):
-                    csv = steel_production_raw.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"steel_production_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = steel_production_raw.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"steel_production_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_steel"
+                )
             search_term = st.text_input("🔍 Search regions:", placeholder="Enter region name...", key="search_steel")
             if search_term:
                 filtered_data = steel_production_raw[
@@ -761,14 +763,15 @@ with tab3:
         with st.expander("📊 Volatility Analysis Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_volatility"):
-                    csv = inventory_volatility_analysis.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"volatility_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = inventory_volatility_analysis.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"volatility_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_volatility"
+                )
             st.dataframe(inventory_volatility_analysis, use_container_width=True)
     else:
         st.info("No volatility analysis data available.")
@@ -778,14 +781,15 @@ with tab4:
         with st.expander("📈 Trend Statistics Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_trend_stats"):
-                    csv = inventory_trend_statistics.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"trend_statistics_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = inventory_trend_statistics.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"trend_statistics_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_trend_stats"
+                )
             st.dataframe(inventory_trend_statistics, use_container_width=True)
     else:
         st.info("No trend statistics data available.")

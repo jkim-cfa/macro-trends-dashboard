@@ -986,14 +986,15 @@ if not economic_indicators_raw.empty or not fx_raw.empty or not sentiment_raw.em
                 # Export functionality
                 col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
                 with col4:
-                    if st.button("📥 Export Data", type="primary", key="export_economic"):
-                        csv = economic_indicators_raw.to_csv(index=False)
-                        st.download_button(
-                            label="Download CSV",
-                            data=csv,
-                            file_name=f"economic_indicators_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                            mime="text/csv"
-                        )
+                    csv = economic_indicators_raw.to_csv(index=False)
+                    st.download_button(
+                        label="📥 Export Data",
+                        data=csv,
+                        file_name=f"economic_indicators_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv",
+                        type="primary",
+                        key="export_economic"
+                    )
                 
                 # Search functionality
                 search_term = st.text_input("🔍 Search indicators:", placeholder="Enter indicator name...", key="search_economic")

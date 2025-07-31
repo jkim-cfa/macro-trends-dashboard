@@ -1087,14 +1087,15 @@ with tab1:
         with st.expander("📊 Export Decrease Items Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_decrease_items"):
-                    csv = export_decrease_items_top5.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"export_decrease_items_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = export_decrease_items_top5.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"export_decrease_items_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_decrease_items"
+                )
             search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_decrease_items")
             if search_term:
                 filtered_data = export_decrease_items_top5[
@@ -1111,14 +1112,15 @@ with tab2:
         with st.expander("📈 Export Increase Items Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_increase_items"):
-                    csv = export_increase_items_top5.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"export_increase_items_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = export_increase_items_top5.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"export_increase_items_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_increase_items"
+                )
             search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_increase_items")
             if search_term:
                 filtered_data = export_increase_items_top5[
@@ -1135,14 +1137,15 @@ with tab3:
         with st.expander("🌍 Export Increase Countries Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_increase_countries"):
-                    csv = export_increase_countries_top5.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"export_increase_countries_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = export_increase_countries_top5.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"export_increase_countries_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_increase_countries"
+                )
             search_term = st.text_input("🔍 Search countries:", placeholder="Enter country name...", key="search_increase_countries")
             if search_term:
                 filtered_data = export_increase_countries_top5[
@@ -1159,14 +1162,15 @@ with tab4:
         with st.expander("🤝 Trade Partners Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_trade_partners"):
-                    csv = trade_partners_top5.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"trade_partners_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = trade_partners_top5.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"trade_partners_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_trade_partners"
+                )
             search_term = st.text_input("🔍 Search partners:", placeholder="Enter partner name...", key="search_trade_partners")
             if search_term:
                 filtered_data = trade_partners_top5[
@@ -1183,14 +1187,15 @@ with tab5:
         with st.expander("🚢 Shipping Index Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_shipping_index"):
-                    csv = shipping_index_pivoted.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"shipping_index_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = shipping_index_pivoted.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"shipping_index_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_shipping_index"
+                )
             search_term = st.text_input("🔍 Search indices:", placeholder="Enter index name...", key="search_shipping_index")
             if search_term:
                 filtered_data = shipping_index_pivoted[
@@ -1209,14 +1214,15 @@ with tab6:
             with st.expander("📊 Volatility Analysis Data", expanded=False):
                 col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
                 with col4:
-                    if st.button("📥 Export Data", type="primary", key="export_volatility"):
-                        csv = volatility_display.to_csv(index=False)
-                        st.download_button(
-                            label="Download CSV",
-                            data=csv,
-                            file_name=f"volatility_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                            mime="text/csv"
-                        )
+                    csv = volatility_display.to_csv(index=False)
+                    st.download_button(
+                        label="📥 Export Data",
+                        data=csv,
+                        file_name=f"volatility_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv",
+                        type="primary",
+                        key="export_volatility"
+                    )
                 search_term = st.text_input("🔍 Search volatility data:", placeholder="Enter search term...", key="search_volatility")
                 if search_term:
                     filtered_data = volatility_display[

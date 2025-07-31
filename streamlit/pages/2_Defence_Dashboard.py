@@ -932,22 +932,19 @@ if not combined_analysis.empty:
         # Export functionality in top right corner
         col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
         with col4:
-            if st.button("📥 Export Data", type="primary"):
-                csv = combined_analysis.to_csv(index=False)
-                st.download_button(
-                    label="Download CSV",
-                    data=csv,
-                    file_name=f"defence_contracts_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                    mime="text/csv"
-                )
-        
+            csv = combined_analysis.to_csv(index=False)
+            st.download_button(
+                label="📥 Export Data",
+                data=csv,
+                file_name=f"defence_contracts_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                mime="text/csv",
+                type="primary"
+            )
         # Advanced filtering options
         st.subheader("🔍 Advanced Filters")
         
         col1, col2 = st.columns(2)
-        
-
-        
+             
         with col1:
             # Value range filter with simplified numbers
             min_val_raw = combined_analysis['value'].min()

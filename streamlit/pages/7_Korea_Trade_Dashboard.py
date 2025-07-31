@@ -872,14 +872,16 @@ with tab1:
         with st.expander("📊 Export Partners Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_partners"):
-                    csv = export_top_partners.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"export_partners_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = export_top_partners.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"export_partners_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_top_partners_download"
+                )
+
             search_term = st.text_input("🔍 Search partners:", placeholder="Enter partner name...", key="search_export_partners")
             if search_term:
                 filtered_data = export_top_partners[
@@ -895,14 +897,15 @@ with tab1:
         with st.expander("📊 Import Partners Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="import_partners"):
-                    csv = import_top_partners.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"import_partners_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = import_top_partners.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"import_partners_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="import_top_partners_download"
+                )
             search_term = st.text_input("🔍 Search partners:", placeholder="Enter partner name...", key="search_import_partners")
             if search_term:
                 filtered_data = import_top_partners[
@@ -920,14 +923,15 @@ with tab2:
         with st.expander("📦 Export Items by Amount Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_items_amount"):
-                    csv = export_top_items_by_amount.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"export_items_amount_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = export_top_items_by_amount.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"export_items_amount_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_items_amount_download"
+                )
             search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_export_items_amount")
             if search_term:
                 filtered_data = export_top_items_by_amount[
@@ -943,14 +947,15 @@ with tab2:
         with st.expander("📦 Import Items by Amount Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="import_items_amount"):
-                    csv = import_top_items_by_amount.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"import_items_amount_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = import_top_items_by_amount.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"import_items_amount_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="import_items_amount_download"
+                )
             search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_import_items_amount")
             if search_term:
                 filtered_data = import_top_items_by_amount[
@@ -968,14 +973,15 @@ with tab3:
         with st.expander("📈 Export Partners YoY Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="export_partners_yoy"):
-                    csv = trade_yoy_top_export_partners.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"export_partners_yoy_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = trade_yoy_top_export_partners.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"export_partners_yoy_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="export_partners_yoy_download"
+                )
             search_term = st.text_input("🔍 Search partners:", placeholder="Enter partner name...", key="search_export_partners_yoy")
             if search_term:
                 filtered_data = trade_yoy_top_export_partners[
@@ -991,14 +997,15 @@ with tab3:
         with st.expander("📈 Import Partners YoY Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="import_partners_yoy"):
-                    csv = trade_yoy_top_import_partners.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"import_partners_yoy_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = trade_yoy_top_import_partners.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"import_partners_yoy_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="import_partners_yoy_download"
+                )
             search_term = st.text_input("🔍 Search partners:", placeholder="Enter partner name...", key="search_import_partners_yoy")
             if search_term:
                 filtered_data = trade_yoy_top_import_partners[
@@ -1016,67 +1023,63 @@ with tab4:
         with st.expander("💹 Value Index Top YoY Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="value_index_top_yoy"):
-                    csv = value_index_top_yoy.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"value_index_top_yoy_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = value_index_top_yoy.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"value_index_top_yoy_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="value_index_top_yoy_download"
+                )
             search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_value_index_top_yoy")
-            if search_term:
-                filtered_data = value_index_top_yoy[
-                    value_index_top_yoy.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
-                ]
-            else:
-                filtered_data = value_index_top_yoy
+            filtered_data = value_index_top_yoy[
+                value_index_top_yoy.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+            ] if search_term else value_index_top_yoy
             st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No value index top YoY data available.")
+
     # Value Index Bottom YoY
     if not value_index_bottom_yoy.empty:
         with st.expander("💹 Value Index Bottom YoY Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="value_index_bottom_yoy"):
-                    csv = value_index_bottom_yoy.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"value_index_bottom_yoy_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = value_index_bottom_yoy.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"value_index_bottom_yoy_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="value_index_bottom_yoy_download"
+                )
             search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_value_index_bottom_yoy")
-            if search_term:
-                filtered_data = value_index_bottom_yoy[
-                    value_index_bottom_yoy.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
-                ]
-            else:
-                filtered_data = value_index_bottom_yoy
+            filtered_data = value_index_bottom_yoy[
+                value_index_bottom_yoy.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+            ] if search_term else value_index_bottom_yoy
             st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No value index bottom YoY data available.")
+
     # Value Index Volatility
     if not value_index_volatility.empty:
         with st.expander("💹 Value Index Volatility Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="value_index_volatility"):
-                    csv = value_index_volatility.to_csv()
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"value_index_volatility_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = value_index_volatility.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"value_index_volatility_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="value_index_volatility_download"
+                )
             search_term = st.text_input("🔍 Search items:", placeholder="Enter item name...", key="search_value_index_volatility")
-            if search_term:
-                filtered_data = value_index_volatility[
-                    value_index_volatility.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
-                ]
-            else:
-                filtered_data = value_index_volatility
+            filtered_data = value_index_volatility[
+                value_index_volatility.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+            ] if search_term else value_index_volatility
             st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No value index volatility data available.")
@@ -1087,67 +1090,63 @@ with tab5:
         with st.expander("🔌 Semiconductor Monthly Trend Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="wsts_trend_monthly"):
-                    csv = wsts_trend_monthly.to_csv()
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"wsts_trend_monthly_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = wsts_trend_monthly.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"wsts_trend_monthly_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="wsts_trend_monthly_download"
+                )
             search_term = st.text_input("🔍 Search regions:", placeholder="Enter region name...", key="search_wsts_trend_monthly")
-            if search_term:
-                filtered_data = wsts_trend_monthly[
-                    wsts_trend_monthly.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
-                ]
-            else:
-                filtered_data = wsts_trend_monthly
+            filtered_data = wsts_trend_monthly[
+                wsts_trend_monthly.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+            ] if search_term else wsts_trend_monthly
             st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No semiconductor monthly trend data available.")
+
     # Semiconductor YoY Monthly Data
     if not wsts_yoy_monthly.empty:
         with st.expander("🔌 Semiconductor YoY Monthly Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="wsts_yoy_monthly"):
-                    csv = wsts_yoy_monthly.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"wsts_yoy_monthly_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = wsts_yoy_monthly.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"wsts_yoy_monthly_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="wsts_yoy_monthly_download"
+                )
             search_term = st.text_input("🔍 Search regions:", placeholder="Enter region name...", key="search_wsts_yoy_monthly")
-            if search_term:
-                filtered_data = wsts_yoy_monthly[
-                    wsts_yoy_monthly.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
-                ]
-            else:
-                filtered_data = wsts_yoy_monthly
+            filtered_data = wsts_yoy_monthly[
+                wsts_yoy_monthly.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+            ] if search_term else wsts_yoy_monthly
             st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No semiconductor YoY monthly data available.")
+
     # Semiconductor Market Share Data
     if not wsts_market_share_monthly.empty:
         with st.expander("🔌 Semiconductor Market Share Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="wsts_market_share_monthly"):
-                    csv = wsts_market_share_monthly.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"wsts_market_share_monthly_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = wsts_market_share_monthly.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"wsts_market_share_monthly_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="wsts_market_share_monthly_download"
+                )
             search_term = st.text_input("🔍 Search regions:", placeholder="Enter region name...", key="search_wsts_market_share_monthly")
-            if search_term:
-                filtered_data = wsts_market_share_monthly[
-                    wsts_market_share_monthly.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
-                ]
-            else:
-                filtered_data = wsts_market_share_monthly
+            filtered_data = wsts_market_share_monthly[
+                wsts_market_share_monthly.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+            ] if search_term else wsts_market_share_monthly
             st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No semiconductor market share data available.")
@@ -1157,26 +1156,22 @@ with tab6:
         with st.expander("⚖️ Trade Balance Data", expanded=False):
             col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
             with col4:
-                if st.button("📥 Export Data", type="primary", key="trade_balance"):
-                    csv = trade_balance.to_csv(index=False)
-                    st.download_button(
-                        label="Download CSV",
-                        data=csv,
-                        file_name=f"trade_balance_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv = trade_balance.to_csv(index=False)
+                st.download_button(
+                    label="📥 Export Data",
+                    data=csv,
+                    file_name=f"trade_balance_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    type="primary",
+                    key="trade_balance_download"
+                )
             search_term = st.text_input("🔍 Search partners:", placeholder="Enter partner name...", key="search_trade_balance")
-            if search_term:
-                filtered_data = trade_balance[
-                    trade_balance.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
-                ]
-            else:
-                filtered_data = trade_balance
+            filtered_data = trade_balance[
+                trade_balance.apply(lambda x: x.astype(str).str.contains(search_term, case=False, na=False)).any(axis=1)
+            ] if search_term else trade_balance
             st.dataframe(filtered_data, use_container_width=True)
     else:
         st.info("No trade balance data available.")
-
-
 
 # Enhanced Footer
 st.markdown("---")
