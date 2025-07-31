@@ -1,4 +1,6 @@
-# 🌐 Global Macro Insight Engine
+![Landing Page](https://github.com/user-attachments/assets/5e288bfa-a94b-4681-921e-1261a9856b9b)
+
+# 🛰️ Global Macro Insight Engine
 
 An AI-powered macroeconomic intelligence platform that integrates structured datasets and routinely updated sector insights to reveal second-order effects, uncover strategic signals, and guide economic, trade, and defense analysis through interactive dashboards and LLM-driven interpretation.
 
@@ -94,37 +96,34 @@ An AI-powered macroeconomic intelligence platform that integrates structured dat
 
 ## 📸 Screenshots
 
-### 🔵 Landing Page
+### 🗂️ Sector Summary Page
 
-![Landing Page](https://github.com/user-attachments/assets/1f4a19b0-c579-477b-8b8b-ece6a98eab6d)
-
-> Sector summaries, database stats, and navigation entry point.
+<img src="https://github.com/user-attachments/assets/1f4a19b0-c579-477b-8b8b-ece6a98eab6d" width="700"/>
+<p><em>Sector summaries, database stats, and navigation entry point.</em></p>
 
 ---
 
-### 🌍 Global Trade Dashboard
+### 🌍 Sector Dashboards
 
-![Global Trade](https://github.com/user-attachments/assets/6c684410-8d4d-42fc-9728-a600cb6c6be1)
-![Export Analysis](https://github.com/user-attachments/assets/5377587a-d6eb-43e7-b4d4-d0877507c6cc)
-
-> Interactive dual-axis charts with YoY filters and top exporter analysis.
+<img src="https://github.com/user-attachments/assets/6c684410-8d4d-42fc-9728-a600cb6c6be1" width="700"/>
+<img src="https://github.com/user-attachments/assets/5377587a-d6eb-43e7-b4d4-d0877507c6cc" width="700"/>
+<img src="https://github.com/user-attachments/assets/5377587a-d6eb-43e7-b4d4-d0877507c6cc" width="700"/>
+<p><em>Sector-specific dashboards with dynamic filters, dual-axis time series, and category breakdowns to surface key trends and top contributors.</em></p>
 
 ---
 
 ### 📈 Economic Indicators & Searchable Tables
 
-![Economic Explorer](https://github.com/user-attachments/assets/4e587d35-9289-4c17-affa-58387f7fed11)
-![Economic Search Table](https://github.com/user-attachments/assets/cbba2346-d2ab-402c-a8a4-d4143175d782)
-
-> Drill-down views with downloadable tables and keyword search filters.
+<img src="https://github.com/user-attachments/assets/4e587d35-9289-4c17-affa-58387f7fed11" width="700"/>
+<img src="https://github.com/user-attachments/assets/cbba2346-d2ab-402c-a8a4-d4143175d782" width="700"/>
+<p><em>Drill-down views with downloadable tables and keyword search filters.</em></p>
 
 ---
 
 ### 🧠 Gemini AI Insight Panel
 
-![AI Insight](https://github.com/user-attachments/assets/a8f2a6f8-08a9-4564-94ea-34a634260829)
-
-> Automatically generated strategic insights based on LLM reasoning.
+<img src="https://github.com/user-attachments/assets/a8f2a6f8-08a9-4564-94ea-34a634260829" width="700"/>
+<p><em>Automatically generated strategic insights based on LLM reasoning.</em></p>
 
 ---
 
