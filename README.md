@@ -107,7 +107,7 @@ An AI-powered macroeconomic intelligence platform that integrates structured dat
 
 <img src="https://github.com/user-attachments/assets/6c684410-8d4d-42fc-9728-a600cb6c6be1" width="700"/>
 <img src="https://github.com/user-attachments/assets/5377587a-d6eb-43e7-b4d4-d0877507c6cc" width="700"/>
-<img src="https://github.com/user-attachments/assets/5377587a-d6eb-43e7-b4d4-d0877507c6cc" width="700"/>
+<img src="https://github.com/user-attachments/assets/c87ad141-d4bf-4427-8819-ca68b97b9b81" width="700"/>
 <p><em>Sector-specific dashboards with dynamic filters, dual-axis time series, and category breakdowns to surface key trends and top contributors.</em></p>
 
 ---
