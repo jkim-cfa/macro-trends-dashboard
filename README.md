@@ -3,7 +3,7 @@
 # 🛰️ Global Macro Insight Engine
 [![Streamlit App](https://img.shields.io/badge/Live--Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://globalengine.streamlit.app/)
 [![GitHub](https://img.shields.io/badge/Code--Repo-GitHub-181717?logo=github)](https://github.com/emailoneid/Global_Macro_Insight_Engine)
-[![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jaeha-kim1)
+[![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jaeha-kim16)
 
 An AI-powered macroeconomic intelligence platform that integrates structured datasets and routinely updated sector insights to reveal second-order effects, uncover strategic signals, and guide economic, trade, and defense analysis through interactive dashboards and LLM-driven interpretation.
 
