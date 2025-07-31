@@ -92,6 +92,21 @@ st.markdown("""
         padding: 1rem;
         margin: 1rem 0;
     }
+    .danger-box {
+        background: linear-gradient(135deg, #f8d7da 0%, #f1aeb5 100%);
+        border: 1px solid #dc3545;
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    .purpose-card {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        border: 2px solid #2196f3;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+    }
     .stDataFrame {
         border-radius: 8px;
         overflow: hidden;
@@ -110,9 +125,29 @@ st.markdown("""
 st.markdown("""
 <div class="main-header">
     <h1>🌾 Agriculture Production Dashboard</h1>
-    <p>Comprehensive analysis of crop production trends, growth rates, and strategic insights</p>
+    <p>Strategic commodity intelligence for data-driven agricultural decisions</p>
 </div>
 """, unsafe_allow_html=True)
+
+# Helper Functions
+def extract_section(text, start, end=None):
+    """Extract section between start and end markers."""
+    if start not in text:
+        return ""
+    section = text.split(start)[1]
+    if end and end in section:
+        section = section.split(end)[0]
+    return section.strip()
+
+def format_dates_for_display(df):
+    """Format date columns to show only date without time component"""
+    if not df.empty and 'date' in df.columns:
+        df = df.copy()
+        df['date'] = pd.to_datetime(df['date']).dt.date
+    return df
+
+# NEW: Dashboard Purpose & Audience Section
+# (Will be created after data is loaded)
 
 # Cache data loading for better performance
 @st.cache_data(ttl=3600)  # Cache for 1 hour
@@ -124,23 +159,6 @@ def load_cached_agriculture_data():
     except Exception as e:
         st.error(f"Error loading agriculture data: {str(e)}")
         return {}
-
-# Helper Functions
-def format_dates_for_display(df):
-    """Format date columns to show only date without time component"""
-    if not df.empty and 'date' in df.columns:
-        df = df.copy()
-        df['date'] = pd.to_datetime(df['date']).dt.date
-    return df
-
-def extract_section(text, start, end=None):
-    """Extract section between start and end markers."""
-    if start not in text:
-        return ""
-    section = text.split(start)[1]
-    if end and end in section:
-        section = section.split(end)[0]
-    return section.strip()
 
 def format_insight_text(text):
     """Clean AI text for better markdown rendering in Streamlit."""
@@ -218,6 +236,80 @@ def create_metric_card(title, value, subtitle="", color="#28a745"):
     </div>
     """
 
+# NEW: Performance Analysis Functions
+def analyze_performance_tiers(growth_data):
+    """Categorize commodities into performance tiers based on growth data"""
+    if growth_data.empty or 'CAGR (%)' not in growth_data.columns:
+        return {}
+    
+    mean_growth = growth_data['CAGR (%)'].mean()
+    std_growth = growth_data['CAGR (%)'].std()
+    
+    high_performers = growth_data[growth_data['CAGR (%)'] > mean_growth + 0.5 * std_growth]
+    stable_performers = growth_data[
+        (growth_data['CAGR (%)'] >= mean_growth - 0.5 * std_growth) & 
+        (growth_data['CAGR (%)'] <= mean_growth + 0.5 * std_growth)
+    ]
+    low_performers = growth_data[growth_data['CAGR (%)'] < mean_growth - 0.5 * std_growth]
+    
+    return {
+        'high': high_performers,
+        'stable': stable_performers, 
+        'low': low_performers,
+        'stats': {
+            'mean': mean_growth,
+            'std': std_growth
+        }
+    }
+
+def generate_alerts(growth_data, corr_data):
+    """Generate data-driven alerts based on available data"""
+    alerts = []
+    
+    if not growth_data.empty and 'CAGR (%)' in growth_data.columns:
+        mean_growth = growth_data['CAGR (%)'].mean()
+        std_growth = growth_data['CAGR (%)'].std()
+        max_growth = growth_data['CAGR (%)'].max()
+        min_growth = growth_data['CAGR (%)'].min()
+        
+        # High growth alert
+        if max_growth > mean_growth + 2 * std_growth:
+            top_commodity = growth_data.loc[growth_data['CAGR (%)'].idxmax(), 'Commodity']
+            alerts.append({
+                'type': 'warning',
+                'title': '⚠️ EXTREME GROWTH DETECTED',
+                'message': f'{top_commodity} shows {max_growth:.1f}% growth (vs {mean_growth:.1f}% average). Monitor for potential volatility.'
+            })
+        
+        # Low/negative growth alert
+        if min_growth < 0:
+            worst_commodity = growth_data.loc[growth_data['CAGR (%)'].idxmin(), 'Commodity']
+            alerts.append({
+                'type': 'danger',
+                'title': '🚨 NEGATIVE GROWTH ALERT',
+                'message': f'{worst_commodity} shows {min_growth:.1f}% decline. Consider diversification away from this commodity.'
+            })
+    
+    # High correlation alert
+    if not corr_data.empty:
+        # Find pairs with very high correlation (>0.9)
+        high_corr_pairs = []
+        for i in range(len(corr_data.columns)):
+            for j in range(i+1, len(corr_data.columns)):
+                corr_val = corr_data.iloc[i, j]
+                if abs(corr_val) > 0.9:
+                    high_corr_pairs.append((corr_data.columns[i], corr_data.columns[j], corr_val))
+        
+        if high_corr_pairs:
+            pair_info = high_corr_pairs[0]  # Show first high correlation pair
+            alerts.append({
+                'type': 'warning',
+                'title': '⚠️ HIGH CORRELATION RISK',
+                'message': f'{pair_info[0]} and {pair_info[1]} are {pair_info[2]:.2f} correlated. Consider diversification to reduce portfolio risk.'
+            })
+    
+    return alerts
+
 # Load Data
 with st.spinner("Loading agriculture intelligence data..."):
     data = load_cached_agriculture_data()
@@ -230,6 +322,60 @@ corr_data = data.get("corr", pd.DataFrame())
 key_insights = data.get("insights", {})
 gemini_insight = data.get("gemini_insight", "No AI insights found.")
 ready_data = data.get("ready", pd.DataFrame())
+
+# Create sections dictionary after data is loaded
+sections = {
+    "Insight": extract_section(gemini_insight, "### Top 1 actionable insights ", "### Key risks "),
+    "Main Risk": extract_section(gemini_insight, "### Key risks", "### Recommended actions"),
+    "Strategic Recommendations": extract_section(gemini_insight, "### Recommended actions", "### Core Trend"),
+}
+
+# Display Key Insights Section
+st.markdown('<div class="section-header"><h2>🎯 Key Strategic Insights</h2></div>', unsafe_allow_html=True)
+
+# Create three columns for the insights
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    if sections["Insight"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">💡 Top Actionable Insight</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Insight"]), unsafe_allow_html=True)
+    else:
+        st.info("No actionable insight available")
+
+with col2:
+    if sections["Main Risk"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #fd7e14 0%, #e74c3c 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">⚠️ Key Risk</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Main Risk"]), unsafe_allow_html=True)
+    else:
+        st.info("No risk data available")
+
+with col3:
+    if sections["Strategic Recommendations"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #17a2b8 0%, #28a745 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">🛠️ Strategic Recommendations</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Strategic Recommendations"]), unsafe_allow_html=True)
+    else:
+        st.info("No recommendations available")
+
+st.markdown("---")
 
 # Create combined analysis dataframe for filtering
 combined_analysis = pd.DataFrame()
@@ -341,10 +487,10 @@ if 'date_range' in locals() and len(date_range) == 2:
 
 # Check commodity filter
 if 'selected_commodities' in locals() and selected_commodities:
-    if len(selected_commodities) == len(all_commodities) + 1: # +1 for "Select All"
-        active_filters.append(f"Commodities: All ({len(selected_commodities) - 1})")
+    if len(selected_commodities) == len(all_commodities):
+        active_filters.append(f"Commodities: All ({len(selected_commodities)})")
     else:
-        active_filters.append(f"Commodities: {len(selected_commodities) - 1} selected")
+        active_filters.append(f"Commodities: {len(selected_commodities)} selected")
 
 if active_filters:
     st.sidebar.success(f"✅ Active filters: {len(active_filters)}")
@@ -353,7 +499,89 @@ if active_filters:
 else:
     st.sidebar.info("ℹ️ No filters applied")
 
-# Key Metrics with enhanced styling
+# So What Section (Updated with more specific insights)
+st.markdown("""
+<div class="section-header">
+    <h2>🌍 Agriculture's Macro Impact: What's at Stake</h2>
+</div>
+<div class="insight-card">
+    <p><strong>📌 Why it matters:</strong> Agriculture drives food security, inflation, and input supply chains. Your data shows varying performance across commodities, indicating both opportunities and risks for strategic positioning.</p>
+    <p><strong>🧠 Strategic takeaway:</strong> Focus on high-growth, low-correlation commodities for expansion while monitoring underperformers for exit opportunities.</p>
+</div>
+""", unsafe_allow_html=True)
+
+# Data-Driven Alerts
+performance_tiers = analyze_performance_tiers(growth_data)
+alerts = generate_alerts(growth_data, corr_data)
+
+if alerts or performance_tiers:
+    st.markdown('<div class="section-header"><h2>🚨 Executive Summary & Alerts</h2></div>', unsafe_allow_html=True)
+    
+    # Show alerts in compact layout
+    if alerts:
+        # Create columns for alerts (2 per row)
+        for i in range(0, len(alerts), 2):
+            cols = st.columns(2)
+            for j in range(2):
+                if i + j < len(alerts):
+                    alert = alerts[i + j]
+                    with cols[j]:
+                        if alert['type'] == 'danger':
+                            st.markdown(f"""
+                            <div style="background: #fff5f5; border: 1px solid #fed7d7; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                    <span style="color: #e53e3e; font-size: 16px; margin-right: 8px;">🔴</span>
+                                    <h5 style="margin: 0; color: #2d3748; font-size: 14px; font-weight: 600;">{alert['title']}</h5>
+                                </div>
+                                <p style="margin: 0; color: #4a5568; font-size: 12px; line-height: 1.4;">{alert['message']}</p>
+                            </div>
+                            """, unsafe_allow_html=True)
+                        elif alert['type'] == 'warning':
+                            st.markdown(f"""
+                            <div style="background: #fffbeb; border: 1px solid #f6e05e; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                    <span style="color: #d69e2e; font-size: 16px; margin-right: 8px;">⚠️</span>
+                                    <h5 style="margin: 0; color: #2d3748; font-size: 14px; font-weight: 600;">{alert['title']}</h5>
+                                </div>
+                                <p style="margin: 0; color: #4a5568; font-size: 12px; line-height: 1.4;">{alert['message']}</p>
+                            </div>
+                            """, unsafe_allow_html=True)
+    
+    # Show performance tiers
+    if performance_tiers:
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            if not performance_tiers['high'].empty:
+                st.markdown("""
+                <div class="success-box">
+                    <h4>🟢 HIGH PERFORMERS</h4>
+                </div>
+                """, unsafe_allow_html=True)
+                for _, row in performance_tiers['high'].iterrows():
+                    st.write(f"• **{row['Commodity']}**: {row['CAGR (%)']:.1f}%")
+            
+        with col2:
+            if not performance_tiers['stable'].empty:
+                st.markdown("""
+                <div class="alert-box">
+                    <h4>🟡 STABLE PERFORMERS</h4>
+                </div>
+                """, unsafe_allow_html=True)
+                for _, row in performance_tiers['stable'].iterrows():
+                    st.write(f"• **{row['Commodity']}**: {row['CAGR (%)']:.1f}%")
+        
+        with col3:
+            if not performance_tiers['low'].empty:
+                st.markdown("""
+                <div class="danger-box">
+                    <h4>🔴 UNDERPERFORMERS</h4>
+                </div>
+                """, unsafe_allow_html=True)
+                for _, row in performance_tiers['low'].iterrows():
+                    st.write(f"• **{row['Commodity']}**: {row['CAGR (%)']:.1f}%")
+
+# Key Metrics with enhanced styling (keeping existing code)
 st.markdown('<div class="section-header"><h2>📊 Key Performance Metrics</h2></div>', unsafe_allow_html=True)
 
 # Dynamically calculate metrics from filtered growth_data
@@ -430,25 +658,65 @@ with col5:
         "#17a2b8"
     ), unsafe_allow_html=True)
 
+
+# AI-Powered Strategic Analysis with enhanced styling
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications & Second-Order Insights</h2></div>', unsafe_allow_html=True)
+
+if gemini_insight and gemini_insight != "No AI insights found.":
+    # Extract sections
+    sections = {
+        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
+        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
+        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
+        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
+        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
+    }
+
+    # Create tabs with enhanced styling
+    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+    tabs = st.tabs(tab_labels)
+
+    for tab, (label, content) in zip(tabs, sections.items()):
+        with tab:
+            if content:
+                st.markdown(f"### {label}")
+                st.markdown(format_insight_text(content))
+            else:
+                st.info(f"No {label} insights available.")
+else:
+    st.markdown("""
+    <div class="alert-box">
+        <h4>🌟 AI Insights Unavailable</h4>
+        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
+        <ul>
+            <li>Insufficient data for analysis</li>
+            <li>AI service configuration issues</li>
+            <li>Data quality concerns</li>
+        </ul>
+        <p>Please check your data sources and AI service setup.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+
 # Production Trends with enhanced visualization
 st.markdown('<div class="section-header"><h2>📈 Production Trends Analysis</h2></div>', unsafe_allow_html=True)
 
 if not trend_data.empty and len(trend_data.columns) > 1:
     # Add "All Commodities" option
     all_options = ["All Commodities"] + list(trend_data.columns[1:])
-    selected_commodities = st.multiselect(
+    selected_commodities_trend = st.multiselect(
         "Select Commodities for Trend Analysis",
         options=all_options,
         default=["All Commodities"]
     )
     
-    if selected_commodities:
-        if "All Commodities" in selected_commodities:
+    if selected_commodities_trend:
+        if "All Commodities" in selected_commodities_trend:
             # Show all commodities
             commodities_to_plot = trend_data.columns[1:]
         else:
             # Show selected commodities
-            commodities_to_plot = selected_commodities
+            commodities_to_plot = selected_commodities_trend
         
         # Enhanced line chart with better styling
         fig_trend = px.line(
@@ -474,6 +742,23 @@ if not trend_data.empty and len(trend_data.columns) > 1:
         )
         
         st.plotly_chart(fig_trend, use_container_width=True)
+        
+        # NEW: Trend interpretation
+        if not growth_data.empty:
+            st.markdown("### 📊 Trend Interpretation")
+            trend_insights = []
+            for commodity in commodities_to_plot:
+                if commodity in growth_data['Commodity'].values:
+                    growth_rate = growth_data[growth_data['Commodity'] == commodity]['CAGR (%)'].iloc[0]
+                    if growth_rate > avg_growth + 0.5 * growth_data['CAGR (%)'].std():
+                        trend_insights.append(f"**{commodity}**: Strong upward trend ({growth_rate:.1f}% CAGR) - Consider expansion")
+                    elif growth_rate < avg_growth - 0.5 * growth_data['CAGR (%)'].std():
+                        trend_insights.append(f"**{commodity}**: Declining trend ({growth_rate:.1f}% CAGR) - Monitor closely")
+                    else:
+                        trend_insights.append(f"**{commodity}**: Stable trend ({growth_rate:.1f}% CAGR) - Maintain position")
+            
+            for insight in trend_insights:
+                st.write(f"• {insight}")
     else:
         st.warning("Please select at least one commodity to view trends.")
 else:
@@ -490,7 +775,7 @@ st.markdown('<div class="section-header"><h2>🚀 Growth Performance Analysis</h
 if not growth_data.empty:
     sorted_growth = growth_data.sort_values("CAGR (%)", ascending=False)
     
-    # Enhanced bar chart
+    # Enhanced bar chart with performance indicators
     fig_growth = px.bar(
         sorted_growth,
         x="Commodity",
@@ -501,12 +786,57 @@ if not growth_data.empty:
         template="plotly_white"
     )
     
+    # Add average line
+    avg_line = avg_growth
+    fig_growth.add_hline(
+        y=avg_line, 
+        line_dash="dash", 
+        line_color="red",
+        annotation_text=f"Average: {avg_line:.1f}%"
+    )
+    
     fig_growth = apply_chart_styling(fig_growth)
     st.plotly_chart(fig_growth, use_container_width=True)
     
-    # Enhanced data table
+    # NEW: Performance categorization with actionable insights
+    st.subheader("🎯 Performance-Based Recommendations")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        if not performance_tiers['high'].empty:
+            st.markdown("**🟢 EXPANSION CANDIDATES**")
+            st.markdown("*Above average growth - consider increasing allocation*")
+            for _, row in performance_tiers['high'].iterrows():
+                st.write(f"• {row['Commodity']}: {row['CAGR (%)']:.1f}%")
+    
+    with col2:
+        if not performance_tiers['stable'].empty:
+            st.markdown("**🟡 MAINTAIN POSITION**")
+            st.markdown("*Steady performers - maintain current allocation*")
+            for _, row in performance_tiers['stable'].iterrows():
+                st.write(f"• {row['Commodity']}: {row['CAGR (%)']:.1f}%")
+    
+    with col3:
+        if not performance_tiers['low'].empty:
+            st.markdown("**🔴 REVIEW & OPTIMIZE**")
+            st.markdown("*Below average - consider reducing allocation*")
+            for _, row in performance_tiers['low'].iterrows():
+                st.write(f"• {row['Commodity']}: {row['CAGR (%)']:.1f}%")
+    
+    # Enhanced data table with context
     st.subheader("📋 Detailed Growth Statistics")
-    styled_growth = sorted_growth.style.background_gradient(subset=['CAGR (%)'], cmap='RdYlGn')
+    
+    # Add context columns
+    sorted_growth_with_context = sorted_growth.copy()
+    sorted_growth_with_context['vs_Average'] = sorted_growth_with_context['CAGR (%)'] - avg_growth
+    sorted_growth_with_context['Performance_Tier'] = sorted_growth_with_context['CAGR (%)'].apply(
+        lambda x: 'High' if x > avg_growth + 0.5 * growth_data['CAGR (%)'].std() 
+        else 'Low' if x < avg_growth - 0.5 * growth_data['CAGR (%)'].std() 
+        else 'Stable'
+    )
+    
+    styled_growth = sorted_growth_with_context.style.background_gradient(subset=['CAGR (%)'], cmap='RdYlGn')
     st.dataframe(styled_growth, use_container_width=True)
 else:
     st.markdown("""
@@ -532,15 +862,36 @@ if not yoy_data.empty and 'commodity' in yoy_data.columns:
         template="plotly_white"
     )
     
+    # Add zero line for reference
+    fig_yoy.add_hline(y=0, line_dash="dash", line_color="gray", annotation_text="No Change")
+    
     fig_yoy = apply_chart_styling(fig_yoy)
     st.plotly_chart(fig_yoy, use_container_width=True)
     
-    # Show YoY statistics for selected commodities
+    # Show YoY statistics for selected commodities with insights
     if len(yoy_data['commodity'].unique()) > 1:
-        st.subheader("📊 YoY Statistics by Commodity")
+        st.subheader("📊 YoY Volatility Analysis")
         yoy_stats = yoy_data.groupby('commodity')['yoy_change'].agg(['mean', 'std', 'min', 'max']).round(2)
-        yoy_stats.columns = ['Average YoY (%)', 'Std Dev (%)', 'Min YoY (%)', 'Max YoY (%)']
+        yoy_stats.columns = ['Average YoY (%)', 'Volatility (Std Dev)', 'Worst YoY (%)', 'Best YoY (%)']
+        
+        # Add volatility assessment
+        yoy_stats['Risk_Level'] = yoy_stats['Volatility (Std Dev)'].apply(
+            lambda x: 'High' if x > yoy_stats['Volatility (Std Dev)'].mean() + yoy_stats['Volatility (Std Dev)'].std()/2
+            else 'Low' if x < yoy_stats['Volatility (Std Dev)'].mean() - yoy_stats['Volatility (Std Dev)'].std()/2
+            else 'Medium'
+        )
+        
         st.dataframe(yoy_stats, use_container_width=True)
+        
+        # Volatility insights
+        high_vol_commodities = yoy_stats[yoy_stats['Risk_Level'] == 'High'].index.tolist()
+        low_vol_commodities = yoy_stats[yoy_stats['Risk_Level'] == 'Low'].index.tolist()
+        
+        if high_vol_commodities:
+            st.warning(f"⚠️ **High Volatility Commodities**: {', '.join(high_vol_commodities)} - Consider smaller position sizes")
+        
+        if low_vol_commodities:
+            st.success(f"✅ **Stable Commodities**: {', '.join(low_vol_commodities)} - Suitable for larger allocations")
 else:
     st.markdown("""
     <div class="alert-box">
@@ -549,7 +900,7 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-# Correlation Matrix with enhanced visualization
+# Correlation Matrix with enhanced visualization and insights
 st.markdown('<div class="section-header"><h2>🔗 Commodity Correlation Analysis</h2></div>', unsafe_allow_html=True)
 
 if not corr_data.empty:
@@ -564,24 +915,59 @@ if not corr_data.empty:
     
     # Enhanced correlation heatmap with dynamic color scale
     fig_corr = px.imshow(
-    corr_data,
-    title="Correlation Matrix Between Commodities",
-    color_continuous_scale="RdBu_r",
-    zmin=corr_min,
-    zmax=corr_max,
-    aspect="auto",
-    template="plotly_white",
-    text_auto=".2f"  # <-- This line adds value labels
-)
+        corr_data,
+        title="Correlation Matrix Between Commodities",
+        color_continuous_scale="RdBu_r",
+        zmin=corr_min,
+        zmax=corr_max,
+        aspect="auto",
+        template="plotly_white",
+        text_auto=".2f"
+    )
     fig_corr.update_traces(
         textfont_size=12,
         textfont_color="black"
-)
+    )
     fig_corr = apply_chart_styling(fig_corr)
     fig_corr.update_layout(height=600)
     fig_corr.update_xaxes(tickangle=-45)
     
     st.plotly_chart(fig_corr, use_container_width=True)
+    
+    # NEW: Diversification insights based on correlation data
+    st.subheader("🎯 Portfolio Diversification Insights")
+    
+    # Find high and low correlation pairs
+    high_corr_pairs = []
+    low_corr_pairs = []
+    
+    for i in range(len(corr_data.columns)):
+        for j in range(i+1, len(corr_data.columns)):
+            corr_val = corr_data.iloc[i, j]
+            if corr_val > 0.7:
+                high_corr_pairs.append((corr_data.columns[i], corr_data.columns[j], corr_val))
+            elif corr_val < 0.3:
+                low_corr_pairs.append((corr_data.columns[i], corr_data.columns[j], corr_val))
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if high_corr_pairs:
+            st.markdown("**🔴 HIGH CORRELATION PAIRS (Risk Concentration)**")
+            st.markdown("*These commodities move together - avoid overconcentration*")
+            for pair in high_corr_pairs[:5]:  # Show top 5
+                st.write(f"• {pair[0]} ↔ {pair[1]}: {pair[2]:.2f}")
+        else:
+            st.success("✅ No high correlation pairs found - good diversification!")
+    
+    with col2:
+        if low_corr_pairs:
+            st.markdown("**🟢 LOW CORRELATION PAIRS (Diversification Opportunities)**")
+            st.markdown("*These commodities move independently - good for diversification*")
+            for pair in low_corr_pairs[:5]:  # Show top 5
+                st.write(f"• {pair[0]} ↔ {pair[1]}: {pair[2]:.2f}")
+        else:
+            st.info("ℹ️ Limited diversification opportunities in current selection")
     
     # Enhanced correlation insights with actual data range
     st.info(f"💡 **Correlation Insights**: Values range from {corr_min:.2f} to {corr_max:.2f}. Values closer to {corr_max:.2f} indicate strong positive correlation, while values closer to {corr_min:.2f} indicate strong negative correlation.")
@@ -601,58 +987,6 @@ else:
     <div class="alert-box">
         <h4>⚠️ No Correlation Data Available</h4>
         <p>No correlation analysis data is currently available. This could be due to insufficient data points or processing issues.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-# AI-Powered Strategic Analysis with enhanced styling
-st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)
-
-if gemini_insight and gemini_insight != "No AI insights found.":
-    # Extract sections
-    sections = {
-        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
-        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
-        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
-        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
-        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
-    }
-
-    # Create tabs with enhanced styling
-    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-    tabs = st.tabs(tab_labels)
-
-    for tab, (label, content) in zip(tabs, sections.items()):
-        with tab:
-            if content:
-                st.markdown(f"### {label}")
-                st.markdown(format_insight_text(content))
-            else:
-                st.info(f"No {label} insights available.")
-    
-    # Summary metrics
-    st.subheader("📊 AI Insight Summary")
-    
-    insight_metrics = {
-        "Sections Available": len([s for s in sections.values() if s]),
-        "Total Insight Length": len(gemini_insight),
-        "Last Updated": datetime.now().strftime("%Y-%m-%d")
-    }
-    
-    col1, col2, col3 = st.columns(3)
-    for i, (key, value) in enumerate(insight_metrics.items()):
-        with [col1, col2, col3][i]:
-            st.metric(key, value)
-else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>🌟 AI Insights Unavailable</h4>
-        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
-        <ul>
-            <li>Insufficient data for analysis</li>
-            <li>AI service configuration issues</li>
-            <li>Data quality concerns</li>
-        </ul>
-        <p>Please check your data sources and AI service setup.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -710,11 +1044,11 @@ else:
 
 # Enhanced Footer
 st.markdown("---")
-st.markdown("""
+st.markdown(f"""
 <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 15px; margin-top: 2rem;">
     <h3>🌾 Agriculture Intelligence Platform</h3>
     <p><strong>Data Sources:</strong> U.S. Department of Agriculture | <strong>AI Powered by:</strong> Gemini AI</p>
     <p style="color: #6c757d; font-size: 0.9rem;">Comprehensive agriculture production analysis and strategic intelligence</p>
-    <p style="color: #6c757d; font-size: 0.8rem;">Last updated: {}</p>
+    <p style="color: #6c757d; font-size: 0.8rem;">Last updated: {datetime.now().strftime("%Y-%m-%d %H:%M")}</p>
 </div>
-""".format(datetime.now().strftime("%Y-%m-%d %H:%M")), unsafe_allow_html=True)
+""", unsafe_allow_html=True)

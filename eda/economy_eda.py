@@ -425,6 +425,13 @@ def generate_insights(key_insights, output_dir):
 ### **Required Output Format**
 ## Economy Sector Second-Order Effect Analysis
 
+### Top 1 actionable insights 
+• (e.g., "Interest rate hikes → expect consumer spending slowdown") (1 line)
+### Key risks 
+• (e.g., "Inflation persistence may trigger further monetary tightening") (1 line)
+### Recommended actions 
+• (e.g., "Diversify investment portfolio and hedge against inflation") (1 line)
+
 ### Core Trend
 • Economy: [TREND SUMMARY IN 5–10 WORDS]  
 • **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]

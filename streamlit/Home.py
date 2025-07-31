@@ -494,6 +494,71 @@ with col4:
         "#1e3c72"
     ), unsafe_allow_html=True)
 
+# AI-Powered Strategic Analysis (Dynamic Content from Data Loaders)
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications & Second-Order Insights</h2></div>', unsafe_allow_html=True)
+
+# Load all Gemini insights for display in tabs
+tagri_gemini = load_agriculture_data().get("gemini_insight", "No AI insights found for Agriculture.")
+defence_gemini = load_defence_data().get("gemini_insight", "No AI insights found for Defence.")
+economy_gemini = load_economy_data().get("gemini_insight", "No AI insights found for Economy.")
+energy_gemini = load_energy_data().get("gemini_insight", "No AI insights found for Energy.")
+industry_gemini = load_industry_data().get("gemini_insight", "No AI insights found for Industry.")
+global_trade_gemini = load_global_trade_data().get("gemini_insight", "No AI insights found for Global Trade.")
+korea_trade_gemini = load_korea_trade_data().get("gemini_insight", "No AI insights found for Korea Trade.")
+
+# Define insights mapping to tab labels with emojis
+all_sector_insights = {
+    "🌾 Agriculture": tagri_gemini,
+    "🛡️ Defence": defence_gemini,
+    "💹 Economy": economy_gemini,
+    "⚡ Energy": energy_gemini,
+    "🏭 Industry": industry_gemini,
+    "🌍 Global Trade": global_trade_gemini,
+    "🇰🇷 Korea Trade": korea_trade_gemini,
+}
+
+# Create tabs for each sector's AI insights
+# Using a list comprehension to create labels for st.tabs
+sector_tab_labels = [sector for sector in all_sector_insights.keys()]
+sector_tabs = st.tabs(sector_tab_labels)
+
+# Iterate through tabs and display content
+for i, sector_name in enumerate(all_sector_insights.keys()):
+    with sector_tabs[i]:
+        gemini_insight_for_sector = all_sector_insights[sector_name]
+        
+        if gemini_insight_for_sector and "No AI insights found" not in gemini_insight_for_sector:
+            # Extract and format sections for the current sector's insight
+            sections = {
+                "Core Trend": extract_section(gemini_insight_for_sector, "### Core Trend", "### Hidden Effects"),
+                "Hidden Effects": extract_section(gemini_insight_for_sector, "### Hidden Effects", "### Strategic Recommendations"),
+                "Strategic Recommendations": extract_section(gemini_insight_for_sector, "### Strategic Recommendations", "### Risk Assessment"),
+                "Risk Assessment": extract_section(gemini_insight_for_sector, "### Risk Assessment", "### Market Intelligence"),
+                "Market Intelligence": extract_section(gemini_insight_for_sector, "### Market Intelligence")
+            }
+
+            # Display sub-tabs within each sector tab for detailed insights
+            insight_sub_tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+            insight_sub_tabs = st.tabs(insight_sub_tab_labels)
+
+            for tab_idx, (label, content) in enumerate(sections.items()):
+                with insight_sub_tabs[tab_idx]:
+                    if content:
+                        # Ensure the section title is prominently displayed within its sub-tab
+                        st.markdown(f"**{label}**") 
+                        st.markdown(format_insight_text(content))
+                    else:
+                        # Extract the sector name without emoji for the error message
+                        sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
+                        st.info(f"No {label} insights available for {sector_name_clean}.")
+        else:
+            # Extract the sector name without emoji for the error message
+            sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
+            st.info(f"No AI insights found for {sector_name_clean}.")
+
+
+st.markdown("---") # Separator
+
 # Architecture, Stack & Skills
 st.markdown("""
 <div class="section-header"><h2>🛠️ Architecture, Stack & Skills</h2></div>
@@ -563,71 +628,6 @@ tr:nth-child(even) {
 </style>
 """, unsafe_allow_html=True)
 
-
-# AI-Powered Strategic Analysis (Dynamic Content from Data Loaders)
-st.markdown('<div class="section-header"><h2>🌟 AI Insights</h2></div>', unsafe_allow_html=True)
-
-# Load all Gemini insights for display in tabs
-tagri_gemini = load_agriculture_data().get("gemini_insight", "No AI insights found for Agriculture.")
-defence_gemini = load_defence_data().get("gemini_insight", "No AI insights found for Defence.")
-economy_gemini = load_economy_data().get("gemini_insight", "No AI insights found for Economy.")
-energy_gemini = load_energy_data().get("gemini_insight", "No AI insights found for Energy.")
-industry_gemini = load_industry_data().get("gemini_insight", "No AI insights found for Industry.")
-global_trade_gemini = load_global_trade_data().get("gemini_insight", "No AI insights found for Global Trade.")
-korea_trade_gemini = load_korea_trade_data().get("gemini_insight", "No AI insights found for Korea Trade.")
-
-# Define insights mapping to tab labels with emojis
-all_sector_insights = {
-    "🌾 Agriculture": tagri_gemini,
-    "🛡️ Defence": defence_gemini,
-    "💹 Economy": economy_gemini,
-    "⚡ Energy": energy_gemini,
-    "🏭 Industry": industry_gemini,
-    "🌍 Global Trade": global_trade_gemini,
-    "🇰🇷 Korea Trade": korea_trade_gemini,
-}
-
-# Create tabs for each sector's AI insights
-# Using a list comprehension to create labels for st.tabs
-sector_tab_labels = [sector for sector in all_sector_insights.keys()]
-sector_tabs = st.tabs(sector_tab_labels)
-
-# Iterate through tabs and display content
-for i, sector_name in enumerate(all_sector_insights.keys()):
-    with sector_tabs[i]:
-        gemini_insight_for_sector = all_sector_insights[sector_name]
-        
-        if gemini_insight_for_sector and "No AI insights found" not in gemini_insight_for_sector:
-            # Extract and format sections for the current sector's insight
-            sections = {
-                "Core Trend": extract_section(gemini_insight_for_sector, "### Core Trend", "### Hidden Effects"),
-                "Hidden Effects": extract_section(gemini_insight_for_sector, "### Hidden Effects", "### Strategic Recommendations"),
-                "Strategic Recommendations": extract_section(gemini_insight_for_sector, "### Strategic Recommendations", "### Risk Assessment"),
-                "Risk Assessment": extract_section(gemini_insight_for_sector, "### Risk Assessment", "### Market Intelligence"),
-                "Market Intelligence": extract_section(gemini_insight_for_sector, "### Market Intelligence")
-            }
-
-            # Display sub-tabs within each sector tab for detailed insights
-            insight_sub_tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-            insight_sub_tabs = st.tabs(insight_sub_tab_labels)
-
-            for tab_idx, (label, content) in enumerate(sections.items()):
-                with insight_sub_tabs[tab_idx]:
-                    if content:
-                        # Ensure the section title is prominently displayed within its sub-tab
-                        st.markdown(f"**{label}**") 
-                        st.markdown(format_insight_text(content))
-                    else:
-                        # Extract the sector name without emoji for the error message
-                        sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
-                        st.info(f"No {label} insights available for {sector_name_clean}.")
-        else:
-            # Extract the sector name without emoji for the error message
-            sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
-            st.info(f"No AI insights found for {sector_name_clean}.")
-
-
-st.markdown("---") # Separator
 
 # Sector Dashboards Section
 st.markdown('<div class="section-header"><h2>🎯 Sector Dashboards</h2></div>', unsafe_allow_html=True)

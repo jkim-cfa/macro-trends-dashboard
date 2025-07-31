@@ -123,6 +123,13 @@ def generate_insights(stats_df, growth_df, corr_matrix, key_insights, output_dir
 ### **Required Output Format**
 ## Agriculture Sector Second-Order Effect Analysis
 
+### Top 1 actionable insights 
+• (e.g., "Wheat production surge → expect flour price drops") (1 line)
+### Key risks 
+• (e.g., "Fertilizer shortages may hurt small farms") (1 line)
+### Recommended actions 
+• (e.g., "Invest in fertilizer production capacity") (1 line)
+
 ### Core Trend
 • Agriculture: [TREND SUMMARY IN 5–10 WORDS]  
 • **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]

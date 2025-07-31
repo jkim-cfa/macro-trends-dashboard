@@ -765,6 +765,13 @@ def generate_gemini_insights(eda_results, output_dir):
 ### **Required Output Format**
 ## Korea Trade Sector Second-Order Effect Analysis
 
+### Top 1 actionable insights 
+• (e.g., "Semiconductor export surge → expect supply chain optimization") (1 line)
+### Key risks 
+• (e.g., "Trade dependency on key partners may impact export stability") (1 line)
+### Recommended actions 
+• (e.g., "Diversify export markets and strengthen trade partnerships") (1 line)
+
 ### Core Trend
 • Korea Trade: [TREND SUMMARY IN 5–10 WORDS]  
 • **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]

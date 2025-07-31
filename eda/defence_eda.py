@@ -242,6 +242,13 @@ def generate_insights(key_insights, combined_df, insight_text, output_dir):
 ### **Required Output Format**
 ## Defence Sector Second-Order Effect Analysis
 
+### Top 1 actionable insights 
+• (e.g., "Defence contract surge → expect supply chain bottlenecks") (1 line)
+### Key risks 
+• (e.g., "Critical defence component shortages may impact readiness") (1 line)
+### Recommended actions 
+• (e.g., "Diversify defence supply chain and increase stockpiles") (1 line)
+
 ### Core Trend
 • Defence: [TREND SUMMARY IN 5–10 WORDS]  
 • **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]

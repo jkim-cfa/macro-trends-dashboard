@@ -378,6 +378,13 @@ def generate_insights(key_insights, output_dir):
 ### **Required Output Format**
 ## Global Trade Sector Second-Order Effect Analysis
 
+### Top 1 actionable insights 
+• (e.g., "Shipping index volatility → expect supply chain delays") (1 line)
+### Key risks 
+• (e.g., "Trade route disruptions may impact global supply chains") (1 line)
+### Recommended actions 
+• (e.g., "Diversify trade routes and increase inventory buffers") (1 line)
+
 ### Core Trend
 • Global Trade: [TREND SUMMARY IN 5–10 WORDS]  
 • **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]

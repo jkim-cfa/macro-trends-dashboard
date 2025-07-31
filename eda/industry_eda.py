@@ -352,6 +352,13 @@ def generate_insights(key_insights, output_dir):
 ### **Required Output Format**
 ## Industry Sector Second-Order Effect Analysis
 
+### Top 1 actionable insights 
+• (e.g., "Steel production decline → expect manufacturing cost increases") (1 line)
+### Key risks 
+• (e.g., "Raw material shortages may impact industrial production") (1 line)
+### Recommended actions 
+• (e.g., "Diversify supply sources and optimize inventory management") (1 line)
+
 ### Core Trend
 • Industry: [TREND SUMMARY IN 5–10 WORDS]  
 • **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]

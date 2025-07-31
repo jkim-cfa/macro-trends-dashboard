@@ -444,6 +444,13 @@ def generate_insights(key_insights, df_opec_summary_df, output_dir):
 ### **Required Output Format**
 ## Energy Sector Second-Order Effect Analysis
 
+### Top 1 actionable insights 
+• (e.g., "Oil price volatility → expect manufacturing cost fluctuations") (1 line)
+### Key risks 
+• (e.g., "Energy supply disruptions may impact industrial production") (1 line)
+### Recommended actions 
+• (e.g., "Diversify energy sources and increase strategic reserves") (1 line)
+
 ### Core Trend
 • Energy: [TREND SUMMARY IN 5–10 WORDS]  
 • **Direct Impact**: [IMMEDIATE OUTCOME IN 1 SENTENCE]
