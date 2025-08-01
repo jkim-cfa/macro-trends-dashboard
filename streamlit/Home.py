@@ -23,9 +23,6 @@ from utils.data_loader import (
 total_records = 160721
 total_indicators = 92
 
-# Remove the old sector_dates global and broken function
-# sector_dates = []
-
 @lru_cache
 def get_all_sector_data():
     sector_dates = []
@@ -64,7 +61,7 @@ def get_all_sector_data():
 
 # --- Streamlit Page Configuration ---
 st.set_page_config(
-    page_title="Global Macro Insight Engine",
+    page_title="Macro Trends Dashboard",
     page_icon="🌐",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -145,11 +142,10 @@ st.markdown("""
     /* Main Header Styling */
     .main-header {
         background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-        padding: 3rem 2rem;
+        padding: 1.5rem 1.5rem;
         border-radius: 20px;
         color: white;
         text-align: center;
-        margin-bottom: 3rem;
         box-shadow: 0 12px 40px rgba(0,0,0,0.15);
         position: relative;
         overflow: hidden;
@@ -176,11 +172,11 @@ st.markdown("""
     .main-header p {
         position: relative;
         z-index: 1;
-        font-size: 1.05rem;      /* Smaller font */
-        max-width: 100%;         /* Use full width */
-        margin: 0 auto 0 auto;   /* Remove extra margin */
+        font-size: 1.05rem;       /* Smaller font */
+        max-width: 100%;           /* Use full width */
+        margin: 0 auto 0 auto;     /* Remove extra margin */
         opacity: 0.95;
-        line-height: 1.4;        /* Slightly tighter lines */
+        line-height: 1.4;          /* Slightly tighter lines */
     }
 
     /* Metric Card Styling */
@@ -347,8 +343,8 @@ st.markdown("""
 
     /* Section Header Styling */
     .section-header {
-        margin-top: 3rem; /* Add some space above the section */
-        margin-bottom: 2rem; /* Add space below the section header */
+        margin-top: 2rem; /* Add some space above the section */
+        margin-bottom: 1rem; /* Add space below the section header */
     }
     .section-header h2 {
         font-size: 2.2rem;
@@ -444,17 +440,271 @@ st.markdown("""
 # Enhanced Header
 st.markdown(f"""
 <div class="main-header">
-    <h1>🌐 Global Macro Insight Engine</h1>
-    <p>
-        A unified data intelligence platform for macroeconomic, trade, and geopolitical analysis.<br>
-        Combines structured ETL pipelines, AI-powered insight generation, and interactive dashboards.<br>
-        Designed to surface second-order effects and strategic trends across 7 global sectors.
-    </p>
+    <h1>🌐 Macro Trends Dashboard</h1>
 </div>
-
 """, unsafe_allow_html=True)
 
-# Display manually typed summary metrics
+
+
+# Load all Gemini insights for display in tabs
+agri_gemini = load_agriculture_data().get("gemini_insight", "No AI insights found for Agriculture.")
+defence_gemini = load_defence_data().get("gemini_insight", "No AI insights found for Defence.")
+economy_gemini = load_economy_data().get("gemini_insight", "No AI insights found for Economy.")
+energy_gemini = load_energy_data().get("gemini_insight", "No AI insights found for Energy.")
+industry_gemini = load_industry_data().get("gemini_insight", "No AI insights found for Industry.")
+global_trade_gemini = load_global_trade_data().get("gemini_insight", "No AI insights found for Global Trade.")
+korea_trade_gemini = load_korea_trade_data().get("gemini_insight", "No AI insights found for Korea Trade.")
+
+# Define insights mapping to tab labels with emojis
+all_sector_insights = {
+    "🌾 Agriculture": agri_gemini,
+    "🛡️ Defence": defence_gemini,
+    "💹 Economy": economy_gemini,
+    "⚡ Energy": energy_gemini,
+    "🏭 Industry": industry_gemini,
+    "🌍 Global Trade": global_trade_gemini,
+    "🇰🇷 Korea Trade": korea_trade_gemini,
+}
+
+# --- Actionable Insights Section ---
+st.markdown('<div class="section-header"><h2>💡 Actionable Insights</h2></div>', unsafe_allow_html=True)
+
+# Create tabs for each sector's actionable insights
+sector_tab_labels = [sector for sector in all_sector_insights.keys()]
+sector_tabs = st.tabs(sector_tab_labels)
+
+# Iterate through tabs and display actionable insight
+for i, sector_name in enumerate(all_sector_insights.keys()):
+    with sector_tabs[i]:
+        gemini_insight_for_sector = all_sector_insights[sector_name]
+        
+        if gemini_insight_for_sector and "No AI insights found" not in gemini_insight_for_sector:
+            # Extract and format the specific actionable insight
+            actionable_insight = extract_section(gemini_insight_for_sector, "### Top 1 actionable insight", "### Key risks")
+            if actionable_insight:
+                st.markdown(f"""
+                    <div style="
+                            background: linear-gradient(135deg, #fff9e6 0%, #fefbe9 100%);
+                            padding: 1.5rem 2rem;
+                            border-left: 6px solid #e0a800;
+                            border-radius: 12px;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+                            margin-top: 1.2rem;
+                            font-size: 1.05rem;
+                            line-height: 1.7;
+                            color: #4a3f0e;
+                        ">
+                        <div style="padding-left: 0.3rem;">
+                            {format_insight_text(actionable_insight)}
+                        </div>
+                    </div>
+                """, unsafe_allow_html=True)
+
+            else:
+                sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
+                st.info(f"No actionable insight available for {sector_name_clean}.")
+        else:
+            sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
+            st.info(f"No AI insights found for {sector_name_clean}.")
+
+
+# Project Overview & Value Proposition
+st.markdown('<div class="section-header"><h2>🎯 Project Overview</h2></div>', unsafe_allow_html=True)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-left: 5px solid #1d3557; padding: 2rem;
+                border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🚨 The Real Problem</h3>
+        <p style="font-size: 1.05rem; line-height: 1.6;">
+            Economic data is everywhere — but it's scattered, inconsistent, and hard to interpret. Most decision-makers waste time cleaning data instead of finding answers.
+        </p>
+        <ul style="font-size: 1rem; line-height: 1.8; margin-left: 1.2rem;">
+            <li>📂 <strong>Too many sources:</strong> World Bank, IMF, ECOS, DAPA, SIPRI — all in silos</li>
+            <li>🧩 <strong>Messy data:</strong> Different formats, units, and classifications</li>
+            <li>⏳ <strong>Slow insight:</strong> Pattern recognition takes hours or days</li>
+            <li>❌ <strong>Missed signals:</strong> Second-order effects rarely surface in raw data</li>
+            <li>🔒 <strong>Hard to reuse:</strong> No standard schema makes long-term comparison difficult</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+                border-left: 5px solid #28a745; padding: 2rem;
+                border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+        <h3 style="color: #155724; margin-bottom: 1.5rem;">⚙️ What This Solves</h3>
+           <p style="font-size: 1.05rem; line-height: 1.6;">
+            This project unifies that chaos. It connects structured pipelines with AI-driven insight to give you the story behind the data — instantly.
+        </p>
+        <ul style="font-size: 1rem; line-height: 1.8; margin-left: 1.2rem;">
+            <li>🔗 <strong>Brings it together:</strong> 7 sectors, 92 indicators, 160K+ records, 1 schema</li>
+            <li>🧠 <strong>Uses AI to think:</strong> Gemini LLM interprets macro patterns and risks</li>
+            <li>📊 <strong>Visualizes impact:</strong> Dashboards reveal trends, signals, and anomalies</li>
+            <li>⚡ <strong>Accelerates judgment:</strong> Spend time deciding — not decoding</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# Impact & Value Proposition
+st.markdown('<div class="section-header"><h2>💼 Impact & Value</h2></div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+    <div style="background: #f8f9fa; padding: 1rem 1.2rem; border-left: 5px solid #1e3c72; border-radius: 10px;">
+        <b>📊 Analysts</b><br> Save time on cleaning & structuring macro data
+    </div>
+    <div style="background: #f8f9fa; padding: 1rem 1.2rem; border-left: 5px solid #1e3c72; border-radius: 10px;">
+        <b>🏛️ Policymakers</b><br> Get fast, readable summaries of sector trends
+    </div>
+    <div style="background: #f8f9fa; padding: 1rem 1.2rem; border-left: 5px solid #1e3c72; border-radius: 10px;">
+        <b>💼 Strategy Teams</b><br> Track cross-sector risks without expert models
+    </div>
+    <div style="background: #f8f9fa; padding: 1rem 1.2rem; border-left: 5px solid #1e3c72; border-radius: 10px;">
+        <b>🔍 Researchers</b><br> Focus on insights, not data prep
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# Key Benefits Section
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.markdown("""
+    <div style="background: #f8f9fa; padding: 1rem 1.2rem; border-radius: 10px;
+                border-left: 5px solid #6c757d; text-align: center;">
+        <div style="font-size: 1.5rem;">⚡</div>
+        <b>Faster Access</b><br>
+        <span style="font-size: 0.9rem;">Data is cleaned, loaded, and ready</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div style="background: #f8f9fa; padding: 1rem 1.2rem; border-radius: 10px;
+                border-left: 5px solid #1e3c72; text-align: center;">
+        <div style="font-size: 1.5rem;">🤖</div>
+        <b>AI Summaries</b><br>
+        <span style="font-size: 0.9rem;">Insights in plain language</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col3:
+    st.markdown("""
+    <div style="background: #f8f9fa; padding: 1rem 1.2rem; border-radius: 10px;
+                border-left: 5px solid #227c45; text-align: center;">
+        <div style="font-size: 1.5rem;">🌍</div>
+        <b>Wide Scope</b><br>
+        <span style="font-size: 0.9rem;">Macro, trade, energy, defense — all in one place</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+
+# --- Strategic Implications Section ---
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications</h2></div>', unsafe_allow_html=True)
+
+# Create tabs for each sector's detailed strategic implications
+sector_tab_labels_2 = [sector for sector in all_sector_insights.keys()]
+sector_tabs_2 = st.tabs(sector_tab_labels_2)
+
+# Iterate through tabs and display detailed strategic implications
+for i, sector_name in enumerate(all_sector_insights.keys()):
+    with sector_tabs_2[i]:
+        gemini_insight_for_sector = all_sector_insights[sector_name]
+        
+        if gemini_insight_for_sector and "No AI insights found" not in gemini_insight_for_sector:
+            # Extract and format sections for the current sector's insight
+            sections = {
+                "Core Trend": extract_section(gemini_insight_for_sector, "### Core Trend", "### Hidden Effects"),
+                "Hidden Effects": extract_section(gemini_insight_for_sector, "### Hidden Effects", "### Strategic Recommendations"),
+                "Strategic Recommendations": extract_section(gemini_insight_for_sector, "### Strategic Recommendations", "### Risk Assessment"),
+                "Risk Assessment": extract_section(gemini_insight_for_sector, "### Risk Assessment", "### Market Intelligence"),
+                "Market Intelligence": extract_section(gemini_insight_for_sector, "### Market Intelligence")
+            }
+
+            # Display sub-tabs within each sector tab for detailed insights
+            insight_sub_tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+            insight_sub_tabs = st.tabs(insight_sub_tab_labels)
+
+            for tab_idx, (label, content) in enumerate(sections.items()):
+                with insight_sub_tabs[tab_idx]:
+                    if content:
+                        st.markdown(f"**{label}**") 
+                        st.markdown(format_insight_text(content))
+                    else:
+                        sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
+                        st.info(f"No {label} insights available for {sector_name_clean}.")
+        else:
+            sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
+            st.info(f"No AI insights found for {sector_name_clean}.")
+
+# How It Works
+st.markdown('<div class="section-header"><h2>🔧 How It Works</h2></div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #1d3557; padding: 2rem;
+            border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 2rem;">
+    <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">📋 3-Step Workflow</h3>
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px;">
+            <h4 style="color: #1e3c72; margin-bottom: 0.5rem;">1️⃣ Unified Data</h4>
+            <p style="font-size: 1rem; line-height: 1.6;">Collect and clean macro, trade, energy, and defense data into a structured format</p>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+            <h4 style="color: #1e3c72; margin-bottom: 0.5rem;">2️⃣ AI Insight Layer</h4>
+            <p style="font-size: 1rem; line-height: 1.6;">Use Gemini AI to summarize key signals and trends across sectors</p>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+            <h4 style="color: #1e3c72; margin-bottom: 0.5rem;">3️⃣ Decision Support</h4>
+            <p style="font-size: 1rem; line-height: 1.6;">Visual dashboards highlight risks, momentum, and macro signals to inform your analysis</p>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# Data Freshness & Updates
+st.markdown('<div class="section-header"><h2>📅 Data Freshness</h2></div>', unsafe_allow_html=True)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-left: 5px solid #1d3557; padding: 1.5rem;
+                border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <h4 style="color: #1e3c72; margin-bottom: 1rem;">🔄 Update Schedule</h4>
+        <ul style="font-size: 1rem; line-height: 1.8; margin-left: 1.5rem;">
+            <li><strong>Daily:</strong> Economic indicators and FX data</li>
+            <li><strong>Weekly:</strong> Trade and shipping data</li>
+            <li><strong>Monthly:</strong> Agriculture, energy, and industry data</li>
+            <li><strong>Quarterly:</strong> Defense procurement data</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+                border-left: 5px solid #28a745; padding: 1.5rem;
+                border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <h4 style="color: #155724; margin-bottom: 1rem;">📊 Data Sources</h4>
+        <ul style="font-size: 1rem; line-height: 1.8; margin-left: 1.5rem;">
+            <li><strong>Official Sources:</strong> World Bank, IMF, Central Banks</li>
+            <li><strong>Industry Data:</strong> OPEC, World Steel Association</li>
+            <li><strong>Government:</strong> USDA, DAPA, Korea Customs</li>
+            <li><strong>Market Data:</strong> Bloomberg, Reuters, Trading Economics</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Platform Overview Section
 st.markdown('<div class="section-header"><h2>📊 Platform Overview</h2></div>', unsafe_allow_html=True)
 
 col1, col2, col3, col4 = st.columns(4)
@@ -494,79 +744,8 @@ with col4:
         "#1e3c72"
     ), unsafe_allow_html=True)
 
-# AI-Powered Strategic Analysis (Dynamic Content from Data Loaders)
-st.markdown('<div class="section-header"><h2>🌟 Strategic Implications & Second-Order Insights</h2></div>', unsafe_allow_html=True)
-
-# Load all Gemini insights for display in tabs
-tagri_gemini = load_agriculture_data().get("gemini_insight", "No AI insights found for Agriculture.")
-defence_gemini = load_defence_data().get("gemini_insight", "No AI insights found for Defence.")
-economy_gemini = load_economy_data().get("gemini_insight", "No AI insights found for Economy.")
-energy_gemini = load_energy_data().get("gemini_insight", "No AI insights found for Energy.")
-industry_gemini = load_industry_data().get("gemini_insight", "No AI insights found for Industry.")
-global_trade_gemini = load_global_trade_data().get("gemini_insight", "No AI insights found for Global Trade.")
-korea_trade_gemini = load_korea_trade_data().get("gemini_insight", "No AI insights found for Korea Trade.")
-
-# Define insights mapping to tab labels with emojis
-all_sector_insights = {
-    "🌾 Agriculture": tagri_gemini,
-    "🛡️ Defence": defence_gemini,
-    "💹 Economy": economy_gemini,
-    "⚡ Energy": energy_gemini,
-    "🏭 Industry": industry_gemini,
-    "🌍 Global Trade": global_trade_gemini,
-    "🇰🇷 Korea Trade": korea_trade_gemini,
-}
-
-# Create tabs for each sector's AI insights
-# Using a list comprehension to create labels for st.tabs
-sector_tab_labels = [sector for sector in all_sector_insights.keys()]
-sector_tabs = st.tabs(sector_tab_labels)
-
-# Iterate through tabs and display content
-for i, sector_name in enumerate(all_sector_insights.keys()):
-    with sector_tabs[i]:
-        gemini_insight_for_sector = all_sector_insights[sector_name]
-        
-        if gemini_insight_for_sector and "No AI insights found" not in gemini_insight_for_sector:
-            # Extract and format sections for the current sector's insight
-            sections = {
-                "Core Trend": extract_section(gemini_insight_for_sector, "### Core Trend", "### Hidden Effects"),
-                "Hidden Effects": extract_section(gemini_insight_for_sector, "### Hidden Effects", "### Strategic Recommendations"),
-                "Strategic Recommendations": extract_section(gemini_insight_for_sector, "### Strategic Recommendations", "### Risk Assessment"),
-                "Risk Assessment": extract_section(gemini_insight_for_sector, "### Risk Assessment", "### Market Intelligence"),
-                "Market Intelligence": extract_section(gemini_insight_for_sector, "### Market Intelligence")
-            }
-
-            # Display sub-tabs within each sector tab for detailed insights
-            insight_sub_tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-            insight_sub_tabs = st.tabs(insight_sub_tab_labels)
-
-            for tab_idx, (label, content) in enumerate(sections.items()):
-                with insight_sub_tabs[tab_idx]:
-                    if content:
-                        # Ensure the section title is prominently displayed within its sub-tab
-                        st.markdown(f"**{label}**") 
-                        st.markdown(format_insight_text(content))
-                    else:
-                        # Extract the sector name without emoji for the error message
-                        sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
-                        st.info(f"No {label} insights available for {sector_name_clean}.")
-        else:
-            # Extract the sector name without emoji for the error message
-            sector_name_clean = sector_name.split(' ', 1)[1] if ' ' in sector_name else sector_name
-            st.info(f"No AI insights found for {sector_name_clean}.")
-
-
-st.markdown("---") # Separator
-
 # Architecture, Stack & Skills
 st.markdown("""
-<div class="section-header"><h2>🛠️ Architecture, Stack & Skills</h2></div>
-
-<p style="font-size: 1rem; color: #444; margin-bottom: 2rem;">
-A lightweight, AI-integrated macroeconomic platform engineered for insight delivery and sector-wide intelligence.
-</p>
-
 <div class="tech-skill-grid">
     <div class="column">
         <h4>🛠 Tech Stack</h4>
@@ -628,59 +807,59 @@ tr:nth-child(even) {
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("---") # Separator
 
-# Sector Dashboards Section
-st.markdown('<div class="section-header"><h2>🎯 Sector Dashboards</h2></div>', unsafe_allow_html=True)
-
+# Sector Intelligence Dashboards Section
+st.markdown('<div class="section-header"><h2>🎯 Sector Intelligence Dashboards</h2></div>', unsafe_allow_html=True)
 DASHBOARDS = [
     {
         "icon": "🌾",
-        "title": "Agriculture Production",
-        "desc": "Comprehensive crop analysis, growth trends, yield predictions, and agricultural market intelligence with seasonal patterns and supply chain insights.",
+        "title": "Agriculture Intelligence",
+        "desc": "Track crop trends, yields, and commodity prices with AI insights.",
         "page": "Agriculture_Dashboard",
-        "features": ["Crop Trends", "Growth Analysis", "Market Intelligence"]
+        "features": ["Crop Analytics", "Yield Forecasts", "Market Signals"]
     },
     {
         "icon": "🛡️",
-        "title": "Defence Procurement",
-        "desc": "In-depth analysis of military contracts, procurement patterns, supplier dynamics, and strategic defense signals — powered by structured data and AI-generated insights.",
+        "title": "Defence Intelligence",
+        "desc": "Analyze procurement, contracts, and supplier patterns in defense.",
         "page": "Defence_Dashboard",
-        "features": ["Contract Analytics", "Procurement Trends", "Supplier Intelligence"]
+        "features": ["Contract Trends", "Procurement Data", "Supplier Analysis"]
     },
     {
         "icon": "💹",
-        "title": "Economy",
-        "desc": "Latest economic indicators, FX analysis with normalization, sentiment trends, inflation tracking, leading index tracking, and AI-powered strategic insights with dual-axis visualization.",
+        "title": "Economic Intelligence",
+        "desc": "Monitor GDP, inflation, and FX with AI-generated macro signals.",
         "page": "Economy_Dashboard",
-        "features": ["Economic Indicators", "FX Analysis", "AI Insights"]
+        "features": ["Macro Indicators", "FX Trends", "AI Forecasts"]
     },
     {
         "icon": "⚡",
-        "title": "Energy",
-        "desc": "Comprehensive energy market analysis including oil stocks, import trends, OPEC insights, and energy supply chain intelligence.",
+        "title": "Energy Intelligence",
+        "desc": "Track oil stocks, imports, and OPEC trends across regions.",
         "page": "Energy_Dashboard",
-        "features": ["Oil Stocks", "Import Trends", "OPEC Insights"]
+        "features": ["Oil Data", "Import Patterns", "OPEC Insights"]
     },
     {
         "icon": "🌍",
-        "title": "Global Trade",
-        "desc": "Global shipping analytics, trade partner analysis, volatility trends, and international trade flow intelligence with BDI tracking.",
+        "title": "Global Trade Intelligence",
+        "desc": "Analyze trade flows, shipping indices, and market volatility.",
         "page": "Global_Trade_Dashboard",
-        "features": ["Shipping Analytics", "Trade Partners", "Volatility Trends"]
+        "features": ["Trade Flows", "Shipping Data", "Volatility Signals"]
     },
     {
         "icon": "🏭",
-        "title": "Industry",
-        "desc": "Manufacturing inventory analysis, steel production trends, industrial capacity utilization, and sector performance metrics.",
+        "title": "Industrial Intelligence",
+        "desc": "Monitor manufacturing, steel output, and inventory trends.",
         "page": "Industry_Dashboard",
-        "features": ["Manufacturing", "Steel Production", "Capacity Analysis"]
+        "features": ["Production Trends", "Steel Analytics", "Inventory Insights"]
     },
     {
         "icon": "🇰🇷",
-        "title": "Korea Trade",
-        "desc": "Korea-specific trade analytics, semiconductor exports, import/export balance, and trade partner analysis with detailed breakdowns.",
+        "title": "Korea Trade Intelligence",
+        "desc": "Explore Korea’s trade, exports, and semiconductor flows.",
         "page": "Korea_Trade_Dashboard",
-        "features": ["Trade Analytics", "Semiconductors", "Export/Import"]
+        "features": ["Export Data", "Semiconductor Trends", "Trade Partners"]
     },
 ]
 
@@ -706,6 +885,13 @@ for idx, dash in enumerate(DASHBOARDS):
 # Footer
 st.markdown(f"""
 <div class="footer">
+    <div style="margin-bottom: 1.5rem;">
+        <h4 style="color: #1e3c72; margin-bottom: 1rem;">🎯 Mission Statement</h4>
+        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 1rem;">
+            To solve the problem of data overload by using AI to interpret complex economic data into simple, 
+            actionable insights that anyone can understand and use to make better decisions.
+        </p>
+    </div>
     <div style="margin-bottom: 1rem;">
         <strong style="color: #1e3c72;">Data Sources:</strong> World Bank, IMF, Korea Customs Service, World Steel Association, OPEC, USDA, DAPA, Bank of Korea (ECOS), and more.
     </div>

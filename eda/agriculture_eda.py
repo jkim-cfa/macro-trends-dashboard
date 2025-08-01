@@ -123,7 +123,7 @@ def generate_insights(stats_df, growth_df, corr_matrix, key_insights, output_dir
 ### **Required Output Format**
 ## Agriculture Sector Second-Order Effect Analysis
 
-### Top 1 actionable insights 
+### Top 1 actionable insight
 • (e.g., "Wheat production surge → expect flour price drops") (1 line)
 ### Key risks 
 • (e.g., "Fertilizer shortages may hurt small farms") (1 line)

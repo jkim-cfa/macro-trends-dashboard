@@ -244,6 +244,102 @@ def format_insight_text(text):
             formatted.append(line)
     return "\n\n".join(formatted)
 
+def detect_global_trade_signals(export_decrease_data, export_increase_data, export_countries_data, trade_partners_data, shipping_volatility_data):
+    """Detect market signals specific to global trade sector"""
+    signals = []
+    
+    # Signal 1: Export decline patterns
+    if not export_decrease_data.empty:
+        avg_decrease = export_decrease_data['yoy_change_percent'].mean()
+        if avg_decrease < -20:
+            signals.append({
+                "signal": "🚨 Significant Export Decline Detected",
+                "description": f"Average YoY decline of {abs(avg_decrease):.1f}% across top export decrease items indicates weakening global demand or supply chain disruptions.",
+                "implication": "Consider diversifying export markets, exploring new product categories, or strengthening supply chain resilience to mitigate trade risks.",
+                "confidence": "High",
+                "type": "bearish"
+            })
+        elif avg_decrease < -10:
+            signals.append({
+                "signal": "⚠️ Moderate Export Decline Warning",
+                "description": f"Average YoY decline of {abs(avg_decrease):.1f}% suggests some trade headwinds that require monitoring.",
+                "implication": "Monitor trade partner relationships and consider hedging strategies for export-dependent businesses.",
+                "confidence": "Medium",
+                "type": "warning"
+            })
+    
+    # Signal 2: Export growth opportunities
+    if not export_increase_data.empty:
+        avg_increase = export_increase_data['yoy_change_percent'].mean()
+        if avg_increase > 30:
+            signals.append({
+                "signal": "📈 Strong Export Growth Momentum",
+                "description": f"Average YoY growth of {avg_increase:.1f}% across top export increase items indicates robust global demand.",
+                "implication": "Opportunity to expand production capacity and explore new markets for high-growth commodities.",
+                "confidence": "High",
+                "type": "bullish"
+            })
+        elif avg_increase > 15:
+            signals.append({
+                "signal": "🟢 Positive Export Growth Trend",
+                "description": f"Average YoY growth of {avg_increase:.1f}% shows healthy trade expansion in key sectors.",
+                "implication": "Consider increasing investment in growing export categories and strengthening trade partnerships.",
+                "confidence": "Medium",
+                "type": "bullish"
+            })
+    
+    # Signal 3: Geographic trade concentration
+    if not export_countries_data.empty:
+        # Check for geographic concentration risk
+        top_country = export_countries_data.iloc[0]
+        if top_country['yoy_change_percent'] > 50:
+            signals.append({
+                "signal": "🌍 Geographic Trade Concentration Risk",
+                "description": f"Excessive growth in {top_country['country']} exports ({top_country['yoy_change_percent']:.1f}% YoY) may indicate over-dependency on single market.",
+                "implication": "Diversify trade partnerships to reduce geographic concentration risk and enhance trade resilience.",
+                "confidence": "Medium",
+                "type": "warning"
+            })
+    
+    # Signal 4: Shipping volatility impact
+    if not shipping_volatility_data.empty:
+        current_vol = shipping_volatility_data['value'].iloc[-1]
+        avg_vol = shipping_volatility_data['value'].mean()
+        
+        if current_vol > avg_vol * 1.5:
+            signals.append({
+                "signal": "🚢 High Shipping Volatility Alert",
+                "description": f"Current shipping volatility ({current_vol:.1f}) is {((current_vol/avg_vol)-1)*100:.0f}% above average, indicating supply chain instability.",
+                "implication": "Expect increased shipping costs and delivery delays. Consider alternative logistics routes and buffer inventory levels.",
+                "confidence": "High",
+                "type": "bearish"
+            })
+        elif current_vol < avg_vol * 0.7:
+            signals.append({
+                "signal": "⚓ Stable Shipping Conditions",
+                "description": f"Current shipping volatility ({current_vol:.1f}) is {((1-current_vol/avg_vol)*100):.0f}% below average, indicating stable logistics environment.",
+                "implication": "Favorable conditions for trade expansion and cost-effective shipping operations.",
+                "confidence": "Medium",
+                "type": "bullish"
+            })
+    
+    # Signal 5: Trade partner value concentration
+    if not trade_partners_data.empty:
+        top_partner_value = trade_partners_data.iloc[0]['export_value_thousand_usd']
+        total_value = trade_partners_data['export_value_thousand_usd'].sum()
+        concentration = (top_partner_value / total_value) * 100
+        
+        if concentration > 40:
+            signals.append({
+                "signal": "🤝 Trade Partner Concentration Risk",
+                "description": f"Top trade partner accounts for {concentration:.1f}% of total export value, indicating high dependency risk.",
+                "implication": "Diversify trade partnerships to reduce dependency on single partner and enhance trade security.",
+                "confidence": "High",
+                "type": "warning"
+            })
+    
+    return signals
+
 # Load Data
 with st.spinner("Loading global trade intelligence data..."):
     data = load_cached_global_trade_data()
@@ -296,8 +392,108 @@ if active_filters:
 else:
     st.sidebar.info("ℹ️ No filters applied")
 
+# Create sections dictionary after data is loaded
+sections = {
+    "Insight": extract_section(gemini_insight, "### Top 1 actionable insight", "### Key risks"),
+    "Main Risk": extract_section(gemini_insight, "### Key risks", "### Recommended actions"),
+    "Strategic Recommendations": extract_section(gemini_insight, "### Recommended actions", "### Core Trend"),
+}
+# Executive Summary Header
+st.markdown('<div class="section-header" style="margin-bottom: 1rem;"><h2>🌍 Executive Summary: Global Trade Trends</h2></div>', unsafe_allow_html=True)
+
+# Three-column Insight Cards
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    if sections["Insight"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #66bb6a 0%, #83c5be 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">💡 Actionable Insight</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Insight"]), unsafe_allow_html=True)
+    else:
+        st.info("No actionable insight available")
+
+with col2:
+    if sections["Main Risk"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #ffa726 0%, #adb5bd 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">⚠️ Key Risk</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Main Risk"]), unsafe_allow_html=True)
+    else:
+        st.info("No risk data available")
+
+with col3:
+    if sections["Strategic Recommendations"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #90caf9 0%, #a8dadc 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">🛠️ Recommendations</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Strategic Recommendations"]), unsafe_allow_html=True)
+    else:
+        st.info("No recommendations available")
+
+
+# Spacer between card row and macro summary
+st.markdown("<div style='margin-top: 1.5rem;'></div>", unsafe_allow_html=True)
+
+# Unified Macro Summary Box
+st.markdown("""
+<div style="background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #1d3557; padding: 1.25rem 1.5rem;
+            border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <p style="margin: 0.25rem 0;"><strong>📊 Macro Context:</strong> Global trade flows show dynamic shifts with emerging market demand growth, supply chain rebalancing post-pandemic, and shipping cost volatility creating both opportunities and risks for international commerce. Regional trade partnerships are evolving with shifting geopolitical dynamics and changing consumer preferences.</p>
+    <p style="margin: 0.25rem 0;"><strong>🧠 Takeaway:</strong> Monitor export-import patterns for emerging opportunities, diversify trade partnerships to reduce geographic concentration risk, and leverage shipping index trends to optimize logistics costs and supply chain resilience in an increasingly volatile global trade environment.</p>
+</div>
+""", unsafe_allow_html=True)
+
+# AI-Powered Strategic Analysis
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications</h2></div>', unsafe_allow_html=True)
+if gemini_insight and gemini_insight != "No AI insights found.":
+    sections = {
+        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
+        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
+        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
+        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
+        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
+    }
+    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+    tabs = st.tabs(tab_labels)
+    for tab, (label, content) in zip(tabs, sections.items()):
+        with tab:
+            if content:
+                st.markdown(f"### {label}")
+                st.markdown(format_insight_text(content))
+            else:
+                st.info(f"No {label} insights available.")
+
+else:
+    st.markdown("""
+    <div class="alert-box">
+        <h4>🌟 AI Insights Unavailable</h4>
+        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
+        <ul>
+            <li>Insufficient data for analysis</li>
+            <li>AI service configuration issues</li>
+            <li>Data quality concerns</li>
+        </ul>
+        <p>Please check your data sources and AI service setup.</p>
+    </div>
+    """, unsafe_allow_html=True)
+st.markdown("---")
+
 # Key Metrics with enhanced styling and better text formatting
-st.markdown('<div class="section-header"><h2>📊 Key Trade Metrics</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>📊 Key Indicators</h2></div>', unsafe_allow_html=True)
 if key_insights and "summary_statistics" in key_insights:
     stats = key_insights["summary_statistics"]
     top5_decrease = stats.get("Top 5 YoY Decrease Items", [])
@@ -391,6 +587,38 @@ with col6:
         "Data refresh time",
         "#6c757d"
     ), unsafe_allow_html=True)
+
+# Signal Detection
+st.markdown('<div class="section-header"><h2>🚨 Global Trade Sector Signals</h2></div>', unsafe_allow_html=True)
+
+# Generate and display global trade-specific signals
+signals = detect_global_trade_signals(export_decrease_items_top5, export_increase_items_top5, export_increase_countries_top5, trade_partners_top5, shipping_index_3m_volatility)
+
+if signals:
+    for signal in signals:
+        if signal["type"] == "bullish":
+            signal_color = "#28a745"
+            signal_emoji = "🟢"
+        elif signal["type"] == "bearish":
+            signal_color = "#dc3545"
+            signal_emoji = "🔴"
+        elif signal["type"] == "warning":
+            signal_color = "#ffc107"
+            signal_emoji = "🟡"
+        else:  # neutral
+            signal_color = "#6c757d"
+            signal_emoji = "⚪"
+        
+        st.markdown(f"""
+        <div class="insight-card" style="border-left-color: {signal_color};">
+            <h4>{signal_emoji} {signal["signal"]}</h4>
+            <p><strong>📊 What We See:</strong> {signal["description"]}</p>
+            <p><strong>💡 What This Means:</strong> {signal["implication"]}</p>
+            <p><strong>🎯 Confidence Level:</strong> {signal["confidence"]}</p>
+        </div>
+        """, unsafe_allow_html=True)
+else:
+    st.info("No significant global trade market signals detected at this time.")
 
 # Top 5 Export Decrease Items
 st.markdown('<div class="section-header"><h2>⬇️ Top 5 Export Decrease Items (YoY)</h2></div>', unsafe_allow_html=True)
@@ -1033,48 +1261,6 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-# AI-Powered Strategic Analysis
-st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)
-if gemini_insight and gemini_insight != "No AI insights found.":
-    sections = {
-        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
-        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
-        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
-        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
-        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
-    }
-    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-    tabs = st.tabs(tab_labels)
-    for tab, (label, content) in zip(tabs, sections.items()):
-        with tab:
-            if content:
-                st.markdown(f"### {label}")
-                st.markdown(format_insight_text(content))
-            else:
-                st.info(f"No {label} insights available.")
-    st.subheader("📊 AI Insight Summary")
-    insight_metrics = {
-        "Sections Available": len([s for s in sections.values() if s]),
-        "Total Insight Length": len(gemini_insight),
-        "Last Updated": datetime.now().strftime("%Y-%m-%d")
-    }
-    col1, col2, col3 = st.columns(3)
-    for i, (key, value) in enumerate(insight_metrics.items()):
-        with [col1, col2, col3][i]:
-            st.metric(key, value)
-else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>🌟 AI Insights Unavailable</h4>
-        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
-        <ul>
-            <li>Insufficient data for analysis</li>
-            <li>AI service configuration issues</li>
-            <li>Data quality concerns</li>
-        </ul>
-        <p>Please check your data sources and AI service setup.</p>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Data Explorer
 st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', unsafe_allow_html=True)

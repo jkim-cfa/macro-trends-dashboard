@@ -24,7 +24,7 @@ st.set_page_config(
 st.markdown("""
 <style>
     .main-header {
-        background: linear-gradient(90deg, #2E8B57, #3CB371);
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         padding: 2rem;
         border-radius: 15px;
         color: white;
@@ -277,7 +277,7 @@ def generate_alerts(growth_data, corr_data):
             top_commodity = growth_data.loc[growth_data['CAGR (%)'].idxmax(), 'Commodity']
             alerts.append({
                 'type': 'warning',
-                'title': '⚠️ EXTREME GROWTH DETECTED',
+                'title': 'EXTREME GROWTH DETECTED',
                 'message': f'{top_commodity} shows {max_growth:.1f}% growth (vs {mean_growth:.1f}% average). Monitor for potential volatility.'
             })
         
@@ -286,7 +286,7 @@ def generate_alerts(growth_data, corr_data):
             worst_commodity = growth_data.loc[growth_data['CAGR (%)'].idxmin(), 'Commodity']
             alerts.append({
                 'type': 'danger',
-                'title': '🚨 NEGATIVE GROWTH ALERT',
+                'title': 'NEGATIVE GROWTH ALERT',
                 'message': f'{worst_commodity} shows {min_growth:.1f}% decline. Consider diversification away from this commodity.'
             })
     
@@ -304,7 +304,7 @@ def generate_alerts(growth_data, corr_data):
             pair_info = high_corr_pairs[0]  # Show first high correlation pair
             alerts.append({
                 'type': 'warning',
-                'title': '⚠️ HIGH CORRELATION RISK',
+                'title': 'HIGH CORRELATION RISK',
                 'message': f'{pair_info[0]} and {pair_info[1]} are {pair_info[2]:.2f} correlated. Consider diversification to reduce portfolio risk.'
             })
     
@@ -325,23 +325,22 @@ ready_data = data.get("ready", pd.DataFrame())
 
 # Create sections dictionary after data is loaded
 sections = {
-    "Insight": extract_section(gemini_insight, "### Top 1 actionable insights ", "### Key risks "),
+    "Insight": extract_section(gemini_insight, "### Top 1 actionable insight", "### Key risks "),
     "Main Risk": extract_section(gemini_insight, "### Key risks", "### Recommended actions"),
     "Strategic Recommendations": extract_section(gemini_insight, "### Recommended actions", "### Core Trend"),
 }
 
 # Display Key Insights Section
-st.markdown('<div class="section-header"><h2>🎯 Key Strategic Insights</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>🌍 Executive Summary: Agriculture Trends</h2></div>', unsafe_allow_html=True)
 
 # Create three columns for the insights
 col1, col2, col3 = st.columns(3)
-
 with col1:
     if sections["Insight"]:
         st.markdown("""
-        <div style="background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: linear-gradient(135deg, #66bb6a 0%, #83c5be 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-                <h4 style="margin: 0 0 1rem 0;">💡 Top Actionable Insight</h4>
+                <h4 style="margin: 0 0 1rem 0;">💡 Actionable Insight</h4>
                 <p style="margin: 0; line-height: 1.5;">{}</p>
             </div>
         </div>
@@ -352,7 +351,7 @@ with col1:
 with col2:
     if sections["Main Risk"]:
         st.markdown("""
-        <div style="background: linear-gradient(135deg, #fd7e14 0%, #e74c3c 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: linear-gradient(135deg, #ffa726 0%, #adb5bd 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
                 <h4 style="margin: 0 0 1rem 0;">⚠️ Key Risk</h4>
                 <p style="margin: 0; line-height: 1.5;">{}</p>
@@ -365,9 +364,9 @@ with col2:
 with col3:
     if sections["Strategic Recommendations"]:
         st.markdown("""
-        <div style="background: linear-gradient(135deg, #17a2b8 0%, #28a745 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: linear-gradient(135deg, #90caf9 0%, #a8dadc 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-                <h4 style="margin: 0 0 1rem 0;">🛠️ Strategic Recommendations</h4>
+                <h4 style="margin: 0 0 1rem 0;">🛠️ Recommendations</h4>
                 <p style="margin: 0; line-height: 1.5;">{}</p>
             </div>
         </div>
@@ -375,7 +374,17 @@ with col3:
     else:
         st.info("No recommendations available")
 
-st.markdown("---")
+# Spacer between card row and macro summary
+st.markdown("<div style='margin-top: 1.5rem;'></div>", unsafe_allow_html=True)
+
+st.markdown("""
+<div style="background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #1d3557; padding: 1.25rem 1.5rem;
+            border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+   <p style="margin: 0.25rem 0;"><strong>📈 Macro context:</strong> Rising soybean and corn prices are contributing to food inflation and import dependency risks.</p>
+   <p style="margin: 0.25rem 0;"><strong>🧠 Takeaway:</strong> Prioritize investments in climate-resilient and low-correlation commodities. Watch for underperformers like cattle that may drag returns.</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Create combined analysis dataframe for filtering
 combined_analysis = pd.DataFrame()
@@ -499,90 +508,48 @@ if active_filters:
 else:
     st.sidebar.info("ℹ️ No filters applied")
 
-# So What Section (Updated with more specific insights)
-st.markdown("""
-<div class="section-header">
-    <h2>🌍 Agriculture's Macro Impact: What's at Stake</h2>
-</div>
-<div class="insight-card">
-    <p><strong>📌 Why it matters:</strong> Agriculture drives food security, inflation, and input supply chains. Your data shows varying performance across commodities, indicating both opportunities and risks for strategic positioning.</p>
-    <p><strong>🧠 Strategic takeaway:</strong> Focus on high-growth, low-correlation commodities for expansion while monitoring underperformers for exit opportunities.</p>
-</div>
-""", unsafe_allow_html=True)
+# AI-Powered Strategic Analysis with enhanced styling
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications</h2></div>', unsafe_allow_html=True)
 
-# Data-Driven Alerts
-performance_tiers = analyze_performance_tiers(growth_data)
-alerts = generate_alerts(growth_data, corr_data)
+if gemini_insight and gemini_insight != "No AI insights found.":
+    # Extract sections
+    sections = {
+        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
+        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
+        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
+        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
+        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
+    }
 
-if alerts or performance_tiers:
-    st.markdown('<div class="section-header"><h2>🚨 Executive Summary & Alerts</h2></div>', unsafe_allow_html=True)
-    
-    # Show alerts in compact layout
-    if alerts:
-        # Create columns for alerts (2 per row)
-        for i in range(0, len(alerts), 2):
-            cols = st.columns(2)
-            for j in range(2):
-                if i + j < len(alerts):
-                    alert = alerts[i + j]
-                    with cols[j]:
-                        if alert['type'] == 'danger':
-                            st.markdown(f"""
-                            <div style="background: #fff5f5; border: 1px solid #fed7d7; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
-                                <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                                    <span style="color: #e53e3e; font-size: 16px; margin-right: 8px;">🔴</span>
-                                    <h5 style="margin: 0; color: #2d3748; font-size: 14px; font-weight: 600;">{alert['title']}</h5>
-                                </div>
-                                <p style="margin: 0; color: #4a5568; font-size: 12px; line-height: 1.4;">{alert['message']}</p>
-                            </div>
-                            """, unsafe_allow_html=True)
-                        elif alert['type'] == 'warning':
-                            st.markdown(f"""
-                            <div style="background: #fffbeb; border: 1px solid #f6e05e; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
-                                <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                                    <span style="color: #d69e2e; font-size: 16px; margin-right: 8px;">⚠️</span>
-                                    <h5 style="margin: 0; color: #2d3748; font-size: 14px; font-weight: 600;">{alert['title']}</h5>
-                                </div>
-                                <p style="margin: 0; color: #4a5568; font-size: 12px; line-height: 1.4;">{alert['message']}</p>
-                            </div>
-                            """, unsafe_allow_html=True)
-    
-    # Show performance tiers
-    if performance_tiers:
-        col1, col2, col3 = st.columns(3)
-        
-        with col1:
-            if not performance_tiers['high'].empty:
-                st.markdown("""
-                <div class="success-box">
-                    <h4>🟢 HIGH PERFORMERS</h4>
-                </div>
-                """, unsafe_allow_html=True)
-                for _, row in performance_tiers['high'].iterrows():
-                    st.write(f"• **{row['Commodity']}**: {row['CAGR (%)']:.1f}%")
-            
-        with col2:
-            if not performance_tiers['stable'].empty:
-                st.markdown("""
-                <div class="alert-box">
-                    <h4>🟡 STABLE PERFORMERS</h4>
-                </div>
-                """, unsafe_allow_html=True)
-                for _, row in performance_tiers['stable'].iterrows():
-                    st.write(f"• **{row['Commodity']}**: {row['CAGR (%)']:.1f}%")
-        
-        with col3:
-            if not performance_tiers['low'].empty:
-                st.markdown("""
-                <div class="danger-box">
-                    <h4>🔴 UNDERPERFORMERS</h4>
-                </div>
-                """, unsafe_allow_html=True)
-                for _, row in performance_tiers['low'].iterrows():
-                    st.write(f"• **{row['Commodity']}**: {row['CAGR (%)']:.1f}%")
+    # Create tabs with enhanced styling
+    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+    tabs = st.tabs(tab_labels)
 
+    for tab, (label, content) in zip(tabs, sections.items()):
+        with tab:
+            if content:
+                st.markdown(f"### {label}")
+                st.markdown(format_insight_text(content))
+            else:
+                st.info(f"No {label} insights available.")
+else:
+    st.markdown("""
+    <div class="alert-box">
+        <h4>🌟 AI Insights Unavailable</h4>
+        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
+        <ul>
+            <li>Insufficient data for analysis</li>
+            <li>AI service configuration issues</li>
+            <li>Data quality concerns</li>
+        </ul>
+        <p>Please check your data sources and AI service setup.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+st.markdown("---")
 # Key Metrics with enhanced styling (keeping existing code)
-st.markdown('<div class="section-header"><h2>📊 Key Performance Metrics</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>📊 Key Indicators</h2></div>', unsafe_allow_html=True)
 
 # Dynamically calculate metrics from filtered growth_data
 if not growth_data.empty and 'Commodity' in growth_data.columns and 'CAGR (%)' in growth_data.columns:
@@ -659,43 +626,88 @@ with col5:
     ), unsafe_allow_html=True)
 
 
-# AI-Powered Strategic Analysis with enhanced styling
-st.markdown('<div class="section-header"><h2>🌟 Strategic Implications & Second-Order Insights</h2></div>', unsafe_allow_html=True)
+# Data-Driven Alerts
+performance_tiers = analyze_performance_tiers(growth_data)
+alerts = generate_alerts(growth_data, corr_data)
 
-if gemini_insight and gemini_insight != "No AI insights found.":
-    # Extract sections
-    sections = {
-        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
-        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
-        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
-        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
-        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
-    }
+if alerts or performance_tiers:
+    st.markdown('<div class="section-header"><h2>🚨 Agriculture Sector Signals</h2></div>', unsafe_allow_html=True)
+    
+    # Show alerts in compact layout
+    if alerts:
+        # Create columns for alerts (2 per row)
+        for i in range(0, len(alerts), 2):
+            cols = st.columns(2)
+            for j in range(2):
+                if i + j < len(alerts):
+                    alert = alerts[i + j]
+                    with cols[j]:
+                        if alert['type'] == 'danger':
+                            st.markdown(f"""
+                            <div style="background: #fff5f5; border: 1px solid #fed7d7; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                    <span style="color: #e53e3e; font-size: 16px; margin-right: 8px;">🔴</span>
+                                    <h5 style="margin: 0; color: #2d3748; font-size: 14px; font-weight: 600;">{alert['title']}</h5>
+                                </div>
+                                <p style="margin: 0; color: #4a5568; font-size: 12px; line-height: 1.4;">{alert['message']}</p>
+                            </div>
+                            """, unsafe_allow_html=True)
+                        elif alert['type'] == 'warning':
+                            st.markdown(f"""
+                            <div style="background: #fffbeb; border: 1px solid #f6e05e; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                    <span style="color: #d69e2e; font-size: 16px; margin-right: 8px;">⚠️</span>
+                                    <h5 style="margin: 0; color: #2d3748; font-size: 14px; font-weight: 600;">{alert['title']}</h5>
+                                </div>
+                                <p style="margin: 0; color: #4a5568; font-size: 12px; line-height: 1.4;">{alert['message']}</p>
+                            </div>
+                            """, unsafe_allow_html=True)
+    
+    # Show performance tiers
+    if performance_tiers:
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            if not performance_tiers['high'].empty:
+                st.markdown("""
+                <div style="background: #e6f4ea; border: 1px solid #28a745; border-radius: 8px; padding: 1rem; height: 140px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
+                    <div style="display: flex; align-items: center;">
+                        <span style="color: #28a745; font-size: 20px; margin-right: 8px;">🟢</span>
+                        <strong style="font-size: 14px;">HIGH PERFORMERS</strong>
+                    </div>
+                    <div style="font-size: 13px;">
+                        {}
+                    </div>
+                </div>
+                """.format("<br>".join([f"• {row['Commodity']}: {row['CAGR (%)']:.1f}%" for _, row in performance_tiers['high'].iterrows()])), unsafe_allow_html=True)
 
-    # Create tabs with enhanced styling
-    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-    tabs = st.tabs(tab_labels)
+        with col2:
+            if not performance_tiers['stable'].empty:
+                st.markdown("""
+                <div style="background: #fff9e6; border: 1px solid #ffc107; border-radius: 8px; padding: 1rem; height: 140px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
+                    <div style="display: flex; align-items: center;">
+                        <span style="color: #ffc107; font-size: 20px; margin-right: 8px;">🟡</span>
+                        <strong style="font-size: 14px;">STABLE PERFORMERS</strong>
+                    </div>
+                    <div style="font-size: 13px;">
+                        {}
+                    </div>
+                </div>
+                """.format("<br>".join([f"• {row['Commodity']}: {row['CAGR (%)']:.1f}%" for _, row in performance_tiers['stable'].iterrows()])), unsafe_allow_html=True)
 
-    for tab, (label, content) in zip(tabs, sections.items()):
-        with tab:
-            if content:
-                st.markdown(f"### {label}")
-                st.markdown(format_insight_text(content))
-            else:
-                st.info(f"No {label} insights available.")
-else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>🌟 AI Insights Unavailable</h4>
-        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
-        <ul>
-            <li>Insufficient data for analysis</li>
-            <li>AI service configuration issues</li>
-            <li>Data quality concerns</li>
-        </ul>
-        <p>Please check your data sources and AI service setup.</p>
-    </div>
-    """, unsafe_allow_html=True)
+        with col3:
+            if not performance_tiers['low'].empty:
+                st.markdown("""
+                <div style="background: #fdecea; border: 1px solid #dc3545; border-radius: 8px; padding: 1rem; height: 140px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
+                    <div style="display: flex; align-items: center;">
+                        <span style="color: #dc3545; font-size: 20px; margin-right: 8px;">🔴</span>
+                        <strong style="font-size: 14px;">UNDERPERFORMERS</strong>
+                    </div>
+                    <div style="font-size: 13px;">
+                        {}
+                    </div>
+                </div>
+                """.format("<br>".join([f"• {row['Commodity']}: {row['CAGR (%)']:.1f}%" for _, row in performance_tiers['low'].iterrows()])), unsafe_allow_html=True)
 
 
 # Production Trends with enhanced visualization

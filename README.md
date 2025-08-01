@@ -1,171 +1,105 @@
-![Landing Page](https://github.com/user-attachments/assets/5e288bfa-a94b-4681-921e-1261a9856b9b)
+![Landing Page](https://github.com/user-attachments/assets/f1680e6f-e9fa-4ca8-a906-92017c497a50)
 
-# 🛰️ Global Macro Insight Engine
+# 🛰️ Macro Trends Dashboard
 [![Streamlit App](https://img.shields.io/badge/Live--Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://globalengine.streamlit.app/)
 [![GitHub](https://img.shields.io/badge/Code--Repo-GitHub-181717?logo=github)](https://github.com/emailoneid/Global_Macro_Insight_Engine)
 [![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jaeha-kim16)
 
-An AI-powered macroeconomic intelligence platform that integrates structured datasets and routinely updated sector insights to reveal second-order effects, uncover strategic signals, and guide economic, trade, and defense analysis through interactive dashboards and LLM-driven interpretation.
+An AI-powered dashboard built to solve a real problem:  
+**economic data is scattered, overwhelming, and hard to interpret.**  
+Governments, institutions, and agencies publish thousands of indicators — but no single tool makes sense of them all.
+
+**Macro Trends Dashboard unifies fragmented macroeconomic, trade, energy, and defense data**, then uses LLMs to extract meaning, spot second-order trends, and turn noise into actionable insight — all in one place.
 
 ---
 
-## 🚀 Project Summary
+## 🚀 What It Does
 
-**Global Macro Insight Engine** is a full-stack data intelligence system designed to:
-
-* Ingest and normalize macroeconomic, trade, defense, and energy data from authoritative global sources.
-* Generate sector-level insights using large language models (LLMs) tuned for economic reasoning.
-* Visualize patterns, anomalies, and trends via interactive dashboards.
-* Enable data-driven decision-making in strategic analysis and policy contexts.
+* Collects and harmonizes macro, trade, energy, defense, and industrial data from global sources
+* Uses Google Gemini LLM to generate insights, trends, risks, and strategic recommendations
+* Provides fast, interactive dashboards for analysts, policy makers, and decision-makers
 
 ---
 
-## 🧱 Architecture
+## 🧠 Features
 
-### 1. **Data Pipeline**
-
-* **Sources**: World Bank, IMF, OPEC, USDA, Korea Customs, ECOS, DAPA, World Steel, SIPRI, and more.
-* **Methods**: API calls, web scraping, PDF parsing, and CSV ingestion using Python.
-* **Processing Flow**:
-
-  * Clean and normalize input data.
-  * Load into **PostgreSQL** under the `unified_macro_view` schema.
-  * Use standard fields: `date`, `sector`, `indicator`, `country`, `partner`, `value`, `unit`, `domain`, etc.
-
-### 2. **Insight Engine**
-
-* Powered by **Google Gemini LLM** to produce:
-
-  * 📊 Trend Summaries
-  * 🔍 Second-Order Implications
-  * 🎯 Strategic Recommendations
-  * ⚠️ Risk Flags
-  * 📈 Market Signals
-* Each prompt is auto-generated using metadata, summaries, and multi-period performance features.
-
-### 3. **Interactive Dashboards**
-
-* Built with **Streamlit** + **Plotly** for flexible exploration:
-
-  * Dual-axis time series
-  * Top movers and volatility filters
-  * Sectoral decomposition
-  * Downloadable filtered tables and visuals
+* **LLM-Powered Insight Engine**: Auto-generated trends, second-order effects, and AI summaries
+* **7 Sector Dashboards**: Agriculture, Economy, Energy, Defense, Trade (Global + Korea), Industry
+* **160K+ Records, 92 Indicators**: All normalized in a single PostgreSQL view
+* **Interactive Visuals**: Dual-axis charts, filters, download tables
+* **Clean UX**: Designed for recruiters, analysts, and economic professionals
 
 ---
 
-## 🛠️ Tech Stack
+## ⚙️ Tech Stack
 
-| Layer         | Tools                                            |
-| ------------- | ------------------------------------------------ |
-| Backend       | Python, PostgreSQL, SQLAlchemy, Docker           |
-| ETL           | Pandas, NumPy, scraping modules                  |
-| AI & Insights | Gemini LLM, Google Generative AI API             |
-| Frontend      | Streamlit, Plotly, enhanced with HTML/CSS        |
-| Deployment    | Streamlit Cloud (production), Docker (local dev) |
-
----
-
-## 🎯 Core Skills Demonstrated
-
-| Domain        | Focus                                              |
-| ------------- | -------------------------------------------------- |
-| Data & AI     | ETL automation, prompt engineering for LLMs        |
-| Visualization | Recruiter-facing UI/UX, modular layouts            |
-| Strategy      | Economic signal analysis, policy relevance mapping |
-| Engineering   | Modular codebase, containerized deployment         |
+| Area     | Tools                            |
+| -------- | -------------------------------- |
+| Backend  | Python, PostgreSQL, Docker       |
+| ETL      | Pandas, NumPy, Web Scraping      |
+| AI       | Google Gemini LLM API            |
+| Frontend | Streamlit, Plotly, HTML/CSS      |
+| Deploy   | Streamlit Cloud / Docker Compose |
 
 ---
 
-## 📊 Coverage
+## 💡 Skills Demonstrated
 
-* ✅ **7 Sector Dashboards**:
-
-  * 🌾 Agriculture
-  * 🛡 Defence
-  * 💹 Economy
-  * ⚡ Energy
-  * 🌍 Global Trade
-  * 🇰🇷 Korea Trade
-  * 🏭 Industry
-
-* ✅ **92 Harmonized Indicators**
-
-* ✅ **160,000+ Records in Unified View**
-
-* ✅ Sector-level Gemini AI Insight Generation
+* ETL automation and unified schema design
+* Prompt engineering and AI-driven analytics
+* Interactive dashboard design and visual storytelling
+* Containerized app deployment
 
 ---
 
-## 📸 Screenshots
+## 🖼️ Screenshots
 
-### 🗂️ Sector Summary Page
+### 🔎 Overview & Navigation
 
-<img src="https://github.com/user-attachments/assets/1f4a19b0-c579-477b-8b8b-ece6a98eab6d" width="700"/>
-<p><em>Sector summaries, database stats, and navigation entry point.</em></p>
+![Landing Page](https://github.com/user-attachments/assets/f1680e6f-e9fa-4ca8-a906-92017c497a50)
 
----
+### 📊 Sector Dashboards
 
-### 🌍 Sector Dashboards
+![Sector Dashboards](https://github.com/user-attachments/assets/6c684410-8d4d-42fc-9728-a600cb6c6be1)
+![More Dashboards](https://github.com/user-attachments/assets/5377587a-d6eb-43e7-b4d4-d0877507c6cc)
 
-<img src="https://github.com/user-attachments/assets/6c684410-8d4d-42fc-9728-a600cb6c6be1" width="700"/>
-<img src="https://github.com/user-attachments/assets/5377587a-d6eb-43e7-b4d4-d0877507c6cc" width="700"/>
-<img src="https://github.com/user-attachments/assets/c87ad141-d4bf-4427-8819-ca68b97b9b81" width="700"/>
-<p><em>Sector-specific dashboards with dynamic filters, dual-axis time series, and category breakdowns to surface key trends and top contributors.</em></p>
+### 📈 Indicators & Tables
 
----
-
-### 📈 Economic Indicators & Searchable Tables
-
-<img src="https://github.com/user-attachments/assets/4e587d35-9289-4c17-affa-58387f7fed11" width="700"/>
-<img src="https://github.com/user-attachments/assets/cbba2346-d2ab-402c-a8a4-d4143175d782" width="700"/>
-<p><em>Drill-down views with downloadable tables and keyword search filters.</em></p>
-
----
+![Indicators](https://github.com/user-attachments/assets/4e587d35-9289-4c17-affa-58387f7fed11)
+![Tables](https://github.com/user-attachments/assets/cbba2346-d2ab-402c-a8a4-d4143175d782)
 
 ### 🧠 Gemini AI Insight Panel
 
-<img src="https://github.com/user-attachments/assets/a8f2a6f8-08a9-4564-94ea-34a634260829" width="700"/>
-<p><em>Automatically generated strategic insights based on LLM reasoning.</em></p>
+![AI Insights](https://github.com/user-attachments/assets/a8f2a6f8-08a9-4564-94ea-34a634260829)
 
 ---
 
-## 📌 Why It Matters
+## 🎯 Who It's For
 
-This project demonstrates the convergence of:
-
-* Data engineering and AI analysis
-* Domain-specific signal detection
-* High-impact storytelling via dashboards
-
-Ideal for roles in:
-
-* Strategic Data Analysis
-* Economic/Policy Intelligence
-* AI or Data Product Management
+* Strategic analysts needing fast macro context
+* Policy makers and researchers requiring synthesis
+* Data product teams evaluating domain-specific signal layers
 
 ---
 
-## 📎 Contact
-
-For questions, feedback, or opportunities:
-
-* 📧 [LinkedIn – Jaeha Kim](https://www.linkedin.com/in/jaeha-kim16)
-* 🔗 [GitHub – emailoneid](https://github.com/emailoneid)
-
----
-
-## ✅ To Run Locally
+## ▶️ Run It Locally
 
 ```bash
-# Clone the repo
+# Clone repo
 git clone https://github.com/emailoneid/Global_Macro_Insight_Engine
 cd global-macro-engine
 
-# Setup environment variables
+# Set environment variables
 cp .env.example .env
-# (Add your DB credentials and Gemini API key)
+# (Add PostgreSQL & Gemini API credentials)
 
-# Launch the app
+# Launch app
 streamlit run app/Home.py
 ```
+
+---
+
+## 📬 Contact
+
+* 🔗 [LinkedIn: Jaeha Kim](https://www.linkedin.com/in/jaeha-kim16)
+* 💻 [GitHub: @emailoneid](https://github.com/emailoneid)

@@ -367,8 +367,106 @@ if active_filters:
 else:
     st.sidebar.info("ℹ️ No filters applied")
 
+# Create sections dictionary after data is loaded
+sections = {
+    "Insight": extract_section(gemini_insight, "### Top 1 actionable insight", "### Key risks"),
+    "Main Risk": extract_section(gemini_insight, "### Key risks", "### Recommended actions"),
+    "Strategic Recommendations": extract_section(gemini_insight, "### Recommended actions", "### Core Trend"),
+}
+# Executive Summary Header
+st.markdown('<div class="section-header" style="margin-bottom: 1rem;"><h2>🌍 Executive Summary: Energy Trends</h2></div>', unsafe_allow_html=True)
+
+# Three-column Insight Cards
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    if sections["Insight"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #66bb6a 0%, #83c5be 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">💡 Actionable Insight</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Insight"]), unsafe_allow_html=True)
+    else:
+        st.info("No actionable insight available")
+
+with col2:
+    if sections["Main Risk"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #ffa726 0%, #adb5bd 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">⚠️ Key Risk</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Main Risk"]), unsafe_allow_html=True)
+    else:
+        st.info("No risk data available")
+
+with col3:
+    if sections["Strategic Recommendations"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #90caf9 0%, #a8dadc 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">🛠️ Recommendations</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Strategic Recommendations"]), unsafe_allow_html=True)
+    else:
+        st.info("No recommendations available")
+
+# Spacer between card row and macro summary
+st.markdown("<div style='margin-top: 1.5rem;'></div>", unsafe_allow_html=True)
+
+# Unified Macro Summary Box
+st.markdown("""
+<div style="background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #1d3557; padding: 1.25rem 1.5rem;
+            border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <p style="margin: 0.25rem 0;"><strong>📊 Macro Context:</strong> Global energy markets are experiencing supply-demand imbalances with OPEC+ production cuts and increasing demand from emerging economies, creating price volatility and energy security concerns.</p>
+    <p style="margin: 0.25rem 0;"><strong>🧠 Takeaway:</strong> Monitor stockpile levels and diversify import sources to mitigate supply risks while capitalizing on price arbitrage opportunities in regional markets.</p>
+</div>
+""", unsafe_allow_html=True)
+
+# AI-Powered Strategic Analysis
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications</h2></div>', unsafe_allow_html=True)
+if gemini_insight and gemini_insight != "No AI insights found.":
+    sections = {
+        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
+        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
+        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
+        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
+        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
+    }
+    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+    tabs = st.tabs(tab_labels)
+    for tab, (label, content) in zip(tabs, sections.items()):
+        with tab:
+            if content:
+                st.markdown(f"### {label}")
+                st.markdown(format_insight_text(content))
+            else:
+                st.info(f"No {label} insights available.")
+
+else:
+    st.markdown("""
+    <div class="alert-box">
+        <h4>🌟 AI Insights Unavailable</h4>
+        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
+        <ul>
+            <li>Insufficient data for analysis</li>
+            <li>AI service configuration issues</li>
+            <li>Data quality concerns</li>
+        </ul>
+        <p>Please check your data sources and AI service setup.</p>
+    </div>
+    """, unsafe_allow_html=True)
+st.markdown("---")
 # Key Metrics with enhanced styling
-st.markdown('<div class="section-header"><h2>📊 Key Energy Metrics</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>📊 Key Indicators</h2></div>', unsafe_allow_html=True)
 
 # Dynamically calculate metrics from key insights
 if key_insights and "summary_statistics" in key_insights:
@@ -445,6 +543,105 @@ with col6:
         "#fd7e14"
     ), unsafe_allow_html=True)
 
+
+def detect_energy_signals(iea_stocks_data, oil_imports_data, import_price_data):
+    """Detect important energy market signals from the data"""
+    signals = []
+    
+    # IEA Stocks Analysis
+    if not iea_stocks_data.empty and 'value' in iea_stocks_data.columns:
+        # Get latest stocks data
+        latest_stocks = iea_stocks_data.groupby('country')['value'].last()
+        if not latest_stocks.empty:
+            total_stocks = latest_stocks.sum()
+            
+            # Check for low stock levels (below 60 days of consumption)
+            if total_stocks < 3000000:  # Threshold for low stocks
+                signals.append({
+                    "type": "bearish",
+                    "signal": "Low Global Oil Stocks Warning",
+                    "description": f"Total IEA stocks at {total_stocks:,.0f} thousand bbl",
+                    "implication": "Increased price volatility and supply risk ahead",
+                    "confidence": "High"
+                })
+            elif total_stocks > 5000000:  # High stock levels
+                signals.append({
+                    "type": "bullish",
+                    "signal": "Adequate Global Oil Stocks",
+                    "description": f"Total IEA stocks at {total_stocks:,.0f} thousand bbl",
+                    "implication": "Stable supply conditions, reduced price pressure",
+                    "confidence": "Medium"
+                })
+    
+    # Oil Import Price Analysis
+    if not import_price_data.empty and 'value' in import_price_data.columns:
+        latest_prices = import_price_data.groupby('region')['value'].last()
+        if not latest_prices.empty:
+            avg_price = latest_prices.mean()
+            
+            if avg_price > 80:  # High price threshold
+                signals.append({
+                    "type": "bearish",
+                    "signal": "High Oil Import Prices",
+                    "description": f"Average import price at ${avg_price:.2f}/bbl",
+                    "implication": "Increased energy costs, potential inflation pressure",
+                    "confidence": "High"
+                })
+            elif avg_price < 50:  # Low price threshold
+                signals.append({
+                    "type": "bullish",
+                    "signal": "Favorable Oil Import Prices",
+                    "description": f"Average import price at ${avg_price:.2f}/bbl",
+                    "implication": "Lower energy costs, economic relief",
+                    "confidence": "Medium"
+                })
+    
+    # Import Volume Analysis
+    if not oil_imports_data.empty and 'value' in oil_imports_data.columns:
+        latest_imports = oil_imports_data.groupby('region')['value'].last()
+        if not latest_imports.empty:
+            total_imports = latest_imports.sum()
+            
+            # Check for significant changes in import patterns
+            if total_imports > 100000:  # High import volume
+                signals.append({
+                    "type": "neutral",
+                    "signal": "High Oil Import Volume",
+                    "description": f"Total imports at {total_imports:,.0f} thousand bbl",
+                    "implication": "Strong energy demand, monitor supply security",
+                    "confidence": "Medium"
+                })
+    
+    return signals
+
+# Signal Detection
+st.markdown('<div class="section-header"><h2>🚨 Energy Sector Signals</h2></div>', unsafe_allow_html=True)
+
+# Generate and display energy-specific signals
+signals = detect_energy_signals(iea_stocks_raw, oil_imports_raw, import_price_by_region)
+
+if signals:
+    for signal in signals:
+        if signal["type"] == "bullish":
+            signal_color = "#28a745"
+            signal_emoji = "🟢"
+        elif signal["type"] == "bearish":
+            signal_color = "#dc3545"
+            signal_emoji = "🔴"
+        else:  # neutral
+            signal_color = "#ffc107"
+            signal_emoji = "🟡"
+        
+        st.markdown(f"""
+        <div class="insight-card" style="border-left-color: {signal_color};">
+            <h4>{signal_emoji} {signal["signal"]}</h4>
+            <p><strong>📊 What We See:</strong> {signal["description"]}</p>
+            <p><strong>💡 What This Means:</strong> {signal["implication"]}</p>
+            <p><strong>🎯 Confidence Level:</strong> {signal["confidence"]}</p>
+        </div>
+        """, unsafe_allow_html=True)
+else:
+    st.info("No significant energy market signals detected at this time.")
 
 # After Import Price Trends, add Dominant Supplier Trend
 st.markdown('<div class="section-header"><h2>🏅 Dominant Supplier Trend</h2></div>', unsafe_allow_html=True)
@@ -700,49 +897,6 @@ if not stock_seasonality_patterns.empty:
     
 else:
     st.info("No seasonality pattern data available.")
-
-# AI-Powered Strategic Analysis
-st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)
-if gemini_insight and gemini_insight != "No AI insights found.":
-    sections = {
-        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
-        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
-        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
-        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
-        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
-    }
-    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-    tabs = st.tabs(tab_labels)
-    for tab, (label, content) in zip(tabs, sections.items()):
-        with tab:
-            if content:
-                st.markdown(f"### {label}")
-                st.markdown(format_insight_text(content))
-            else:
-                st.info(f"No {label} insights available.")
-    st.subheader("📊 AI Insight Summary")
-    insight_metrics = {
-        "Sections Available": len([s for s in sections.values() if s]),
-        "Total Insight Length": len(gemini_insight),
-        "Last Updated": datetime.now().strftime("%Y-%m-%d")
-    }
-    col1, col2, col3 = st.columns(3)
-    for i, (key, value) in enumerate(insight_metrics.items()):
-        with [col1, col2, col3][i]:
-            st.metric(key, value)
-else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>🌟 AI Insights Unavailable</h4>
-        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
-        <ul>
-            <li>Insufficient data for analysis</li>
-            <li>AI service configuration issues</li>
-            <li>Data quality concerns</li>
-        </ul>
-        <p>Please check your data sources and AI service setup.</p>
-    </div>
-    """, unsafe_allow_html=True)
 
 # OPEC Insights
 st.markdown('<div class="section-header"><h2>🛢️ OPEC Monthly Report Insights</h2></div>', unsafe_allow_html=True)

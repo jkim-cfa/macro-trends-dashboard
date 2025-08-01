@@ -406,8 +406,109 @@ if active_filters:
 else:
     st.sidebar.info("ℹ️ No filters applied")
 
+# Create sections dictionary after data is loaded
+sections = {
+    "Insight": extract_section(gemini_insight, "### Top 1 actionable insight", "### Key risks "),
+    "Main Risk": extract_section(gemini_insight, "### Key risks", "### Recommended actions"),
+    "Strategic Recommendations": extract_section(gemini_insight, "### Recommended actions", "### Core Trend"),
+}
+
+# Display Key Insights Section
+st.markdown('<div class="section-header"><h2>🌍 Executive Summary: Economic Trends</h2></div>', unsafe_allow_html=True)
+
+# Create three columns for the insights
+col1, col2, col3 = st.columns(3)
+with col1:
+    if sections["Insight"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #66bb6a 0%, #83c5be 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">💡 Actionable Insight</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Insight"]), unsafe_allow_html=True)
+    else:
+        st.info("No actionable insight available")
+
+with col2:
+    if sections["Main Risk"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #ffa726 0%, #adb5bd 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">⚠️ Key Risk</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Main Risk"]), unsafe_allow_html=True)
+    else:
+        st.info("No risk data available")
+
+with col3:
+    if sections["Strategic Recommendations"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #90caf9 0%, #a8dadc 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">🛠️ Recommendations</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Strategic Recommendations"]), unsafe_allow_html=True)
+    else:
+        st.info("No recommendations available")
+
+# Spacer between card row and macro summary
+st.markdown("<div style='margin-top: 1.5rem;'></div>", unsafe_allow_html=True)
+
+st.markdown("""
+<div style="background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #1d3557; padding: 1.25rem 1.5rem;
+            border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+   <p style="margin: 0.25rem 0;"><strong>📈 Macro context:</strong> The Korean economy faces a complex landscape with divergent signals: KOSPI showing resilience while leading indicators suggest cautious optimism, amid global monetary policy uncertainty and trade tensions affecting currency stability.</p>
+   <p style="margin: 0.25rem 0;"><strong>🧠 Takeaway:</strong> Focus on leading indicator momentum for early economic cycle signals, maintain currency hedge strategies given FX volatility, and leverage sentiment data for consumer confidence insights to optimize timing of economic decisions.</p>
+</div>
+""", unsafe_allow_html=True)
+
+# AI-Powered Strategic Analysis
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications</h2></div>', unsafe_allow_html=True)
+
+if gemini_insight and gemini_insight != "No AI insights found.":
+    # Extract sections
+    sections = {
+        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
+        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
+        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
+        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
+        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
+    }
+
+    # Create tabs with enhanced styling
+    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+    tabs = st.tabs(tab_labels)
+
+    for tab, (label, content) in zip(tabs, sections.items()):
+        with tab:
+            if content:
+                st.markdown(f"### {label}")
+                st.markdown(format_insight_text(content))
+            else:
+                st.info(f"No {label} insights available.")
+else:
+    st.markdown("""
+    <div class="alert-box">
+        <h4>🌟 AI Insights Unavailable</h4>
+        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
+        <ul>
+            <li>Insufficient data for analysis</li>
+            <li>AI service configuration issues</li>
+            <li>Data quality concerns</li>
+        </ul>
+        <p>Please check your data sources and AI service setup.</p>
+    </div>
+    """, unsafe_allow_html=True)
+st.markdown("---")
 # Key Metrics with enhanced styling
-st.markdown('<div class="section-header"><h2>📊 Key Economic Indicators</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>📊 Key Indicators</h2></div>', unsafe_allow_html=True)
 
 # Dynamically calculate metrics from key insights
 if key_insights and "market_indicators" in key_insights:
@@ -492,6 +593,143 @@ with col5:
         "Most recent data",
         "#17a2b8"
     ), unsafe_allow_html=True)
+
+def detect_economic_signals(economic_data, fx_data, sentiment_data):
+    """Detect important economic signals from the data"""
+    signals = []
+    
+    # Economic Indicators Analysis
+    if not economic_data.empty and 'indicator' in economic_data.columns:
+        # Pivot data for analysis
+        pivot_data = economic_data.pivot(index='date', columns='indicator', values='value')
+        
+        if not pivot_data.empty:
+            # Leading-Coincident divergence
+            if 'Leading Index' in pivot_data.columns and 'Coincident Index' in pivot_data.columns:
+                latest_leading = pivot_data['Leading Index'].dropna().iloc[-1]
+                latest_coincident = pivot_data['Coincident Index'].dropna().iloc[-1] 
+                spread = latest_leading - latest_coincident
+                
+                if spread > 2:
+                    signals.append({
+                        "type": "bullish",
+                        "signal": "Strong Economic Expansion Signal",
+                        "description": f"Leading Index is {spread:.1f} points above Coincident Index",
+                        "implication": "Economy likely to accelerate in next 3-6 months",
+                        "confidence": "High"
+                    })
+                elif spread < -2:
+                    signals.append({
+                        "type": "bearish", 
+                        "signal": "Economic Slowdown Warning",
+                        "description": f"Leading Index is {abs(spread):.1f} points below Coincident Index",
+                        "implication": "Potential economic deceleration ahead",
+                        "confidence": "High"
+                    })
+            
+            # KOSPI momentum
+            if 'KOSPI' in pivot_data.columns:
+                kospi_data = pivot_data['KOSPI'].dropna()
+                if len(kospi_data) >= 5:
+                    recent_change = (kospi_data.iloc[-1] / kospi_data.iloc[-5] - 1) * 100
+                    if recent_change > 10:
+                        signals.append({
+                            "type": "bullish",
+                            "signal": "Strong Market Momentum", 
+                            "description": f"KOSPI up {recent_change:.1f}% in recent period",
+                            "implication": "High investor confidence, consider taking profits",
+                            "confidence": "Medium"
+                        })
+                    elif recent_change < -10:
+                        signals.append({
+                            "type": "bearish",
+                            "signal": "Market Correction Underway",
+                            "description": f"KOSPI down {abs(recent_change):.1f}% in recent period", 
+                            "implication": "Potential buying opportunity emerging",
+                            "confidence": "Medium"
+                        })
+    
+    # FX Rate Analysis
+    if not fx_data.empty and 'pair' in fx_data.columns and 'exchange_rate' in fx_data.columns:
+        # USD/KRW analysis
+        usd_krw_data = fx_data[fx_data['pair'] == 'USD/KRW']
+        if not usd_krw_data.empty:
+            latest_rate = usd_krw_data['exchange_rate'].iloc[-1]
+            if len(usd_krw_data) >= 5:
+                recent_change = (latest_rate / usd_krw_data['exchange_rate'].iloc[-5] - 1) * 100
+                
+                if recent_change > 5:  # Strong KRW depreciation
+                    signals.append({
+                        "type": "bearish",
+                        "signal": "KRW Depreciation Pressure",
+                        "description": f"USD/KRW up {recent_change:.1f}% in recent period",
+                        "implication": "Import costs rising, potential inflation pressure",
+                        "confidence": "Medium"
+                    })
+                elif recent_change < -5:  # Strong KRW appreciation
+                    signals.append({
+                        "type": "bullish",
+                        "signal": "KRW Appreciation Trend",
+                        "description": f"USD/KRW down {abs(recent_change):.1f}% in recent period",
+                        "implication": "Lower import costs, improved purchasing power",
+                        "confidence": "Medium"
+                    })
+    
+    # Sentiment Analysis
+    if not sentiment_data.empty and 'indicator' in sentiment_data.columns:
+        # Get latest sentiment values
+        latest_sentiment = sentiment_data.groupby('indicator')['value'].last()
+        
+        if not latest_sentiment.empty:
+            avg_sentiment = latest_sentiment.mean()
+            
+            if avg_sentiment > 60:  # High sentiment
+                signals.append({
+                    "type": "bullish",
+                    "signal": "High Economic Sentiment",
+                    "description": f"Average sentiment index at {avg_sentiment:.1f}",
+                    "implication": "Strong consumer and business confidence",
+                    "confidence": "Medium"
+                })
+            elif avg_sentiment < 40:  # Low sentiment
+                signals.append({
+                    "type": "bearish",
+                    "signal": "Low Economic Sentiment",
+                    "description": f"Average sentiment index at {avg_sentiment:.1f}",
+                    "implication": "Weak consumer and business confidence",
+                    "confidence": "Medium"
+                })
+    
+    return signals
+
+# Signal Detection
+st.markdown('<div class="section-header"><h2>🚨 Economic Sector Signals</h2></div>', unsafe_allow_html=True)
+
+# Generate and display economy-specific signals
+signals = detect_economic_signals(economic_indicators_raw, fx_raw, sentiment_raw)
+
+if signals:
+    for signal in signals:
+        if signal["type"] == "bullish":
+            signal_color = "#28a745"
+            signal_emoji = "🟢"
+        elif signal["type"] == "bearish":
+            signal_color = "#dc3545"
+            signal_emoji = "🔴"
+        else:  # neutral
+            signal_color = "#ffc107"
+            signal_emoji = "🟡"
+        
+        st.markdown(f"""
+        <div class="insight-card" style="border-left-color: {signal_color};">
+            <h4>{signal_emoji} {signal["signal"]}</h4>
+            <p><strong>📊 What We See:</strong> {signal["description"]}</p>
+            <p><strong>💡 What This Means:</strong> {signal["implication"]}</p>
+            <p><strong>🎯 Confidence Level:</strong> {signal["confidence"]}</p>
+        </div>
+        """, unsafe_allow_html=True)
+else:
+    st.info("No significant economic market signals detected at this time.")
 
 # Economic Indicators Trends
 st.markdown('<div class="section-header"><h2>📈 Economic Indicators Trends</h2></div>', unsafe_allow_html=True)
@@ -881,97 +1119,6 @@ else:
         <p>No correlation analysis data is currently available.</p>
     </div>
     """, unsafe_allow_html=True)
-
-# AI-Powered Strategic Analysis
-st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)
-
-if gemini_insight and gemini_insight != "No AI insights found.":
-    # Extract sections
-    sections = {
-        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
-        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
-        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
-        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
-        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
-    }
-
-    # Create tabs with enhanced styling
-    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-    tabs = st.tabs(tab_labels)
-
-    for tab, (label, content) in zip(tabs, sections.items()):
-        with tab:
-            if content:
-                st.markdown(f"### {label}")
-                st.markdown(format_insight_text(content))
-            else:
-                st.info(f"No {label} insights available.")
-    
-    # Summary metrics
-    st.subheader("📊 AI Insight Summary")
-    
-    insight_metrics = {
-        "Sections Available": len([s for s in sections.values() if s]),
-        "Total Insight Length": len(gemini_insight),
-        "Last Updated": datetime.now().strftime("%Y-%m-%d")
-    }
-    
-    col1, col2, col3 = st.columns(3)
-    for i, (key, value) in enumerate(insight_metrics.items()):
-        with [col1, col2, col3][i]:
-            st.metric(key, value)
-else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>🌟 AI Insights Unavailable</h4>
-        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
-        <ul>
-            <li>Insufficient data for analysis</li>
-            <li>AI service configuration issues</li>
-            <li>Data quality concerns</li>
-        </ul>
-        <p>Please check your data sources and AI service setup.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-# Data Quality Overview
-st.markdown('<div class="section-header"><h2>📊 Data Quality Overview</h2></div>', unsafe_allow_html=True)
-
-if key_insights and "data_quality" in key_insights:
-    data_quality = key_insights["data_quality"]
-    
-    col1, col2, col3 = st.columns([1.2, 1, 1])
-
-    
-    with col1:
-        st.subheader("📈 Economic Indicators")
-        eco_data = data_quality.get("economic_indicators", {})
-        st.metric("Total Records", f"{eco_data.get('total_records', 0):,}")
-        
-        # Date Range with consistent font size
-        earliest_date = eco_data.get('date_range', {}).get('earliest', 'N/A')
-        latest_date = eco_data.get('date_range', {}).get('latest', 'N/A')
-        st.metric("Unique Indicators", eco_data.get('unique_indicators', 0))
-        
-        # Use full date format
-        if earliest_date != 'N/A' and latest_date != 'N/A':
-            date_range_display = f"{earliest_date} to {latest_date}"
-        else:
-            date_range_display = f"{earliest_date} to {latest_date}"
-        
-        st.metric("Date Range", date_range_display)
-        
-    with col2:
-        st.subheader("💱 FX Data")
-        fx_data = data_quality.get("fx_data", {})
-        st.metric("Total Records", f"{fx_data.get('total_records', 0):,}")
-        st.metric("Currency Pairs", fx_data.get('currency_pairs', 0))
-    
-    with col3:
-        st.subheader("😊 Sentiment Data")
-        sent_data = data_quality.get("sentiment_data", {})
-        st.metric("Total Records", f"{sent_data.get('total_records', 0):,}")
-        st.metric("Unique Indicators", sent_data.get('unique_indicators', 0))
 
 # Data Explorer
 st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', unsafe_allow_html=True)

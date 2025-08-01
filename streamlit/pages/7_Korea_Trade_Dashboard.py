@@ -191,6 +191,102 @@ def format_insight_text(text):
             formatted.append(line)
     return "\n\n".join(formatted)
 
+def detect_korea_trade_signals(export_partners_data, import_partners_data, export_items_data, 
+                              import_items_data, trade_balance_data, wsts_data, value_index_data):
+    """Detect market signals specific to Korea trade sector"""
+    signals = []
+    
+    # Signal 1: Trade balance trends
+    if not trade_balance_data.empty and 'trade_balance' in trade_balance_data.columns:
+        latest_balance = trade_balance_data['trade_balance'].iloc[-1]
+        if latest_balance > 0:
+            signals.append({
+                "signal": "📈 Korea Trade Surplus Strength",
+                "description": f"Trade surplus of ${latest_balance:,.0f}M indicates strong export competitiveness and favorable trade position.",
+                "implication": "Leverage strong trade position to negotiate better terms and expand export markets while maintaining competitive advantage.",
+                "confidence": "High",
+                "type": "bullish"
+            })
+        elif latest_balance < -1000:  # Large deficit
+            signals.append({
+                "signal": "⚠️ Korea Trade Deficit Alert",
+                "description": f"Trade deficit of ${abs(latest_balance):,.0f}M suggests import dependency and potential currency pressure.",
+                "implication": "Focus on export diversification and import substitution strategies to improve trade balance.",
+                "confidence": "High",
+                "type": "bearish"
+            })
+    
+    # Signal 2: Semiconductor export trends (WSTS data)
+    if not wsts_data.empty and 'value' in wsts_data.columns:
+        latest_wsts = wsts_data['value'].iloc[-1]
+        avg_wsts = wsts_data['value'].mean()
+        if latest_wsts > avg_wsts * 1.2:
+            signals.append({
+                "signal": "💻 Strong Semiconductor Demand",
+                "description": f"Semiconductor billings {((latest_wsts/avg_wsts)-1)*100:.0f}% above average indicate robust global chip demand.",
+                "implication": "Korea's semiconductor leadership position provides strong export opportunities and market expansion potential.",
+                "confidence": "High",
+                "type": "bullish"
+            })
+        elif latest_wsts < avg_wsts * 0.8:
+            signals.append({
+                "signal": "📉 Semiconductor Demand Decline",
+                "description": f"Semiconductor billings {((1-latest_wsts/avg_wsts)*100):.0f}% below average suggest cooling global chip demand.",
+                "implication": "Monitor semiconductor market trends and consider diversifying export portfolio beyond chips.",
+                "confidence": "Medium",
+                "type": "warning"
+            })
+    
+    # Signal 3: Geographic trade concentration
+    if not export_partners_data.empty:
+        top_partner = export_partners_data.iloc[0]
+        top_partner_share = (top_partner['export_amount'] / export_partners_data['export_amount'].sum()) * 100
+        if top_partner_share > 30:
+            signals.append({
+                "signal": "🌍 Trade Partner Concentration Risk",
+                "description": f"Top partner {top_partner['partner']} accounts for {top_partner_share:.1f}% of exports, indicating high dependency risk.",
+                "implication": "Diversify trade partnerships to reduce geopolitical and economic concentration risks.",
+                "confidence": "High",
+                "type": "warning"
+            })
+    
+    # Signal 4: Export item diversification
+    if not export_items_data.empty:
+        # Check for semiconductor dominance
+        semiconductor_items = export_items_data[
+            export_items_data['commodity_name_en'].str.contains(
+                'semiconductor|chip|memory|processor', case=False, na=False
+            )
+        ]
+        if not semiconductor_items.empty:
+            semi_share = (
+                semiconductor_items['export_amount'].sum() / 
+                export_items_data['export_amount'].sum()
+            ) * 100
+            if semi_share > 50:
+                signals.append({
+                    "signal": "🔌 Semiconductor Export Concentration",
+                    "description": f"Semiconductors account for {semi_share:.1f}% of exports, showing high sector dependency.",
+                    "implication": "While semiconductors are Korea's strength, consider diversifying into other high-value sectors.",
+                    "confidence": "Medium",
+                    "type": "warning"
+                })
+    
+    # Signal 5: Value index volatility
+    if not value_index_data.empty and 'value' in value_index_data.columns:
+        current_vol = value_index_data['value'].iloc[-1]
+        avg_vol = value_index_data['value'].mean()
+        if current_vol > avg_vol * 1.5:
+            signals.append({
+                "signal": "📊 High Trade Value Volatility",
+                "description": f"Trade value volatility {((current_vol/avg_vol)-1)*100:.0f}% above average indicates market uncertainty.",
+                "implication": "Implement hedging strategies and monitor currency fluctuations to manage trade value risks.",
+                "confidence": "Medium",
+                "type": "warning"
+            })
+    
+    return signals
+
 # Load Data
 with st.spinner("Loading Korea trade intelligence data..."):
     data = load_cached_korea_trade_data()
@@ -280,8 +376,109 @@ if active_filters:
 else:
     st.sidebar.info("ℹ️ No filters applied")
 
+# Create sections dictionary after data is loaded
+sections = {
+    "Insight": extract_section(gemini_insight, "### Top 1 actionable insight", "### Key risks"),
+    "Main Risk": extract_section(gemini_insight, "### Key risks", "### Recommended actions"),
+    "Strategic Recommendations": extract_section(gemini_insight, "### Recommended actions", "### Core Trend"),
+}
+# Executive Summary Header
+st.markdown('<div class="section-header" style="margin-bottom: 1rem;"><h2>🌍 Executive Summary: Korea Trade Trends</h2></div>', unsafe_allow_html=True)
+
+# Three-column Insight Cards
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    if sections["Insight"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #66bb6a 0%, #83c5be 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">💡 Actionable Insight</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Insight"]), unsafe_allow_html=True)
+    else:
+        st.info("No actionable insight available")
+
+with col2:
+    if sections["Main Risk"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #ffa726 0%, #adb5bd 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">⚠️ Key Risk</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Main Risk"]), unsafe_allow_html=True)
+    else:
+        st.info("No risk data available")
+
+with col3:
+    if sections["Strategic Recommendations"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #90caf9 0%, #a8dadc 100%); padding: 1.5rem; border-radius: 10px; color: white; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">🛠️ Recommendations</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Strategic Recommendations"]), unsafe_allow_html=True)
+    else:
+        st.info("No recommendations available")
+
+
+# Spacer between card row and macro summary
+st.markdown("<div style='margin-top: 1.5rem;'></div>", unsafe_allow_html=True)
+
+# Unified Macro Summary Box
+st.markdown("""
+<div style="background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #1d3557; padding: 1.25rem 1.5rem;
+            border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <p style="margin: 0.25rem 0;"><strong>📊 Macro Context:</strong> Korea's trade landscape is characterized by strong semiconductor exports driving economic growth, with China and ASEAN markets as key trading partners. The country faces both opportunities from global chip demand and challenges from geopolitical tensions and supply chain diversification. Korea's export-led economy shows resilience with diversified trade partnerships and technological competitiveness.</p>
+    <p style="margin: 0.25rem 0;"><strong>🧠 Takeaway:</strong> Leverage Korea's semiconductor leadership position to expand market share in high-value exports, diversify trade partnerships beyond traditional markets to reduce geopolitical risks, and monitor semiconductor billings trends to anticipate global demand shifts and maintain competitive advantage in technology-driven trade.</p>
+</div>
+""", unsafe_allow_html=True)
+
+# AI-Powered Strategic Analysis
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications</h2></div>', unsafe_allow_html=True)
+ 
+# Text-based AI Insights
+if gemini_insight and gemini_insight != "No AI insights found.":
+    sections = {
+        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
+        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
+        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
+        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
+        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
+    }
+    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+    tabs = st.tabs(tab_labels)
+    for tab, (label, content) in zip(tabs, sections.items()):
+        with tab:
+            if content:
+                st.markdown(f"### {label}")
+                st.markdown(format_insight_text(content))
+            else:
+                st.info(f"No {label} insights available.")
+    
+else:
+    st.markdown("""
+    <div class="alert-box">
+        <h4>🌟 AI Insights Unavailable</h4>
+        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
+        <ul>
+            <li>Insufficient data for analysis</li>
+            <li>AI service configuration issues</li>
+            <li>Data quality concerns</li>
+        </ul>
+        <p>Please check your data sources and AI service setup.</p>
+    </div>
+    """, unsafe_allow_html=True)
+st.markdown("---")
 # Key Metrics with enhanced styling
-st.markdown('<div class="section-header"><h2>📊 Key Trade Metrics</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>📊 Key Indicators</h2></div>', unsafe_allow_html=True)
 
 # Get data from key insights if available, otherwise use direct data
 if key_insights and isinstance(key_insights, dict):
@@ -375,6 +572,41 @@ with col2:
         "#17a2b8"
     ), unsafe_allow_html=True)
 
+
+# Signal Detection
+st.markdown('<div class="section-header"><h2>🚨 Korea Trade Sector Signals</h2></div>', unsafe_allow_html=True)
+
+# Generate and display Korea trade-specific signals
+signals = detect_korea_trade_signals(
+    export_top_partners, import_top_partners, export_top_items_by_amount,
+    import_top_items_by_amount, trade_balance, wsts_trend_monthly, value_index_volatility
+)
+
+if signals:
+    for signal in signals:
+        if signal["type"] == "bullish":
+            signal_color = "#28a745"
+            signal_emoji = "🟢"
+        elif signal["type"] == "bearish":
+            signal_color = "#dc3545"
+            signal_emoji = "🔴"
+        elif signal["type"] == "warning":
+            signal_color = "#ffc107"
+            signal_emoji = "🟡"
+        else:  # neutral
+            signal_color = "#6c757d"
+            signal_emoji = "⚪"
+        
+        st.markdown(f"""
+        <div class="insight-card" style="border-left-color: {signal_color};">
+            <h4>{signal_emoji} {signal["signal"]}</h4>
+            <p><strong>📊 What We See:</strong> {signal["description"]}</p>
+            <p><strong>💡 What This Means:</strong> {signal["implication"]}</p>
+            <p><strong>🎯 Confidence Level:</strong> {signal["confidence"]}</p>
+        </div>
+        """, unsafe_allow_html=True)
+else:
+    st.info("No significant Korea trade market signals detected at this time.")
 
 
 # Export/Import Partners Analysis
@@ -804,61 +1036,6 @@ if not wsts_volatility.empty:
         fig_volatility_semiconductor = apply_chart_styling(fig_volatility_semiconductor)
         st.plotly_chart(fig_volatility_semiconductor, use_container_width=True)
 
-
-# AI-Powered Strategic Analysis
-st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)
- 
-# Text-based AI Insights
-if gemini_insight and gemini_insight != "No AI insights found.":
-    sections = {
-        "Core Trend": extract_section(gemini_insight, "### Core Trend", "### Hidden Effects"),
-        "Hidden Effects": extract_section(gemini_insight, "### Hidden Effects", "### Strategic Recommendations"),
-        "Strategic Recommendations": extract_section(gemini_insight, "### Strategic Recommendations", "### Risk Assessment"),
-        "Risk Assessment": extract_section(gemini_insight, "### Risk Assessment", "### Market Intelligence"),
-        "Market Intelligence": extract_section(gemini_insight, "### Market Intelligence")
-    }
-    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-    tabs = st.tabs(tab_labels)
-    for tab, (label, content) in zip(tabs, sections.items()):
-        with tab:
-            if content:
-                st.markdown(f"### {label}")
-                st.markdown(format_insight_text(content))
-            else:
-                st.info(f"No {label} insights available.")
-    
-    st.subheader("📊 AI Insight Summary")
-    # Format Last Updated to show only date
-    last_updated_raw = gemini_insights_data.get("generated_at") if gemini_insights_data else None
-    if last_updated_raw:
-        try:
-            last_updated = str(last_updated_raw)[:10]  # Handles both ISO and date strings
-        except Exception:
-            last_updated = datetime.now().strftime("%Y-%m-%d")
-    else:
-        last_updated = datetime.now().strftime("%Y-%m-%d")
-    insight_metrics = {
-        "Sections Available": len([s for s in sections.values() if s]),
-        "Total Insight Length": len(gemini_insight),
-        "Last Updated": last_updated
-    }
-    col1, col2, col3 = st.columns(3)
-    for i, (key, value) in enumerate(insight_metrics.items()):
-        with [col1, col2, col3][i]:
-            st.metric(key, value)
-else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>🌟 AI Insights Unavailable</h4>
-        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
-        <ul>
-            <li>Insufficient data for analysis</li>
-            <li>AI service configuration issues</li>
-            <li>Data quality concerns</li>
-        </ul>
-        <p>Please check your data sources and AI service setup.</p>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Data Explorer
 st.markdown('<div class="section-header"><h2>📄 Data Explorer</h2></div>', unsafe_allow_html=True)

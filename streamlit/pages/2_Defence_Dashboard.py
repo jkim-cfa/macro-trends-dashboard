@@ -247,6 +247,18 @@ def format_insight_section(text):
     
     return "\n\n".join(formatted_lines)
 
+def extract_section(text, start_marker, end_marker):
+    """Extract a section of text between start and end markers"""
+    if not text or text == "No AI insights found.":
+        return ""
+    
+    if start_marker in text:
+        section = text.split(start_marker)[1]
+        if end_marker and end_marker in section:
+            section = section.split(end_marker)[0]
+        return section.strip()
+    return ""
+
 def format_sipri_text(text):
     """Format SIPRI analysis text with numbered points and emojis in styled containers"""
     if not text or text == "No SIPRI insights found.":
@@ -391,8 +403,142 @@ if not combined_analysis.empty and 'category' in combined_analysis.columns:
     if selected_category != "All":
         combined_analysis = combined_analysis[combined_analysis['category'] == selected_category]
 
+
+# Create sections dictionary after data is loaded
+sections = {
+    "Insight": extract_section(gemini_insight, "### Top 1 actionable insight", "### Key risks "),
+    "Main Risk": extract_section(gemini_insight, "### Key risks", "### Recommended actions"),
+    "Strategic Recommendations": extract_section(gemini_insight, "### Recommended actions", "### Core Trend"),
+}
+# Executive Summary Header
+st.markdown('<div class="section-header" style="margin-bottom: 1rem;"><h2>🌍 Executive Summary: Defence Procurement Trends</h2></div>', unsafe_allow_html=True)
+
+# Three-column Insight Cards
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    if sections["Insight"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #66bb6a 0%, #83c5be 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 230px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">💡 Actionable Insight</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Insight"]), unsafe_allow_html=True)
+    else:
+        st.info("No actionable insight available")
+
+with col2:
+    if sections["Main Risk"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #ffa726 0%, #adb5bd 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 230px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">⚠️ Key Risk</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Main Risk"]), unsafe_allow_html=True)
+    else:
+        st.info("No risk data available")
+
+with col3:
+    if sections["Strategic Recommendations"]:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #90caf9 0%, #a8dadc 100%); padding: 1.5rem; border-radius: 10px; color: white; height: 230px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h4 style="margin: 0 0 1rem 0;">🛠️ Recommendations</h4>
+                <p style="margin: 0; line-height: 1.5;">{}</p>
+            </div>
+        </div>
+        """.format(sections["Strategic Recommendations"]), unsafe_allow_html=True)
+    else:
+        st.info("No recommendations available")
+
+# Spacer between card row and macro summary
+st.markdown("<div style='margin-top: 1.5rem;'></div>", unsafe_allow_html=True)
+
+# Unified Macro Summary Box
+st.markdown("""
+<div style="background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #1d3557; padding: 1.25rem 1.5rem;
+            border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <p style="margin: 0.25rem 0;"><strong>📊 Macro Context:</strong> Global defense spending is creating upstream pressure on raw materials and critical components, increasing cross-sectoral inflation risk.</p>
+    <p style="margin: 0.25rem 0;"><strong>🧠 Takeaway:</strong> Diversify supply chains and invest in resilient procurement strategies to avoid downstream disruption in related sectors (e.g. energy, agriculture).</p>
+</div>
+""", unsafe_allow_html=True)
+
+
+# AI-Powered Strategic Analysis
+st.markdown('<div class="section-header"><h2>🌟 Strategic Implications</h2></div>', unsafe_allow_html=True)
+
+if gemini_insight and gemini_insight != "No AI insights found.":
+    # Define insight sections
+    insight_sections = {
+        "Core Trends": ("### Core Trend", "### Hidden Effects"),
+        "Hidden Effects": ("### Hidden Effects", "### Strategic Recommendations"),
+        "Strategic Recommendations": ("### Strategic Recommendations", "### Risk Assessment"),
+        "Risk Assessment": ("### Risk Assessment", "### Market Intelligence"),
+        "Market Intelligence": ("### Market Intelligence", None)
+    }
+    
+    # Extract sections
+    sections = extract_insight_sections(gemini_insight, insight_sections)
+    
+    # Create tabs
+    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
+    tabs = st.tabs(tab_labels)
+    
+    for tab, (label, content) in zip(tabs, sections.items()):
+        with tab:
+            if content:
+                st.markdown(f"### {label}")
+                st.markdown(content)
+            else:
+                st.info(f"No {label} insights available.")
+    
+else:
+    st.markdown("""
+    <div class="alert-box">
+        <h4>🌟 AI Insights Unavailable</h4>
+        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
+        <ul>
+            <li>Insufficient data for analysis</li>
+            <li>AI service configuration issues</li>
+            <li>Data quality concerns</li>
+        </ul>
+        <p>Please check your data sources and AI service setup.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Add after metrics calculation
+def generate_alerts(data):
+    alerts = []
+    
+    # Emergency contract threshold
+    emergency_pct = (len(emergency_contracts) / len(combined_analysis) * 100) if not combined_analysis.empty else 0
+    if emergency_pct > 15:
+        alerts.append({
+            "type": "warning",
+            "title": "High Emergency Procurement Rate",
+            "message": f"{emergency_pct:.1f}% of contracts are emergency procurements. This may indicate planning issues.",
+            "action": "Review procurement planning processes and identify systemic causes."
+        })
+    
+    # Concentration risk
+    top_10_pct = combined_analysis.nlargest(10, 'value')['value'].sum() / combined_analysis['value'].sum() * 100
+    if top_10_pct > 70:
+        alerts.append({
+            "type": "info",
+            "title": "High Value Concentration",
+            "message": f"Top 10 contracts represent {top_10_pct:.1f}% of total value.",
+            "action": "Monitor these high-value contracts closely for performance and compliance."
+        })
+    
+    return alerts
+
 # Key Performance Metrics
-st.markdown('<div class="section-header"><h2>📊 Key Performance Indicators</h2></div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header"><h2>📊 Key Indicators</h2></div>', unsafe_allow_html=True)
 
 if not combined_analysis.empty:
     # Calculate metrics
@@ -491,6 +637,31 @@ else:
         <p>No defence contract data is currently available. Please check your data sources or try refreshing the dashboard.</p>
     </div>
     """, unsafe_allow_html=True)
+
+# Display alerts
+alerts = generate_alerts(combined_analysis)
+if alerts:
+    st.markdown('<div class="section-header"><h2>🚨 Defence Sector Signals</h2></div>', unsafe_allow_html=True)
+    for alert in alerts:
+        alert_class = "alert-box" if alert["type"] == "warning" else "success-box"
+        st.markdown(f"""
+        <div class="{alert_class}">
+            <h4>{alert["title"]}</h4>
+            <p><strong>Finding:</strong> {alert["message"]}</p>
+            <p><strong>Recommended Action:</strong> {alert["action"]}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+def create_contextual_metric_card(title, value, subtitle="", context="", color="#007bff"):
+    """Create a metric card with business context"""
+    return f"""
+    <div class="metric-card" title="{context}">
+        <div class="metric-label">{title}</div>
+        <div class="metric-value" style="color: {color};">{value}</div>
+        <div class="metric-label">{subtitle}</div>
+        <small style="color: #6c757d; font-style: italic;">{context}</small>
+    </div>
+    """
 
 # Contract Value Analysis
 st.markdown('<div class="section-header"><h2>💰 Contract Value Distribution</h2></div>', unsafe_allow_html=True)
@@ -844,61 +1015,6 @@ if not word_frequency.empty:
         st.metric("Average Frequency", f"{avg_frequency:.1f}")
 else:
     st.info("No word frequency data available.")
-
-# AI-Powered Strategic Analysis
-st.markdown('<div class="section-header"><h2>🌟 AI-Powered Strategic Intelligence</h2></div>', unsafe_allow_html=True)
-
-if gemini_insight and gemini_insight != "No AI insights found.":
-    # Define insight sections
-    insight_sections = {
-        "Core Trends": ("### Core Trend", "### Hidden Effects"),
-        "Hidden Effects": ("### Hidden Effects", "### Strategic Recommendations"),
-        "Strategic Recommendations": ("### Strategic Recommendations", "### Risk Assessment"),
-        "Risk Assessment": ("### Risk Assessment", "### Market Intelligence"),
-        "Market Intelligence": ("### Market Intelligence", None)
-    }
-    
-    # Extract sections
-    sections = extract_insight_sections(gemini_insight, insight_sections)
-    
-    # Create tabs
-    tab_labels = ["📊 Core Trends", "🔍 Hidden Effects", "🎯 Strategic Recommendations", "⚠️ Risk Assessment", "📈 Market Intelligence"]
-    tabs = st.tabs(tab_labels)
-    
-    for tab, (label, content) in zip(tabs, sections.items()):
-        with tab:
-            if content:
-                st.markdown(f"### {label}")
-                st.markdown(content)
-            else:
-                st.info(f"No {label} insights available.")
-    
-    # Summary metrics
-    st.subheader("📊 AI Insight Summary")
-    
-    insight_metrics = {
-        "Sections Available": len([s for s in sections.values() if s]),
-        "Total Insight Length": len(gemini_insight),
-        "Last Updated": datetime.now().strftime("%Y-%m-%d")
-    }
-    
-    col1, col2, col3 = st.columns(3)
-    for i, (key, value) in enumerate(insight_metrics.items()):
-        with [col1, col2, col3][i]:
-            st.metric(key, value)
-else:
-    st.markdown("""
-    <div class="alert-box">
-        <h4>🌟 AI Insights Unavailable</h4>
-        <p>No AI-powered strategic insights are currently available. This could be due to:</p>
-        <ul>
-            <li>Insufficient data for analysis</li>
-            <li>AI service configuration issues</li>
-            <li>Data quality concerns</li>
-        </ul>
-        <p>Please check your data sources and AI service setup.</p>
-    </div>
-    """, unsafe_allow_html=True)
 
 # SIPRI Insights
 st.markdown('<div class="section-header"><h2>📊 SIPRI Defence Report Insights</h2></div>', unsafe_allow_html=True)

@@ -1,6 +1,6 @@
 ## Global Trade Sector Second-Order Effect Analysis
 
-### Top 1 actionable insights 
+### Top 1 actionable insight
 • High volatility in shipping indices (SCFI, CCFI) suggests potential for significant supply chain disruptions.
 
 ### Key risks 
