@@ -517,12 +517,13 @@ with col1:
     st.markdown("""
     <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
                 border-left: 5px solid #1d3557; padding: 2rem;
-                border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                min-height: 500px; display: flex; flex-direction: column;">
         <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🚨 The Real Problem</h3>
         <p style="font-size: 1.05rem; line-height: 1.6;">
             Economic data is everywhere — but it's scattered, inconsistent, and hard to interpret. Most decision-makers waste time cleaning data instead of finding answers.
         </p>
-        <ul style="font-size: 1rem; line-height: 1.8; margin-left: 1.2rem;">
+        <ul style="font-size: 1rem; line-height: 1.8; margin-left: 1.2rem; flex-grow: 1;">
             <li>📂 <strong>Too many sources:</strong> World Bank, IMF, ECOS, DAPA, SIPRI — all in silos</li>
             <li>🧩 <strong>Messy data:</strong> Different formats, units, and classifications</li>
             <li>⏳ <strong>Slow insight:</strong> Pattern recognition takes hours or days</li>
@@ -536,12 +537,13 @@ with col2:
     st.markdown("""
     <div style="background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
                 border-left: 5px solid #28a745; padding: 2rem;
-                border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                min-height: 500px; display: flex; flex-direction: column;">
         <h3 style="color: #155724; margin-bottom: 1.5rem;">⚙️ What This Solves</h3>
            <p style="font-size: 1.05rem; line-height: 1.6;">
             This project unifies that chaos. It connects structured pipelines with AI-driven insight to give you the story behind the data — instantly.
         </p>
-        <ul style="font-size: 1rem; line-height: 1.8; margin-left: 1.2rem;">
+        <ul style="font-size: 1rem; line-height: 1.8; margin-left: 1.2rem; flex-grow: 1;">
             <li>🔗 <strong>Brings it together:</strong> 7 sectors, 92 indicators, 160K+ records, 1 schema</li>
             <li>🧠 <strong>Uses AI to think:</strong> Gemini LLM interprets macro patterns and risks</li>
             <li>📊 <strong>Visualizes impact:</strong> Dashboards reveal trends, signals, and anomalies</li>
