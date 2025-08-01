@@ -885,13 +885,6 @@ for idx, dash in enumerate(DASHBOARDS):
 # Footer
 st.markdown(f"""
 <div class="footer">
-    <div style="margin-bottom: 1.5rem;">
-        <h4 style="color: #1e3c72; margin-bottom: 1rem;">🎯 Mission Statement</h4>
-        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 1rem;">
-            To solve the problem of data overload by using AI to interpret complex economic data into simple, 
-            actionable insights that anyone can understand and use to make better decisions.
-        </p>
-    </div>
     <div style="margin-bottom: 1rem;">
         <strong style="color: #1e3c72;">Data Sources:</strong> World Bank, IMF, Korea Customs Service, World Steel Association, OPEC, USDA, DAPA, Bank of Korea (ECOS), and more.
     </div>
@@ -903,7 +896,7 @@ st.markdown(f"""
         <span style="color: #28a745;">●</span> All systems operational
     </div>
     <div style="font-size: 0.9rem; color: #888; margin-top: 1rem;">
-        🔗 <a href="https://github.com/emailoneid/Global_Macro_Insight_Engine" target="_blank" style="color: #1e3c72; text-decoration: none; font-weight: 600;">View on GitHub</a> &nbsp; | &nbsp;
+        🔗 <a href="https://github.com/emailoneid/macro-trends-dashboard" target="_blank" style="color: #1e3c72; text-decoration: none; font-weight: 600;">View on GitHub</a> &nbsp; | &nbsp;
         💼 <a href="https://www.linkedin.com/in/jaeha-kim16/" target="_blank" style="color: #1e3c72; text-decoration: none; font-weight: 600;">Connect on LinkedIn</a>
     </div>
 </div>
