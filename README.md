@@ -115,4 +115,4 @@ streamlit run app/Home.py
 ## 📬 Contact
 
 * 🔗 [LinkedIn: Jaeha Kim](https://www.linkedin.com/in/jaeha-kim16)
-* 💻 [GitHub: @emailoneid](https://github.com/emailoneid)
+* 💻 [GitHub: @emailoneid](https://github.com/jkim-cfa)
